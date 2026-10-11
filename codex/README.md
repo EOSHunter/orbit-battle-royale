@@ -4,6 +4,7 @@ Work produced in the Orbit Royale Codex conversation lives here so Claude and ot
 
 ## Start here
 
+- [Gameplay and inventory concepts](concepts/gameplay-v0.1/README.md): first-person POV with HUD and held rifle, plus the five-slot inventory overlay.
 - [Latest concept gallery — v0.2](concepts/v0.2/index.html): 48 selected concepts covering characters, equipment, vehicles, transport, Ringfall, effects, branding, and UI.
 - [Concept inventory](concepts/v0.2/manifest.json): selected image paths plus retained first drafts.
 - [Original supplied concept list](concepts/v0.2/source-list.txt) and [generation prompts](concepts/v0.2/prompts.md).
@@ -30,6 +31,7 @@ codex/
   concepts/
     v0.1/             Four early equipment sheets
     v0.2/             Full 48-concept gallery, images, manifest, and prompts
+    gameplay-v0.1/    First-person gameplay and inventory visual targets
 ```
 
 Keep future Codex-produced concepts, drafts, and review artifacts in clearly named folders here. Use new versions for art revisions and maintain this index. Update shared implementation files in their existing locations when the task calls for it; this folder does not replace the application structure.
