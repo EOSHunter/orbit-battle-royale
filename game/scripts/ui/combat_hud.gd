@@ -111,8 +111,8 @@ func _ready() -> void:
 	_help = _label(15, TEXT_2)
 	_help.text = "WASD move · Space jump · Shift sprint · C crouch
 Click fire · Right-click aim · R reload · 1–5 or wheel switch slots
-E pick up · Tab inventory · Q Tethercaster
-F5 restart · F10 movement playground · H hide this help"
+E pick up · Tab inventory · Q or mouse side button: Tethercaster
+F1 tuning · F5 restart · F10 movement playground · H hide this help"
 	_pin(_help, Vector2(0, 0), Vector2i(Control.GROW_DIRECTION_END, Control.GROW_DIRECTION_END), Vector2(28, 24))
 
 	_center = _label(44, TEXT)

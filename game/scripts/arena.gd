@@ -119,7 +119,7 @@ func _on_player_eliminated(attacker: Node) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	var button := event as InputEventMouseButton
 	var playing := Input.mouse_mode == Input.MOUSE_MODE_CAPTURED or (_lock_refused and Input.mouse_mode == Input.MOUSE_MODE_HIDDEN)
-	if button and button.pressed and button.button_index == MOUSE_BUTTON_LEFT and not playing and not inventory_screen.is_open():
+	if button and button.pressed and button.button_index == MOUSE_BUTTON_LEFT and not playing and player.combat_input and not inventory_screen.is_open():
 		get_viewport().set_input_as_handled()
 		player.input_grace = 0.25
 		_recapture()

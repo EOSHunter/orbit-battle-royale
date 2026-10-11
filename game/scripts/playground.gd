@@ -25,7 +25,7 @@ func _ready() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	var button := event as InputEventMouseButton
 	var playing := Input.mouse_mode == Input.MOUSE_MODE_CAPTURED or (_lock_refused and Input.mouse_mode == Input.MOUSE_MODE_HIDDEN)
-	if button and button.pressed and button.button_index == MOUSE_BUTTON_LEFT and not playing and not hud.is_tuning_open():
+	if button and button.pressed and button.button_index == MOUSE_BUTTON_LEFT and not playing and player.combat_input:
 		get_viewport().set_input_as_handled()
 		player.input_grace = 0.25
 		if _lock_refused:
@@ -36,8 +36,6 @@ func _unhandled_input(event: InputEvent) -> void:
 	elif event.is_action_pressed("ui_cancel"):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		player.free_look = false
-	elif event.is_action_pressed("toggle_tuning"):
-		hud.toggle_tuning()
 		player.free_look = false
 
 

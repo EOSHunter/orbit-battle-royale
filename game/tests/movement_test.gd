@@ -10,6 +10,7 @@ var _drops: Array[float] = []
 
 
 func _initialize() -> void:
+	Player.use_saved_tuning = false
 	scene = load("res://scenes/playground.tscn").instantiate()
 	root.add_child(scene)
 	player = scene.get_node("Player")

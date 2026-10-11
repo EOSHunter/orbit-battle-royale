@@ -1,6 +1,6 @@
 extends CanvasLayer
 ## Playground HUD: crosshair with Tethercaster eligibility, speed and state,
-## landing readout, tether charge, controls help, and the live tuning panel.
+## landing readout, tether charge and controls help. Tuning lives in TuningPanel (F1).
 ## Colors come from the Orbit Royale design tokens.
 
 const ACCENT := Color("c5f277")
@@ -10,25 +10,6 @@ const DANGER := Color("ff797f")
 const WARNING := Color("ffd18a")
 const SHIELD := Color("70d6ff")
 const SCRIM := Color(0.043, 0.063, 0.106, 0.72)
-
-## [property, label, min, max, step]
-const TUNABLES := [
-	["walk_speed", "Walk speed", 1.0, 15.0, 0.1],
-	["sprint_speed", "Sprint speed", 1.0, 20.0, 0.1],
-	["jump_velocity", "Jump velocity", 2.0, 15.0, 0.1],
-	["gravity", "Gravity", 5.0, 40.0, 0.5],
-	["air_speed", "Air control speed", 1.0, 15.0, 0.1],
-	["air_accel", "Air acceleration", 1.0, 100.0, 1.0],
-	["grapple_range", "Tether range", 10.0, 120.0, 1.0],
-	["reel_speed", "Reel speed", 0.0, 40.0, 0.5],
-	["reel_accel", "Reel pull", 0.0, 80.0, 1.0],
-	["swing_steer", "Swing steering", 0.0, 40.0, 0.5],
-	["grapple_max_speed", "Tether max speed", 10.0, 80.0, 1.0],
-	["release_boost", "Jump-release boost", 0.0, 15.0, 0.1],
-	["grapple_cooldown", "Tether recharge", 0.0, 15.0, 0.1],
-	["mouse_sensitivity", "Mouse sensitivity", 0.1, 3.0, 0.05],
-	["fov", "Field of view", 60.0, 120.0, 1.0],
-]
 
 var player: Player
 
@@ -42,7 +23,6 @@ var _charge_fill: ColorRect
 var _charge_label: Label
 var _help: Label
 var _capture_hint: Label
-var _tuning: PanelContainer
 var _landing_time := 0.0
 
 
@@ -91,7 +71,7 @@ func _ready() -> void:
 
 	var help_panel := _panel(root, Vector2(0, 1), Vector2i(Control.GROW_DIRECTION_END, Control.GROW_DIRECTION_BEGIN), Vector2(24, -24))
 	_help = _label(15, TEXT_2)
-	_help.text = "WASD move · Shift sprint · C crouch · Space jump\nClick / Q fire or release tether · Space while tethered: release with boost\nHold C while tethered: swing without reeling\n1–4 teleport · R respawn · F1 tuning · Esc free the mouse\nController: sticks, A jump, RT tether, B crouch, L3 sprint, Start tuning"
+	_help.text = "WASD move · Shift sprint · C crouch · Space jump\nClick, Q or a mouse side button: fire or release the tether · Space while tethered: release with boost\nHold C while tethered: swing without reeling\nF6–F9 teleport · F5 respawn · F1 tuning (saved) · F10 combat arena · Esc free the mouse\nController: sticks, A jump, RT or R3 tether, B crouch, L3 sprint, Start tuning"
 	help_panel.add_child(_help)
 
 	_capture_hint = _label(22, TEXT)
@@ -101,7 +81,6 @@ func _ready() -> void:
 	_capture_hint.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	root.add_child(_capture_hint)
 
-	_build_tuning(root)
 
 
 func _label(size: int, color: Color) -> Label:
@@ -142,63 +121,6 @@ func _panel(parent: Control, anchor: Vector2, grow: Vector2i, offset: Vector2) -
 	return p
 
 
-func _build_tuning(root: Control) -> void:
-	_tuning = PanelContainer.new()
-	var sb := StyleBoxFlat.new()
-	sb.bg_color = Color("141d2d")
-	sb.border_color = Color("46566d")
-	sb.set_border_width_all(1)
-	sb.set_corner_radius_all(8)
-	sb.set_content_margin_all(16)
-	_tuning.add_theme_stylebox_override("panel", sb)
-	_tuning.visible = false
-	root.add_child(_tuning)
-	_pin(_tuning, Vector2(1, 0), Vector2i(Control.GROW_DIRECTION_BEGIN, Control.GROW_DIRECTION_END), Vector2(-24, 24))
-	_tuning.custom_minimum_size = Vector2(396, 0)
-	var box := VBoxContainer.new()
-	box.add_theme_constant_override("separation", 6)
-	_tuning.add_child(box)
-	var title := _label(20, TEXT)
-	title.text = "Tuning (live, not saved)"
-	box.add_child(title)
-	for t: Array in TUNABLES:
-		var row := HBoxContainer.new()
-		var name_l := _label(15, TEXT_2)
-		name_l.text = t[1]
-		name_l.custom_minimum_size = Vector2(170, 0)
-		var value_l := _label(15, TEXT)
-		value_l.custom_minimum_size = Vector2(56, 0)
-		value_l.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
-		var slider := HSlider.new()
-		slider.min_value = t[2]
-		slider.max_value = t[3]
-		slider.step = t[4]
-		slider.custom_minimum_size = Vector2(150, 24)
-		slider.size_flags_vertical = Control.SIZE_SHRINK_CENTER
-		slider.set_meta("prop", t[0])
-		slider.value_changed.connect(func(v: float) -> void:
-			player.tuning.set(t[0], v)
-			value_l.text = str(snappedf(v, t[4])))
-		row.add_child(name_l)
-		row.add_child(slider)
-		row.add_child(value_l)
-		box.add_child(row)
-	var reset := Button.new()
-	reset.text = "Reset to defaults"
-	reset.pressed.connect(func() -> void:
-		var fresh := MoveTuning.new()
-		for t: Array in TUNABLES:
-			player.tuning.set(t[0], fresh.get(t[0]))
-		_sync_sliders())
-	box.add_child(reset)
-
-
-func _sync_sliders() -> void:
-	for slider: HSlider in _tuning.find_children("*", "HSlider", true, false):
-		slider.set_value_no_signal(player.tuning.get(slider.get_meta("prop")))
-		slider.value_changed.emit(slider.value)
-
-
 var _lock_refused := false
 var _notice_time := 0.0
 
@@ -218,17 +140,6 @@ func set_lock_refused(refused: bool) -> void:
 		_pin(_capture_hint, Vector2(0.5, 0.5), Vector2i(Control.GROW_DIRECTION_BOTH, Control.GROW_DIRECTION_END), Vector2(0, 80))
 
 
-func is_tuning_open() -> bool:
-	return _tuning.visible
-
-
-func toggle_tuning() -> void:
-	_tuning.visible = not _tuning.visible
-	if _tuning.visible:
-		_sync_sliders()
-		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-
-
 func show_landing(drop: float) -> void:
 	_landing.text = "Landed from %.1f m · no fall damage" % drop
 	_landing_time = 3.0
@@ -244,7 +155,7 @@ func _process(delta: float) -> void:
 		_capture_hint.visible = _notice_time > 0.0
 		_capture_hint.modulate.a = clampf(_notice_time, 0.0, 1.0)
 	else:
-		_capture_hint.visible = not captured and not _tuning.visible
+		_capture_hint.visible = not captured and player.combat_input
 		_capture_hint.modulate.a = 1.0
 		if _lock_refused and _notice_time == 0.0:
 			_capture_hint.text = "Click to play"

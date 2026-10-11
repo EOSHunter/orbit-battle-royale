@@ -23,6 +23,8 @@ const EDGE_ZONE := 0.12             # fraction of the window width / height
 const EDGE_TURN_SPEED := Vector2(2.6, 1.3)  # rad/s at the very edge
 
 @export var tuning: MoveTuning
+## Load the values saved by the tuning panel. Tests turn this off to use defaults.
+static var use_saved_tuning := true
 ## Items given on spawn: "id" or "id:qty"; ammunition as "ammo:type:amount".
 @export var start_loadout := PackedStringArray(["tethercaster"])
 
@@ -62,8 +64,9 @@ var _swing_mode := false
 
 
 func _ready() -> void:
+	add_to_group("player")
 	if tuning == null:
-		tuning = MoveTuning.new()
+		tuning = MoveTuning.load_saved() if use_saved_tuning else MoveTuning.new()
 	tether.tuning = tuning
 	camera.fov = tuning.fov
 	_peak_y = global_position.y

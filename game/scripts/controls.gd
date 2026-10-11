@@ -28,7 +28,7 @@ func _ready() -> void:
 	_bind("slot_next", [_mouse(MOUSE_BUTTON_WHEEL_DOWN)], [_button(JOY_BUTTON_RIGHT_SHOULDER)])
 	_bind("slot_prev", [_mouse(MOUSE_BUTTON_WHEEL_UP)], [_button(JOY_BUTTON_LEFT_SHOULDER)])
 	# Quick-fire the Tethercaster from any slot, as long as it's carried.
-	_bind("grapple", [_key(KEY_Q)], [_button(JOY_BUTTON_RIGHT_STICK)])
+	_bind("grapple", [_key(KEY_Q), _mouse(MOUSE_BUTTON_XBUTTON1), _mouse(MOUSE_BUTTON_XBUTTON2)], [_button(JOY_BUTTON_RIGHT_STICK)])
 
 	# Session
 	_bind("respawn", [_key(KEY_F5)], [_button(JOY_BUTTON_DPAD_DOWN)])

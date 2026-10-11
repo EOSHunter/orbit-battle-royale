@@ -17,7 +17,7 @@ extends Resource
 @export_range(5.0, 40.0, 0.5, "suffix:m/s²") var gravity := 23.5
 @export_range(2.0, 15.0, 0.1, "suffix:m/s") var jump_velocity := 7.9
 @export_range(1.0, 15.0, 0.1, "suffix:m/s") var air_speed := 8.3
-@export_range(1.0, 100.0, 1.0, "suffix:m/s²") var air_accel := 3.0
+@export_range(1.0, 100.0, 1.0, "suffix:m/s²") var air_accel := 40.0
 @export_range(0.0, 0.4, 0.01, "suffix:s") var coyote_time := 0.12
 @export_range(0.0, 0.4, 0.01, "suffix:s") var jump_buffer := 0.12
 
@@ -35,3 +35,30 @@ extends Resource
 @export_range(0.1, 3.0, 0.05) var mouse_sensitivity := 1.0
 @export_range(0.5, 8.0, 0.1, "suffix:rad/s") var stick_sensitivity := 3.2
 @export_range(60.0, 120.0, 1.0, "suffix:°") var fov := 110.0
+
+
+# ---------------------------------------------------------------- saved values
+
+const SAVE_PATH := "user://move_tuning.tres"
+
+
+## The values saved on this device by the tuning panel, or the defaults.
+static func load_saved() -> MoveTuning:
+	if FileAccess.file_exists(SAVE_PATH):
+		var saved := ResourceLoader.load(SAVE_PATH, "", ResourceLoader.CACHE_MODE_IGNORE) as MoveTuning
+		if saved:
+			return saved
+	return MoveTuning.new()
+
+
+static func has_saved() -> bool:
+	return FileAccess.file_exists(SAVE_PATH)
+
+
+static func clear_saved() -> void:
+	if FileAccess.file_exists(SAVE_PATH):
+		DirAccess.remove_absolute(SAVE_PATH)
+
+
+func save_to_device() -> bool:
+	return ResourceSaver.save(self, SAVE_PATH) == OK
