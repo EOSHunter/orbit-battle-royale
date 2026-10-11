@@ -1,0 +1,799 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/playground.gd" id="1_mm0a5"]
+[ext_resource type="Shader" path="res://shaders/grid.gdshader" id="2_o6wi6"]
+[ext_resource type="PackedScene" path="res://scenes/player.tscn" id="3_emj6c"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="4_mrac1"]
+[ext_resource type="Script" path="res://scripts/hud.gd" id="5_2q4k0"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_x1amm"]
+sky_top_color = Color(0.078431375, 0.101960786, 0.20784314, 1)
+sky_horizon_color = Color(0.41960785, 0.3529412, 0.5568628, 1)
+ground_bottom_color = Color(0.043137256, 0.0627451, 0.105882354, 1)
+ground_horizon_color = Color(0.22745098, 0.1764706, 0.3372549, 1)
+sun_angle_max = 20.0
+
+[sub_resource type="Sky" id="Sky_2bfhc"]
+sky_material = SubResource("ProceduralSkyMaterial_x1amm")
+
+[sub_resource type="Environment" id="Environment_osidk"]
+background_mode = 2
+sky = SubResource("Sky_2bfhc")
+ambient_light_source = 3
+ambient_light_energy = 0.9
+tonemap_mode = 2
+fog_enabled = true
+fog_light_color = Color(0.41960785, 0.3529412, 0.5568628, 1)
+fog_density = 0.0012
+fog_sky_affect = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rlvb3"]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+disable_fog = true
+albedo_color = Color(0.93, 0.9, 1, 0.5)
+
+[sub_resource type="TorusMesh" id="TorusMesh_k63md"]
+inner_radius = 2900.0
+outer_radius = 3700.0
+rings = 128
+ring_segments = 8
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fn4oh"]
+disable_fog = true
+albedo_color = Color(0.22745098, 0.1764706, 0.43137255, 1)
+emission_enabled = true
+emission = Color(0.16470589, 0.13725491, 0.3137255, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_j30dx"]
+radius = 700.0
+height = 1400.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2ilni"]
+render_priority = 0
+shader = ExtResource("2_o6wi6")
+shader_parameter/base_color = Color(0.11372549, 0.13725491, 0.21960784, 1)
+shader_parameter/line_color = Color(0.22745098, 0.27058825, 0.3764706, 1)
+shader_parameter/accent_color = null
+shader_parameter/accent_strength = 0.0
+shader_parameter/roughness_value = null
+
+[sub_resource type="BoxMesh" id="BoxMesh_d3jfy"]
+size = Vector3(280, 1, 280)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q6c7b"]
+size = Vector3(280, 1, 280)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x2tju"]
+cull_mode = 2
+shading_mode = 0
+disable_fog = true
+albedo_color = Color(0.7058824, 0.7490196, 0.8156863, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wm6m6"]
+size = Vector3(6, 0.02, 0.15)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ocmmj"]
+cull_mode = 2
+shading_mode = 0
+disable_fog = true
+albedo_color = Color(0.7058824, 0.7490196, 0.8156863, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_vwj6b"]
+size = Vector3(6, 0.02, 0.15)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_62tve"]
+cull_mode = 2
+shading_mode = 0
+disable_fog = true
+albedo_color = Color(0.7058824, 0.7490196, 0.8156863, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_rdeg0"]
+size = Vector3(6, 0.02, 0.15)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_reluu"]
+cull_mode = 2
+shading_mode = 0
+disable_fog = true
+albedo_color = Color(0.7058824, 0.7490196, 0.8156863, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_csshy"]
+size = Vector3(6, 0.02, 0.15)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2etec"]
+cull_mode = 2
+shading_mode = 0
+disable_fog = true
+albedo_color = Color(0.7058824, 0.7490196, 0.8156863, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_34hvl"]
+size = Vector3(6, 0.02, 0.15)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1fo14"]
+render_priority = 0
+shader = ExtResource("2_o6wi6")
+shader_parameter/base_color = Color(0.22745098, 0.27058825, 0.3764706, 1)
+shader_parameter/line_color = Color(0.3529412, 0.41568628, 0.52156866, 1)
+shader_parameter/accent_color = null
+shader_parameter/accent_strength = 0.0
+shader_parameter/roughness_value = null
+
+[sub_resource type="BoxMesh" id="BoxMesh_xfos3"]
+size = Vector3(2.5, 0.5, 2.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jwxgv"]
+size = Vector3(2.5, 0.5, 2.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_tpkwa"]
+size = Vector3(2.5, 1, 2.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2xhi3"]
+size = Vector3(2.5, 1, 2.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_was57"]
+size = Vector3(2.5, 1.5, 2.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6ptjj"]
+size = Vector3(2.5, 1.5, 2.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_otaui"]
+size = Vector3(2.5, 2, 2.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y86a3"]
+size = Vector3(2.5, 2, 2.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_xhvlp"]
+size = Vector3(4, 0.4, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4ymkv"]
+size = Vector3(4, 0.4, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_tlawh"]
+size = Vector3(4, 0.4, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jlfjr"]
+size = Vector3(4, 0.4, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_fh42t"]
+size = Vector3(4, 0.4, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_380qc"]
+size = Vector3(4, 0.4, 10)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rg8ow"]
+render_priority = 0
+shader = ExtResource("2_o6wi6")
+shader_parameter/base_color = Color(0.16862746, 0.20784314, 0.3137255, 1)
+shader_parameter/line_color = Color(0.2901961, 0.34509805, 0.47058824, 1)
+shader_parameter/accent_color = null
+shader_parameter/accent_strength = 0.9
+shader_parameter/roughness_value = null
+
+[sub_resource type="BoxMesh" id="BoxMesh_2wvu7"]
+size = Vector3(5, 10, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mya8t"]
+size = Vector3(5, 10, 5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ouvll"]
+size = Vector3(5, 20, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vvmg8"]
+size = Vector3(5, 20, 5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ckbc6"]
+size = Vector3(5, 30, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cllo1"]
+size = Vector3(5, 30, 5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_uqr3w"]
+size = Vector3(5, 50, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5lifq"]
+size = Vector3(5, 50, 5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uhbw8"]
+transparency = 1
+albedo_color = Color(0.44, 0.84, 1, 0.28)
+metallic = 0.3
+roughness = 0.05
+
+[sub_resource type="BoxMesh" id="BoxMesh_emcgs"]
+size = Vector3(10, 10, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ffqw6"]
+size = Vector3(10, 10, 0.3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_j45eg"]
+size = Vector3(10, 10, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uupcn"]
+size = Vector3(10, 10, 0.3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_0arfh"]
+size = Vector3(20, 12, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bxty4"]
+size = Vector3(20, 12, 20)
+
+[sub_resource type="BoxMesh" id="BoxMesh_h80nu"]
+size = Vector3(20, 12, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ffarp"]
+size = Vector3(20, 12, 20)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wodau"]
+size = Vector3(24, 1.5, 1.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1sw4s"]
+size = Vector3(24, 1.5, 1.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ondg5"]
+size = Vector3(1.5, 30, 1.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a8qf5"]
+size = Vector3(1.5, 30, 1.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7v6jk"]
+size = Vector3(1.5, 30, 1.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qpcsa"]
+size = Vector3(1.5, 30, 1.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_2ltdf"]
+size = Vector3(14, 1, 14)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nqhxb"]
+size = Vector3(14, 1, 14)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bcig5"]
+cull_mode = 2
+shading_mode = 0
+disable_fog = true
+albedo_color = Color(0.77254903, 0.9490196, 0.46666667, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ry8ch"]
+size = Vector3(12, 0.02, 0.25)
+
+[sub_resource type="BoxMesh" id="BoxMesh_omaub"]
+size = Vector3(10, 12, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_70ht2"]
+size = Vector3(10, 12, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_6dt6l"]
+size = Vector3(10, 12, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r50hj"]
+size = Vector3(10, 12, 1)
+
+[node name="Playground" type="Node3D" unique_id=510538237]
+script = ExtResource("1_mm0a5")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=164036865]
+environment = SubResource("Environment_osidk")
+
+[node name="Sun" type="DirectionalLight3D" parent="." unique_id=568249119]
+transform = Transform3D(0.81915206, 0.4262504, -0.38379753, 0, 0.66913056, 0.74314487, 0.57357645, -0.6087487, 0.54811966, 0, 0, 0)
+light_color = Color(1, 0.8901961, 0.7607843, 1)
+light_energy = 1.25
+shadow_enabled = true
+directional_shadow_max_distance = 120.0
+
+[node name="SkyObjects" type="Node3D" parent="." unique_id=1525925203]
+
+[node name="Rings" type="MeshInstance3D" parent="SkyObjects" unique_id=993399713]
+transform = Transform3D(0.9702957, 0.00096768764, 0, -0.23255026, 0.0037308326, -0.27563736, -0.06668271, 0.001069799, 0.9612617, 0, -500, -2600)
+material_override = SubResource("StandardMaterial3D_rlvb3")
+cast_shadow = 0
+mesh = SubResource("TorusMesh_k63md")
+
+[node name="Planet" type="MeshInstance3D" parent="SkyObjects" unique_id=881311258]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2400, 700, -5600)
+material_override = SubResource("StandardMaterial3D_fn4oh")
+cast_shadow = 0
+mesh = SubResource("SphereMesh_j30dx")
+
+[node name="Course" type="Node3D" parent="." unique_id=40699053]
+
+[node name="Ground" type="StaticBody3D" parent="Course" unique_id=562442979]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -40)
+collision_mask = 0
+
+[node name="Mesh" type="MeshInstance3D" parent="Course/Ground" unique_id=1013514200]
+material_override = SubResource("ShaderMaterial_2ilni")
+mesh = SubResource("BoxMesh_d3jfy")
+
+[node name="Shape" type="CollisionShape3D" parent="Course/Ground" unique_id=1454218839]
+shape = SubResource("BoxShape3D_q6c7b")
+
+[node name="Strip" type="MeshInstance3D" parent="Course" unique_id=727467289]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, -2)
+material_override = SubResource("StandardMaterial3D_x2tju")
+cast_shadow = 0
+mesh = SubResource("BoxMesh_wm6m6")
+
+[node name="Sign_10_m" type="Label3D" parent="Course" unique_id=432241260]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.8, -2)
+pixel_size = 0.01
+billboard = 2
+modulate = Color(0.9529412, 0.9607843, 0.98039216, 1)
+outline_modulate = Color(0.04, 0.06, 0.1, 0.9)
+text = "10 m"
+font_size = 48
+
+[node name="@MeshInstance3D@2" type="MeshInstance3D" parent="Course" unique_id=2078161997]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, -12)
+material_override = SubResource("StandardMaterial3D_ocmmj")
+cast_shadow = 0
+mesh = SubResource("BoxMesh_vwj6b")
+
+[node name="Sign_20_m" type="Label3D" parent="Course" unique_id=1001168221]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.8, -12)
+pixel_size = 0.01
+billboard = 2
+modulate = Color(0.9529412, 0.9607843, 0.98039216, 1)
+outline_modulate = Color(0.04, 0.06, 0.1, 0.9)
+text = "20 m"
+font_size = 48
+
+[node name="@MeshInstance3D@3" type="MeshInstance3D" parent="Course" unique_id=1053590917]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, -22)
+material_override = SubResource("StandardMaterial3D_62tve")
+cast_shadow = 0
+mesh = SubResource("BoxMesh_rdeg0")
+
+[node name="Sign_30_m" type="Label3D" parent="Course" unique_id=1162339039]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.8, -22)
+pixel_size = 0.01
+billboard = 2
+modulate = Color(0.9529412, 0.9607843, 0.98039216, 1)
+outline_modulate = Color(0.04, 0.06, 0.1, 0.9)
+text = "30 m"
+font_size = 48
+
+[node name="@MeshInstance3D@4" type="MeshInstance3D" parent="Course" unique_id=1150355546]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, -32)
+material_override = SubResource("StandardMaterial3D_reluu")
+cast_shadow = 0
+mesh = SubResource("BoxMesh_csshy")
+
+[node name="Sign_40_m" type="Label3D" parent="Course" unique_id=2114691381]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.8, -32)
+pixel_size = 0.01
+billboard = 2
+modulate = Color(0.9529412, 0.9607843, 0.98039216, 1)
+outline_modulate = Color(0.04, 0.06, 0.1, 0.9)
+text = "40 m"
+font_size = 48
+
+[node name="@MeshInstance3D@5" type="MeshInstance3D" parent="Course" unique_id=2109069309]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, -42)
+material_override = SubResource("StandardMaterial3D_2etec")
+cast_shadow = 0
+mesh = SubResource("BoxMesh_34hvl")
+
+[node name="Sign_50_m" type="Label3D" parent="Course" unique_id=882419855]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.8, -42)
+pixel_size = 0.01
+billboard = 2
+modulate = Color(0.9529412, 0.9607843, 0.98039216, 1)
+outline_modulate = Color(0.04, 0.06, 0.1, 0.9)
+text = "50 m"
+font_size = 48
+
+[node name="Step_0_5" type="StaticBody3D" parent="Course" unique_id=375606950]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0.25, 4)
+collision_mask = 0
+
+[node name="Mesh" type="MeshInstance3D" parent="Course/Step_0_5" unique_id=792459683]
+material_override = SubResource("ShaderMaterial_1fo14")
+mesh = SubResource("BoxMesh_xfos3")
+
+[node name="Shape" type="CollisionShape3D" parent="Course/Step_0_5" unique_id=1546290183]
+shape = SubResource("BoxShape3D_jwxgv")
+
+[node name="Step_1_0" type="StaticBody3D" parent="Course" unique_id=1208962475]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0.5, 0.5)
+collision_mask = 0
+
+[node name="Mesh" type="MeshInstance3D" parent="Course/Step_1_0" unique_id=968459671]
+material_override = SubResource("ShaderMaterial_1fo14")
+mesh = SubResource("BoxMesh_tpkwa")
+
+[node name="Shape" type="CollisionShape3D" parent="Course/Step_1_0" unique_id=123595063]
+shape = SubResource("BoxShape3D_2xhi3")
+
+[node name="Step_1_5" type="StaticBody3D" parent="Course" unique_id=1314339558]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0.75, -3)
+collision_mask = 0
+
+[node name="Mesh" type="MeshInstance3D" parent="Course/Step_1_5" unique_id=1562420425]
+material_override = SubResource("ShaderMaterial_1fo14")
+mesh = SubResource("BoxMesh_was57")
+
+[node name="Shape" type="CollisionShape3D" parent="Course/Step_1_5" unique_id=389670246]
+shape = SubResource("BoxShape3D_6ptjj")
+
+[node name="Step_2_0" type="StaticBody3D" parent="Course" unique_id=423988732]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1, -6.5)
+collision_mask = 0
+
+[node name="Mesh" type="MeshInstance3D" parent="Course/Step_2_0" unique_id=936161788]
+material_override = SubResource("ShaderMaterial_1fo14")
+mesh = SubResource("BoxMesh_otaui")
+
+[node name="Shape" type="CollisionShape3D" parent="Course/Step_2_0" unique_id=1348321576]
+shape = SubResource("BoxShape3D_y86a3")
+
+[node name="Sign_Steps_0_5_·_1_·_1_5_·_2_" type="Label3D" parent="Course" unique_id=1176174381]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 3, -1)
+pixel_size = 0.01
+billboard = 2
+modulate = Color(0.9529412, 0.9607843, 0.98039216, 1)
+outline_modulate = Color(0.04, 0.06, 0.1, 0.9)
+text = "Steps 0.5 · 1 · 1.5 · 2 m"
+font_size = 72
+
+[node name="Ramp_20" type="StaticBody3D" parent="Course" unique_id=1290489995]
+transform = Transform3D(1, 0, 0, 0, 0.9396926, -0.34202012, 0, 0.34202012, 0.9396926, -8, 1.7101008, -2)
+collision_mask = 0
+
+[node name="Mesh" type="MeshInstance3D" parent="Course/Ramp_20" unique_id=1554145489]
+material_override = SubResource("ShaderMaterial_1fo14")
+mesh = SubResource("BoxMesh_xhvlp")
+
+[node name="Shape" type="CollisionShape3D" parent="Course/Ramp_20" unique_id=561352918]
+shape = SubResource("BoxShape3D_4ymkv")
+
+[node name="Sign_20°" type="Label3D" parent="Course" unique_id=1840023137]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 4.9202013, -7)
+pixel_size = 0.01
+billboard = 2
+modulate = Color(0.9529412, 0.9607843, 0.98039216, 1)
+outline_modulate = Color(0.04, 0.06, 0.1, 0.9)
+text = "20°"
+font_size = 48
+
+[node name="Ramp_35" type="StaticBody3D" parent="Course" unique_id=777258808]
+transform = Transform3D(1, 0, 0, 0, 0.81915206, -0.57357645, 0, 0.57357645, 0.81915206, -14, 2.8678823, -2)
+collision_mask = 0
+
+[node name="Mesh" type="MeshInstance3D" parent="Course/Ramp_35" unique_id=1102331027]
+material_override = SubResource("ShaderMaterial_1fo14")
+mesh = SubResource("BoxMesh_tlawh")
+
+[node name="Shape" type="CollisionShape3D" parent="Course/Ramp_35" unique_id=1092631197]
+shape = SubResource("BoxShape3D_jlfjr")
+
+[node name="Sign_35°" type="Label3D" parent="Course" unique_id=386133676]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 7.2357645, -7)
+pixel_size = 0.01
+billboard = 2
+modulate = Color(0.9529412, 0.9607843, 0.98039216, 1)
+outline_modulate = Color(0.04, 0.06, 0.1, 0.9)
+text = "35°"
+font_size = 48
+
+[node name="Ramp_50" type="StaticBody3D" parent="Course" unique_id=689261698]
+transform = Transform3D(1, 0, 0, 0, 0.64278764, -0.76604444, 0, 0.76604444, 0.64278764, -20, 3.8302221, -2)
+collision_mask = 0
+
+[node name="Mesh" type="MeshInstance3D" parent="Course/Ramp_50" unique_id=1660249594]
+material_override = SubResource("ShaderMaterial_1fo14")
+mesh = SubResource("BoxMesh_fh42t")
+
+[node name="Shape" type="CollisionShape3D" parent="Course/Ramp_50" unique_id=1954844107]
+shape = SubResource("BoxShape3D_380qc")
+
+[node name="Sign_50°_·_too_steep" type="Label3D" parent="Course" unique_id=853513976]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 9.160444, -7)
+pixel_size = 0.01
+billboard = 2
+modulate = Color(0.9529412, 0.9607843, 0.98039216, 1)
+outline_modulate = Color(0.04, 0.06, 0.1, 0.9)
+text = "50° · too steep"
+font_size = 48
+
+[node name="Tower_10" type="StaticBody3D" parent="Course" unique_id=275299678]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 5, -20)
+collision_layer = 2
+collision_mask = 0
+
+[node name="Mesh" type="MeshInstance3D" parent="Course/Tower_10" unique_id=457607024]
+material_override = SubResource("ShaderMaterial_rg8ow")
+mesh = SubResource("BoxMesh_2wvu7")
+
+[node name="Shape" type="CollisionShape3D" parent="Course/Tower_10" unique_id=60853705]
+shape = SubResource("BoxShape3D_mya8t")
+
+[node name="@Label3D@6" type="Label3D" parent="Course" unique_id=1882260819]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 12, -20)
+pixel_size = 0.01
+billboard = 2
+modulate = Color(0.9529412, 0.9607843, 0.98039216, 1)
+outline_modulate = Color(0.04, 0.06, 0.1, 0.9)
+text = "10 m"
+font_size = 72
+
+[node name="Tower_20" type="StaticBody3D" parent="Course" unique_id=309498394]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42, 10, -34)
+collision_layer = 2
+collision_mask = 0
+
+[node name="Mesh" type="MeshInstance3D" parent="Course/Tower_20" unique_id=1377218795]
+material_override = SubResource("ShaderMaterial_rg8ow")
+mesh = SubResource("BoxMesh_ouvll")
+
+[node name="Shape" type="CollisionShape3D" parent="Course/Tower_20" unique_id=442931511]
+shape = SubResource("BoxShape3D_vvmg8")
+
+[node name="@Label3D@7" type="Label3D" parent="Course" unique_id=1676910895]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42, 22, -34)
+pixel_size = 0.01
+billboard = 2
+modulate = Color(0.9529412, 0.9607843, 0.98039216, 1)
+outline_modulate = Color(0.04, 0.06, 0.1, 0.9)
+text = "20 m"
+font_size = 72
+
+[node name="Tower_30" type="StaticBody3D" parent="Course" unique_id=1873074060]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56, 15, -48)
+collision_layer = 2
+collision_mask = 0
+
+[node name="Mesh" type="MeshInstance3D" parent="Course/Tower_30" unique_id=1790494399]
+material_override = SubResource("ShaderMaterial_rg8ow")
+mesh = SubResource("BoxMesh_ckbc6")
+
+[node name="Shape" type="CollisionShape3D" parent="Course/Tower_30" unique_id=1798943492]
+shape = SubResource("BoxShape3D_cllo1")
+
+[node name="@Label3D@8" type="Label3D" parent="Course" unique_id=568555668]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56, 32, -48)
+pixel_size = 0.01
+billboard = 2
+modulate = Color(0.9529412, 0.9607843, 0.98039216, 1)
+outline_modulate = Color(0.04, 0.06, 0.1, 0.9)
+text = "30 m"
+font_size = 72
+
+[node name="Tower_50" type="StaticBody3D" parent="Course" unique_id=1081426264]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -74, 25, -64)
+collision_layer = 2
+collision_mask = 0
+
+[node name="Mesh" type="MeshInstance3D" parent="Course/Tower_50" unique_id=2078970606]
+material_override = SubResource("ShaderMaterial_rg8ow")
+mesh = SubResource("BoxMesh_uqr3w")
+
+[node name="Shape" type="CollisionShape3D" parent="Course/Tower_50" unique_id=315731654]
+shape = SubResource("BoxShape3D_5lifq")
+
+[node name="@Label3D@9" type="Label3D" parent="Course" unique_id=625362890]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -74, 52, -64)
+pixel_size = 0.01
+billboard = 2
+modulate = Color(0.9529412, 0.9607843, 0.98039216, 1)
+outline_modulate = Color(0.04, 0.06, 0.1, 0.9)
+text = "50 m"
+font_size = 72
+
+[node name="Sign_Tower_field_·_jump_off_a" type="Label3D" parent="Course" unique_id=313896420]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 14, -10)
+pixel_size = 0.01
+billboard = 2
+modulate = Color(0.9529412, 0.9607843, 0.98039216, 1)
+outline_modulate = Color(0.04, 0.06, 0.1, 0.9)
+text = "Tower field · jump off anything, no fall damage"
+font_size = 56
+
+[node name="Glass" type="StaticBody3D" parent="Course" unique_id=531945933 groups=["no_grapple"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 5, -30)
+collision_mask = 0
+
+[node name="Mesh" type="MeshInstance3D" parent="Course/Glass" unique_id=70832345]
+material_override = SubResource("StandardMaterial3D_uhbw8")
+mesh = SubResource("BoxMesh_emcgs")
+
+[node name="Shape" type="CollisionShape3D" parent="Course/Glass" unique_id=108692748]
+shape = SubResource("BoxShape3D_ffqw6")
+
+[node name="Sign_Glass_·_can\'t_hook" type="Label3D" parent="Course" unique_id=420809919]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 11.5, -30)
+pixel_size = 0.01
+billboard = 2
+modulate = Color(0.9529412, 0.9607843, 0.98039216, 1)
+outline_modulate = Color(0.04, 0.06, 0.1, 0.9)
+text = "Glass · can't hook"
+font_size = 72
+
+[node name="HookPanel" type="StaticBody3D" parent="Course" unique_id=804967929]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 5, -30)
+collision_layer = 2
+collision_mask = 0
+
+[node name="Mesh" type="MeshInstance3D" parent="Course/HookPanel" unique_id=784390666]
+material_override = SubResource("ShaderMaterial_rg8ow")
+mesh = SubResource("BoxMesh_j45eg")
+
+[node name="Shape" type="CollisionShape3D" parent="Course/HookPanel" unique_id=1184858646]
+shape = SubResource("BoxShape3D_uupcn")
+
+[node name="Sign_Lime_stripes_·_hookable" type="Label3D" parent="Course" unique_id=1897825436]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 11.5, -30)
+pixel_size = 0.01
+billboard = 2
+modulate = Color(0.9529412, 0.9607843, 0.98039216, 1)
+outline_modulate = Color(0.04, 0.06, 0.1, 0.9)
+text = "Lime stripes · hookable"
+font_size = 72
+
+[node name="CliffNear" type="StaticBody3D" parent="Course" unique_id=786838297]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 6, -20)
+collision_mask = 0
+
+[node name="Mesh" type="MeshInstance3D" parent="Course/CliffNear" unique_id=1042652412]
+material_override = SubResource("ShaderMaterial_1fo14")
+mesh = SubResource("BoxMesh_0arfh")
+
+[node name="Shape" type="CollisionShape3D" parent="Course/CliffNear" unique_id=1793781434]
+shape = SubResource("BoxShape3D_bxty4")
+
+[node name="CliffFar" type="StaticBody3D" parent="Course" unique_id=1741024086]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 6, -75)
+collision_mask = 0
+
+[node name="Mesh" type="MeshInstance3D" parent="Course/CliffFar" unique_id=1032023966]
+material_override = SubResource("ShaderMaterial_1fo14")
+mesh = SubResource("BoxMesh_h80nu")
+
+[node name="Shape" type="CollisionShape3D" parent="Course/CliffFar" unique_id=749872001]
+shape = SubResource("BoxShape3D_ffarp")
+
+[node name="SwingBeam" type="StaticBody3D" parent="Course" unique_id=377410162]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 30, -47.5)
+collision_layer = 2
+collision_mask = 0
+
+[node name="Mesh" type="MeshInstance3D" parent="Course/SwingBeam" unique_id=436355440]
+material_override = SubResource("ShaderMaterial_rg8ow")
+mesh = SubResource("BoxMesh_wodau")
+
+[node name="Shape" type="CollisionShape3D" parent="Course/SwingBeam" unique_id=2143364627]
+shape = SubResource("BoxShape3D_1sw4s")
+
+[node name="BeamPillarL" type="StaticBody3D" parent="Course" unique_id=1374647386]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.5, 15, -47.5)
+collision_mask = 0
+
+[node name="Mesh" type="MeshInstance3D" parent="Course/BeamPillarL" unique_id=1155742220]
+material_override = SubResource("ShaderMaterial_1fo14")
+mesh = SubResource("BoxMesh_ondg5")
+
+[node name="Shape" type="CollisionShape3D" parent="Course/BeamPillarL" unique_id=1637227552]
+shape = SubResource("BoxShape3D_a8qf5")
+
+[node name="BeamPillarR" type="StaticBody3D" parent="Course" unique_id=348932445]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.5, 15, -47.5)
+collision_mask = 0
+
+[node name="Mesh" type="MeshInstance3D" parent="Course/BeamPillarR" unique_id=1302195331]
+material_override = SubResource("ShaderMaterial_1fo14")
+mesh = SubResource("BoxMesh_7v6jk")
+
+[node name="Shape" type="CollisionShape3D" parent="Course/BeamPillarR" unique_id=1339956920]
+shape = SubResource("BoxShape3D_qpcsa")
+
+[node name="Sign_Swing_gap_·_35_m" type="Label3D" parent="Course" unique_id=1792534824]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 15, -12)
+pixel_size = 0.01
+billboard = 2
+modulate = Color(0.9529412, 0.9607843, 0.98039216, 1)
+outline_modulate = Color(0.04, 0.06, 0.1, 0.9)
+text = "Swing gap · 35 m"
+font_size = 72
+
+[node name="Overhang" type="StaticBody3D" parent="Course" unique_id=437156345]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 16, 18)
+collision_layer = 2
+collision_mask = 0
+
+[node name="Mesh" type="MeshInstance3D" parent="Course/Overhang" unique_id=1242916800]
+material_override = SubResource("ShaderMaterial_rg8ow")
+mesh = SubResource("BoxMesh_2ltdf")
+
+[node name="Shape" type="CollisionShape3D" parent="Course/Overhang" unique_id=963976181]
+shape = SubResource("BoxShape3D_nqhxb")
+
+[node name="Sign_Hook_the_underside" type="Label3D" parent="Course" unique_id=1125680540]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 18.5, 18)
+pixel_size = 0.01
+billboard = 2
+modulate = Color(0.9529412, 0.9607843, 0.98039216, 1)
+outline_modulate = Color(0.04, 0.06, 0.1, 0.9)
+text = "Hook the underside"
+font_size = 72
+
+[node name="@MeshInstance3D@10" type="MeshInstance3D" parent="Course" unique_id=2143079598]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, -60)
+material_override = SubResource("StandardMaterial3D_bcig5")
+cast_shadow = 0
+mesh = SubResource("BoxMesh_ry8ch")
+
+[node name="Sign_Range_line" type="Label3D" parent="Course" unique_id=1108651424]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, -60)
+pixel_size = 0.01
+billboard = 2
+modulate = Color(0.9529412, 0.9607843, 0.98039216, 1)
+outline_modulate = Color(0.04, 0.06, 0.1, 0.9)
+text = "Range line"
+font_size = 48
+
+[node name="Wall40" type="StaticBody3D" parent="Course" unique_id=1901799597]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 6, -100)
+collision_layer = 2
+collision_mask = 0
+
+[node name="Mesh" type="MeshInstance3D" parent="Course/Wall40" unique_id=1255209878]
+material_override = SubResource("ShaderMaterial_rg8ow")
+mesh = SubResource("BoxMesh_omaub")
+
+[node name="Shape" type="CollisionShape3D" parent="Course/Wall40" unique_id=1665471701]
+shape = SubResource("BoxShape3D_70ht2")
+
+[node name="Sign_40_m_·_in_range" type="Label3D" parent="Course" unique_id=318953301]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 13.5, -100)
+pixel_size = 0.01
+billboard = 2
+modulate = Color(0.9529412, 0.9607843, 0.98039216, 1)
+outline_modulate = Color(0.04, 0.06, 0.1, 0.9)
+text = "40 m · in range"
+font_size = 72
+
+[node name="Wall65" type="StaticBody3D" parent="Course" unique_id=1819600718]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 6, -125)
+collision_layer = 2
+collision_mask = 0
+
+[node name="Mesh" type="MeshInstance3D" parent="Course/Wall65" unique_id=2023896162]
+material_override = SubResource("ShaderMaterial_rg8ow")
+mesh = SubResource("BoxMesh_6dt6l")
+
+[node name="Shape" type="CollisionShape3D" parent="Course/Wall65" unique_id=1013067859]
+shape = SubResource("BoxShape3D_r50hj")
+
+[node name="Sign_65_m_·_out_of_range" type="Label3D" parent="Course" unique_id=1561545516]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 13.5, -125)
+pixel_size = 0.01
+billboard = 2
+modulate = Color(0.9529412, 0.9607843, 0.98039216, 1)
+outline_modulate = Color(0.04, 0.06, 0.1, 0.9)
+text = "65 m · out of range"
+font_size = 72
+
+[node name="Markers" type="Node3D" parent="." unique_id=1488319685]
+
+[node name="Spawn" type="Marker3D" parent="Markers" unique_id=1934043201]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 8)
+
+[node name="Towers" type="Marker3D" parent="Markers" unique_id=2026708773]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 10.05, -20)
+
+[node name="Gap" type="Marker3D" parent="Markers" unique_id=925547438]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 12.05, -14)
+
+[node name="Range" type="Marker3D" parent="Markers" unique_id=12580626]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, -58)
+
+[node name="Player" type="CharacterBody3D" parent="." unique_id=76589432 instance=ExtResource("3_emj6c")]
+collision_layer = 4
+collision_mask = 3
+floor_max_angle = 0.80285144
+floor_snap_length = 0.35
+script = ExtResource("4_mrac1")
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=2121978080]
+script = ExtResource("5_2q4k0")

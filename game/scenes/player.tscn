@@ -1,0 +1,108 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="Script" path="res://scripts/tethercaster.gd" id="2_qhqgy"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dqkch"]
+radius = 0.35
+height = 1.8
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qlg0r"]
+albedo_color = Color(0.16862746, 0.20784314, 0.3137255, 1)
+metallic = 0.6
+roughness = 0.45
+
+[sub_resource type="BoxMesh" id="BoxMesh_tuyoq"]
+size = Vector3(0.07, 0.085, 0.32)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fjrip"]
+cull_mode = 2
+shading_mode = 0
+disable_fog = true
+albedo_color = Color(0.77254903, 0.9490196, 0.46666667, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_smehm"]
+size = Vector3(0.072, 0.02, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ur7pv"]
+cull_mode = 2
+shading_mode = 0
+disable_fog = true
+albedo_color = Color(1, 0.7058824, 0.36078432, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_y4r1p"]
+size = Vector3(0.074, 0.012, 0.03)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d2wvv"]
+cull_mode = 2
+shading_mode = 0
+disable_fog = true
+albedo_color = Color(0.77254903, 0.9490196, 0.46666667, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_3v2ag"]
+top_radius = 0.018
+bottom_radius = 0.018
+height = 1.0
+radial_segments = 6
+rings = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jej6c"]
+cull_mode = 2
+shading_mode = 0
+disable_fog = true
+albedo_color = Color(0.77254903, 0.9490196, 0.46666667, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_f1ej7"]
+radius = 0.14
+height = 0.28
+
+[node name="Player" type="CharacterBody3D" unique_id=76589432]
+collision_layer = 4
+collision_mask = 3
+floor_max_angle = 0.80285144
+floor_snap_length = 0.35
+script = ExtResource("1_g2els")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1249814521]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("CapsuleShape3D_dqkch")
+
+[node name="Head" type="Node3D" parent="." unique_id=490653494]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.62, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head" unique_id=1027213200]
+fov = 90.0
+far = 9000.0
+
+[node name="Launcher" type="Node3D" parent="Head/Camera3D" unique_id=807705772]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0.24, -0.22, -0.52)
+
+[node name="Body" type="MeshInstance3D" parent="Head/Camera3D/Launcher" unique_id=912690397]
+material_override = SubResource("StandardMaterial3D_qlg0r")
+cast_shadow = 0
+mesh = SubResource("BoxMesh_tuyoq")
+
+[node name="Stripe" type="MeshInstance3D" parent="Head/Camera3D/Launcher" unique_id=1698717648]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.03, -0.06)
+material_override = SubResource("StandardMaterial3D_fjrip")
+cast_shadow = 0
+mesh = SubResource("BoxMesh_smehm")
+
+[node name="Light" type="MeshInstance3D" parent="Head/Camera3D/Launcher" unique_id=2050711462]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.08)
+material_override = SubResource("StandardMaterial3D_ur7pv")
+cast_shadow = 0
+mesh = SubResource("BoxMesh_y4r1p")
+
+[node name="Tethercaster" type="Node3D" parent="Head/Camera3D" unique_id=2019590790]
+script = ExtResource("2_qhqgy")
+
+[node name="Cable" type="MeshInstance3D" parent="Head/Camera3D/Tethercaster" unique_id=673707033]
+material_override = SubResource("StandardMaterial3D_d2wvv")
+cast_shadow = 0
+mesh = SubResource("CylinderMesh_3v2ag")
+
+[node name="AnchorMarker" type="MeshInstance3D" parent="Head/Camera3D/Tethercaster" unique_id=1657179036]
+material_override = SubResource("StandardMaterial3D_jej6c")
+cast_shadow = 0
+mesh = SubResource("SphereMesh_f1ej7")

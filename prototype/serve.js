@@ -5,7 +5,7 @@ const fs = require('fs');
 const path = require('path');
 const root = process.argv[2] ? path.resolve(process.argv[2]) : __dirname;
 const port = +process.argv[3] || 5173;
-const types = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript', '.css': 'text/css', '.json': 'application/json' };
+const types = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript', '.css': 'text/css', '.json': 'application/json', '.wasm': 'application/wasm', '.pck': 'application/octet-stream', '.png': 'image/png' };
 http.createServer((req, res) => {
   const rel = decodeURIComponent(req.url.split('?')[0]).replace(/^\/+/, '') || 'index.html';
   const file = path.resolve(root, rel);
@@ -13,7 +13,7 @@ http.createServer((req, res) => {
   fs.readFile(file, (err, data) => {
     if (err) { res.writeHead(404); return res.end('Not found'); }
     // The published artifact wraps index.html in a document skeleton; do the same locally.
-    if (rel === 'index.html') data = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"></head><body>${data}</body></html>`;
+    if (rel === 'index.html' && !/^\s*<!doctype/i.test(data.toString('utf8', 0, 64))) data = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"></head><body>${data}</body></html>`;
     res.writeHead(200, { 'Content-Type': types[path.extname(file)] || 'application/octet-stream' });
     res.end(data);
   });
