@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="WeaponDef" format=3]
+
+[ext_resource type="Script" path="res://scripts/items/weapon_def.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"ar7"
+display_name = "AR-7 Wayfarer"
+kind = 0
+stack_max = 1
+carry_cap = 2
+color = Color(0.953, 0.961, 0.98, 1)
+description = "Assault rifle. Dependable at mid range."
+damage = 20.0
+pellets = 1
+max_range = 150.0
+falloff_start = 60.0
+falloff_min = 0.6
+automatic = true
+fire_interval = 0.1
+magazine = 30
+ammo_type = &"medium"
+reload_time = 1.9
+equip_time = 0.45
+spread_hip = 2.0
+spread_aim = 0.35
+spread_moving = 2.5
+recoil_pitch = 0.7
+recoil_yaw = 0.3
+aim_fov_scale = 0.75

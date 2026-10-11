@@ -1,30 +1,48 @@
 class_name Player
 extends CharacterBody3D
-## First-person movement: walk, sprint, crouch, jump, no fall damage, and
-## Tethercaster rope physics. Air movement only adds speed up to `air_speed`
-## in the wished direction, so momentum from a swing carries until you land.
+## First-person player: movement (walk, sprint, crouch, jump, no fall damage,
+## Tethercaster rope physics) and combat (five-slot inventory, weapons,
+## healing with use time and interruption, looting).
+## Air movement only adds speed up to `air_speed` in the wished direction, so
+## momentum from a swing carries until you land.
 
 signal landed(drop_height: float, impact_speed: float)
+signal eliminated(attacker: Node)
+signal heal_started(def: HealDef)
+signal heal_finished(def: HealDef)
+signal heal_interrupted(reason: String)
+signal notice(text: String)
 
-enum State { GROUND, AIR, TETHERED }
+enum State { GROUND, AIR, TETHERED, DEAD }
 
 const STAND_HEIGHT := 1.8
 const CROUCH_HEIGHT := 1.1
 const HEAD_FROM_TOP := 0.18
+const AIM_SENSITIVITY := 0.7
+const EDGE_ZONE := 0.12             # fraction of the window width / height
+const EDGE_TURN_SPEED := Vector2(2.6, 1.3)  # rad/s at the very edge
 
 @export var tuning: MoveTuning
+## Items given on spawn: "id" or "id:qty"; ammunition as "ammo:type:amount".
+@export var start_loadout := PackedStringArray(["tethercaster"])
 
 var state := State.GROUND
 var crouching := false
 var sprinting := false
 ## Ignore gameplay input briefly, e.g. after the click that captures the mouse.
 var input_grace := 0.0
+## False while a menu (like the inventory screen) owns the mouse.
+var combat_input := true
 ## Set when the browser refuses pointer lock: the hidden cursor turns the
 ## camera directly, and holding it near a window edge keeps turning.
 var free_look := false
 
-const EDGE_ZONE := 0.12             # fraction of the window width / height
-const EDGE_TURN_SPEED := Vector2(2.6, 1.3)  # rad/s at the very edge
+## Healing in progress.
+var using: HealDef
+var use_left := 0.0
+var _use_slot := -1
+## The pickup the player is looking at and close enough to take.
+var focused_pickup: Pickup
 
 var _coyote := 0.0
 var _jump_buffer := 0.0
@@ -36,6 +54,9 @@ var _swing_mode := false
 @onready var head: Node3D = $Head
 @onready var camera: Camera3D = $Head/Camera3D
 @onready var tether: Tethercaster = $Head/Camera3D/Tethercaster
+@onready var weapons: WeaponController = $Head/Camera3D/Weapons
+@onready var health: Health = $Health
+@onready var inventory: Inventory = $Inventory
 @onready var _shape: CapsuleShape3D = $CollisionShape3D.shape
 @onready var _shape_node: CollisionShape3D = $CollisionShape3D
 
@@ -46,14 +67,59 @@ func _ready() -> void:
 	tether.tuning = tuning
 	camera.fov = tuning.fov
 	_peak_y = global_position.y
+	weapons.setup(self, inventory)
+	health.damaged.connect(func(_a: float, _f: Vector3, _by: Node) -> void: _interrupt_use("Took damage"))
+	health.died.connect(_die)
+	inventory.selected_changed.connect(func(_i: int) -> void: _interrupt_use("Switched items"))
+	give_loadout()
+
+
+func give_loadout() -> void:
+	inventory.clear()
+	for entry in start_loadout:
+		var parts := entry.split(":")
+		if parts[0] == "ammo" and parts.size() == 3:
+			inventory.add_ammo(StringName(parts[1]), int(parts[2]))
+		else:
+			var s := ItemCatalog.stack(StringName(parts[0]), int(parts[1]) if parts.size() > 1 else 1)
+			if s.def:
+				inventory.add(s)
+	var first := inventory.slot_of(&"tethercaster")
+	for i in Inventory.SLOT_COUNT:
+		if inventory.get_slot(i) and inventory.get_slot(i).def.is_weapon():
+			first = i
+			break
+	inventory.select(maxi(first, 0))
+
+
+func respawn(where: Transform3D) -> void:
+	health.reset()
+	_interrupt_use("")
+	weapons.cancel_reload()
+	give_loadout()
+	state = State.GROUND
+	head.rotation.z = 0.0
+	teleport_to(where)
+
+
+func is_alive() -> bool:
+	return state != State.DEAD
+
+
+func can_auto_pickup() -> bool:
+	return is_alive()
+
+
+func has_tether() -> bool:
+	return inventory.has_item(&"tethercaster")
 
 
 func _unhandled_input(event: InputEvent) -> void:
 	var motion := event as InputEventMouseMotion
-	if motion == null:
+	if motion == null or not combat_input:
 		return
 	if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED or free_look:
-		_turn(motion.relative * 0.0022 * tuning.mouse_sensitivity)
+		_turn(motion.relative * 0.0022 * tuning.mouse_sensitivity * (AIM_SENSITIVITY if weapons.aiming else 1.0))
 
 
 func _edge_turn(delta: float) -> void:
@@ -98,14 +164,22 @@ func teleport_to(where: Transform3D) -> void:
 
 func _physics_process(delta: float) -> void:
 	input_grace = maxf(0.0, input_grace - delta)
-	camera.fov = tuning.fov
+	if state == State.DEAD:
+		velocity.x = move_toward(velocity.x, 0.0, delta * 20.0)
+		velocity.z = move_toward(velocity.z, 0.0, delta * 20.0)
+		velocity.y -= tuning.gravity * delta
+		move_and_slide()
+		head.rotation.z = move_toward(head.rotation.z, 0.5, delta)
+		return
 	var accepts_input := input_grace == 0.0
+	var combat := accepts_input and combat_input
 
-	if free_look and Input.mouse_mode != Input.MOUSE_MODE_CAPTURED:
-		_edge_turn(delta)
-	var look := Input.get_vector("look_left", "look_right", "look_up", "look_down")
-	if look != Vector2.ZERO:
-		_turn(look * look.length() * tuning.stick_sensitivity * delta)
+	if combat_input:
+		if free_look and Input.mouse_mode != Input.MOUSE_MODE_CAPTURED:
+			_edge_turn(delta)
+		var look := Input.get_vector("look_left", "look_right", "look_up", "look_down")
+		if look != Vector2.ZERO:
+			_turn(look * look.length() * tuning.stick_sensitivity * (AIM_SENSITIVITY if weapons.aiming else 1.0) * delta)
 
 	var move := Input.get_vector("move_left", "move_right", "move_forward", "move_back")
 	var wish := global_basis * Vector3(move.x, 0.0, move.y)
@@ -113,7 +187,7 @@ func _physics_process(delta: float) -> void:
 	wish = wish.limit_length(1.0)
 
 	_update_crouch(delta)
-	sprinting = Input.is_action_pressed("sprint") and move.y < -0.3 and not crouching
+	sprinting = Input.is_action_pressed("sprint") and move.y < -0.3 and not crouching and using == null and not weapons.aiming
 
 	var on_floor := is_on_floor()
 	_coyote = tuning.coyote_time if on_floor else _coyote - delta
@@ -122,11 +196,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		_jump_buffer -= delta
 
-	if accepts_input and Input.is_action_just_pressed("grapple"):
-		if tether.is_attached():
-			tether.release()
-		else:
-			tether.try_attach()
+	_combat(delta, combat, move.length())
 
 	if tether.is_attached():
 		state = State.TETHERED
@@ -148,12 +218,127 @@ func _physics_process(delta: float) -> void:
 	_track_landing(fall_speed)
 	_land_dip = move_toward(_land_dip, 0.0, delta * 0.6)
 	head.position.y = _shape.height - HEAD_FROM_TOP - _land_dip
+	var fov_target := tuning.fov * (weapons.weapon().aim_fov_scale if weapons.aiming and weapons.weapon() else 1.0)
+	camera.fov = lerpf(camera.fov, fov_target, minf(1.0, delta * 14.0))
 
+
+# ---------------------------------------------------------------- combat
+
+func _combat(delta: float, combat: bool, move_amount: float) -> void:
+	if combat:
+		for i in Inventory.SLOT_COUNT:
+			if Input.is_action_just_pressed("slot_%d" % (i + 1)):
+				inventory.select(i)
+		if Input.is_action_just_pressed("slot_next"):
+			inventory.select((inventory.selected + 1) % Inventory.SLOT_COUNT)
+		if Input.is_action_just_pressed("slot_prev"):
+			inventory.select((inventory.selected + Inventory.SLOT_COUNT - 1) % Inventory.SLOT_COUNT)
+		if Input.is_action_just_pressed("reload"):
+			weapons.start_reload()
+		if Input.is_action_just_pressed("interact"):
+			interact()
+		if Input.is_action_just_pressed("grapple") and has_tether():
+			_toggle_tether()
+
+	var sel := inventory.selected_stack()
+	var fire_pressed := combat and Input.is_action_just_pressed("fire")
+	var fire_held := combat and Input.is_action_pressed("fire")
+	var aim_held := combat and Input.is_action_pressed("aim")
+	var moving_ratio := clampf(horizontal_speed() / maxf(0.1, tuning.walk_speed), 0.0, 1.0) * clampf(move_amount * 2.0, 0.0, 1.0)
+	if sel and sel.def is HealDef:
+		if fire_pressed and using == null:
+			start_use(inventory.selected)
+		weapons.tick(delta, false, false, false, moving_ratio)
+	elif sel and sel.def.id == &"tethercaster":
+		if fire_pressed:
+			_toggle_tether()
+		weapons.tick(delta, false, false, false, moving_ratio)
+	else:
+		weapons.tick(delta, fire_pressed, fire_held, aim_held, moving_ratio)
+
+	if using:
+		use_left -= delta
+		var s := inventory.get_slot(_use_slot)
+		if s == null or s.def != using:
+			_interrupt_use("Item gone")
+		elif use_left <= 0.0:
+			var def := using
+			using = null
+			health.apply_heal(def)
+			inventory.consume(_use_slot)
+			heal_finished.emit(def)
+	_update_focus()
+
+
+func start_use(slot: int) -> bool:
+	var s := inventory.get_slot(slot)
+	var def: HealDef = s.def as HealDef if s else null
+	if def == null:
+		return false
+	if not health.can_use(def):
+		notice.emit("Health is full" if def.pool == HealDef.Pool.HEALTH else "Shields are full")
+		return false
+	using = def
+	use_left = def.use_time
+	_use_slot = slot
+	heal_started.emit(def)
+	return true
+
+
+func _interrupt_use(reason: String) -> void:
+	if using == null:
+		return
+	using = null
+	if reason != "":
+		heal_interrupted.emit(reason)
+
+
+func _toggle_tether() -> void:
+	if tether.is_attached():
+		tether.release()
+	elif tether.try_attach():
+		_interrupt_use("Fired the Tethercaster")
+
+
+func interact() -> void:
+	if focused_pickup == null:
+		return
+	var item_name := focused_pickup.display_name()
+	if not focused_pickup.collect_into(inventory):
+		var full: bool = not focused_pickup.is_ammo() and inventory.preview(focused_pickup.stack).full
+		notice.emit("Carrying the maximum of %s" % focused_pickup.stack.def.display_name if full
+			else "No free slot for %s · open the inventory to replace" % item_name)
+
+
+func _update_focus() -> void:
+	focused_pickup = null
+	var best := Pickup.INTERACT_RANGE
+	var eye := camera.global_position
+	var fwd := -camera.global_basis.z
+	for node in get_tree().get_nodes_in_group(Pickup.GROUP):
+		var p := node as Pickup
+		var to := p.global_position + Vector3(0, 0.5, 0) - eye
+		var d := to.length()
+		if d < best and fwd.dot(to / d) > 0.55:
+			best = d
+			focused_pickup = p
+
+
+func _die(attacker: Node) -> void:
+	state = State.DEAD
+	_interrupt_use("")
+	tether.reset()
+	weapons.cancel_reload()
+	eliminated.emit(attacker)
+
+
+# ---------------------------------------------------------------- movement
 
 func _target_speed() -> float:
-	if crouching:
-		return tuning.crouch_speed
-	return tuning.sprint_speed if sprinting else tuning.walk_speed
+	var speed := tuning.crouch_speed if crouching else (tuning.sprint_speed if sprinting else tuning.walk_speed)
+	if using:
+		speed *= using.move_scale
+	return speed
 
 
 func _ground_move(delta: float, wish: Vector3) -> void:

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemDef" format=3]
+
+[ext_resource type="Script" path="res://scripts/items/item_def.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"tethercaster"
+display_name = "Tethercaster"
+kind = 3
+stack_max = 1
+carry_cap = 1
+color = Color(0.773, 0.949, 0.467, 1)
+description = "Rechargeable grapple. Hook lime-striped surfaces and swing."

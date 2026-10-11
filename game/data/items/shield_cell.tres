@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="HealDef" format=3]
+
+[ext_resource type="Script" path="res://scripts/items/heal_def.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"shield_cell"
+display_name = "Shield Cell"
+kind = 1
+stack_max = 6
+carry_cap = 6
+color = Color(0.439, 0.839, 1, 1)
+description = "+25 shields."
+pool = 1
+amount = 25.0
+use_time = 2.0
+move_scale = 0.45

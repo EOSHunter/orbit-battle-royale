@@ -55,12 +55,16 @@ jobs:
       - name: Import project
         run: ~/godot/godot --headless --path game --import
 
-      - name: Run movement checks
+      - name: Run headless checks
         run: |
           set -o pipefail
-          ~/godot/godot --headless --path game -s res://tests/movement_test.gd 2>&1 | tee test.log
-          grep -q "ALL PASSED" test.log
-          if grep -q "SCRIPT ERROR" test.log; then echo "Script errors in the test run"; exit 1; fi
+          for suite in movement_test inventory_test combat_test; do
+            echo "::group::$suite"
+            timeout 300 ~/godot/godot --headless --path game -s res://tests/$suite.gd 2>&1 | tee "$suite.log"
+            echo "::endgroup::"
+            grep -q "ALL PASSED" "$suite.log" || { echo "$suite failed"; exit 1; }
+            if grep -q "SCRIPT ERROR" "$suite.log"; then echo "Script errors in $suite"; exit 1; fi
+          done
 
       - name: Export web build
         run: |

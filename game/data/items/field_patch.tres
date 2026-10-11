@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="HealDef" format=3]
+
+[ext_resource type="Script" path="res://scripts/items/heal_def.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"field_patch"
+display_name = "Field Patch"
+kind = 1
+stack_max = 6
+carry_cap = 6
+color = Color(1, 0.553, 0.498, 1)
+description = "+25 health."
+pool = 0
+amount = 25.0
+use_time = 2.0
+move_scale = 0.45

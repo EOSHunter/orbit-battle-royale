@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="HealDef" format=3]
+
+[ext_resource type="Script" path="res://scripts/items/heal_def.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"shield_pack"
+display_name = "Shield Pack"
+kind = 1
+stack_max = 3
+carry_cap = 3
+color = Color(0.439, 0.839, 1, 1)
+description = "+50 shields."
+pool = 1
+amount = 50.0
+use_time = 3.5
+move_scale = 0.45

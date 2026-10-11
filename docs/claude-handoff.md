@@ -33,7 +33,7 @@ These are future checks, not test results.
 
 ## Decisions still open
 
-- First-person or third-person combat.
+- ~~First-person or third-person combat.~~ Decided: first-person combat, third-person vehicles. Browsers: latest Chrome, Edge, Firefox.
 - Whether flexible slots allow extra weapons in addition to utility/consumables.
 - Final planet/map/weapon/item/vehicle names.
 - Exact damage, recoil, magazines, ammunition caps, and healing balance.

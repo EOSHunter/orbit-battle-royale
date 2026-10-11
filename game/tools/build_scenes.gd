@@ -1,5 +1,5 @@
 extends SceneTree
-## Generates scenes/player.tscn and scenes/playground.tscn from code, so the
+## Generates scenes/player.tscn, scenes/playground.tscn and scenes/arena.tscn from code, so the
 ## greybox stays reviewable and reproducible. Scenes remain editable in Godot;
 ## re-running this overwrites them.
 ## Run: godot --headless --path game -s res://tools/build_scenes.gd
@@ -8,6 +8,7 @@ const GRID_SHADER := "res://shaders/grid.gdshader"
 const WORLD_LAYER := 1
 const GRAPPLE_LAYER := 2
 const PLAYER_LAYER := 4
+const BOT_LAYER := 8
 
 var _root: Node
 
@@ -15,6 +16,7 @@ var _root: Node
 func _initialize() -> void:
 	_save(_build_player(), "res://scenes/player.tscn")
 	_save(_build_playground(), "res://scenes/playground.tscn")
+	_save(_build_arena(), "res://scenes/arena.tscn")
 	quit()
 
 
@@ -71,7 +73,7 @@ func _build_player() -> Node:
 	p.name = "Player"
 	p.set_script(load("res://scripts/player.gd"))
 	p.collision_layer = PLAYER_LAYER
-	p.collision_mask = WORLD_LAYER | GRAPPLE_LAYER
+	p.collision_mask = WORLD_LAYER | GRAPPLE_LAYER | BOT_LAYER
 	p.floor_max_angle = deg_to_rad(46.0)
 	p.floor_snap_length = 0.35
 
@@ -96,15 +98,21 @@ func _build_player() -> Node:
 	cam.fov = 90.0
 	_add(head, cam)
 
-	# Placeholder Tethercaster launcher until the real viewmodel exists.
-	var launcher := Node3D.new()
-	launcher.name = "Launcher"
-	launcher.position = Vector3(0.24, -0.22, -0.52)
-	launcher.scale = Vector3(0.7, 0.7, 0.7)
-	_add(cam, launcher)
-	_mesh(launcher, "Body", BoxMesh, Vector3(0.07, 0.085, 0.32), Vector3.ZERO, _solid(Color("2b3550"), 0.45, 0.6))
-	_mesh(launcher, "Stripe", BoxMesh, Vector3(0.072, 0.02, 0.1), Vector3(0, 0.03, -0.06), _unshaded(Color("c5f277")))
-	_mesh(launcher, "Light", BoxMesh, Vector3(0.074, 0.012, 0.03), Vector3(0, 0.0, 0.08), _unshaded(Color("ffb45c")))
+	# Held items (weapons, heals, the Tethercaster) are drawn by the weapon controller.
+	var weapons := Node3D.new()
+	weapons.name = "Weapons"
+	weapons.set_script(load("res://scripts/combat/weapon_controller.gd"))
+	_add(cam, weapons)
+
+	var health := Node.new()
+	health.name = "Health"
+	health.set_script(load("res://scripts/combat/health.gd"))
+	_add(p, health)
+
+	var inventory := Node.new()
+	inventory.name = "Inventory"
+	inventory.set_script(load("res://scripts/combat/inventory.gd"))
+	_add(p, inventory)
 
 	var tether := Node3D.new()
 	tether.name = "Tethercaster"
@@ -179,7 +187,7 @@ func _build_playground() -> Node:
 	var markers := Node3D.new()
 	markers.name = "Markers"
 	_add(root, markers)
-	# Order matters: keys 1–4 teleport to these in order.
+	# Order matters: F6–F9 teleport to these in order.
 	for m: Array in [["Spawn", Vector3(0, 0.05, 8)], ["Towers", Vector3(-30, 10.05, -20)], ["Gap", Vector3(40, 12.05, -14)], ["Range", Vector3(0, 0.05, -58)]]:
 		var mk := Marker3D.new()
 		mk.name = m[0]
@@ -381,3 +389,88 @@ func _build_course() -> void:
 	_sign("40 m · in range", Vector3(-7, 13.5, -100))
 	_box("Wall65", Vector3(7, 6, -125), Vector3(10, 12, 1), "hook", true)
 	_sign("65 m · out of range", Vector3(7, 13.5, -125))
+
+
+# ---------------------------------------------------------------- combat arena
+
+func _build_arena() -> Node:
+	var root := Node3D.new()
+	_root = root
+	root.name = "Arena"
+	root.set_script(load("res://scripts/arena.gd"))
+	_mat = {
+		"ground": _grid(Color("1d2338"), Color("3a4560")),
+		"block": _grid(Color("3a4560"), Color("5a6a85")),
+		"hook": _grid(Color("2b3550"), Color("4a5878"), 0.9),
+		"glass": _glass(),
+	}
+	_environment(root)
+	_sky(root)
+	_course = Node3D.new()
+	_course.name = "Course"
+	_add(root, _course)
+
+	# 140 m square with walls; cover in three bands so every fight has options.
+	_box("Ground", Vector3(0, -0.5, 0), Vector3(150, 1, 150), "ground")
+	for w: Array in [[Vector3(0, 3, -70), Vector3(140, 6, 1)], [Vector3(0, 3, 70), Vector3(140, 6, 1)], [Vector3(-70, 3, 0), Vector3(1, 6, 140)], [Vector3(70, 3, 0), Vector3(1, 6, 140)]]:
+		_box("Perimeter", w[0], w[1], "hook", true)
+	var crates := [Vector3(-12, 1, 30), Vector3(14, 1, 26), Vector3(-30, 1, 10), Vector3(28, 1, 6), Vector3(-6, 1, -8),
+		Vector3(9, 1, -14), Vector3(-34, 1, -28), Vector3(34, 1, -34), Vector3(-18, 1, -48), Vector3(20, 1, -52), Vector3(0, 1, 12), Vector3(44, 1, 30)]
+	for i in crates.size():
+		_box("Crate%d" % i, crates[i], Vector3(2, 2, 2), "block")
+	var low_walls := [[Vector3(-22, 0.6, 22), 0.0], [Vector3(22, 0.6, 16), 90.0], [Vector3(-40, 0.6, -6), 90.0], [Vector3(42, 0.6, -14), 0.0],
+		[Vector3(-8, 0.6, -30), 0.0], [Vector3(12, 0.6, -36), 90.0], [Vector3(-48, 0.6, 36), 0.0], [Vector3(50, 0.6, 46), 90.0]]
+	for i in low_walls.size():
+		_box("LowWall%d" % i, low_walls[i][0], Vector3(6, 1.2, 0.6), "block", false, Vector3(0, low_walls[i][1], 0))
+	var tall_walls := [[Vector3(-24, 2.5, -14), 0.0], [Vector3(26, 2.5, -22), 90.0], [Vector3(-2, 2.5, -44), 0.0], [Vector3(0, 2.5, 40), 0.0]]
+	for i in tall_walls.size():
+		_box("TallWall%d" % i, tall_walls[i][0], Vector3(8, 5, 0.6), "hook", true, Vector3(0, tall_walls[i][1], 0))
+	_box("TowerWest", Vector3(-52, 7, -50), Vector3(6, 14, 6), "hook", true)
+	_box("TowerEast", Vector3(52, 7, -46), Vector3(6, 14, 6), "hook", true)
+	# Central platform on pillars: hook the underside, fight on top.
+	_box("Platform", Vector3(0, 6, -20), Vector3(14, 0.6, 14), "hook", true)
+	for c: Vector3 in [Vector3(-6, 3, -26), Vector3(6, 3, -26), Vector3(-6, 3, -14), Vector3(6, 3, -14)]:
+		_box("Pillar", c, Vector3(1.2, 6, 1.2), "block")
+	_box("Ramp", Vector3(0, 3.0, -3.6), Vector3(4, 0.4, 13), "block", false, Vector3(28, 0, 0))
+	_sign("Combat slice · F10 for the movement playground", Vector3(0, 5, 69), 64)
+
+	var markers := Node3D.new()
+	markers.name = "Markers"
+	_add(root, markers)
+	var spawn := Marker3D.new()
+	spawn.name = "PlayerSpawn"
+	spawn.position = Vector3(0, 0.05, 58)
+	_add(markers, spawn)
+	_marker_group(markers, "BotSpawns", [Vector3(-40, 0.1, -40), Vector3(4, 0.1, -60), Vector3(40, 0.1, -30)])
+	_marker_group(markers, "LootSpots", [Vector3(-3, 0, 50), Vector3(3, 0, 50), Vector3(0, 0, 46), Vector3(-26, 0, 26), Vector3(-24, 0, 18),
+		Vector3(26, 0, 20), Vector3(30, 0, 2), Vector3(-36, 0, -4), Vector3(-4, 6.4, -20), Vector3(4, 6.4, -20), Vector3(36, 0, -36), Vector3(-30, 0, -34)])
+	_marker_group(markers, "Cover", [Vector3(-12, 0, 33), Vector3(14, 0, 29), Vector3(-30, 0, 13), Vector3(28, 0, 9), Vector3(-6, 0, -5),
+		Vector3(9, 0, -11), Vector3(-34, 0, -25), Vector3(34, 0, -31), Vector3(-18, 0, -45), Vector3(20, 0, -49), Vector3(-24, 0, -11),
+		Vector3(26, 0, -25), Vector3(-2, 0, -41), Vector3(0, 0, 43), Vector3(-40, 0, -3), Vector3(42, 0, -11), Vector3(-8, 0, -27)])
+
+	var loot := Node3D.new()
+	loot.name = "Loot"
+	_add(root, loot)
+	var player: Node = load("res://scenes/player.tscn").instantiate()
+	player.name = "Player"
+	_add(root, player)
+	var hud := CanvasLayer.new()
+	hud.name = "HUD"
+	hud.set_script(load("res://scripts/ui/combat_hud.gd"))
+	_add(root, hud)
+	var inv := CanvasLayer.new()
+	inv.name = "InventoryScreen"
+	inv.set_script(load("res://scripts/ui/inventory_screen.gd"))
+	_add(root, inv)
+	return root
+
+
+func _marker_group(parent: Node, group_name: String, points: Array) -> void:
+	var g := Node3D.new()
+	g.name = group_name
+	_add(parent, g)
+	for i in points.size():
+		var m := Marker3D.new()
+		m.name = "%s%d" % [group_name.trim_suffix("s"), i]
+		m.position = points[i]
+		_add(g, m)

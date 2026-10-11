@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="WeaponDef" format=3]
+
+[ext_resource type="Script" path="res://scripts/items/weapon_def.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"sg4"
+display_name = "SG-4 Breaker"
+kind = 0
+stack_max = 1
+carry_cap = 2
+color = Color(0.953, 0.961, 0.98, 1)
+description = "Shotgun. Strong close bursts; misses are costly."
+damage = 11.0
+pellets = 8
+max_range = 40.0
+falloff_start = 8.0
+falloff_min = 0.2
+automatic = false
+fire_interval = 0.85
+magazine = 6
+ammo_type = &"shells"
+reload_time = 2.6
+equip_time = 0.5
+spread_hip = 5.5
+spread_aim = 4.0
+spread_moving = 1.5
+recoil_pitch = 3.5
+recoil_yaw = 0.8
+aim_fov_scale = 0.85

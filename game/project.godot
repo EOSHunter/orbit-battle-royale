@@ -6,8 +6,8 @@ config_version=5
 [application]
 
 config/name="Orbit Royale"
-config/description="Movement and Tethercaster playground"
-run/main_scene="res://scenes/playground.tscn"
+config/description="Combat slice and movement playground"
+run/main_scene="res://scenes/arena.tscn"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 

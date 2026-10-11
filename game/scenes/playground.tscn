@@ -269,53 +269,53 @@ size = Vector3(10, 12, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_r50hj"]
 size = Vector3(10, 12, 1)
 
-[node name="Playground" type="Node3D" unique_id=510538237]
+[node name="Playground" type="Node3D" unique_id=1189969461]
 script = ExtResource("1_mm0a5")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=164036865]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1769073723]
 environment = SubResource("Environment_osidk")
 
-[node name="Sun" type="DirectionalLight3D" parent="." unique_id=568249119]
+[node name="Sun" type="DirectionalLight3D" parent="." unique_id=1895638568]
 transform = Transform3D(0.81915206, 0.4262504, -0.38379753, 0, 0.66913056, 0.74314487, 0.57357645, -0.6087487, 0.54811966, 0, 0, 0)
 light_color = Color(1, 0.8901961, 0.7607843, 1)
 light_energy = 1.25
 shadow_enabled = true
 directional_shadow_max_distance = 120.0
 
-[node name="SkyObjects" type="Node3D" parent="." unique_id=1525925203]
+[node name="SkyObjects" type="Node3D" parent="." unique_id=932808850]
 
-[node name="Rings" type="MeshInstance3D" parent="SkyObjects" unique_id=993399713]
+[node name="Rings" type="MeshInstance3D" parent="SkyObjects" unique_id=1430675779]
 transform = Transform3D(0.9702957, 0.00096768764, 0, -0.23255026, 0.0037308326, -0.27563736, -0.06668271, 0.001069799, 0.9612617, 0, -500, -2600)
 material_override = SubResource("StandardMaterial3D_rlvb3")
 cast_shadow = 0
 mesh = SubResource("TorusMesh_k63md")
 
-[node name="Planet" type="MeshInstance3D" parent="SkyObjects" unique_id=881311258]
+[node name="Planet" type="MeshInstance3D" parent="SkyObjects" unique_id=572503843]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2400, 700, -5600)
 material_override = SubResource("StandardMaterial3D_fn4oh")
 cast_shadow = 0
 mesh = SubResource("SphereMesh_j30dx")
 
-[node name="Course" type="Node3D" parent="." unique_id=40699053]
+[node name="Course" type="Node3D" parent="." unique_id=536092846]
 
-[node name="Ground" type="StaticBody3D" parent="Course" unique_id=562442979]
+[node name="Ground" type="StaticBody3D" parent="Course" unique_id=1444331191]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -40)
 collision_mask = 0
 
-[node name="Mesh" type="MeshInstance3D" parent="Course/Ground" unique_id=1013514200]
+[node name="Mesh" type="MeshInstance3D" parent="Course/Ground" unique_id=1277258955]
 material_override = SubResource("ShaderMaterial_2ilni")
 mesh = SubResource("BoxMesh_d3jfy")
 
-[node name="Shape" type="CollisionShape3D" parent="Course/Ground" unique_id=1454218839]
+[node name="Shape" type="CollisionShape3D" parent="Course/Ground" unique_id=19868079]
 shape = SubResource("BoxShape3D_q6c7b")
 
-[node name="Strip" type="MeshInstance3D" parent="Course" unique_id=727467289]
+[node name="Strip" type="MeshInstance3D" parent="Course" unique_id=268094791]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, -2)
 material_override = SubResource("StandardMaterial3D_x2tju")
 cast_shadow = 0
 mesh = SubResource("BoxMesh_wm6m6")
 
-[node name="Sign_10_m" type="Label3D" parent="Course" unique_id=432241260]
+[node name="Sign_10_m" type="Label3D" parent="Course" unique_id=1109154360]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.8, -2)
 pixel_size = 0.01
 billboard = 2
@@ -324,13 +324,13 @@ outline_modulate = Color(0.04, 0.06, 0.1, 0.9)
 text = "10 m"
 font_size = 48
 
-[node name="@MeshInstance3D@2" type="MeshInstance3D" parent="Course" unique_id=2078161997]
+[node name="@MeshInstance3D@2" type="MeshInstance3D" parent="Course" unique_id=1643189094]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, -12)
 material_override = SubResource("StandardMaterial3D_ocmmj")
 cast_shadow = 0
 mesh = SubResource("BoxMesh_vwj6b")
 
-[node name="Sign_20_m" type="Label3D" parent="Course" unique_id=1001168221]
+[node name="Sign_20_m" type="Label3D" parent="Course" unique_id=47608288]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.8, -12)
 pixel_size = 0.01
 billboard = 2
@@ -339,13 +339,13 @@ outline_modulate = Color(0.04, 0.06, 0.1, 0.9)
 text = "20 m"
 font_size = 48
 
-[node name="@MeshInstance3D@3" type="MeshInstance3D" parent="Course" unique_id=1053590917]
+[node name="@MeshInstance3D@3" type="MeshInstance3D" parent="Course" unique_id=1939777683]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, -22)
 material_override = SubResource("StandardMaterial3D_62tve")
 cast_shadow = 0
 mesh = SubResource("BoxMesh_rdeg0")
 
-[node name="Sign_30_m" type="Label3D" parent="Course" unique_id=1162339039]
+[node name="Sign_30_m" type="Label3D" parent="Course" unique_id=459891819]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.8, -22)
 pixel_size = 0.01
 billboard = 2
@@ -354,13 +354,13 @@ outline_modulate = Color(0.04, 0.06, 0.1, 0.9)
 text = "30 m"
 font_size = 48
 
-[node name="@MeshInstance3D@4" type="MeshInstance3D" parent="Course" unique_id=1150355546]
+[node name="@MeshInstance3D@4" type="MeshInstance3D" parent="Course" unique_id=1540646514]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, -32)
 material_override = SubResource("StandardMaterial3D_reluu")
 cast_shadow = 0
 mesh = SubResource("BoxMesh_csshy")
 
-[node name="Sign_40_m" type="Label3D" parent="Course" unique_id=2114691381]
+[node name="Sign_40_m" type="Label3D" parent="Course" unique_id=1928114141]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.8, -32)
 pixel_size = 0.01
 billboard = 2
@@ -369,13 +369,13 @@ outline_modulate = Color(0.04, 0.06, 0.1, 0.9)
 text = "40 m"
 font_size = 48
 
-[node name="@MeshInstance3D@5" type="MeshInstance3D" parent="Course" unique_id=2109069309]
+[node name="@MeshInstance3D@5" type="MeshInstance3D" parent="Course" unique_id=1804000706]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, -42)
 material_override = SubResource("StandardMaterial3D_2etec")
 cast_shadow = 0
 mesh = SubResource("BoxMesh_34hvl")
 
-[node name="Sign_50_m" type="Label3D" parent="Course" unique_id=882419855]
+[node name="Sign_50_m" type="Label3D" parent="Course" unique_id=627712304]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.8, -42)
 pixel_size = 0.01
 billboard = 2
@@ -384,51 +384,51 @@ outline_modulate = Color(0.04, 0.06, 0.1, 0.9)
 text = "50 m"
 font_size = 48
 
-[node name="Step_0_5" type="StaticBody3D" parent="Course" unique_id=375606950]
+[node name="Step_0_5" type="StaticBody3D" parent="Course" unique_id=521132703]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0.25, 4)
 collision_mask = 0
 
-[node name="Mesh" type="MeshInstance3D" parent="Course/Step_0_5" unique_id=792459683]
+[node name="Mesh" type="MeshInstance3D" parent="Course/Step_0_5" unique_id=2011655038]
 material_override = SubResource("ShaderMaterial_1fo14")
 mesh = SubResource("BoxMesh_xfos3")
 
-[node name="Shape" type="CollisionShape3D" parent="Course/Step_0_5" unique_id=1546290183]
+[node name="Shape" type="CollisionShape3D" parent="Course/Step_0_5" unique_id=591141948]
 shape = SubResource("BoxShape3D_jwxgv")
 
-[node name="Step_1_0" type="StaticBody3D" parent="Course" unique_id=1208962475]
+[node name="Step_1_0" type="StaticBody3D" parent="Course" unique_id=1813902222]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0.5, 0.5)
 collision_mask = 0
 
-[node name="Mesh" type="MeshInstance3D" parent="Course/Step_1_0" unique_id=968459671]
+[node name="Mesh" type="MeshInstance3D" parent="Course/Step_1_0" unique_id=784595645]
 material_override = SubResource("ShaderMaterial_1fo14")
 mesh = SubResource("BoxMesh_tpkwa")
 
-[node name="Shape" type="CollisionShape3D" parent="Course/Step_1_0" unique_id=123595063]
+[node name="Shape" type="CollisionShape3D" parent="Course/Step_1_0" unique_id=1635421774]
 shape = SubResource("BoxShape3D_2xhi3")
 
-[node name="Step_1_5" type="StaticBody3D" parent="Course" unique_id=1314339558]
+[node name="Step_1_5" type="StaticBody3D" parent="Course" unique_id=862310355]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0.75, -3)
 collision_mask = 0
 
-[node name="Mesh" type="MeshInstance3D" parent="Course/Step_1_5" unique_id=1562420425]
+[node name="Mesh" type="MeshInstance3D" parent="Course/Step_1_5" unique_id=1693665794]
 material_override = SubResource("ShaderMaterial_1fo14")
 mesh = SubResource("BoxMesh_was57")
 
-[node name="Shape" type="CollisionShape3D" parent="Course/Step_1_5" unique_id=389670246]
+[node name="Shape" type="CollisionShape3D" parent="Course/Step_1_5" unique_id=242808957]
 shape = SubResource("BoxShape3D_6ptjj")
 
-[node name="Step_2_0" type="StaticBody3D" parent="Course" unique_id=423988732]
+[node name="Step_2_0" type="StaticBody3D" parent="Course" unique_id=1484890593]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1, -6.5)
 collision_mask = 0
 
-[node name="Mesh" type="MeshInstance3D" parent="Course/Step_2_0" unique_id=936161788]
+[node name="Mesh" type="MeshInstance3D" parent="Course/Step_2_0" unique_id=1478972759]
 material_override = SubResource("ShaderMaterial_1fo14")
 mesh = SubResource("BoxMesh_otaui")
 
-[node name="Shape" type="CollisionShape3D" parent="Course/Step_2_0" unique_id=1348321576]
+[node name="Shape" type="CollisionShape3D" parent="Course/Step_2_0" unique_id=1214125738]
 shape = SubResource("BoxShape3D_y86a3")
 
-[node name="Sign_Steps_0_5_·_1_·_1_5_·_2_" type="Label3D" parent="Course" unique_id=1176174381]
+[node name="Sign_Steps_0_5_·_1_·_1_5_·_2_" type="Label3D" parent="Course" unique_id=192186430]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 3, -1)
 pixel_size = 0.01
 billboard = 2
@@ -437,18 +437,18 @@ outline_modulate = Color(0.04, 0.06, 0.1, 0.9)
 text = "Steps 0.5 · 1 · 1.5 · 2 m"
 font_size = 72
 
-[node name="Ramp_20" type="StaticBody3D" parent="Course" unique_id=1290489995]
+[node name="Ramp_20" type="StaticBody3D" parent="Course" unique_id=1357530055]
 transform = Transform3D(1, 0, 0, 0, 0.9396926, -0.34202012, 0, 0.34202012, 0.9396926, -8, 1.7101008, -2)
 collision_mask = 0
 
-[node name="Mesh" type="MeshInstance3D" parent="Course/Ramp_20" unique_id=1554145489]
+[node name="Mesh" type="MeshInstance3D" parent="Course/Ramp_20" unique_id=1911757480]
 material_override = SubResource("ShaderMaterial_1fo14")
 mesh = SubResource("BoxMesh_xhvlp")
 
-[node name="Shape" type="CollisionShape3D" parent="Course/Ramp_20" unique_id=561352918]
+[node name="Shape" type="CollisionShape3D" parent="Course/Ramp_20" unique_id=342233946]
 shape = SubResource("BoxShape3D_4ymkv")
 
-[node name="Sign_20°" type="Label3D" parent="Course" unique_id=1840023137]
+[node name="Sign_20°" type="Label3D" parent="Course" unique_id=1365414741]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 4.9202013, -7)
 pixel_size = 0.01
 billboard = 2
@@ -457,18 +457,18 @@ outline_modulate = Color(0.04, 0.06, 0.1, 0.9)
 text = "20°"
 font_size = 48
 
-[node name="Ramp_35" type="StaticBody3D" parent="Course" unique_id=777258808]
+[node name="Ramp_35" type="StaticBody3D" parent="Course" unique_id=124147977]
 transform = Transform3D(1, 0, 0, 0, 0.81915206, -0.57357645, 0, 0.57357645, 0.81915206, -14, 2.8678823, -2)
 collision_mask = 0
 
-[node name="Mesh" type="MeshInstance3D" parent="Course/Ramp_35" unique_id=1102331027]
+[node name="Mesh" type="MeshInstance3D" parent="Course/Ramp_35" unique_id=1039673300]
 material_override = SubResource("ShaderMaterial_1fo14")
 mesh = SubResource("BoxMesh_tlawh")
 
-[node name="Shape" type="CollisionShape3D" parent="Course/Ramp_35" unique_id=1092631197]
+[node name="Shape" type="CollisionShape3D" parent="Course/Ramp_35" unique_id=867397130]
 shape = SubResource("BoxShape3D_jlfjr")
 
-[node name="Sign_35°" type="Label3D" parent="Course" unique_id=386133676]
+[node name="Sign_35°" type="Label3D" parent="Course" unique_id=704928908]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 7.2357645, -7)
 pixel_size = 0.01
 billboard = 2
@@ -477,18 +477,18 @@ outline_modulate = Color(0.04, 0.06, 0.1, 0.9)
 text = "35°"
 font_size = 48
 
-[node name="Ramp_50" type="StaticBody3D" parent="Course" unique_id=689261698]
+[node name="Ramp_50" type="StaticBody3D" parent="Course" unique_id=20999161]
 transform = Transform3D(1, 0, 0, 0, 0.64278764, -0.76604444, 0, 0.76604444, 0.64278764, -20, 3.8302221, -2)
 collision_mask = 0
 
-[node name="Mesh" type="MeshInstance3D" parent="Course/Ramp_50" unique_id=1660249594]
+[node name="Mesh" type="MeshInstance3D" parent="Course/Ramp_50" unique_id=1604895331]
 material_override = SubResource("ShaderMaterial_1fo14")
 mesh = SubResource("BoxMesh_fh42t")
 
-[node name="Shape" type="CollisionShape3D" parent="Course/Ramp_50" unique_id=1954844107]
+[node name="Shape" type="CollisionShape3D" parent="Course/Ramp_50" unique_id=707652921]
 shape = SubResource("BoxShape3D_380qc")
 
-[node name="Sign_50°_·_too_steep" type="Label3D" parent="Course" unique_id=853513976]
+[node name="Sign_50°_·_too_steep" type="Label3D" parent="Course" unique_id=1559905215]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 9.160444, -7)
 pixel_size = 0.01
 billboard = 2
@@ -497,19 +497,19 @@ outline_modulate = Color(0.04, 0.06, 0.1, 0.9)
 text = "50° · too steep"
 font_size = 48
 
-[node name="Tower_10" type="StaticBody3D" parent="Course" unique_id=275299678]
+[node name="Tower_10" type="StaticBody3D" parent="Course" unique_id=632353975]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 5, -20)
 collision_layer = 2
 collision_mask = 0
 
-[node name="Mesh" type="MeshInstance3D" parent="Course/Tower_10" unique_id=457607024]
+[node name="Mesh" type="MeshInstance3D" parent="Course/Tower_10" unique_id=1635137442]
 material_override = SubResource("ShaderMaterial_rg8ow")
 mesh = SubResource("BoxMesh_2wvu7")
 
-[node name="Shape" type="CollisionShape3D" parent="Course/Tower_10" unique_id=60853705]
+[node name="Shape" type="CollisionShape3D" parent="Course/Tower_10" unique_id=2110172079]
 shape = SubResource("BoxShape3D_mya8t")
 
-[node name="@Label3D@6" type="Label3D" parent="Course" unique_id=1882260819]
+[node name="@Label3D@6" type="Label3D" parent="Course" unique_id=1594470341]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 12, -20)
 pixel_size = 0.01
 billboard = 2
@@ -518,19 +518,19 @@ outline_modulate = Color(0.04, 0.06, 0.1, 0.9)
 text = "10 m"
 font_size = 72
 
-[node name="Tower_20" type="StaticBody3D" parent="Course" unique_id=309498394]
+[node name="Tower_20" type="StaticBody3D" parent="Course" unique_id=2137017037]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42, 10, -34)
 collision_layer = 2
 collision_mask = 0
 
-[node name="Mesh" type="MeshInstance3D" parent="Course/Tower_20" unique_id=1377218795]
+[node name="Mesh" type="MeshInstance3D" parent="Course/Tower_20" unique_id=973570213]
 material_override = SubResource("ShaderMaterial_rg8ow")
 mesh = SubResource("BoxMesh_ouvll")
 
-[node name="Shape" type="CollisionShape3D" parent="Course/Tower_20" unique_id=442931511]
+[node name="Shape" type="CollisionShape3D" parent="Course/Tower_20" unique_id=424345671]
 shape = SubResource("BoxShape3D_vvmg8")
 
-[node name="@Label3D@7" type="Label3D" parent="Course" unique_id=1676910895]
+[node name="@Label3D@7" type="Label3D" parent="Course" unique_id=737719502]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42, 22, -34)
 pixel_size = 0.01
 billboard = 2
@@ -539,19 +539,19 @@ outline_modulate = Color(0.04, 0.06, 0.1, 0.9)
 text = "20 m"
 font_size = 72
 
-[node name="Tower_30" type="StaticBody3D" parent="Course" unique_id=1873074060]
+[node name="Tower_30" type="StaticBody3D" parent="Course" unique_id=1659598431]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56, 15, -48)
 collision_layer = 2
 collision_mask = 0
 
-[node name="Mesh" type="MeshInstance3D" parent="Course/Tower_30" unique_id=1790494399]
+[node name="Mesh" type="MeshInstance3D" parent="Course/Tower_30" unique_id=965504848]
 material_override = SubResource("ShaderMaterial_rg8ow")
 mesh = SubResource("BoxMesh_ckbc6")
 
-[node name="Shape" type="CollisionShape3D" parent="Course/Tower_30" unique_id=1798943492]
+[node name="Shape" type="CollisionShape3D" parent="Course/Tower_30" unique_id=1538677241]
 shape = SubResource("BoxShape3D_cllo1")
 
-[node name="@Label3D@8" type="Label3D" parent="Course" unique_id=568555668]
+[node name="@Label3D@8" type="Label3D" parent="Course" unique_id=756453572]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56, 32, -48)
 pixel_size = 0.01
 billboard = 2
@@ -560,19 +560,19 @@ outline_modulate = Color(0.04, 0.06, 0.1, 0.9)
 text = "30 m"
 font_size = 72
 
-[node name="Tower_50" type="StaticBody3D" parent="Course" unique_id=1081426264]
+[node name="Tower_50" type="StaticBody3D" parent="Course" unique_id=799280491]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -74, 25, -64)
 collision_layer = 2
 collision_mask = 0
 
-[node name="Mesh" type="MeshInstance3D" parent="Course/Tower_50" unique_id=2078970606]
+[node name="Mesh" type="MeshInstance3D" parent="Course/Tower_50" unique_id=1544796554]
 material_override = SubResource("ShaderMaterial_rg8ow")
 mesh = SubResource("BoxMesh_uqr3w")
 
-[node name="Shape" type="CollisionShape3D" parent="Course/Tower_50" unique_id=315731654]
+[node name="Shape" type="CollisionShape3D" parent="Course/Tower_50" unique_id=1622322125]
 shape = SubResource("BoxShape3D_5lifq")
 
-[node name="@Label3D@9" type="Label3D" parent="Course" unique_id=625362890]
+[node name="@Label3D@9" type="Label3D" parent="Course" unique_id=2139762531]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -74, 52, -64)
 pixel_size = 0.01
 billboard = 2
@@ -581,7 +581,7 @@ outline_modulate = Color(0.04, 0.06, 0.1, 0.9)
 text = "50 m"
 font_size = 72
 
-[node name="Sign_Tower_field_·_jump_off_a" type="Label3D" parent="Course" unique_id=313896420]
+[node name="Sign_Tower_field_·_jump_off_a" type="Label3D" parent="Course" unique_id=1506490005]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 14, -10)
 pixel_size = 0.01
 billboard = 2
@@ -590,18 +590,18 @@ outline_modulate = Color(0.04, 0.06, 0.1, 0.9)
 text = "Tower field · jump off anything, no fall damage"
 font_size = 56
 
-[node name="Glass" type="StaticBody3D" parent="Course" unique_id=531945933 groups=["no_grapple"]]
+[node name="Glass" type="StaticBody3D" parent="Course" unique_id=1848103706 groups=["no_grapple"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 5, -30)
 collision_mask = 0
 
-[node name="Mesh" type="MeshInstance3D" parent="Course/Glass" unique_id=70832345]
+[node name="Mesh" type="MeshInstance3D" parent="Course/Glass" unique_id=862464577]
 material_override = SubResource("StandardMaterial3D_uhbw8")
 mesh = SubResource("BoxMesh_emcgs")
 
-[node name="Shape" type="CollisionShape3D" parent="Course/Glass" unique_id=108692748]
+[node name="Shape" type="CollisionShape3D" parent="Course/Glass" unique_id=2118103221]
 shape = SubResource("BoxShape3D_ffqw6")
 
-[node name="Sign_Glass_·_can\'t_hook" type="Label3D" parent="Course" unique_id=420809919]
+[node name="Sign_Glass_·_can\'t_hook" type="Label3D" parent="Course" unique_id=928432663]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 11.5, -30)
 pixel_size = 0.01
 billboard = 2
@@ -610,19 +610,19 @@ outline_modulate = Color(0.04, 0.06, 0.1, 0.9)
 text = "Glass · can't hook"
 font_size = 72
 
-[node name="HookPanel" type="StaticBody3D" parent="Course" unique_id=804967929]
+[node name="HookPanel" type="StaticBody3D" parent="Course" unique_id=1005333443]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 5, -30)
 collision_layer = 2
 collision_mask = 0
 
-[node name="Mesh" type="MeshInstance3D" parent="Course/HookPanel" unique_id=784390666]
+[node name="Mesh" type="MeshInstance3D" parent="Course/HookPanel" unique_id=274815199]
 material_override = SubResource("ShaderMaterial_rg8ow")
 mesh = SubResource("BoxMesh_j45eg")
 
-[node name="Shape" type="CollisionShape3D" parent="Course/HookPanel" unique_id=1184858646]
+[node name="Shape" type="CollisionShape3D" parent="Course/HookPanel" unique_id=1683564912]
 shape = SubResource("BoxShape3D_uupcn")
 
-[node name="Sign_Lime_stripes_·_hookable" type="Label3D" parent="Course" unique_id=1897825436]
+[node name="Sign_Lime_stripes_·_hookable" type="Label3D" parent="Course" unique_id=57098326]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 11.5, -30)
 pixel_size = 0.01
 billboard = 2
@@ -631,63 +631,63 @@ outline_modulate = Color(0.04, 0.06, 0.1, 0.9)
 text = "Lime stripes · hookable"
 font_size = 72
 
-[node name="CliffNear" type="StaticBody3D" parent="Course" unique_id=786838297]
+[node name="CliffNear" type="StaticBody3D" parent="Course" unique_id=457967464]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 6, -20)
 collision_mask = 0
 
-[node name="Mesh" type="MeshInstance3D" parent="Course/CliffNear" unique_id=1042652412]
+[node name="Mesh" type="MeshInstance3D" parent="Course/CliffNear" unique_id=1283021944]
 material_override = SubResource("ShaderMaterial_1fo14")
 mesh = SubResource("BoxMesh_0arfh")
 
-[node name="Shape" type="CollisionShape3D" parent="Course/CliffNear" unique_id=1793781434]
+[node name="Shape" type="CollisionShape3D" parent="Course/CliffNear" unique_id=73901301]
 shape = SubResource("BoxShape3D_bxty4")
 
-[node name="CliffFar" type="StaticBody3D" parent="Course" unique_id=1741024086]
+[node name="CliffFar" type="StaticBody3D" parent="Course" unique_id=567158288]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 6, -75)
 collision_mask = 0
 
-[node name="Mesh" type="MeshInstance3D" parent="Course/CliffFar" unique_id=1032023966]
+[node name="Mesh" type="MeshInstance3D" parent="Course/CliffFar" unique_id=315975714]
 material_override = SubResource("ShaderMaterial_1fo14")
 mesh = SubResource("BoxMesh_h80nu")
 
-[node name="Shape" type="CollisionShape3D" parent="Course/CliffFar" unique_id=749872001]
+[node name="Shape" type="CollisionShape3D" parent="Course/CliffFar" unique_id=1547202157]
 shape = SubResource("BoxShape3D_ffarp")
 
-[node name="SwingBeam" type="StaticBody3D" parent="Course" unique_id=377410162]
+[node name="SwingBeam" type="StaticBody3D" parent="Course" unique_id=1715812881]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 30, -47.5)
 collision_layer = 2
 collision_mask = 0
 
-[node name="Mesh" type="MeshInstance3D" parent="Course/SwingBeam" unique_id=436355440]
+[node name="Mesh" type="MeshInstance3D" parent="Course/SwingBeam" unique_id=347095919]
 material_override = SubResource("ShaderMaterial_rg8ow")
 mesh = SubResource("BoxMesh_wodau")
 
-[node name="Shape" type="CollisionShape3D" parent="Course/SwingBeam" unique_id=2143364627]
+[node name="Shape" type="CollisionShape3D" parent="Course/SwingBeam" unique_id=917886956]
 shape = SubResource("BoxShape3D_1sw4s")
 
-[node name="BeamPillarL" type="StaticBody3D" parent="Course" unique_id=1374647386]
+[node name="BeamPillarL" type="StaticBody3D" parent="Course" unique_id=838798885]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.5, 15, -47.5)
 collision_mask = 0
 
-[node name="Mesh" type="MeshInstance3D" parent="Course/BeamPillarL" unique_id=1155742220]
+[node name="Mesh" type="MeshInstance3D" parent="Course/BeamPillarL" unique_id=332352531]
 material_override = SubResource("ShaderMaterial_1fo14")
 mesh = SubResource("BoxMesh_ondg5")
 
-[node name="Shape" type="CollisionShape3D" parent="Course/BeamPillarL" unique_id=1637227552]
+[node name="Shape" type="CollisionShape3D" parent="Course/BeamPillarL" unique_id=594286002]
 shape = SubResource("BoxShape3D_a8qf5")
 
-[node name="BeamPillarR" type="StaticBody3D" parent="Course" unique_id=348932445]
+[node name="BeamPillarR" type="StaticBody3D" parent="Course" unique_id=1108197279]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.5, 15, -47.5)
 collision_mask = 0
 
-[node name="Mesh" type="MeshInstance3D" parent="Course/BeamPillarR" unique_id=1302195331]
+[node name="Mesh" type="MeshInstance3D" parent="Course/BeamPillarR" unique_id=1538745300]
 material_override = SubResource("ShaderMaterial_1fo14")
 mesh = SubResource("BoxMesh_7v6jk")
 
-[node name="Shape" type="CollisionShape3D" parent="Course/BeamPillarR" unique_id=1339956920]
+[node name="Shape" type="CollisionShape3D" parent="Course/BeamPillarR" unique_id=1408133799]
 shape = SubResource("BoxShape3D_qpcsa")
 
-[node name="Sign_Swing_gap_·_35_m" type="Label3D" parent="Course" unique_id=1792534824]
+[node name="Sign_Swing_gap_·_35_m" type="Label3D" parent="Course" unique_id=185185887]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 15, -12)
 pixel_size = 0.01
 billboard = 2
@@ -696,19 +696,19 @@ outline_modulate = Color(0.04, 0.06, 0.1, 0.9)
 text = "Swing gap · 35 m"
 font_size = 72
 
-[node name="Overhang" type="StaticBody3D" parent="Course" unique_id=437156345]
+[node name="Overhang" type="StaticBody3D" parent="Course" unique_id=1208117862]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 16, 18)
 collision_layer = 2
 collision_mask = 0
 
-[node name="Mesh" type="MeshInstance3D" parent="Course/Overhang" unique_id=1242916800]
+[node name="Mesh" type="MeshInstance3D" parent="Course/Overhang" unique_id=932214350]
 material_override = SubResource("ShaderMaterial_rg8ow")
 mesh = SubResource("BoxMesh_2ltdf")
 
-[node name="Shape" type="CollisionShape3D" parent="Course/Overhang" unique_id=963976181]
+[node name="Shape" type="CollisionShape3D" parent="Course/Overhang" unique_id=1219591070]
 shape = SubResource("BoxShape3D_nqhxb")
 
-[node name="Sign_Hook_the_underside" type="Label3D" parent="Course" unique_id=1125680540]
+[node name="Sign_Hook_the_underside" type="Label3D" parent="Course" unique_id=1836731043]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 18.5, 18)
 pixel_size = 0.01
 billboard = 2
@@ -717,13 +717,13 @@ outline_modulate = Color(0.04, 0.06, 0.1, 0.9)
 text = "Hook the underside"
 font_size = 72
 
-[node name="@MeshInstance3D@10" type="MeshInstance3D" parent="Course" unique_id=2143079598]
+[node name="@MeshInstance3D@10" type="MeshInstance3D" parent="Course" unique_id=1497946141]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, -60)
 material_override = SubResource("StandardMaterial3D_bcig5")
 cast_shadow = 0
 mesh = SubResource("BoxMesh_ry8ch")
 
-[node name="Sign_Range_line" type="Label3D" parent="Course" unique_id=1108651424]
+[node name="Sign_Range_line" type="Label3D" parent="Course" unique_id=1464353473]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, -60)
 pixel_size = 0.01
 billboard = 2
@@ -732,19 +732,19 @@ outline_modulate = Color(0.04, 0.06, 0.1, 0.9)
 text = "Range line"
 font_size = 48
 
-[node name="Wall40" type="StaticBody3D" parent="Course" unique_id=1901799597]
+[node name="Wall40" type="StaticBody3D" parent="Course" unique_id=1241223090]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 6, -100)
 collision_layer = 2
 collision_mask = 0
 
-[node name="Mesh" type="MeshInstance3D" parent="Course/Wall40" unique_id=1255209878]
+[node name="Mesh" type="MeshInstance3D" parent="Course/Wall40" unique_id=745873542]
 material_override = SubResource("ShaderMaterial_rg8ow")
 mesh = SubResource("BoxMesh_omaub")
 
-[node name="Shape" type="CollisionShape3D" parent="Course/Wall40" unique_id=1665471701]
+[node name="Shape" type="CollisionShape3D" parent="Course/Wall40" unique_id=476660845]
 shape = SubResource("BoxShape3D_70ht2")
 
-[node name="Sign_40_m_·_in_range" type="Label3D" parent="Course" unique_id=318953301]
+[node name="Sign_40_m_·_in_range" type="Label3D" parent="Course" unique_id=275208840]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 13.5, -100)
 pixel_size = 0.01
 billboard = 2
@@ -753,19 +753,19 @@ outline_modulate = Color(0.04, 0.06, 0.1, 0.9)
 text = "40 m · in range"
 font_size = 72
 
-[node name="Wall65" type="StaticBody3D" parent="Course" unique_id=1819600718]
+[node name="Wall65" type="StaticBody3D" parent="Course" unique_id=674825071]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 6, -125)
 collision_layer = 2
 collision_mask = 0
 
-[node name="Mesh" type="MeshInstance3D" parent="Course/Wall65" unique_id=2023896162]
+[node name="Mesh" type="MeshInstance3D" parent="Course/Wall65" unique_id=2101055225]
 material_override = SubResource("ShaderMaterial_rg8ow")
 mesh = SubResource("BoxMesh_6dt6l")
 
-[node name="Shape" type="CollisionShape3D" parent="Course/Wall65" unique_id=1013067859]
+[node name="Shape" type="CollisionShape3D" parent="Course/Wall65" unique_id=141361175]
 shape = SubResource("BoxShape3D_r50hj")
 
-[node name="Sign_65_m_·_out_of_range" type="Label3D" parent="Course" unique_id=1561545516]
+[node name="Sign_65_m_·_out_of_range" type="Label3D" parent="Course" unique_id=628852092]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 13.5, -125)
 pixel_size = 0.01
 billboard = 2
@@ -774,26 +774,27 @@ outline_modulate = Color(0.04, 0.06, 0.1, 0.9)
 text = "65 m · out of range"
 font_size = 72
 
-[node name="Markers" type="Node3D" parent="." unique_id=1488319685]
+[node name="Markers" type="Node3D" parent="." unique_id=1664287966]
 
-[node name="Spawn" type="Marker3D" parent="Markers" unique_id=1934043201]
+[node name="Spawn" type="Marker3D" parent="Markers" unique_id=1708842179]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 8)
 
-[node name="Towers" type="Marker3D" parent="Markers" unique_id=2026708773]
+[node name="Towers" type="Marker3D" parent="Markers" unique_id=1677193068]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 10.05, -20)
 
-[node name="Gap" type="Marker3D" parent="Markers" unique_id=925547438]
+[node name="Gap" type="Marker3D" parent="Markers" unique_id=1349108077]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 12.05, -14)
 
-[node name="Range" type="Marker3D" parent="Markers" unique_id=12580626]
+[node name="Range" type="Marker3D" parent="Markers" unique_id=1347523838]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, -58)
 
-[node name="Player" type="CharacterBody3D" parent="." unique_id=76589432 instance=ExtResource("3_emj6c")]
+[node name="Player" type="CharacterBody3D" parent="." unique_id=845680204 instance=ExtResource("3_emj6c")]
 collision_layer = 4
-collision_mask = 3
+collision_mask = 11
 floor_max_angle = 0.80285144
 floor_snap_length = 0.35
 script = ExtResource("4_mrac1")
+start_loadout = PackedStringArray("tethercaster")
 
-[node name="HUD" type="CanvasLayer" parent="." unique_id=2121978080]
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1979206206]
 script = ExtResource("5_2q4k0")

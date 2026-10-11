@@ -106,6 +106,11 @@ func _run_bench() -> void:
 	var tree := get_tree()
 	if not _web:
 		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
+	# The benchmark views are positions in the movement playground.
+	if tree.current_scene == null or tree.current_scene.name != "Playground":
+		tree.change_scene_to_file("res://scenes/playground.tscn")
+		await tree.process_frame
+		await tree.process_frame
 	await tree.create_timer(WARMUP).timeout
 	var scene := tree.current_scene
 	var player := scene.get_node_or_null("Player") as Player

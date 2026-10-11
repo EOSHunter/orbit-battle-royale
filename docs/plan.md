@@ -28,13 +28,14 @@ Nothing is tuned or production-ready yet. Every balance number is a starting poi
 
 ---
 
-## Phase 0 · Lock the foundations (S–M) · next up
+## Phase 0 · Lock the foundations (S–M)
 
 Settle what everything else depends on, and make every build tested and downloadable.
 
 **Decisions**
-- [ ] Combat camera: first-person combat with third-person vehicles (proposed), or third-person throughout.
-- [ ] Target hardware and browsers: e.g. "a 2020 mid-range laptop with integrated graphics, latest Chrome, Edge and Firefox, 60 fps at 1080p on Medium."
+- [x] Combat camera: **first-person** (decided 2026-10-11). Vehicles third-person as proposed.
+- [x] Browsers: **latest Chrome, Edge and Firefox** (decided 2026-10-11).
+- [ ] Target hardware and frame-rate goal, e.g. "a 2020 mid-range laptop with integrated graphics, 60 fps at 1080p on Medium."
 - [ ] Download budget for first play (e.g. under 60 MB compressed, game playable before the full map streams in).
 - [ ] Confirm Godot 4 after this phase's measurements.
 
@@ -51,29 +52,31 @@ Settle what everything else depends on, and make every build tested and download
 
 ---
 
-## Phase 1 · Combat and inventory slice (L)
+## Phase 1 · Combat and inventory slice (L) · in progress
 
 The first real firefight: two weapons, health and shields, healing, the 5-slot inventory, and a few simple bots, all in greybox.
 
 **Decisions**
-- [ ] Can flexible slots 3–5 hold extra weapons, or only items?
-- [ ] Hitscan or projectile bullets per weapon (hitscan for AR-7 and SG-4 is the simple start).
+- [x] Flexible slots 3–5 hold items only (assumed for Phase 1 per the design system; revisit after playtests).
+- [x] Hitscan for the AR-7 and SG-4 (assumed for Phase 1). No headshot multiplier yet.
 - [ ] Storm damage bypassing shields (proposed): confirm for later phases.
 
 **Work**
-- [ ] Weapon framework: weapon data resources (damage, fire rate, magazine, reserve type, spread, recoil, reload time), with placeholder values clearly marked.
-- [ ] AR-7 Wayfarer and SG-4 Breaker with placeholder models, muzzle flash, tracers, impacts, hit markers.
-- [ ] Health and shields: shields absorb damage first, readable damage feedback, plus the directional damage arc and edge glow designed in the prototype.
-- [ ] Healing: Field Patch and Shield Pack with use time, slow walk while using, interruption by damage, firing or grappling, and the item kept on interruption.
-- [ ] 5-slot inventory with the prototype's rules: slot eligibility, stack and carry caps, matching pickups fill stacks first, replace with preview, move, split, drop, all without dragging.
-- [ ] Ground loot: pickups with interact prompts, auto-pickup that never replaces an occupied slot.
-- [ ] Separate ammunition reserves shown next to the weapon.
-- [ ] The Tethercaster becomes a slot item instead of always equipped.
-- [ ] Bots v1: wander, spot, engage, take cover, heal, with believable mistakes and no wallhacks.
-- [ ] In-game HUD ported from the prototype: meters, slot strip, ammo, crosshair, damage feedback.
-- [ ] Headless tests for inventory rules (no duplication or cap bypass), damage order, and heal interruption.
+- [x] Weapon framework: weapon data resources (damage, fire rate, magazine, reserve type, spread, recoil, reload time), with placeholder values clearly marked.
+- [x] AR-7 Wayfarer and SG-4 Breaker with placeholder models, muzzle flash, tracers, impacts, hit markers.
+- [x] Health and shields: shields absorb damage first, readable damage feedback, plus the directional damage arc and edge glow designed in the prototype.
+- [x] Healing: Field Patch and Shield Pack with use time, slow walk while using, interruption by damage, firing or grappling, and the item kept on interruption.
+- [x] 5-slot inventory with the prototype's rules: slot eligibility, stack and carry caps, matching pickups fill stacks first, replace with preview, move, split, drop, all without dragging.
+- [x] Ground loot: pickups with interact prompts, auto-pickup that never replaces an occupied slot.
+- [x] Separate ammunition reserves shown next to the weapon.
+- [x] The Tethercaster becomes a slot item instead of always equipped.
+- [x] Bots v1: wander, spot, engage, take cover, heal, with believable mistakes and no wallhacks.
+- [x] In-game HUD ported from the prototype: meters, slot strip, ammo, crosshair, damage feedback.
+- [x] Headless tests for inventory rules (no duplication or cap bypass), damage order, and heal interruption.
 
 **Done when** you can loot, fight two or three bots, heal under pressure and win or lose a firefight in the browser, and the inventory tests prove no duplication or cap bypass.
+
+**Status (2026-10-11):** first pass built and tested headless (65 checks across three suites). Next: a hands-on playtest to tune weapon feel, bot difficulty and healing times. Healing items in the slice: Field Patch, Shield Cell, Shield Pack.
 
 ---
 
