@@ -151,7 +151,7 @@ function renderList() {
   el.innerHTML = rows.length ? groups.map(g => `<div class="grp"><div class="grp-h">${esc(g.cat)} <span>${g.items.length}</span></div>${g.items.map(a => {
     const p = progress(a), np = (a.parts || []).length, nd = (a.parts || []).filter(x => x.done).length;
     return `<button class="row ${a.id === S.sel ? 'is-sel' : ''}" data-id="${a.id}" aria-current="${a.id === S.sel}">
-      <span class="thumb">${a.thumb ? `<img src="/_blob/${esc(a.thumb)}" alt="" loading="lazy">` : kindIcon(a.kind)}</span>
+      <span class="thumb">${thumbOf(a) ? `<img src="/_blob/${esc(thumbOf(a))}" alt="" loading="lazy">` : kindIcon(a.kind)}</span>
       <span class="row-main"><span class="row-name">${esc(a.name)}${a.decision ? `<span class="dec-flag" title="Needs a decision">${Orbit.icon('warning', '')}</span>` : ''}</span><span class="row-sub">${esc(KIND_LABEL[a.kind])}${a.group ? ' · ' + esc(a.group) : ''}</span></span>
       <span class="row-meta"><span class="pill ${STAGE_CLASS(a.stage)}">${esc(a.stage)}</span><span class="mini"><i style="width:${p * 100}%"></i></span><span class="row-count">${nd}/${np}${(a.files || []).length ? ` · ${a.files.length} file${a.files.length > 1 ? 's' : ''}` : ''}</span></span>
     </button>`;
@@ -159,6 +159,8 @@ function renderList() {
   $$('.row', el).forEach(b => (b.onclick = () => select(b.dataset.id)));
   const cf = $('#clear-f'); if (cf) cf.onclick = () => { S.q = ''; S.stage = ''; S.milestone = ''; S.decisions = false; $('#q').value = ''; $('#f-stage').value = ''; $('#f-ms').value = ''; $('#f-dec').checked = false; renderList(); };
 }
+
+const thumbOf = a => a.thumb || (a.concepts && a.concepts[0] && a.concepts[0].id) || null;
 
 function select(id) {
   if (S.sel === id) return;
@@ -180,7 +182,7 @@ function renderStage() {
   $('#audio-panel').hidden = mode !== 'audio';
   $('#image-panel').hidden = mode !== 'image';
   const latest = a && (a.files || []).filter(f => f.kind === mode).slice(-1)[0];
-  const key = a ? a.id + ':' + (latest ? latest.id : '') : null;
+  const key = a ? a.id + ':' + (latest ? latest.id : '') + ':' + (a.concepts && a.concepts[0] ? a.concepts[0].id : '') : null;
   if (S.local && S.local.for === (a && a.id)) { renderTools(); return; }
   if (S.loadedFor === key) { renderTools(); return; }
   S.loadedFor = key; S.loaded = null;
@@ -195,6 +197,12 @@ function showEmpty(a, mode) {
   if (!a && S.status === 'ready') { e.hidden = false; e.innerHTML = `<p class="em-t">Pick an asset to inspect it</p>`; return; }
   e.hidden = false;
   const what = { model: 'a .glb or .gltf model', audio: 'an .ogg, .wav or .mp3 file', image: 'a .png, .jpg, .webp or .svg image' }[mode];
+  const c = a && a.concepts && a.concepts[0];
+  if (c && mode !== 'audio') {
+    e.innerHTML = `<img class="em-concept" src="/_blob/${esc(c.id)}" alt="Concept art for ${esc(a.name)}"><div class="em-bar"><span><b>Concept art</b> · no ${mode === 'model' ? 'model' : 'final file'} yet. Drop ${what} here to inspect it.</span><button class="or-btn" id="choose">Choose a file</button></div>`;
+    $('#choose').onclick = () => pickFile(mode);
+    return;
+  }
   e.innerHTML = `<div class="em-ico">${kindIcon(a ? a.kind : 'model')}</div><p class="em-t">${a ? `No ${mode === 'model' ? 'model' : mode === 'audio' ? 'audio' : 'image'} for ${esc(a.name)} yet` : 'Model viewer'}</p><p class="em-s">Drop ${what} here to inspect it${mode === 'model' ? ': rotate, check scale in meters, triangle count and animations' : ''}. It stays on your screen until you attach it.</p><button class="or-btn" id="choose">Choose a file</button>`;
   $('#choose').onclick = () => pickFile(mode);
 }
@@ -368,6 +376,10 @@ function renderInfo() {
     </div>
     ${a.decision ? `<div class="decision">${Orbit.icon('warning', '')}<div><strong>Needs a decision</strong><span>${esc(a.decision)}</span></div>${w ? `<button class="or-btn or-btn--ghost" id="i-resolve">Mark resolved</button>` : ''}</div>` : ''}
     ${info ? statsHtml(a, info) : ''}
+    <div class="concepts">
+      <div class="col-h"><span class="lbl">Concept art</span><span class="note">${(a.concepts || []).length ? `${a.concepts.length} image${a.concepts.length === 1 ? '' : 's'} · select one to view full size` : 'None yet'}</span></div>
+      <div class="cgrid">${(a.concepts || []).map((c, i) => `<button class="cthumb" data-ci="${i}" aria-label="View concept ${i + 1} of ${a.concepts.length}"><img src="/_blob/${esc(c.id)}" alt="" loading="lazy"></button>`).join('')}${w && S.store ? `<button class="cthumb cadd" id="c-add" aria-label="Add concept art">+ Add image</button>` : ''}</div>
+    </div>
     <div class="cols">
       <div class="col">
         <div class="col-h"><span class="lbl">Deliverables</span><span class="note">${nd} of ${np} done</span></div>
@@ -393,6 +405,8 @@ function renderInfo() {
     <div class="updated note">${a.updatedAt ? `Last change ${fmtDate(a.updatedAt)} · <span data-uid="${esc(a.updatedBy || '')}"></span>` : 'Not changed since the list was created'}</div>
     ${w ? `<div class="danger-zone"><button class="or-btn or-btn--danger" id="i-del">Delete asset</button></div>` : ''}`;
   resolveNames([...ids, a.updatedBy].filter(Boolean));
+  $$('[data-ci]', el).forEach(b => (b.onclick = () => openConcept(a.id, +b.dataset.ci)));
+  const cadd = $('#c-add', el); if (cadd) cadd.onclick = () => addConcept(a);
   if (!w) { wireCopy(el); wireFiles(el); return; }
   $('#i-stage').onchange = e => save(a.id, { stage: e.target.value });
   $('#i-ms').onchange = e => save(a.id, { milestone: e.target.value });
@@ -429,6 +443,41 @@ async function resolveNames(ids) {
     const ps = await S.user.profiles([...new Set(ids)]);
     $$('[data-uid]').forEach(s => { const id = s.dataset.uid; s.textContent = id ? (id === S.me ? 'you' : (ps[id] && ps[id].name) || 'Someone') : 'unknown'; });
   } catch (e) { /* names are optional */ }
+}
+
+// ---------------------------------------------------------------- concept art
+function openConcept(assetId, i) {
+  const a = S.assets.find(x => x.id === assetId); if (!a || !a.concepts || !a.concepts[i]) return;
+  const c = a.concepts[i], n = a.concepts.length, w = S.canWrite && S.store;
+  const l = openLayer(`<div class="lightbox" role="dialog" aria-modal="true" aria-label="Concept art for ${esc(a.name)}">
+    <div class="lb-head"><div><div class="or-eyebrow">${esc(a.name)} · concept ${i + 1} of ${n}</div><div class="note">${esc(c.source || c.name || '')}</div></div>
+      <div class="lb-actions">${w ? `<button class="or-btn or-btn--ghost" id="lb-rm">Remove</button>` : ''}<button class="or-btn" id="lb-x">Close</button></div></div>
+    <div class="lb-img">${n > 1 ? `<button class="lb-nav prev" id="lb-prev" aria-label="Previous concept">‹</button>` : ''}<img src="/_blob/${esc(c.id)}" alt="Concept art for ${esc(a.name)}">${n > 1 ? `<button class="lb-nav next" id="lb-next" aria-label="Next concept">›</button>` : ''}</div></div>`);
+  const go = d => openConcept(assetId, (i + d + n) % n);
+  $('#lb-x', l).onclick = closeLayer; $('#lb-x', l).focus();
+  const p = $('#lb-prev', l), nx = $('#lb-next', l); if (p) p.onclick = () => go(-1); if (nx) nx.onclick = () => go(1);
+  l.onkeydown = e => { if (e.key === 'Escape') closeLayer(); if (n > 1 && e.key === 'ArrowLeft') go(-1); if (n > 1 && e.key === 'ArrowRight') go(1); };
+  const rm = $('#lb-rm', l);
+  if (rm) rm.onclick = async () => {
+    if (!rm.dataset.armed) { rm.dataset.armed = '1'; rm.textContent = 'Remove for everyone'; rm.classList.add('or-btn--danger'); return; }
+    const patch = { concepts: a.concepts.filter((_, k) => k !== i) };
+    if (await save(a.id, patch)) { try { await S.store.delete(c.id); } catch (e) { /* orphan is harmless */ } closeLayer(); toast('success', 'Concept image removed'); }
+  };
+}
+function addConcept(a) {
+  const inp = $('#file');
+  inp.accept = '.png,.jpg,.jpeg,.webp'; inp.value = '';
+  inp.onchange = async () => {
+    const f = inp.files[0]; if (!f) return;
+    const type = { png: 'image/png', jpg: 'image/jpeg', jpeg: 'image/jpeg', webp: 'image/webp' }[f.name.split('.').pop().toLowerCase()];
+    if (!type) { toast('warning', 'Concept art takes .png, .jpg or .webp images.'); return; }
+    if (f.size > MAX_BYTES) { toast('warning', `That image is ${fmtBytes(f.size)}; the limit is 20 MB. Export it as .webp or .jpg first.`); return; }
+    try {
+      const up = await S.store.upload(f, { type });
+      if (await save(a.id, { concepts: (a.concepts || []).concat({ id: up.id, name: f.name, source: f.name, at: new Date().toISOString(), by: S.me || null }) })) toast('success', `Concept added to ${a.name}`);
+    } catch (e) { toast('danger', e && e.code === 'quota_or_state' ? 'The hub\'s storage is full. Remove old files first.' : 'The upload didn\'t finish. Try again.'); }
+  };
+  inp.click();
 }
 
 // ---------------------------------------------------------------- dialogs

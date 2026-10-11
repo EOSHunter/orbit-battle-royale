@@ -148,6 +148,27 @@ code { font: 500 14px/20px var(--font-mono); color: var(--text-primary); word-br
 .danger-zone { border-top: 1px solid var(--border); padding-top: var(--space-4); }
 .danger-zone .or-btn { height: 40px; font-size: 16px; }
 
+/* Concept art */
+.em-concept { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; background: var(--background); }
+.em-bar { position: absolute; left: 0; right: 0; bottom: 0; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-3); padding: var(--space-3) var(--space-4); background: var(--scrim); text-align: left; font-size: 15px; }
+.em-bar .or-btn { height: 36px; font-size: 15px; }
+.concepts { display: flex; flex-direction: column; gap: var(--space-2); }
+.cgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: var(--space-2); }
+.cthumb { aspect-ratio: 3 / 2; padding: 0; border: 1px solid var(--border); border-radius: var(--radius-control); background: var(--surface); overflow: hidden; cursor: zoom-in; }
+.cthumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform var(--motion-standard) var(--ease-out); }
+.cthumb:hover img { transform: scale(1.04); }
+.cthumb:hover { border-color: var(--border-control); }
+.cadd { cursor: pointer; color: var(--text-secondary); font: 600 15px/20px var(--font-ui); border-style: dashed; }
+.cadd:hover { color: var(--text-primary); }
+.lightbox { width: min(1400px, 100%); max-height: 100%; display: flex; flex-direction: column; gap: var(--space-3); }
+.lb-head { display: flex; justify-content: space-between; align-items: flex-start; gap: var(--space-4); }
+.lb-actions { display: flex; gap: var(--space-2); }
+.lb-actions .or-btn { height: 40px; font-size: 16px; }
+.lb-img { position: relative; min-height: 0; display: grid; place-items: center; background: var(--background); border: 1px solid var(--border); border-radius: var(--radius-panel); overflow: hidden; }
+.lb-img img { max-width: 100%; max-height: calc(100vh - 180px); object-fit: contain; display: block; }
+.lb-nav { position: absolute; top: 50%; transform: translateY(-50%); width: 48px; height: 64px; border: 0; border-radius: var(--radius-control); background: var(--scrim); color: var(--text-primary); font-size: 32px; cursor: pointer; }
+.lb-nav.prev { left: var(--space-3); } .lb-nav.next { right: var(--space-3); }
+
 /* Layers */
 .dock { position: fixed; left: 50%; bottom: var(--space-6); transform: translateX(-50%); z-index: 30; }
 .layer { position: fixed; inset: 0; z-index: 40; display: none; }
