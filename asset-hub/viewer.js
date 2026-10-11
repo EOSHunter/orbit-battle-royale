@@ -57,7 +57,9 @@ export function createViewer(host) {
   }
 
   function frame() {
-    const box = new THREE.Box3().setFromObject(root);
+    // Precise bounds follow the skeleton, so skinned characters frame correctly.
+    root.updateMatrixWorld(true);
+    const box = new THREE.Box3().setFromObject(root, true);
     const size = box.getSize(new THREE.Vector3()), center = box.getCenter(new THREE.Vector3());
     root.position.sub(new THREE.Vector3(center.x, box.min.y, center.z));
     const r = Math.max(size.x, size.y, size.z) || 1;
