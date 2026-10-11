@@ -51,7 +51,7 @@ var _t := 0.0
 
 func _ready() -> void:
 	_root = Control.new()
-	_root.set_anchors_preset(Control.PRESET_FULL_RECT)
+	_root.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	_root.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(_root)
 
@@ -60,7 +60,7 @@ func _ready() -> void:
 	_low_glow = _glow_rect(DANGER)
 
 	_crosshair = _canvas(_draw_crosshair)
-	_crosshair.set_anchors_preset(Control.PRESET_FULL_RECT)
+	_crosshair.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 
 	_meters = _canvas(_draw_meters)
 	_meters.custom_minimum_size = Vector2(360, 76)
@@ -161,7 +161,7 @@ func _canvas(draw_fn: Callable) -> Control:
 
 func _glow_rect(color: Color) -> ColorRect:
 	var r := ColorRect.new()
-	r.set_anchors_preset(Control.PRESET_FULL_RECT)
+	r.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	r.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	var m := ShaderMaterial.new()
 	m.shader = load("res://shaders/edge_glow.gdshader")
@@ -330,9 +330,6 @@ func _update_prompt() -> void:
 				verb = "Slots full · Tab to replace ·"
 		_prompt.text = "E  %s %s" % [verb, p.display_name()]
 		_prompt.add_theme_color_override("font_color", TEXT)
-	elif player.has_tether() and player.tether.aim == Tethercaster.Aim.NOT_HOOKABLE and player.inventory.selected_stack() and player.inventory.selected_stack().def.id == &"tethercaster":
-		_prompt.text = "Can't hook this surface"
-		_prompt.add_theme_color_override("font_color", DANGER)
 	else:
 		_prompt.text = ""
 
@@ -340,7 +337,8 @@ func _update_prompt() -> void:
 # ---------------------------------------------------------------- drawing
 
 func _draw_crosshair() -> void:
-	var c := _crosshair.size * 0.5
+	# Center on the viewport itself, wherever the drawing layer sits.
+	var c := _crosshair.get_viewport_rect().size * 0.5 - _crosshair.global_position
 	var color := TEXT
 	var gap := 6.0 + player.weapons.spread_now * 3.0
 	if player.inventory.selected_stack() and player.inventory.selected_stack().def.id == &"tethercaster":

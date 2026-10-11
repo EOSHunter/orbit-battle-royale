@@ -36,10 +36,10 @@ func _ready() -> void:
 	visible = false
 	var dim := ColorRect.new()
 	dim.color = Color(0.043, 0.063, 0.106, 0.86)
-	dim.set_anchors_preset(Control.PRESET_FULL_RECT)
+	dim.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	add_child(dim)
 	_panel = MarginContainer.new()
-	_panel.set_anchors_preset(Control.PRESET_FULL_RECT)
+	_panel.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	for side in ["left", "right", "top", "bottom"]:
 		_panel.add_theme_constant_override("margin_" + side, 48)
 	add_child(_panel)

@@ -172,7 +172,7 @@ func _build_playground() -> Node:
 	_mat = {
 		"ground": _grid(Color("1d2338"), Color("3a4560")),
 		"block": _grid(Color("3a4560"), Color("5a6a85")),
-		"hook": _grid(Color("2b3550"), Color("4a5878"), 0.9),
+		"hook": _grid(Color("2b3550"), Color("4a5878")),
 		"glass": _glass(),
 	}
 
@@ -364,11 +364,9 @@ func _build_course() -> void:
 		_sign("%d m" % int(h), base + Vector3(0, h + 2.0, 0))
 	_sign("Tower field · jump off anything, no fall damage", Vector3(-30, 14, -10), 56)
 
-	# Hook eligibility: glass blocks the tether, the striped panel takes it.
-	_box("Glass", Vector3(14, 5, -30), Vector3(10, 10, 0.3), "glass", false, Vector3.ZERO, "no_grapple")
-	_sign("Glass · can't hook", Vector3(14, 11.5, -30))
-	_box("HookPanel", Vector3(27, 5, -30), Vector3(10, 10, 0.3), "hook", true)
-	_sign("Lime stripes · hookable", Vector3(27, 11.5, -30))
+	# The Tethercaster hooks any surface in range, glass included.
+	_box("Glass", Vector3(20, 5, -30), Vector3(10, 10, 0.3), "glass")
+	_sign("Hook any surface within range", Vector3(20, 11.5, -30))
 
 	# Swing gap: two cliffs 35 m apart with a hookable beam overhead.
 	_box("CliffNear", Vector3(40, 6, -20), Vector3(20, 12, 20), "block")
@@ -401,7 +399,7 @@ func _build_arena() -> Node:
 	_mat = {
 		"ground": _grid(Color("1d2338"), Color("3a4560")),
 		"block": _grid(Color("3a4560"), Color("5a6a85")),
-		"hook": _grid(Color("2b3550"), Color("4a5878"), 0.9),
+		"hook": _grid(Color("2b3550"), Color("4a5878")),
 		"glass": _glass(),
 	}
 	_environment(root)

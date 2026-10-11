@@ -1,12 +1,9 @@
 class_name Tethercaster
 extends Node3D
-## The grapple. Lives under the camera: aims along the view, hooks surfaces on
-## the "grappable" physics layer within range, and draws the cable. The player
-## controller reads `anchor` and `rope_length` to apply rope physics.
-##
-## Eligibility is deliberately simple and visible: a surface is hookable only if
-## it is on the grappable layer (the lime-striped greybox) and not in the
-## "no_grapple" group. Everything else blocks line of sight but can't be hooked.
+## The grapple. Lives under the camera: aims along the view, hooks any world
+## surface within range (decided 2026-10-11: no eligibility rules), and draws
+## the cable. The player controller reads `anchor` and `rope_length` to apply
+## rope physics. Players and bots can't be hooked; the aim ray ignores them.
 
 signal attached(point: Vector3)
 signal released(boosted: bool)
@@ -108,10 +105,8 @@ func _update_aim() -> void:
 
 
 func _is_hookable(collider: Object) -> bool:
-	var body := collider as CollisionObject3D
-	if body == null or body.is_in_group("no_grapple"):
-		return false
-	return body.get_collision_layer_value(GRAPPLE_LAYER)
+	# Any world geometry the aim ray reaches (it only tests world layers).
+	return collider is CollisionObject3D
 
 
 func try_attach() -> bool:

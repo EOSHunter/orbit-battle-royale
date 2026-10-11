@@ -146,7 +146,11 @@ func _run() -> void:
 	b2._think = 0.0
 	b2._goal = player.global_position
 	b2.set_physics_process(true)
-	await _wait(5.0)
+	# Its aim is imperfect by design, so give it up to 12 s to land a hit.
+	for i in 12 * Engine.physics_ticks_per_second:
+		await physics_frame
+		if player.health.health + player.health.shield < hp_before:
+			break
 	_check("A bot that sees the player engages and deals damage", player.health.health + player.health.shield < hp_before, "%.0f → %.0f" % [hp_before, player.health.health + player.health.shield])
 
 	print("\n%s: %d failed" % ["ALL PASSED" if failures == 0 else "FAILURES", failures])

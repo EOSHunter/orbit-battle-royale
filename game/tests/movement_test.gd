@@ -79,9 +79,12 @@ func _run() -> void:
 	_check("40 m wall reads as in range", player.tether.aim == Tethercaster.Aim.IN_RANGE, "%.1f m" % player.tether.aim_distance)
 	await _place(Vector3(0, 0.05, -60), Vector3(7, 6, -124.5))
 	_check("65 m wall reads as out of range", player.tether.aim == Tethercaster.Aim.OUT_OF_RANGE, "%.1f m" % player.tether.aim_distance)
-	await _place(Vector3(14, 0.05, -18), Vector3(14, 5, -30))
-	_check("Glass reads as not hookable", player.tether.aim == Tethercaster.Aim.NOT_HOOKABLE)
-	_check("Glass refuses the tether", not player.tether.try_attach())
+	await _place(Vector3(20, 0.05, -18), Vector3(20, 5, -30))
+	_check("Glass can be hooked", player.tether.aim == Tethercaster.Aim.IN_RANGE and player.tether.try_attach())
+	player.tether.reset()
+	await _place(Vector3(0, 0.05, 8), Vector3(0, 0, -6))
+	_check("The ground can be hooked", player.tether.aim == Tethercaster.Aim.IN_RANGE and player.tether.try_attach())
+	player.tether.reset()
 
 	# Swing across the gap: hook the beam, ride the rope, release with a jump.
 	_drops.clear()
