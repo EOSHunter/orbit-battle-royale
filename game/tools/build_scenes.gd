@@ -219,12 +219,8 @@ func _environment(root: Node) -> void:
 	we.name = "WorldEnvironment"
 	var env := Environment.new()
 	var sky := Sky.new()
-	var mat := ProceduralSkyMaterial.new()
-	mat.sky_top_color = Color("141a35")
-	mat.sky_horizon_color = Color("6b5a8e")
-	mat.ground_horizon_color = Color("3a2d56")
-	mat.ground_bottom_color = Color("0b101b")
-	mat.sun_angle_max = 20.0
+	var mat := ShaderMaterial.new()
+	mat.shader = load("res://shaders/ringed_sky.gdshader")
 	sky.sky_material = mat
 	env.background_mode = Environment.BG_SKY
 	env.sky = sky
@@ -248,40 +244,10 @@ func _environment(root: Node) -> void:
 	_add(root, sun)
 
 
-func _sky(root: Node) -> void:
-	# Veyra's rings: a flattened torus far away, plus the neighbouring planet.
-	var sky := Node3D.new()
-	sky.name = "SkyObjects"
-	_add(root, sky)
-	var rings := MeshInstance3D.new()
-	rings.name = "Rings"
-	var torus := TorusMesh.new()
-	torus.inner_radius = 2900.0
-	torus.outer_radius = 3700.0
-	torus.rings = 128
-	torus.ring_segments = 8
-	rings.mesh = torus
-	rings.scale = Vector3(1.0, 0.004, 1.0)
-	rings.rotation_degrees = Vector3(16, 0, -14)
-	rings.position = Vector3(0, -500, -2600)
-	rings.material_override = _unshaded(Color(0.93, 0.9, 1.0, 0.5))
-	rings.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
-	_add(sky, rings)
-	var planet := MeshInstance3D.new()
-	planet.name = "Planet"
-	var sphere := SphereMesh.new()
-	sphere.radius = 700.0
-	sphere.height = 1400.0
-	planet.mesh = sphere
-	var pm := StandardMaterial3D.new()
-	pm.albedo_color = Color("3a2d6e")
-	pm.emission_enabled = true
-	pm.emission = Color("2a2350")
-	pm.disable_fog = true
-	planet.material_override = pm
-	planet.position = Vector3(2400, 700, -5600)
-	planet.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
-	_add(sky, planet)
+func _sky(_scene_root: Node) -> void:
+	# The rings and the neighbouring planet are drawn by the sky shader
+	# (shaders/ringed_sky.gdshader); nothing to place in the scene.
+	pass
 
 
 func _box(n: String, center: Vector3, size: Vector3, mat: String, hookable := false, rot := Vector3.ZERO, group := "") -> StaticBody3D:

@@ -386,6 +386,8 @@ class Model:
         """before_export(lows) runs after baking, before export: e.g. add an armature and skin."""
         global _EDGE_RADIUS
         _EDGE_RADIUS = max(0.0028, self.bevel * 1.5)
+        if os.environ.get("KIT_PREVIEW"):
+            texture_size = 128  # fast iteration: tiny bake, same geometry and export
         lows, highs = [], []
         for group, objs in self.parts.items():
             name = self.id if group == "body" else f"{self.id}-{group}"

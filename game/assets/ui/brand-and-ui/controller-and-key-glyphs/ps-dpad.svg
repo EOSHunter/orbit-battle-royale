@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+<title>PlayStation directional buttons</title>
+<path d="M25 6L39 6L39 22L32 28.5L25 22Z" fill="#141d2d" stroke="#7083a0" stroke-width="2.5" stroke-linejoin="round"/><path class="ink" d="M32 10.5L35.5 15.5L28.5 15.5Z" fill="#f3f5fa"/><path d="M58 25L58 39L42 39L35.5 32L42 25Z" fill="#141d2d" stroke="#7083a0" stroke-width="2.5" stroke-linejoin="round"/><path class="ink" d="M53.5 32L48.5 35.5L48.5 28.5Z" fill="#f3f5fa"/><path d="M39 58L25 58L25 42L32 35.5L39 42Z" fill="#141d2d" stroke="#7083a0" stroke-width="2.5" stroke-linejoin="round"/><path class="ink" d="M32 53.5L28.5 48.5L35.5 48.5Z" fill="#f3f5fa"/><path d="M6 39L6 25L22 25L28.5 32L22 39Z" fill="#141d2d" stroke="#7083a0" stroke-width="2.5" stroke-linejoin="round"/><path class="ink" d="M10.5 32L15.5 28.5L15.5 35.5Z" fill="#f3f5fa"/>
+</svg>

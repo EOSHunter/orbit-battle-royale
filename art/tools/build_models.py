@@ -22,6 +22,8 @@ scripts = sorted(glob.glob(os.path.join(REPO, "art", "*", "models", "*.py")))
 results = []
 for path in scripts:
     asset_id = os.path.splitext(os.path.basename(path))[0]
+    if asset_id.startswith("_"):
+        continue  # shared helpers, not assets
     category = os.path.basename(os.path.dirname(os.path.dirname(path)))
     if args and asset_id not in args and category not in args:
         continue

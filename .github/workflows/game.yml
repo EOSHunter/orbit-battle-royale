@@ -27,8 +27,21 @@ jobs:
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
+
+      # Git LFS bandwidth is limited, so only the game's own assets are pulled
+      # (not art/ sources), and they're cached until an LFS file changes.
+      - name: List the game's LFS files
+        run: git lfs ls-files --long --include="game/**" | cut -d' ' -f1 | sort > .lfs-game-ids
+
+      - name: Cache LFS objects
+        uses: actions/cache@v4
         with:
-          lfs: true
+          path: .git/lfs
+          key: lfs-game-${{ hashFiles('.lfs-game-ids') }}
+          restore-keys: lfs-game-
+
+      - name: Pull the game's LFS files
+        run: git lfs pull --include="game/**"
 
       - name: Cache Godot and the web export template
         id: godot-cache

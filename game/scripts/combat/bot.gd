@@ -10,6 +10,13 @@ enum Mode { PATROL, ENGAGE, SEARCH, RETREAT, HEAL, DEAD }
 
 const THINK_INTERVAL := 0.15
 const EYE_HEIGHT := 1.55
+const BODY_MODELS := [
+	"res://assets/models/characters/bot-operator-rust.glb",
+	"res://assets/models/characters/bot-operator-tan.glb",
+	"res://assets/models/characters/bot-operator-olive.glb",
+	"res://assets/models/characters/bot-operator-white.glb",
+	"res://assets/models/characters/bot-operator-black.glb",
+]
 
 @export var display_name := "Bot"
 @export var weapon_id: StringName = &"ar7"
@@ -48,7 +55,9 @@ var _strafe_timer := 0.0
 var _stuck := 0.0
 var _search_timer := 0.0
 var _gravity := 20.0
-var _visor: MeshInstance3D
+var _visor: Node3D
+var _anim: AnimationPlayer
+var _anim_now := ""
 
 @onready var health: Health = $Health
 
@@ -76,6 +85,8 @@ func _build_body() -> void:
 	shape.shape = cap
 	shape.position.y = 0.9
 	add_child(shape)
+	if _build_operator():
+		return
 	var body := MeshInstance3D.new()
 	var mesh := CapsuleMesh.new()
 	mesh.radius = 0.34
@@ -112,6 +123,52 @@ func _build_body() -> void:
 	gmat.albedo_color = Color("1a2135")
 	gun.material_override = gmat
 	add_child(gun)
+
+
+## Animated bot operator in one of the color variants, with the weapon in its
+## hands (the clips hold the right hand on the grip at this spot). False if the
+## models aren't imported, so the placeholder capsule is used instead.
+func _build_operator() -> bool:
+	var path: String = BODY_MODELS[absi(hash(display_name)) % BODY_MODELS.size()]
+	if not ResourceLoader.exists(path):
+		return false
+	var body := (load(path) as PackedScene).instantiate() as Node3D
+	body.rotation.y = PI
+	add_child(body)
+	_anim = body.find_child("AnimationPlayer", true, false) as AnimationPlayer
+	var gun := weapon.instantiate_model()
+	if gun:
+		gun.position = Vector3(0.2, 1.17, -0.3)
+		add_child(gun)
+	_play("idle")
+	return true
+
+
+func _play(clip: String) -> void:
+	if _anim == null or clip == _anim_now:
+		return
+	for name in _anim.get_animation_list():
+		if name.begins_with(clip):
+			_anim.play(name, 0.2)
+			_anim_now = clip
+			return
+
+
+func _animate(on_floor: bool, ground_speed: float) -> void:
+	if mode == Mode.HEAL:
+		_play("heal")
+	elif _reload_left > 0.0 and ground_speed < 0.3:
+		_play("reload")
+	elif not on_floor:
+		_play("fall")
+	elif ground_speed > (walk_speed + run_speed) * 0.5:
+		_play("run")
+	elif ground_speed > 0.3:
+		_play("walk")
+	else:
+		_play("idle")
+	if _anim:
+		_anim.speed_scale = clampf(ground_speed / (run_speed if _anim_now == "run" else walk_speed), 0.6, 1.4) if _anim_now in ["run", "walk"] else 1.0
 
 
 func eye_position() -> Vector3:
@@ -190,6 +247,7 @@ func _physics_process(delta: float) -> void:
 	var before := global_position
 	move_and_slide()
 	var moved := (global_position - before).length()
+	_animate(is_on_floor(), Vector2(velocity.x, velocity.z).length())
 	_stuck = _stuck + delta if move != Vector3.ZERO and moved < speed * delta * 0.2 else 0.0
 	face.y = 0.0
 	if face.length() > 0.01:
@@ -324,7 +382,9 @@ func _on_died(attacker: Node) -> void:
 	mode = Mode.DEAD
 	collision_layer = 0
 	collision_mask = Hitscan.WORLD | Hitscan.GRAPPABLE
-	_visor.visible = false
+	if _visor:
+		_visor.visible = false
+	_play("death")
 	eliminated.emit(self, attacker)
 	var t := create_tween()
 	t.tween_property(self, "rotation:x", -PI / 2.0, 0.4).set_ease(Tween.EASE_IN)

@@ -33,7 +33,7 @@ albedo_color = Color(0.77254903, 0.9490196, 0.46666667, 1)
 radius = 0.14
 height = 0.28
 
-[node name="Player" type="CharacterBody3D" unique_id=1205228489]
+[node name="Player" type="CharacterBody3D" unique_id=1196871102]
 collision_layer = 4
 collision_mask = 11
 floor_max_angle = 0.80285144
@@ -41,35 +41,35 @@ floor_snap_length = 0.35
 script = ExtResource("1_qlg0r")
 start_loadout = PackedStringArray("tethercaster")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=171026157]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=674941356]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
 shape = SubResource("CapsuleShape3D_y4r1p")
 
-[node name="Head" type="Node3D" parent="." unique_id=1569292697]
+[node name="Head" type="Node3D" parent="." unique_id=188539658]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.62, 0)
 
-[node name="Camera3D" type="Camera3D" parent="Head" unique_id=1104471790]
+[node name="Camera3D" type="Camera3D" parent="Head" unique_id=1625486781]
 fov = 90.0
 far = 9000.0
 
-[node name="Weapons" type="Node3D" parent="Head/Camera3D" unique_id=1862539997]
+[node name="Weapons" type="Node3D" parent="Head/Camera3D" unique_id=507134896]
 script = ExtResource("2_tuyoq")
 
-[node name="Tethercaster" type="Node3D" parent="Head/Camera3D" unique_id=1248860643]
+[node name="Tethercaster" type="Node3D" parent="Head/Camera3D" unique_id=1353450231]
 script = ExtResource("3_fjrip")
 
-[node name="Cable" type="MeshInstance3D" parent="Head/Camera3D/Tethercaster" unique_id=529872602]
+[node name="Cable" type="MeshInstance3D" parent="Head/Camera3D/Tethercaster" unique_id=1382414040]
 material_override = SubResource("StandardMaterial3D_d2wvv")
 cast_shadow = 0
 mesh = SubResource("CylinderMesh_3v2ag")
 
-[node name="AnchorMarker" type="MeshInstance3D" parent="Head/Camera3D/Tethercaster" unique_id=910219399]
+[node name="AnchorMarker" type="MeshInstance3D" parent="Head/Camera3D/Tethercaster" unique_id=1875343233]
 material_override = SubResource("StandardMaterial3D_jej6c")
 cast_shadow = 0
 mesh = SubResource("SphereMesh_f1ej7")
 
-[node name="Health" type="Node" parent="." unique_id=1617771618]
+[node name="Health" type="Node" parent="." unique_id=366623653]
 script = ExtResource("4_smehm")
 
-[node name="Inventory" type="Node" parent="." unique_id=1004870151]
+[node name="Inventory" type="Node" parent="." unique_id=674606585]
 script = ExtResource("5_ur7pv")

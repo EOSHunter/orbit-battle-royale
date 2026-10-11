@@ -50,6 +50,8 @@ var _coyote := 0.0
 var _jump_buffer := 0.0
 var _peak_y := 0.0
 var _was_on_floor := true
+var _aura: CPUParticles3D
+var _dust_left := 0.0
 var _land_dip := 0.0
 var _swing_mode := false
 
@@ -269,6 +271,7 @@ func _combat(delta: float, combat: bool, move_amount: float) -> void:
 			using = null
 			health.apply_heal(def)
 			inventory.consume(_use_slot)
+			Fx.stop_aura(_aura)
 			heal_finished.emit(def)
 	_update_focus()
 
@@ -284,6 +287,8 @@ func start_use(slot: int) -> bool:
 	using = def
 	use_left = def.use_time
 	_use_slot = slot
+	Fx.stop_aura(_aura)
+	_aura = Fx.heal_aura(self, def.pool != HealDef.Pool.HEALTH)
 	heal_started.emit(def)
 	return true
 
@@ -292,6 +297,7 @@ func _interrupt_use(reason: String) -> void:
 	if using == null:
 		return
 	using = null
+	Fx.stop_aura(_aura)
 	if reason != "":
 		heal_interrupted.emit(reason)
 
@@ -424,9 +430,15 @@ func _track_landing(fall_speed: float) -> void:
 		var drop := _peak_y - global_position.y
 		if drop > 1.0:
 			landed.emit(drop, fall_speed)
+			Fx.landing_dust(get_world_3d(), global_position, clampf(fall_speed / 20.0, 0.0, 1.0))
 			# No fall damage, but a short camera dip so big drops still read as big.
 			_land_dip = clampf(fall_speed * 0.012, 0.0, 0.18)
 		_peak_y = global_position.y
 	else:
 		_peak_y = global_position.y
+		if sprinting:
+			_dust_left -= get_physics_process_delta_time()
+			if _dust_left <= 0.0:
+				_dust_left = 0.18
+				Fx.sprint_dust(get_world_3d(), global_position)
 	_was_on_floor = on_floor

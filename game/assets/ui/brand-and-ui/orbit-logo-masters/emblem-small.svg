@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+<title>Orbit Royale emblem, small</title>
+<defs><mask id="orbit-ring-cut-s" maskUnits="userSpaceOnUse" x="-14.5" y="-14.5" width="77" height="77"><rect x="-14.5" y="-14.5" width="77" height="77" fill="#fff"/><path d="M44.04 19.68A22.5 6.5 -20 0 1 5.87 33.58" fill="none" stroke="#000" stroke-width="8.4"/></mask></defs>
+<circle class="ink-s" cx="24" cy="24" r="11.25" fill="none" stroke="#f3f5fa" stroke-width="6.5" mask="url(#orbit-ring-cut-s)"/><path class="accent-s" d="M21.59 31.63A22.5 6.5 -20 0 1 7.15 25.36M37.78 14.21A22.5 6.5 -20 0 1 30.75 28.3" fill="none" stroke="#c5f277" stroke-width="3.6"/>
+</svg>

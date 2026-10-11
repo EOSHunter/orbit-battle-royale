@@ -30,12 +30,18 @@ static func fire(world: World3D, origin: Vector3, forward: Vector3, muzzle: Vect
 			if body:
 				health = body.get_node_or_null("Health") as Health
 			if health and health.alive:
+				var shielded := health.shield > 0.0
 				var dealt := health.take_damage(def.damage_at(origin.distance_to(end)) * damage_scale, origin, shooter)
 				result.hits += 1
 				result.damage += dealt
 				if not health.alive:
 					result.kills += 1
-				Fx.impact(world, end, hit.normal, true)
+				if shielded:
+					Fx.shield_hit(world, end, hit.normal)
+					if health.shield <= 0.0 and body is Node3D:
+						Fx.shield_break(world, (body as Node3D).global_position + Vector3.UP * 1.0)
+				else:
+					Fx.impact(world, end, hit.normal, true)
 			else:
 				Fx.impact(world, end, hit.normal, false)
 		if i < 3:

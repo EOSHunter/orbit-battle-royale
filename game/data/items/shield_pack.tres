@@ -15,3 +15,4 @@ pool = 1
 amount = 50.0
 use_time = 3.5
 move_scale = 0.45
+model_path = "res://assets/models/healing-items/shield-pack.glb"

@@ -58,7 +58,7 @@ func _build_visual() -> void:
 	_visual = Node3D.new()
 	add_child(_visual)
 	_visual.position.y = 0.5
-	var model := stack.def.instantiate_model() if not is_ammo() else null
+	var model := AmmoTypes.instantiate_model(ammo_type) if is_ammo() else stack.def.instantiate_model()
 	if model:
 		_visual.add_child(model)
 	else:
