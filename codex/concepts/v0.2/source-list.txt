@@ -1,0 +1,69 @@
+STYLE NOTES (for reference): original military sci-fi on the alien planet Veyra, enormous planetary rings across the sky, frontier colony gear, warm amber equipment lights against cool blue and violet landscapes, pale lime accent (#C5F277). Health items read coral, shield items read cyan. No logos, text or existing franchise designs.
+
+— CHARACTERS —
+Operator (third-person): Character concept sheet of an original frontier expedition soldier for a sci-fi battle royale, full-body front, side and back turnaround, practical armored survey suit with layered soft and hard plates, rounded helmet with a wide amber visor, utility harness and pouches, muted slate-blue and graphite colors with pale lime accent stripes, readable silhouette at distance, neutral grey background, clean concept art, no text.
+Operator bot variants: Lineup of six variants of the same sci-fi expedition soldier, identical body with swapped gear (shoulder pads, backpacks, helmet attachments) and color schemes (slate, rust, sand, olive, white, charcoal), each instantly distinguishable at distance, amber visors, neutral grey background, concept art turnaround, no text.
+First-person arms: First-person view concept of armored sci-fi gloved hands and forearms, survey suit sleeves with amber status light on the wrist, slate-blue and graphite materials, shown in three poses (open hand, gripping, pointing), neutral grey background, concept art, no text.
+
+— WEAPONS (render each as a side view plus 3/4 view) —
+AR-7 Wayfarer (assault rifle): Weapon concept of an original sci-fi assault rifle called AR-7 Wayfarer, dependable frontier colony design, chunky boxy receiver, side-mounted magazine, small amber status light, worn gunmetal and slate polymer with a pale lime stripe, clear distinctive silhouette, side view and 3/4 view on neutral grey background, concept art, no text.
+SG-4 Breaker (shotgun): Weapon concept of an original sci-fi pump shotgun called SG-4 Breaker, heavy short barrel shroud, oversized pump grip, tube magazine, rugged colony-industrial design, worn gunmetal and dark brown composite, amber light, side view and 3/4 view on neutral grey background, concept art, no text.
+P-12 Spark (pistol): Weapon concept of an original compact sci-fi sidearm called P-12 Spark, accurate fast-handling design, angular slide with cyan-free amber indicator, gunmetal and slate polymer, side view and 3/4 view on neutral grey background, concept art, no text.
+S-9 Wisp (SMG): Weapon concept of an original compact sci-fi submachine gun called S-9 Wisp, lightweight skeletal stock, vertical foregrip, top-loaded magazine, sleek aggressive silhouette, gunmetal and pale grey, amber status light, side view and 3/4 view on neutral grey background, concept art, no text.
+SR-8 Longview (sniper): Weapon concept of an original long sci-fi precision rifle called SR-8 Longview, long fluted barrel, large survey-style optic, bipod folded under the barrel, bolt action, gunmetal and slate with a pale lime stripe, side view and 3/4 view on neutral grey background, concept art, no text.
+
+— HEALING ITEMS (keep each silhouette distinct) —
+Field Patch (+25 health): Item concept of a small sci-fi medical patch pack, flat folded pouch with a coral-red cross emblem shape, adhesive tabs, colony-issue design, pickup view and held-in-hand view, neutral grey background, concept art, no text.
+Trauma Kit (full health): Item concept of a sci-fi trauma medical kit, rugged hard case with coral-red accents and a latch, injector and bandage roll visible, colony-issue design, closed and open views, neutral grey background, concept art, no text.
+Shield Cell (+25 shields): Item concept of a small hexagonal sci-fi energy cell, glowing cyan core visible through a window, compact and pocketable, metal caps on both ends, neutral grey background, concept art, no text.
+Shield Pack (+50 shields): Item concept of a medium sci-fi shield battery pack, hexagonal housing with three glowing cyan cells inside, carry handle, clearly larger than a single cell, neutral grey background, concept art, no text.
+Shield Core (full shields): Item concept of a large sci-fi shield core device, heavy cylindrical canister with a bright cyan energy core and protective cage, two-handed item, neutral grey background, concept art, no text.
+Phoenix Capsule (full health and shields): Item concept of a rare sci-fi revival capsule, sleek vertical injector capsule glowing half coral and half cyan, premium elegant design, neutral grey background, concept art, no text.
+
+— GRENADES AND UTILITY —
+Fragmentation grenade: Item concept of an original sci-fi fragmentation grenade, segmented spherical body, pin and amber fuse light, rugged military design, neutral grey background, concept art, no text.
+Arc grenade: Item concept of an original sci-fi electrical disruption grenade, cylindrical body with exposed coil rings and crackling violet-white arcs, neutral grey background, concept art, no text.
+Veil grenade: Item concept of an original sci-fi smoke concealment grenade, tall canister with vent slots and a soft grey cloud starting to escape, neutral grey background, concept art, no text.
+Tethercaster (grapple): Item concept of an original wrist- or hand-held sci-fi grappling launcher called Tethercaster, compact launcher with a three-pronged hook head, glowing pale lime cable, recharge indicator lights, shown fired with cable extended and holstered, neutral grey background, concept art, no text.
+
+— PICKUPS —
+Ammunition boxes: Prop concept sheet of four sci-fi ammunition boxes (light, medium, heavy, shells), same colony-crate family with different sizes, shapes and color bands so each type is readable, neutral grey background, concept art, no text.
+Colony supply crate: Prop concept of a frontier colony supply crate for loot, rugged hard-shell container with amber lights and a pop-open lid, shown closed and open with a soft glow inside, neutral grey background, concept art, no text.
+
+— VEHICLES (side, front and 3/4 views) —
+Mule: Vehicle concept of an original sci-fi colony buggy called Mule, rugged open-frame two-seat off-roader with big suspension and chunky tires, roll cage, amber work lights, slate and sand paint, side, front and 3/4 views on neutral grey background, concept art, no text.
+Skimmer: Vehicle concept of an original one-seat sci-fi hover bike called Skimmer, fast and exposed rider position, twin hover pads, sleek narrow body, amber and pale lime lights, side, front and 3/4 views on neutral grey background, concept art, no text.
+Strider: Vehicle concept of an original heavy sci-fi survey rover called Strider, slow six-wheeled armored research vehicle, enclosed cabin, sensor mast and antenna array, durable and conspicuous, side, front and 3/4 views on neutral grey background, concept art, no text.
+Kestrel: Vehicle concept of an original unarmed sci-fi utility rotorcraft called Kestrel, compact cockpit, two enclosed ducted lift rotors, landing skids, expedition colony livery in slate and white with amber lights, no weapons, side, front and 3/4 views on neutral grey background, concept art, no text.
+
+— DROP TRANSPORT —
+Drop transport: Vehicle concept of an original large sci-fi colony carrier aircraft that drops 60 players at the start of a match, long cargo fuselage, wide wings with four large engine pods, open rear loading ramp, slate and white colony livery with amber lights, readable silhouette against a ringed sky, side, top and 3/4 views on neutral grey background, concept art, no text.
+Drop transport interior: Interior concept of a sci-fi cargo carrier hold, long bay with fold-down seats along the walls, red-amber jump lights, rear ramp open to a sky with enormous planetary rings below the clouds, concept art, no text.
+Descent device options: Concept comparison sheet of three sci-fi descent devices for a skydiving player: a compact deployable glider wing, a back-mounted thruster pack with downward jets, and a small drag-chute pack, same suit for scale, neutral grey background, concept art, no text.
+
+— WORLD: RINGFALL —
+Ringed sky: Environment concept of an alien sky with enormous planetary rings sweeping diagonally across the entire sky, a large violet gas giant on the horizon, a small pale moon, deep blue to violet gradient at dusk, wide cinematic view, concept art, no text.
+Ringfall terrain overview: Aerial environment concept of an alien island landscape called Ringfall, dark basalt mountains, pale alien grasslands, a massive turquoise crater lake in the center where a ring fragment struck, colony roads, cinematic matte painting, no text.
+Luminous vegetation: Environment prop sheet of alien plants, pale silver grass clumps, glowing cyan and violet shrubs, luminous roots, giant bulbous flowering plants taller than a person, night and day versions, neutral grey background, concept art, no text.
+Colony structure kit: Modular architecture concept sheet of frontier colony buildings, habitat module, prefab warehouse, landing pad, comms mast, gantries, stairs and pipes, practical industrial style in slate, white and rust with amber work lights, neutral grey background, concept art, no text.
+Ancient ruins kit: Modular architecture concept sheet of mysterious ancient alien ruins, monolithic dark stone walls, arches, pillars and bridge spans with faint carved patterns and dim cyan inlays, weathered and overgrown, neutral grey background, concept art, no text.
+Crown Observatory: Environment concept of a mountaintop colony observatory with telescope domes and a huge fractured communications dish, long sightlines over an alien valley, planetary rings in the sky, concept art, no text.
+Anchorport: Environment concept of a frontier cargo spaceport, landing pads, warehouses, stacked cargo containers and large grounded transport ships, amber floodlights, dense urban cover, ringed sky, concept art, no text.
+Glass Basin: Environment concept of a vast turquoise crater lake with jagged black volcanic glass formations and small rocky islands, a giant ring fragment half-buried at the edge, dramatic ringed sky, concept art, no text.
+Bloomwild: Environment concept of an alien forest of giant glowing plants and luminous roots, shallow streams, cyan and violet bioluminescence, dense cover and ambush paths, ringed sky through the canopy, concept art, no text.
+Relay Nine: Environment concept of a colony power station with tall cooling structures, gantries, catwalks, pipes and maintenance tunnel entrances, vertical multilevel layout, amber lights, ringed sky, concept art, no text.
+The Spine: Environment concept of a long elevated cliff ridge with an ancient stone bridge spanning a deep gap, contested high ground, wind-swept grass, planetary rings overhead, concept art, no text.
+Hollow Array: Environment concept of ancient alien ruins embedded in a narrow canyon, carved stone array structures, tight corridors and sheltered passages, dim cyan inlays, concept art, no text.
+Prop kit: Prop concept sheet of colony props, crates, barrels, fences, barriers, floodlights, debris and a vehicle spawn pad, slate, white and rust with amber lights, neutral grey background, concept art, no text.
+
+— EFFECTS —
+Ion storm: Effect concept of an approaching ion storm wall on an alien planet, towering violet energy clouds, crackling lightning, particles, a sharp glowing boundary edge across the landscape, ringed sky, concept art, no text.
+Combat effects: Effect concept sheet for a sci-fi shooter, muzzle flashes, tracers, impact sparks on rock, metal, glass and water, a cyan shield hit ripple, a cyan shield shatter, neutral dark background, concept art, no text.
+Healing effects: Effect concept sheet of healing feedback, soft coral particles for health restoration and cyan hexagonal shimmer for shield recharge around a sci-fi soldier, neutral dark background, concept art, no text.
+
+— BRAND AND UI —
+Logo exploration: Logo design exploration for a game called ORBIT ROYALE, bold geometric wordmark where the letter O is a planet crossed by one thin orbital arc, ROYALE as a smaller spaced descriptor, flat vector, white and pale lime on deep navy, several variations, no gradients or bevels.
+Item and weapon icons: Game UI icon sheet, flat solid silhouettes on transparent background of five sci-fi weapons, six healing items, three grenades, a grappling launcher and four ammo types, consistent stroke and weight, readable at small sizes, white on dark navy.
+HUD icons: Game UI icon set, flat solid glyphs for health cross, shield hexagon, survivors, eliminations, storm lightning, map marker and success, warning and error states, consistent style, white on dark navy.
+Ringfall map: Top-down stylized map illustration of an alien island with a central turquoise crater lake, basalt highlands, a glowing forest, colony roads and seven location areas, clean readable game-map style, no text.
+Key art: Cinematic key art for a sci-fi battle royale, lone expedition soldier on a basalt ridge looking over a crater lake and colony ruins, enormous planetary rings across a dusk sky, a carrier aircraft dropping tiny figures in the distance, warm amber lights against cool violet landscape, wide 16:9, no text.

@@ -2,10 +2,11 @@
 
 A browser battle royale on an alien planet whose enormous rings dominate the sky. Scavenge, grapple through vertical terrain, and rotate by ground vehicle or unarmed aircraft to become the last survivor.
 
-**Status: preproduction.** This repository currently contains concept and design documents, not a playable game. Premium presentation and responsive gameplay are the quality goal.
+**Status: preproduction.** This repository contains concept/design documents, a UI prototype, and an asset hub. The complete battle royale is not implemented. Premium presentation and responsive gameplay are the quality goal.
 
 ## Start here
 
+- [Codex workspace](codex/README.md): concept art, generation prompts, and original planning snapshots for Claude and other collaborators.
 - [Game concept](docs/game-concept.md): world, Ringfall map, combat, equipment, vehicles, bots, and match flow.
 - [Design system v0.1](docs/design-system.md): confirmed requirements, proposed inventory limits, brand direction, UI contracts, accessibility, and implementation sequence.
 - [Development roadmap and Claude handoff](docs/claude-handoff.md): priorities, unresolved decisions, and milestone acceptance criteria.

@@ -1,0 +1,345 @@
+{
+  "version": "0.2",
+  "tool": "built-in image_gen",
+  "conceptCount": 48,
+  "concepts": [
+    {
+      "index": 1,
+      "section": "CHARACTERS",
+      "name": "Operator (third-person)",
+      "file": "01-operator.png",
+      "status": "complete"
+    },
+    {
+      "index": 2,
+      "section": "CHARACTERS",
+      "name": "Operator bot variants",
+      "file": "02-operator-bot-variants.png",
+      "status": "complete"
+    },
+    {
+      "index": 3,
+      "section": "CHARACTERS",
+      "name": "First-person arms",
+      "file": "03-first-person-arms.png",
+      "status": "complete"
+    },
+    {
+      "index": 4,
+      "section": "WEAPONS (render each as a side view plus 3/4 view)",
+      "name": "AR-7 Wayfarer (assault rifle)",
+      "file": "04-ar-7-wayfarer.png",
+      "status": "complete"
+    },
+    {
+      "index": 5,
+      "section": "WEAPONS (render each as a side view plus 3/4 view)",
+      "name": "SG-4 Breaker (shotgun)",
+      "file": "05-sg-4-breaker.png",
+      "status": "complete"
+    },
+    {
+      "index": 6,
+      "section": "WEAPONS (render each as a side view plus 3/4 view)",
+      "name": "P-12 Spark (pistol)",
+      "file": "06-p-12-spark.png",
+      "status": "complete"
+    },
+    {
+      "index": 7,
+      "section": "WEAPONS (render each as a side view plus 3/4 view)",
+      "name": "S-9 Wisp (SMG)",
+      "file": "07-s-9-wisp.png",
+      "status": "complete"
+    },
+    {
+      "index": 8,
+      "section": "WEAPONS (render each as a side view plus 3/4 view)",
+      "name": "SR-8 Longview (sniper)",
+      "file": "08-sr-8-longview.png",
+      "status": "complete"
+    },
+    {
+      "index": 9,
+      "section": "HEALING ITEMS (keep each silhouette distinct)",
+      "name": "Field Patch (+25 health)",
+      "file": "09-field-patch-refined.png",
+      "status": "complete",
+      "firstDraftFile": "09-field-patch.png"
+    },
+    {
+      "index": 10,
+      "section": "HEALING ITEMS (keep each silhouette distinct)",
+      "name": "Trauma Kit (full health)",
+      "file": "10-trauma-kit.png",
+      "status": "complete"
+    },
+    {
+      "index": 11,
+      "section": "HEALING ITEMS (keep each silhouette distinct)",
+      "name": "Shield Cell (+25 shields)",
+      "file": "11-shield-cell.png",
+      "status": "complete"
+    },
+    {
+      "index": 12,
+      "section": "HEALING ITEMS (keep each silhouette distinct)",
+      "name": "Shield Pack (+50 shields)",
+      "file": "12-shield-pack.png",
+      "status": "complete"
+    },
+    {
+      "index": 13,
+      "section": "HEALING ITEMS (keep each silhouette distinct)",
+      "name": "Shield Core (full shields)",
+      "file": "13-shield-core.png",
+      "status": "complete"
+    },
+    {
+      "index": 14,
+      "section": "HEALING ITEMS (keep each silhouette distinct)",
+      "name": "Phoenix Capsule (full health and shields)",
+      "file": "14-phoenix-capsule.png",
+      "status": "complete"
+    },
+    {
+      "index": 15,
+      "section": "GRENADES AND UTILITY",
+      "name": "Fragmentation grenade",
+      "file": "15-fragmentation-grenade.png",
+      "status": "complete"
+    },
+    {
+      "index": 16,
+      "section": "GRENADES AND UTILITY",
+      "name": "Arc grenade",
+      "file": "16-arc-grenade.png",
+      "status": "complete"
+    },
+    {
+      "index": 17,
+      "section": "GRENADES AND UTILITY",
+      "name": "Veil grenade",
+      "file": "17-veil-grenade.png",
+      "status": "complete"
+    },
+    {
+      "index": 18,
+      "section": "GRENADES AND UTILITY",
+      "name": "Tethercaster (grapple)",
+      "file": "18-tethercaster.png",
+      "status": "complete"
+    },
+    {
+      "index": 19,
+      "section": "PICKUPS",
+      "name": "Ammunition boxes",
+      "file": "19-ammunition-boxes.png",
+      "status": "complete"
+    },
+    {
+      "index": 20,
+      "section": "PICKUPS",
+      "name": "Colony supply crate",
+      "file": "20-colony-supply-crate.png",
+      "status": "complete"
+    },
+    {
+      "index": 21,
+      "section": "VEHICLES (side, front and 3/4 views)",
+      "name": "Mule",
+      "file": "21-mule.png",
+      "status": "complete"
+    },
+    {
+      "index": 22,
+      "section": "VEHICLES (side, front and 3/4 views)",
+      "name": "Skimmer",
+      "file": "22-skimmer.png",
+      "status": "complete"
+    },
+    {
+      "index": 23,
+      "section": "VEHICLES (side, front and 3/4 views)",
+      "name": "Strider",
+      "file": "23-strider.png",
+      "status": "complete"
+    },
+    {
+      "index": 24,
+      "section": "VEHICLES (side, front and 3/4 views)",
+      "name": "Kestrel",
+      "file": "24-kestrel.png",
+      "status": "complete"
+    },
+    {
+      "index": 25,
+      "section": "DROP TRANSPORT",
+      "name": "Drop transport",
+      "file": "25-drop-transport.png",
+      "status": "complete"
+    },
+    {
+      "index": 26,
+      "section": "DROP TRANSPORT",
+      "name": "Drop transport interior",
+      "file": "26-drop-transport-interior.png",
+      "status": "complete"
+    },
+    {
+      "index": 27,
+      "section": "DROP TRANSPORT",
+      "name": "Descent device options",
+      "file": "27-descent-device-options.png",
+      "status": "complete"
+    },
+    {
+      "index": 28,
+      "section": "WORLD: RINGFALL",
+      "name": "Ringed sky",
+      "file": "28-ringed-sky.png",
+      "status": "complete"
+    },
+    {
+      "index": 29,
+      "section": "WORLD: RINGFALL",
+      "name": "Ringfall terrain overview",
+      "file": "29-ringfall-terrain-overview.png",
+      "status": "complete"
+    },
+    {
+      "index": 30,
+      "section": "WORLD: RINGFALL",
+      "name": "Luminous vegetation",
+      "file": "30-luminous-vegetation.png",
+      "status": "complete"
+    },
+    {
+      "index": 31,
+      "section": "WORLD: RINGFALL",
+      "name": "Colony structure kit",
+      "file": "31-colony-structure-kit.png",
+      "status": "complete"
+    },
+    {
+      "index": 32,
+      "section": "WORLD: RINGFALL",
+      "name": "Ancient ruins kit",
+      "file": "32-ancient-ruins-kit.png",
+      "status": "complete"
+    },
+    {
+      "index": 33,
+      "section": "WORLD: RINGFALL",
+      "name": "Crown Observatory",
+      "file": "33-crown-observatory.png",
+      "status": "complete"
+    },
+    {
+      "index": 34,
+      "section": "WORLD: RINGFALL",
+      "name": "Anchorport",
+      "file": "34-anchorport.png",
+      "status": "complete"
+    },
+    {
+      "index": 35,
+      "section": "WORLD: RINGFALL",
+      "name": "Glass Basin",
+      "file": "35-glass-basin.png",
+      "status": "complete"
+    },
+    {
+      "index": 36,
+      "section": "WORLD: RINGFALL",
+      "name": "Bloomwild",
+      "file": "36-bloomwild.png",
+      "status": "complete"
+    },
+    {
+      "index": 37,
+      "section": "WORLD: RINGFALL",
+      "name": "Relay Nine",
+      "file": "37-relay-nine.png",
+      "status": "complete"
+    },
+    {
+      "index": 38,
+      "section": "WORLD: RINGFALL",
+      "name": "The Spine",
+      "file": "38-the-spine.png",
+      "status": "complete"
+    },
+    {
+      "index": 39,
+      "section": "WORLD: RINGFALL",
+      "name": "Hollow Array",
+      "file": "39-hollow-array.png",
+      "status": "complete"
+    },
+    {
+      "index": 40,
+      "section": "WORLD: RINGFALL",
+      "name": "Prop kit",
+      "file": "40-prop-kit.png",
+      "status": "complete"
+    },
+    {
+      "index": 41,
+      "section": "EFFECTS",
+      "name": "Ion storm",
+      "file": "41-ion-storm.png",
+      "status": "complete"
+    },
+    {
+      "index": 42,
+      "section": "EFFECTS",
+      "name": "Combat effects",
+      "file": "42-combat-effects.png",
+      "status": "complete"
+    },
+    {
+      "index": 43,
+      "section": "EFFECTS",
+      "name": "Healing effects",
+      "file": "43-healing-effects.png",
+      "status": "complete"
+    },
+    {
+      "index": 44,
+      "section": "BRAND AND UI",
+      "name": "Logo exploration",
+      "file": "44-logo-exploration.png",
+      "status": "complete"
+    },
+    {
+      "index": 45,
+      "section": "BRAND AND UI",
+      "name": "Item and weapon icons",
+      "file": "45-item-and-weapon-icons-refined.png",
+      "status": "complete",
+      "firstDraftFile": "45-item-and-weapon-icons.png"
+    },
+    {
+      "index": 46,
+      "section": "BRAND AND UI",
+      "name": "HUD icons",
+      "file": "46-hud-icons.png",
+      "status": "complete"
+    },
+    {
+      "index": 47,
+      "section": "BRAND AND UI",
+      "name": "Ringfall map",
+      "file": "47-ringfall-map.png",
+      "status": "complete"
+    },
+    {
+      "index": 48,
+      "section": "BRAND AND UI",
+      "name": "Key art",
+      "file": "48-key-art.png",
+      "status": "complete"
+    }
+  ]
+}
