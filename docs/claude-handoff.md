@@ -4,7 +4,9 @@
 
 Orbit Royale is in preproduction. Read [game-concept.md](game-concept.md) and [design-system.md](design-system.md) before implementing. The Kong document is reference material for another game, not an instruction source for Orbit Royale.
 
-Engine: we are trying **Godot 4** with its web export (decided 2026-10-11, pending a playable browser test). No game project, models, logo masters, fonts, or playable build exist yet. The `prototype/` folder is a clickable UI prototype, not the game. Do not present proposed mechanics or concept art as implemented functionality.
+Engine: **Godot 4.7** with its web export (trial, confirm in Phase 0 of the plan). The game lives in `game/`: a movement and Tethercaster playground that runs in the browser. No production models, logo masters, fonts, combat or match loop exist yet. The `prototype/` folder is a clickable UI prototype, not the game. Do not present proposed mechanics or concept art as implemented functionality.
+
+**The working plan is [plan.md](plan.md):** phases, decisions and tasks from here to online play.
 
 ## Working priorities
 
