@@ -200,12 +200,14 @@ func _sync_sliders() -> void:
 
 
 var _lock_refused := false
+var _notice_time := 0.0
 
 
 func set_lock_refused(refused: bool) -> void:
 	_lock_refused = refused
 	if refused:
-		_capture_hint.text = "This browser view blocks mouse capture.\nHold right-click and move the mouse to look. Left click or Q fires the tether.\nFor full mouse control, open the game in Chrome, Edge or Firefox."
+		_capture_hint.text = "This browser view can't capture the mouse, so the hidden cursor turns the camera.\nPush toward a window edge to keep turning. Chrome, Edge or Firefox give full mouse control."
+		_notice_time = 7.0
 		_capture_hint.add_theme_font_size_override("font_size", 17)
 		_capture_hint.custom_minimum_size = Vector2(760, 0)
 		_pin(_capture_hint, Vector2(0.5, 0), Vector2i(Control.GROW_DIRECTION_BOTH, Control.GROW_DIRECTION_END), Vector2(0, 24))
@@ -236,7 +238,16 @@ func _process(delta: float) -> void:
 	if player == null:
 		return
 	var captured := Input.mouse_mode == Input.MOUSE_MODE_CAPTURED
-	_capture_hint.visible = not captured and not _tuning.visible
+	var free_playing := _lock_refused and Input.mouse_mode == Input.MOUSE_MODE_HIDDEN
+	_notice_time = maxf(0.0, _notice_time - delta)
+	if free_playing:
+		_capture_hint.visible = _notice_time > 0.0
+		_capture_hint.modulate.a = clampf(_notice_time, 0.0, 1.0)
+	else:
+		_capture_hint.visible = not captured and not _tuning.visible
+		_capture_hint.modulate.a = 1.0
+		if _lock_refused and _notice_time == 0.0:
+			_capture_hint.text = "Click to play"
 	_speed.text = "%.1f m/s" % player.horizontal_speed()
 	var state_name: String = ["On ground", "In air", "Tethered"][player.state]
 	if player.state == Player.State.TETHERED:

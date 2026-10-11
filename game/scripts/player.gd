@@ -19,6 +19,12 @@ var crouching := false
 var sprinting := false
 ## Ignore gameplay input briefly, e.g. after the click that captures the mouse.
 var input_grace := 0.0
+## Set when the browser refuses pointer lock: the hidden cursor turns the
+## camera directly, and holding it near a window edge keeps turning.
+var free_look := false
+
+const EDGE_ZONE := 0.12             # fraction of the window width / height
+const EDGE_TURN_SPEED := Vector2(2.6, 1.3)  # rad/s at the very edge
 
 var _coyote := 0.0
 var _jump_buffer := 0.0
@@ -46,11 +52,30 @@ func _unhandled_input(event: InputEvent) -> void:
 	var motion := event as InputEventMouseMotion
 	if motion == null:
 		return
-	# Captured mouse turns freely. Where the browser refuses pointer lock,
-	# holding right-click and moving the mouse turns instead.
-	var dragging := (motion.button_mask & MOUSE_BUTTON_MASK_RIGHT) != 0
-	if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED or dragging:
+	if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED or free_look:
 		_turn(motion.relative * 0.0022 * tuning.mouse_sensitivity)
+
+
+func _edge_turn(delta: float) -> void:
+	# Without pointer lock the cursor eventually reaches the window edge;
+	# keep turning while it is held there so the player never runs out of room.
+	var vp := get_viewport()
+	var size := vp.get_visible_rect().size
+	var pos := vp.get_mouse_position()
+	if not Rect2(Vector2.ZERO, size).has_point(pos):
+		return
+	var zone := size * EDGE_ZONE
+	var push := Vector2.ZERO
+	if pos.x < zone.x:
+		push.x = -(1.0 - pos.x / zone.x)
+	elif pos.x > size.x - zone.x:
+		push.x = 1.0 - (size.x - pos.x) / zone.x
+	if pos.y < zone.y:
+		push.y = -(1.0 - pos.y / zone.y)
+	elif pos.y > size.y - zone.y:
+		push.y = 1.0 - (size.y - pos.y) / zone.y
+	if push != Vector2.ZERO:
+		_turn(push * EDGE_TURN_SPEED * tuning.mouse_sensitivity * delta)
 
 
 func _turn(by: Vector2) -> void:
@@ -76,6 +101,8 @@ func _physics_process(delta: float) -> void:
 	camera.fov = tuning.fov
 	var accepts_input := input_grace == 0.0
 
+	if free_look and Input.mouse_mode != Input.MOUSE_MODE_CAPTURED:
+		_edge_turn(delta)
 	var look := Input.get_vector("look_left", "look_right", "look_up", "look_down")
 	if look != Vector2.ZERO:
 		_turn(look * look.length() * tuning.stick_sensitivity * delta)
