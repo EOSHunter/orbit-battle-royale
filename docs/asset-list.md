@@ -1,6 +1,6 @@
 # Asset list
 
-Generated from `asset-hub/asset-list.js` (77 assets). Track progress in the Asset Hub; edit this list in the script and regenerate.
+Generated from `asset-hub/asset-list.js` (78 assets). Track progress in the Asset Hub; edit this list in the script and regenerate.
 
 Budgets are proposals for a browser target and change once hardware and performance targets are agreed. Items marked **Decision needed** depend on open design decisions in [claude-handoff.md](claude-handoff.md).
 
@@ -8,8 +8,9 @@ Budgets are proposals for a browser target and change once hardware and performa
 
 | Asset | Milestone | Deliverables | Budget | File |
 |---|---|---|---|---|
-| Operator (third-person) | Combat and inventory | Concept sheet; Base mesh; Materials and textures; Rig and skinning; LODs; Bot variants (gear and color swaps) | 20k tris · 2048² textures · 3 LODs | `game/assets/models/characters/operator-third-person.glb` |
-| First-person arms<br>**Decision needed:** Combat camera: first-person combat is proposed, not approved. | Traversal | Mesh; Materials; Rig matching the operator skeleton | 8k tris · 2048² textures | `game/assets/models/characters/first-person-arms.glb` |
+| Operator (third-person) | Combat and inventory | Concept sheet; Base mesh; Materials and textures; Rig and skinning; LODs; Bot variants (gear and color swaps) | 5k–15k tris · 2048² baked textures | `game/assets/models/characters/operator-third-person.glb` |
+| Bot operator | Combat and inventory | Mesh; Materials and color variants; Rig matching the operator skeleton | 1k–3k tris · 512² baked textures | `game/assets/models/characters/bot-operator.glb` |
+| First-person arms<br>**Decision needed:** Combat camera: first-person combat is proposed, not approved. | Traversal | Mesh; Materials; Rig matching the operator skeleton | Part of the 5k–15k character budget · 1024² baked textures | `game/assets/models/characters/first-person-arms.glb` |
 | Locomotion set | Traversal | Idle; Walk; Sprint; Crouch and crouch-walk; Jump, fall, land; Slow walk while healing | — | `game/assets/animations/characters/locomotion-set.glb` |
 | Tethercaster traversal set | Traversal | Fire hook; Reel in; Swing loop; Release and momentum carry | — | `game/assets/animations/characters/tethercaster-traversal-set.glb` |
 | Weapon handling set | Combat and inventory | Equip and holster per weapon; Hip and aim poses; Fire and recoil; Reload per weapon; Grenade throw | — | `game/assets/animations/characters/weapon-handling-set.glb` |
@@ -22,11 +23,11 @@ Budgets are proposals for a browser target and change once hardware and performa
 
 | Asset | Milestone | Deliverables | Budget | File |
 |---|---|---|---|---|
-| AR-7 Wayfarer (Assault rifle) | Combat and inventory | Concept and silhouette; First-person viewmodel mesh; World / pickup mesh + LODs; Materials and textures; Rig (magazine, bolt, trigger); Animations: equip, fire, reload, sprint; Inventory and HUD icon; Fire VFX: muzzle, tracer, casing | 12k tris viewmodel · 3k world model · 2048² textures | `game/assets/models/weapons/ar-7-wayfarer.glb` |
-| SG-4 Breaker (Shotgun) | Combat and inventory | Concept and silhouette; First-person viewmodel mesh; World / pickup mesh + LODs; Materials and textures; Rig (magazine, bolt, trigger); Animations: equip, fire, reload, sprint; Inventory and HUD icon; Fire VFX: muzzle, tracer, casing | 12k tris viewmodel · 3k world model · 2048² textures | `game/assets/models/weapons/sg-4-breaker.glb` |
-| P-12 Spark (Pistol) | Equipment and rotation | Concept and silhouette; First-person viewmodel mesh; World / pickup mesh + LODs; Materials and textures; Rig (magazine, bolt, trigger); Animations: equip, fire, reload, sprint; Inventory and HUD icon; Fire VFX: muzzle, tracer, casing | 12k tris viewmodel · 3k world model · 2048² textures | `game/assets/models/weapons/p-12-spark.glb` |
-| S-9 Wisp (SMG) | Equipment and rotation | Concept and silhouette; First-person viewmodel mesh; World / pickup mesh + LODs; Materials and textures; Rig (magazine, bolt, trigger); Animations: equip, fire, reload, sprint; Inventory and HUD icon; Fire VFX: muzzle, tracer, casing | 12k tris viewmodel · 3k world model · 2048² textures | `game/assets/models/weapons/s-9-wisp.glb` |
-| SR-8 Longview (Sniper) | Equipment and rotation | Concept and silhouette; First-person viewmodel mesh; World / pickup mesh + LODs; Materials and textures; Rig (magazine, bolt, trigger); Animations: equip, fire, reload, sprint; Inventory and HUD icon; Fire VFX: muzzle, tracer, casing | 12k tris viewmodel · 3k world model · 2048² textures | `game/assets/models/weapons/sr-8-longview.glb` |
+| AR-7 Wayfarer (Assault rifle) | Combat and inventory | Concept and silhouette; First-person viewmodel mesh; World / pickup mesh + LODs; Materials and textures; Rig (magazine, bolt, trigger); Animations: equip, fire, reload, sprint; Inventory and HUD icon; Fire VFX: muzzle, tracer, casing | 500–1.5k tris (one model for view, pickup and bots) · 1024² baked textures | `game/assets/models/weapons/ar-7-wayfarer.glb` |
+| SG-4 Breaker (Shotgun) | Combat and inventory | Concept and silhouette; First-person viewmodel mesh; World / pickup mesh + LODs; Materials and textures; Rig (magazine, bolt, trigger); Animations: equip, fire, reload, sprint; Inventory and HUD icon; Fire VFX: muzzle, tracer, casing | 500–1.5k tris (one model for view, pickup and bots) · 1024² baked textures | `game/assets/models/weapons/sg-4-breaker.glb` |
+| P-12 Spark (Pistol) | Equipment and rotation | Concept and silhouette; First-person viewmodel mesh; World / pickup mesh + LODs; Materials and textures; Rig (magazine, bolt, trigger); Animations: equip, fire, reload, sprint; Inventory and HUD icon; Fire VFX: muzzle, tracer, casing | 500–1.5k tris (one model for view, pickup and bots) · 1024² baked textures | `game/assets/models/weapons/p-12-spark.glb` |
+| S-9 Wisp (SMG) | Equipment and rotation | Concept and silhouette; First-person viewmodel mesh; World / pickup mesh + LODs; Materials and textures; Rig (magazine, bolt, trigger); Animations: equip, fire, reload, sprint; Inventory and HUD icon; Fire VFX: muzzle, tracer, casing | 500–1.5k tris (one model for view, pickup and bots) · 1024² baked textures | `game/assets/models/weapons/s-9-wisp.glb` |
+| SR-8 Longview (Sniper) | Equipment and rotation | Concept and silhouette; First-person viewmodel mesh; World / pickup mesh + LODs; Materials and textures; Rig (magazine, bolt, trigger); Animations: equip, fire, reload, sprint; Inventory and HUD icon; Fire VFX: muzzle, tracer, casing | 500–1.5k tris (one model for view, pickup and bots) · 1024² baked textures | `game/assets/models/weapons/sr-8-longview.glb` |
 
 ## Weapon audio
 
@@ -42,12 +43,12 @@ Budgets are proposals for a browser target and change once hardware and performa
 
 | Asset | Milestone | Deliverables | Budget | File |
 |---|---|---|---|---|
-| Field Patch (+25 health · stack 6) | Combat and inventory | Pickup mesh; Held mesh; Materials; Inventory icon; Use VFX | 2k tris · 1024² textures | `game/assets/models/healing-items/field-patch.glb` |
-| Shield Cell (+25 shields · stack 6) | Equipment and rotation | Pickup mesh; Held mesh; Materials; Inventory icon; Use VFX | 2k tris · 1024² textures | `game/assets/models/healing-items/shield-cell.glb` |
-| Shield Pack (+50 shields · stack 3) | Combat and inventory | Pickup mesh; Held mesh; Materials; Inventory icon; Use VFX | 2k tris · 1024² textures | `game/assets/models/healing-items/shield-pack.glb` |
-| Shield Core (Full shields · stack 1) | Equipment and rotation | Pickup mesh; Held mesh; Materials; Inventory icon; Use VFX | 2k tris · 1024² textures | `game/assets/models/healing-items/shield-core.glb` |
-| Trauma Kit (Full health · stack 1) | Equipment and rotation | Pickup mesh; Held mesh; Materials; Inventory icon; Use VFX | 2k tris · 1024² textures | `game/assets/models/healing-items/trauma-kit.glb` |
-| Phoenix Capsule (Full health and shields · stack 1) | Equipment and rotation | Pickup mesh; Held mesh; Materials; Inventory icon; Use VFX | 2k tris · 1024² textures | `game/assets/models/healing-items/phoenix-capsule.glb` |
+| Field Patch (+25 health · stack 6) | Combat and inventory | Pickup mesh; Held mesh; Materials; Inventory icon; Use VFX | 500–1.5k tris · 1024² baked textures | `game/assets/models/healing-items/field-patch.glb` |
+| Shield Cell (+25 shields · stack 6) | Equipment and rotation | Pickup mesh; Held mesh; Materials; Inventory icon; Use VFX | 500–1.5k tris · 1024² baked textures | `game/assets/models/healing-items/shield-cell.glb` |
+| Shield Pack (+50 shields · stack 3) | Combat and inventory | Pickup mesh; Held mesh; Materials; Inventory icon; Use VFX | 500–1.5k tris · 1024² baked textures | `game/assets/models/healing-items/shield-pack.glb` |
+| Shield Core (Full shields · stack 1) | Equipment and rotation | Pickup mesh; Held mesh; Materials; Inventory icon; Use VFX | 500–1.5k tris · 1024² baked textures | `game/assets/models/healing-items/shield-core.glb` |
+| Trauma Kit (Full health · stack 1) | Equipment and rotation | Pickup mesh; Held mesh; Materials; Inventory icon; Use VFX | 500–1.5k tris · 1024² baked textures | `game/assets/models/healing-items/trauma-kit.glb` |
+| Phoenix Capsule (Full health and shields · stack 1) | Equipment and rotation | Pickup mesh; Held mesh; Materials; Inventory icon; Use VFX | 500–1.5k tris · 1024² baked textures | `game/assets/models/healing-items/phoenix-capsule.glb` |
 
 ## Item audio
 
@@ -61,31 +62,31 @@ Budgets are proposals for a browser target and change once hardware and performa
 
 | Asset | Milestone | Deliverables | Budget | File |
 |---|---|---|---|---|
-| Fragmentation grenade (Timed explosive) | Equipment and rotation | Mesh; Materials; Inventory icon; Detonation VFX | 1.5k tris · 1024² textures | `game/assets/models/grenades/fragmentation-grenade.glb` |
-| Arc grenade (Shield and vehicle disruption) | Equipment and rotation | Mesh; Materials; Inventory icon; Detonation VFX | 1.5k tris · 1024² textures | `game/assets/models/grenades/arc-grenade.glb` |
-| Veil grenade (Concealment cloud) | Equipment and rotation | Mesh; Materials; Inventory icon; Detonation VFX | 1.5k tris · 1024² textures | `game/assets/models/grenades/veil-grenade.glb` |
+| Fragmentation grenade (Timed explosive) | Equipment and rotation | Mesh; Materials; Inventory icon; Detonation VFX | 500–1.5k tris · 1024² baked textures | `game/assets/models/grenades/fragmentation-grenade.glb` |
+| Arc grenade (Shield and vehicle disruption) | Equipment and rotation | Mesh; Materials; Inventory icon; Detonation VFX | 500–1.5k tris · 1024² baked textures | `game/assets/models/grenades/arc-grenade.glb` |
+| Veil grenade (Concealment cloud) | Equipment and rotation | Mesh; Materials; Inventory icon; Detonation VFX | 500–1.5k tris · 1024² baked textures | `game/assets/models/grenades/veil-grenade.glb` |
 
 ## Utility
 
 | Asset | Milestone | Deliverables | Budget | File |
 |---|---|---|---|---|
-| Tethercaster (Grapple) | Traversal | Viewmodel mesh; Pickup mesh; Hook head; Cable material and shader; Rig; Inventory icon; Recharge indicator | 6k tris viewmodel · 2048² textures | `game/assets/models/utility/tethercaster.glb` |
+| Tethercaster (Grapple) | Traversal | Viewmodel mesh; Pickup mesh; Hook head; Cable material and shader; Rig; Inventory icon; Recharge indicator | 500–1.5k tris · 1024² baked textures | `game/assets/models/utility/tethercaster.glb` |
 
 ## Pickups
 
 | Asset | Milestone | Deliverables | Budget | File |
 |---|---|---|---|---|
-| Ammunition boxes | Combat and inventory | Light; Medium; Heavy; Shells | 800 tris each | `game/assets/models/pickups/ammunition-boxes.glb` |
-| Colony supply crate | Combat and inventory | Mesh; Open animation; Loot glow VFX | 3k tris | `game/assets/models/pickups/colony-supply-crate.glb` |
+| Ammunition boxes | Combat and inventory | Light; Medium; Heavy; Shells | 100–800 tris each (prop) | `game/assets/models/pickups/ammunition-boxes.glb` |
+| Colony supply crate | Combat and inventory | Mesh; Open animation; Loot glow VFX | 100–800 tris (prop) | `game/assets/models/pickups/colony-supply-crate.glb` |
 
 ## Vehicles
 
 | Asset | Milestone | Deliverables | Budget | File |
 |---|---|---|---|---|
-| Mule (Colony buggy · reliable, loud) | Equipment and rotation | Concept and silhouette; Blockout and scale test; Exterior mesh + LODs; Seat and controls; Damage states; Materials and textures; Rig: wheels, suspension, doors; Dust and exhaust VFX | 35k tris · 2048² textures · 3 LODs | `game/assets/models/vehicles/mule.glb` |
-| Skimmer (One-seat hover bike · fast, exposed) | Equipment and rotation | Concept and silhouette; Blockout and scale test; Exterior mesh + LODs; Seat and controls; Damage states; Materials and textures; Rig: hover pads, handlebars; Dust and exhaust VFX | 25k tris · 2048² textures · 3 LODs | `game/assets/models/vehicles/skimmer.glb` |
-| Strider (Heavy survey rover · slow, durable) | Equipment and rotation | Concept and silhouette; Blockout and scale test; Exterior mesh + LODs; Seat and controls; Damage states; Materials and textures; Rig: wheels, suspension, doors; Dust and exhaust VFX | 40k tris · 2048² textures · 3 LODs | `game/assets/models/vehicles/strider.glb` |
-| Kestrel (Unarmed utility rotorcraft)<br>**Decision needed:** Seating, flight ceiling, energy and airborne exit rules are open. | Equipment and rotation | Concept and silhouette; Blockout and scale test; Exterior mesh + LODs; Cockpit interior; Damage states; Materials and textures; Rig: rotors, skids, doors; Rotor wash VFX | 40k tris · 2048² textures · 3 LODs | `game/assets/models/vehicles/kestrel.glb` |
+| Mule (Colony buggy · reliable, loud) | Equipment and rotation | Concept and silhouette; Blockout and scale test; Exterior mesh + LODs; Seat and controls; Damage states; Materials and textures; Rig: wheels, suspension, doors; Dust and exhaust VFX | 4k–8k tris · 2048² baked textures | `game/assets/models/vehicles/mule.glb` |
+| Skimmer (One-seat hover bike · fast, exposed) | Equipment and rotation | Concept and silhouette; Blockout and scale test; Exterior mesh + LODs; Seat and controls; Damage states; Materials and textures; Rig: hover pads, handlebars; Dust and exhaust VFX | 3k–6k tris · 2048² baked textures | `game/assets/models/vehicles/skimmer.glb` |
+| Strider (Heavy survey rover · slow, durable) | Equipment and rotation | Concept and silhouette; Blockout and scale test; Exterior mesh + LODs; Seat and controls; Damage states; Materials and textures; Rig: wheels, suspension, doors; Dust and exhaust VFX | 4k–8k tris · 2048² baked textures | `game/assets/models/vehicles/strider.glb` |
+| Kestrel (Unarmed utility rotorcraft)<br>**Decision needed:** Seating, flight ceiling, energy and airborne exit rules are open. | Equipment and rotation | Concept and silhouette; Blockout and scale test; Exterior mesh + LODs; Cockpit interior; Damage states; Materials and textures; Rig: rotors, skids, doors; Rotor wash VFX | 4k–8k tris · 2048² baked textures | `game/assets/models/vehicles/kestrel.glb` |
 
 ## Vehicle audio
 
@@ -100,8 +101,8 @@ Budgets are proposals for a browser target and change once hardware and performa
 
 | Asset | Milestone | Deliverables | Budget | File |
 |---|---|---|---|---|
-| Drop transport (Start-of-match carrier (working name needed))<br>**Decision needed:** Deployment: transport route, jump window and drop rules are undecided. | Match loop | Concept and silhouette; Blockout and scale (60 jumpers); Exterior mesh + LODs; Interior hold and rear ramp; Materials and textures; Rig: ramp, engines, landing gear; Flight-path and ramp-open animation; Engine contrail VFX | 45k tris · 2048² textures · 2 LODs | `game/assets/models/drop-transport/drop-transport.glb` |
-| Descent device<br>**Decision needed:** Whether players use a glider, thruster pack or nothing (no fall damage) is undecided. | Match loop | Concept; Mesh; Deploy animation; Trail VFX | 5k tris | `game/assets/models/drop-transport/descent-device.glb` |
+| Drop transport (Start-of-match carrier (working name needed))<br>**Decision needed:** Deployment: transport route, jump window and drop rules are undecided. | Match loop | Concept and silhouette; Blockout and scale (60 jumpers); Exterior mesh + LODs; Interior hold and rear ramp; Materials and textures; Rig: ramp, engines, landing gear; Flight-path and ramp-open animation; Engine contrail VFX | 8k–15k tris · 2048² baked textures | `game/assets/models/drop-transport/drop-transport.glb` |
+| Descent device<br>**Decision needed:** Whether players use a glider, thruster pack or nothing (no fall damage) is undecided. | Match loop | Concept; Mesh; Deploy animation; Trail VFX | 500–1.5k tris (main item) | `game/assets/models/drop-transport/descent-device.glb` |
 | Drop transport audio | Match loop | Engine loop (exterior, distant); Hold interior ambience; Ramp open; Jump-out wind gust; Freefall wind loop; Landing | — | `game/assets/audio/drop-transport/drop-transport-audio/` |
 
 ## Environment
@@ -110,10 +111,10 @@ Budgets are proposals for a browser target and change once hardware and performa
 |---|---|---|---|---|
 | Ringed sky dome | Visual slice | Ring band texture and shader; Planet and moon; Stars and haze; Fixed lighting setup | Sky shader + 4096² ring texture | `game/assets/models/environment/ringed-sky-dome.glb` |
 | Ringfall terrain<br>**Decision needed:** Map size and final location layout are undecided. | Visual slice | Greybox heightmap; Crater lake basin; Final heightmap; Terrain materials: basalt, grassland, black glass, sand; Water shader (turquoise lakes) | Heightmap + 4 splat layers | `game/assets/models/environment/ringfall-terrain.glb` |
-| Luminous vegetation kit | Visual slice | Pale grass cards; Glowing shrubs; Giant Bloomwild plants; Luminous roots; Emissive material | 1–4k tris per plant · instanced | `game/assets/models/environment/luminous-vegetation-kit.glb` |
-| Colony structure kit | Visual slice | Habitat module; Warehouse; Cargo pad; Comms mast; Gantries and stairs; Pipes and cables; Amber work lights | Modular · 2048² trim sheets | `game/assets/models/environment/colony-structure-kit.glb` |
-| Ancient ruins kit | Full local match | Wall and arch pieces; Pillars; Bridge spans (The Spine); Canyon ruin set (Hollow Array) | Modular · 2048² trim sheets | `game/assets/models/environment/ancient-ruins-kit.glb` |
-| Prop kit | Visual slice | Crates and barrels; Fences and barriers; Lamps; Debris; Vehicle spawn pads | 0.5–3k tris each | `game/assets/models/environment/prop-kit.glb` |
+| Luminous vegetation kit | Visual slice | Pale grass cards; Glowing shrubs; Giant Bloomwild plants; Luminous roots; Emissive material | 100–800 tris per plant (prop) · instanced | `game/assets/models/environment/luminous-vegetation-kit.glb` |
+| Colony structure kit | Visual slice | Habitat module; Warehouse; Cargo pad; Comms mast; Gantries and stairs; Pipes and cables; Amber work lights | Modular pieces under 1k tris each where possible | `game/assets/models/environment/colony-structure-kit.glb` |
+| Ancient ruins kit | Full local match | Wall and arch pieces; Pillars; Bridge spans (The Spine); Canyon ruin set (Hollow Array) | Modular pieces under 1k tris each where possible | `game/assets/models/environment/ancient-ruins-kit.glb` |
+| Prop kit | Visual slice | Crates and barrels; Fences and barriers; Lamps; Debris; Vehicle spawn pads | 100–800 tris each | `game/assets/models/environment/prop-kit.glb` |
 
 ## Locations
 

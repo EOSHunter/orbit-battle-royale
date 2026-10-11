@@ -98,6 +98,11 @@ func _build_body() -> void:
 	vmat.albedo_color = Color("ffb45c")
 	_visor.material_override = vmat
 	add_child(_visor)
+	var model := weapon.instantiate_model()
+	if model:
+		model.position = Vector3(0.28, 1.2, -0.3)
+		add_child(model)
+		return
 	var gun := MeshInstance3D.new()
 	var gm := BoxMesh.new()
 	gm.size = Vector3(0.08, 0.1, 0.6)

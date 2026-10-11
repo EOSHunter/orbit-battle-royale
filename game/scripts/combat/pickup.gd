@@ -57,6 +57,25 @@ func color() -> Color:
 func _build_visual() -> void:
 	_visual = Node3D.new()
 	add_child(_visual)
+	_visual.position.y = 0.5
+	var model := stack.def.instantiate_model() if not is_ammo() else null
+	if model:
+		_visual.add_child(model)
+	else:
+		_build_placeholder()
+	_label = Label3D.new()
+	_label.billboard = BaseMaterial3D.BILLBOARD_ENABLED
+	_label.font_size = 40
+	_label.pixel_size = 0.005
+	_label.outline_size = 10
+	_label.modulate = color().lightened(0.3)
+	_label.position.y = 1.05
+	_label.no_depth_test = false
+	add_child(_label)
+	_refresh_label()
+
+
+func _build_placeholder() -> void:
 	var mi := MeshInstance3D.new()
 	var mat := StandardMaterial3D.new()
 	mat.albedo_color = color().darkened(0.35)
@@ -80,17 +99,6 @@ func _build_visual() -> void:
 		mi.mesh = cyl
 	mi.material_override = mat
 	_visual.add_child(mi)
-	_visual.position.y = 0.5
-	_label = Label3D.new()
-	_label.billboard = BaseMaterial3D.BILLBOARD_ENABLED
-	_label.font_size = 40
-	_label.pixel_size = 0.005
-	_label.outline_size = 10
-	_label.modulate = color().lightened(0.3)
-	_label.position.y = 1.05
-	_label.no_depth_test = false
-	add_child(_label)
-	_refresh_label()
 
 
 func _refresh_label() -> void:

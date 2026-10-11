@@ -11,3 +11,6 @@ Thumbs.db
 *.blend1
 *.blend2
 *.blend@
+
+# Python caches (Blender build scripts)
+__pycache__/

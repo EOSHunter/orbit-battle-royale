@@ -1,8 +1,7 @@
 class_name Viewmodels
 extends RefCounted
-## Placeholder first-person models built from boxes, one per item, until the
-## production viewmodels from the asset list arrive. Shapes follow the concept
-## silhouettes loosely so items are told apart at a glance.
+## First-person models. Items with a production model (ItemDef.model_path) use
+## it; the rest get placeholder shapes built from boxes until theirs arrive.
 
 const GRAPHITE := Color("2b3550")
 const DARK := Color("1a2135")
@@ -13,6 +12,13 @@ const AMBER := Color("ffb45c")
 static func build(def: ItemDef) -> Node3D:
 	var root := Node3D.new()
 	root.name = "Viewmodel"
+	var model := def.instantiate_model()
+	if model:
+		model.position = def.view_offset
+		model.rotation_degrees += def.view_rotation
+		no_shadows(model)
+		root.add_child(model)
+		return root
 	var hand := Vector3(0.24, -0.22, -0.48)
 	match def.id:
 		&"ar7":
@@ -35,6 +41,51 @@ static func build(def: ItemDef) -> Node3D:
 			_box(root, hand + Vector3(-0.04, 0.02, 0.02), Vector3(0.09, 0.15, 0.09), DARK, 0.4)
 			_glow(root, hand + Vector3(-0.04, 0.02, -0.025), Vector3(0.06, 0.1, 0.004), def.color)
 	return root
+
+
+## Field of view the first-person model is drawn for, independent of the
+## player's (wide) camera FOV, so weapons don't stretch at the screen edges.
+const VIEW_FOV := 62.0
+
+
+## Squash a viewmodel sideways and vertically so that, seen through a camera
+## with `camera_fov`, it looks as if drawn with VIEW_FOV. Call every frame
+## (the camera FOV changes when aiming).
+static func fit_fov(viewmodel: Node3D, camera_fov: float) -> void:
+	var k := tan(deg_to_rad(camera_fov) * 0.5) / tan(deg_to_rad(VIEW_FOV) * 0.5)
+	viewmodel.scale = Vector3(k, k, 1.0)
+
+
+## Blend a model viewmodel between its hip pose and aiming down sights
+## (ads 0..1). Aimed, the model's "sight" marker sits on the camera axis with
+## the bore parallel to the view, so the rear sight and the front post line up
+## on the screen center, where hitscan shots go.
+static func pose(viewmodel: Node3D, def: ItemDef, ads: float) -> void:
+	if viewmodel.get_child_count() == 0 or def.model_path.is_empty():
+		return
+	var model := viewmodel.get_child(0) as Node3D
+	var sight := model.find_child("sight", true, false) as Node3D
+	var e := smoothstep(0.0, 1.0, ads) if sight else 0.0
+	var turn := Basis(Vector3.UP, PI)
+	var ads_pos := Vector3(0.0, 0.0, -def.ads_eye) - turn * sight.position if sight else def.view_offset
+	model.position = def.view_offset.lerp(ads_pos, e)
+	model.rotation_degrees = Vector3(0.0, 180.0, 0.0) + def.view_rotation * (1.0 - e)
+
+
+## The model's muzzle (or the Tethercaster's hook) marker, if it has one.
+static func muzzle(viewmodel: Node3D) -> Node3D:
+	if viewmodel == null:
+		return null
+	var m := viewmodel.find_child("muzzle", true, false) as Node3D
+	return m if m else viewmodel.find_child("hook", true, false) as Node3D
+
+
+## First-person models shouldn't throw shadows onto the world from the camera.
+static func no_shadows(node: Node) -> void:
+	if node is GeometryInstance3D:
+		(node as GeometryInstance3D).cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+	for c in node.get_children():
+		no_shadows(c)
 
 
 static func _box(parent: Node3D, pos: Vector3, size: Vector3, color: Color, metal := 0.3) -> void:

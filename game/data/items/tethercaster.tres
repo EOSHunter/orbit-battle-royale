@@ -10,4 +10,4 @@ kind = 3
 stack_max = 1
 carry_cap = 1
 color = Color(0.773, 0.949, 0.467, 1)
-description = "Rechargeable grapple. Hook lime-striped surfaces and swing."
+description = "Rechargeable grapple. Hook any surface in range and swing."

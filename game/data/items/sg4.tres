@@ -28,3 +28,4 @@ spread_moving = 1.5
 recoil_pitch = 3.5
 recoil_yaw = 0.8
 aim_fov_scale = 0.85
+model_path = "res://assets/models/weapons/sg-4-breaker.glb"

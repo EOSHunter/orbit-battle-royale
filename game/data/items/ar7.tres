@@ -28,3 +28,4 @@ spread_moving = 2.5
 recoil_pitch = 0.7
 recoil_yaw = 0.3
 aim_fov_scale = 0.75
+model_path = "res://assets/models/weapons/ar-7-wayfarer.glb"

@@ -14,6 +14,9 @@ signal reload_finished
 var inventory: Inventory
 var player: Player
 var aiming := false
+## Seconds to raise the sights to the eye.
+const ADS_TIME := 0.16
+var _ads := 0.0
 var spread_now := 0.0
 
 var _cooldown := 0.0
@@ -96,7 +99,8 @@ func _fire(w: WeaponDef, s: ItemStack) -> void:
 	s.mag -= 1
 	_cooldown = w.fire_interval
 	var cam := player.camera
-	var muzzle := cam.global_transform * muzzle_offset
+	var marker := Viewmodels.muzzle(_viewmodel)
+	var muzzle := marker.global_position if marker else cam.global_transform * muzzle_offset
 	var result := Hitscan.fire(get_world_3d(), cam.global_position, -cam.global_basis.z, muzzle, w, spread_now, player, _exclude)
 	fired.emit(w)
 	if int(result.hits) > 0:
@@ -107,7 +111,7 @@ func _fire(w: WeaponDef, s: ItemStack) -> void:
 	player.rotation.y += kick.x
 	_recoil_kick += kick * 0.75
 	if _viewmodel:
-		Fx.muzzle_flash(_viewmodel)
+		Fx.muzzle_flash(marker if marker else _viewmodel)
 		_viewmodel.position.z += 0.05
 	inventory.changed.emit()
 	if s.mag == 0 and inventory.ammo_count(w.ammo_type) > 0:
@@ -141,9 +145,12 @@ func _finish_reload() -> void:
 
 func _process(delta: float) -> void:
 	if _viewmodel:
-		var rest := Vector3(0.0, -0.06 if aiming else 0.0, 0.0)
-		var target := rest + Vector3(0.0, -0.25 if _reload_left > 0.0 else 0.0, 0.0) + Vector3(0.0, -0.3 * clampf(_equip_left * 3.0, 0.0, 1.0), 0.0)
+		_ads = move_toward(_ads, 1.0 if aiming else 0.0, delta / ADS_TIME)
+		var target := Vector3(0.0, -0.25 if _reload_left > 0.0 else 0.0, 0.0) + Vector3(0.0, -0.3 * clampf(_equip_left * 3.0, 0.0, 1.0), 0.0)
 		_viewmodel.position = _viewmodel.position.lerp(target, minf(1.0, delta * 14.0))
+		if _viewmodel_for and not _viewmodel_for.model_path.is_empty():
+			Viewmodels.fit_fov(_viewmodel, player.camera.fov)
+			Viewmodels.pose(_viewmodel, _viewmodel_for, _ads)
 
 
 func _refresh_viewmodel() -> void:

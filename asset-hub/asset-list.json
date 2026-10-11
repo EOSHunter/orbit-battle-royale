@@ -33,12 +33,41 @@
         "done": false
       }
     ],
-    "budget": "20k tris · 2048² textures · 3 LODs",
+    "budget": "5k–15k tris · 2048² baked textures",
     "path": "game/assets/models/characters/operator-third-person.glb",
     "source": "art/characters/operator-third-person.blend",
     "decision": null,
-    "notes": "One original expedition-suit operator. Bots reuse it with gear and color swaps so 59 bots stay readable.",
+    "notes": "One original expedition-suit operator for players.",
     "order": 0
+  },
+  {
+    "id": "bot-operator",
+    "name": "Bot operator",
+    "category": "Characters",
+    "kind": "model",
+    "group": null,
+    "milestone": "Combat and inventory",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Mesh",
+        "done": false
+      },
+      {
+        "n": "Materials and color variants",
+        "done": false
+      },
+      {
+        "n": "Rig matching the operator skeleton",
+        "done": false
+      }
+    ],
+    "budget": "1k–3k tris · 512² baked textures",
+    "path": "game/assets/models/characters/bot-operator.glb",
+    "source": "art/characters/bot-operator.blend",
+    "decision": null,
+    "notes": "Lighter build of the operator so 59 bots stay cheap and readable; same skeleton and silhouette.",
+    "order": 1
   },
   {
     "id": "first-person-arms",
@@ -62,12 +91,12 @@
         "done": false
       }
     ],
-    "budget": "8k tris · 2048² textures",
+    "budget": "Part of the 5k–15k character budget · 1024² baked textures",
     "path": "game/assets/models/characters/first-person-arms.glb",
     "source": "art/characters/first-person-arms.blend",
     "decision": "Combat camera: first-person combat is proposed, not approved.",
     "notes": "",
-    "order": 1
+    "order": 2
   },
   {
     "id": "locomotion-set",
@@ -108,7 +137,7 @@
     "source": "art/characters/locomotion-set.blend",
     "decision": null,
     "notes": "No fall damage: landings from any height need a clean recovery, not a stagger.",
-    "order": 2
+    "order": 3
   },
   {
     "id": "tethercaster-traversal-set",
@@ -141,7 +170,7 @@
     "source": "art/characters/tethercaster-traversal-set.blend",
     "decision": null,
     "notes": "",
-    "order": 3
+    "order": 4
   },
   {
     "id": "weapon-handling-set",
@@ -178,7 +207,7 @@
     "source": "art/characters/weapon-handling-set.blend",
     "decision": null,
     "notes": "",
-    "order": 4
+    "order": 5
   },
   {
     "id": "healing-use-set",
@@ -211,7 +240,7 @@
     "source": "art/characters/healing-use-set.blend",
     "decision": null,
     "notes": "",
-    "order": 5
+    "order": 6
   },
   {
     "id": "freefall-and-landing",
@@ -244,7 +273,7 @@
     "source": "art/characters/freefall-and-landing.blend",
     "decision": "Drop rules: how players slow down after jumping (glider, thruster pack, or none) is undecided.",
     "notes": "",
-    "order": 6
+    "order": 7
   },
   {
     "id": "vehicle-set",
@@ -277,7 +306,7 @@
     "source": "art/characters/vehicle-set.blend",
     "decision": null,
     "notes": "",
-    "order": 7
+    "order": 8
   },
   {
     "id": "elimination",
@@ -302,7 +331,7 @@
     "source": "art/characters/elimination.blend",
     "decision": null,
     "notes": "",
-    "order": 8
+    "order": 9
   },
   {
     "id": "ar-7-wayfarer",
@@ -346,12 +375,12 @@
         "done": false
       }
     ],
-    "budget": "12k tris viewmodel · 3k world model · 2048² textures",
+    "budget": "500–1.5k tris (one model for view, pickup and bots) · 1024² baked textures",
     "path": "game/assets/models/weapons/ar-7-wayfarer.glb",
     "source": "art/weapons/ar-7-wayfarer.blend",
     "decision": null,
     "notes": "",
-    "order": 9
+    "order": 10
   },
   {
     "id": "ar-7-wayfarer-audio",
@@ -388,7 +417,7 @@
     "source": "art/weapon-audio/ar-7-wayfarer-audio/",
     "decision": null,
     "notes": "",
-    "order": 10
+    "order": 11
   },
   {
     "id": "sg-4-breaker",
@@ -432,12 +461,12 @@
         "done": false
       }
     ],
-    "budget": "12k tris viewmodel · 3k world model · 2048² textures",
+    "budget": "500–1.5k tris (one model for view, pickup and bots) · 1024² baked textures",
     "path": "game/assets/models/weapons/sg-4-breaker.glb",
     "source": "art/weapons/sg-4-breaker.blend",
     "decision": null,
     "notes": "",
-    "order": 11
+    "order": 12
   },
   {
     "id": "sg-4-breaker-audio",
@@ -474,7 +503,7 @@
     "source": "art/weapon-audio/sg-4-breaker-audio/",
     "decision": null,
     "notes": "",
-    "order": 12
+    "order": 13
   },
   {
     "id": "p-12-spark",
@@ -518,12 +547,12 @@
         "done": false
       }
     ],
-    "budget": "12k tris viewmodel · 3k world model · 2048² textures",
+    "budget": "500–1.5k tris (one model for view, pickup and bots) · 1024² baked textures",
     "path": "game/assets/models/weapons/p-12-spark.glb",
     "source": "art/weapons/p-12-spark.blend",
     "decision": null,
     "notes": "",
-    "order": 13
+    "order": 14
   },
   {
     "id": "p-12-spark-audio",
@@ -560,7 +589,7 @@
     "source": "art/weapon-audio/p-12-spark-audio/",
     "decision": null,
     "notes": "",
-    "order": 14
+    "order": 15
   },
   {
     "id": "s-9-wisp",
@@ -604,12 +633,12 @@
         "done": false
       }
     ],
-    "budget": "12k tris viewmodel · 3k world model · 2048² textures",
+    "budget": "500–1.5k tris (one model for view, pickup and bots) · 1024² baked textures",
     "path": "game/assets/models/weapons/s-9-wisp.glb",
     "source": "art/weapons/s-9-wisp.blend",
     "decision": null,
     "notes": "",
-    "order": 15
+    "order": 16
   },
   {
     "id": "s-9-wisp-audio",
@@ -646,7 +675,7 @@
     "source": "art/weapon-audio/s-9-wisp-audio/",
     "decision": null,
     "notes": "",
-    "order": 16
+    "order": 17
   },
   {
     "id": "sr-8-longview",
@@ -690,12 +719,12 @@
         "done": false
       }
     ],
-    "budget": "12k tris viewmodel · 3k world model · 2048² textures",
+    "budget": "500–1.5k tris (one model for view, pickup and bots) · 1024² baked textures",
     "path": "game/assets/models/weapons/sr-8-longview.glb",
     "source": "art/weapons/sr-8-longview.blend",
     "decision": null,
     "notes": "",
-    "order": 17
+    "order": 18
   },
   {
     "id": "sr-8-longview-audio",
@@ -732,7 +761,7 @@
     "source": "art/weapon-audio/sr-8-longview-audio/",
     "decision": null,
     "notes": "",
-    "order": 18
+    "order": 19
   },
   {
     "id": "field-patch",
@@ -764,12 +793,12 @@
         "done": false
       }
     ],
-    "budget": "2k tris · 1024² textures",
+    "budget": "500–1.5k tris · 1024² baked textures",
     "path": "game/assets/models/healing-items/field-patch.glb",
     "source": "art/healing-items/field-patch.blend",
     "decision": null,
     "notes": "Distinct silhouette per item; health items coral, shield items cyan.",
-    "order": 19
+    "order": 20
   },
   {
     "id": "shield-cell",
@@ -801,12 +830,12 @@
         "done": false
       }
     ],
-    "budget": "2k tris · 1024² textures",
+    "budget": "500–1.5k tris · 1024² baked textures",
     "path": "game/assets/models/healing-items/shield-cell.glb",
     "source": "art/healing-items/shield-cell.blend",
     "decision": null,
     "notes": "Distinct silhouette per item; health items coral, shield items cyan.",
-    "order": 20
+    "order": 21
   },
   {
     "id": "shield-pack",
@@ -838,12 +867,12 @@
         "done": false
       }
     ],
-    "budget": "2k tris · 1024² textures",
+    "budget": "500–1.5k tris · 1024² baked textures",
     "path": "game/assets/models/healing-items/shield-pack.glb",
     "source": "art/healing-items/shield-pack.blend",
     "decision": null,
     "notes": "Distinct silhouette per item; health items coral, shield items cyan.",
-    "order": 21
+    "order": 22
   },
   {
     "id": "shield-core",
@@ -875,12 +904,12 @@
         "done": false
       }
     ],
-    "budget": "2k tris · 1024² textures",
+    "budget": "500–1.5k tris · 1024² baked textures",
     "path": "game/assets/models/healing-items/shield-core.glb",
     "source": "art/healing-items/shield-core.blend",
     "decision": null,
     "notes": "Distinct silhouette per item; health items coral, shield items cyan.",
-    "order": 22
+    "order": 23
   },
   {
     "id": "trauma-kit",
@@ -912,12 +941,12 @@
         "done": false
       }
     ],
-    "budget": "2k tris · 1024² textures",
+    "budget": "500–1.5k tris · 1024² baked textures",
     "path": "game/assets/models/healing-items/trauma-kit.glb",
     "source": "art/healing-items/trauma-kit.blend",
     "decision": null,
     "notes": "Distinct silhouette per item; health items coral, shield items cyan.",
-    "order": 23
+    "order": 24
   },
   {
     "id": "phoenix-capsule",
@@ -949,12 +978,12 @@
         "done": false
       }
     ],
-    "budget": "2k tris · 1024² textures",
+    "budget": "500–1.5k tris · 1024² baked textures",
     "path": "game/assets/models/healing-items/phoenix-capsule.glb",
     "source": "art/healing-items/phoenix-capsule.blend",
     "decision": null,
     "notes": "Distinct silhouette per item; health items coral, shield items cyan.",
-    "order": 24
+    "order": 25
   },
   {
     "id": "healing-item-audio",
@@ -987,7 +1016,7 @@
     "source": "art/item-audio/healing-item-audio/",
     "decision": null,
     "notes": "",
-    "order": 25
+    "order": 26
   },
   {
     "id": "fragmentation-grenade",
@@ -1015,12 +1044,12 @@
         "done": false
       }
     ],
-    "budget": "1.5k tris · 1024² textures",
+    "budget": "500–1.5k tris · 1024² baked textures",
     "path": "game/assets/models/grenades/fragmentation-grenade.glb",
     "source": "art/grenades/fragmentation-grenade.blend",
     "decision": null,
     "notes": "",
-    "order": 26
+    "order": 27
   },
   {
     "id": "arc-grenade",
@@ -1048,12 +1077,12 @@
         "done": false
       }
     ],
-    "budget": "1.5k tris · 1024² textures",
+    "budget": "500–1.5k tris · 1024² baked textures",
     "path": "game/assets/models/grenades/arc-grenade.glb",
     "source": "art/grenades/arc-grenade.blend",
     "decision": null,
     "notes": "",
-    "order": 27
+    "order": 28
   },
   {
     "id": "veil-grenade",
@@ -1081,12 +1110,12 @@
         "done": false
       }
     ],
-    "budget": "1.5k tris · 1024² textures",
+    "budget": "500–1.5k tris · 1024² baked textures",
     "path": "game/assets/models/grenades/veil-grenade.glb",
     "source": "art/grenades/veil-grenade.blend",
     "decision": null,
     "notes": "",
-    "order": 28
+    "order": 29
   },
   {
     "id": "grenade-audio",
@@ -1123,7 +1152,7 @@
     "source": "art/item-audio/grenade-audio/",
     "decision": null,
     "notes": "",
-    "order": 29
+    "order": 30
   },
   {
     "id": "tethercaster",
@@ -1163,12 +1192,12 @@
         "done": false
       }
     ],
-    "budget": "6k tris viewmodel · 2048² textures",
+    "budget": "500–1.5k tris · 1024² baked textures",
     "path": "game/assets/models/utility/tethercaster.glb",
     "source": "art/utility/tethercaster.blend",
     "decision": null,
     "notes": "",
-    "order": 30
+    "order": 31
   },
   {
     "id": "tethercaster-audio",
@@ -1205,7 +1234,7 @@
     "source": "art/item-audio/tethercaster-audio/",
     "decision": null,
     "notes": "",
-    "order": 31
+    "order": 32
   },
   {
     "id": "ammunition-boxes",
@@ -1233,12 +1262,12 @@
         "done": false
       }
     ],
-    "budget": "800 tris each",
+    "budget": "100–800 tris each (prop)",
     "path": "game/assets/models/pickups/ammunition-boxes.glb",
     "source": "art/pickups/ammunition-boxes.blend",
     "decision": null,
     "notes": "",
-    "order": 32
+    "order": 33
   },
   {
     "id": "colony-supply-crate",
@@ -1262,12 +1291,12 @@
         "done": false
       }
     ],
-    "budget": "3k tris",
+    "budget": "100–800 tris (prop)",
     "path": "game/assets/models/pickups/colony-supply-crate.glb",
     "source": "art/pickups/colony-supply-crate.blend",
     "decision": null,
     "notes": "Proposed loot source; confirm looting design.",
-    "order": 33
+    "order": 34
   },
   {
     "id": "mule",
@@ -1311,12 +1340,12 @@
         "done": false
       }
     ],
-    "budget": "35k tris · 2048² textures · 3 LODs",
+    "budget": "4k–8k tris · 2048² baked textures",
     "path": "game/assets/models/vehicles/mule.glb",
     "source": "art/vehicles/mule.blend",
     "decision": null,
     "notes": "",
-    "order": 34
+    "order": 35
   },
   {
     "id": "mule-audio",
@@ -1353,7 +1382,7 @@
     "source": "art/vehicle-audio/mule-audio/",
     "decision": null,
     "notes": "",
-    "order": 35
+    "order": 36
   },
   {
     "id": "skimmer",
@@ -1397,12 +1426,12 @@
         "done": false
       }
     ],
-    "budget": "25k tris · 2048² textures · 3 LODs",
+    "budget": "3k–6k tris · 2048² baked textures",
     "path": "game/assets/models/vehicles/skimmer.glb",
     "source": "art/vehicles/skimmer.blend",
     "decision": null,
     "notes": "",
-    "order": 36
+    "order": 37
   },
   {
     "id": "skimmer-audio",
@@ -1439,7 +1468,7 @@
     "source": "art/vehicle-audio/skimmer-audio/",
     "decision": null,
     "notes": "",
-    "order": 37
+    "order": 38
   },
   {
     "id": "strider",
@@ -1483,12 +1512,12 @@
         "done": false
       }
     ],
-    "budget": "40k tris · 2048² textures · 3 LODs",
+    "budget": "4k–8k tris · 2048² baked textures",
     "path": "game/assets/models/vehicles/strider.glb",
     "source": "art/vehicles/strider.blend",
     "decision": null,
     "notes": "",
-    "order": 38
+    "order": 39
   },
   {
     "id": "strider-audio",
@@ -1525,7 +1554,7 @@
     "source": "art/vehicle-audio/strider-audio/",
     "decision": null,
     "notes": "",
-    "order": 39
+    "order": 40
   },
   {
     "id": "kestrel",
@@ -1569,12 +1598,12 @@
         "done": false
       }
     ],
-    "budget": "40k tris · 2048² textures · 3 LODs",
+    "budget": "4k–8k tris · 2048² baked textures",
     "path": "game/assets/models/vehicles/kestrel.glb",
     "source": "art/vehicles/kestrel.blend",
     "decision": "Seating, flight ceiling, energy and airborne exit rules are open.",
     "notes": "",
-    "order": 40
+    "order": 41
   },
   {
     "id": "kestrel-audio",
@@ -1611,7 +1640,7 @@
     "source": "art/vehicle-audio/kestrel-audio/",
     "decision": null,
     "notes": "",
-    "order": 41
+    "order": 42
   },
   {
     "id": "drop-transport",
@@ -1655,12 +1684,12 @@
         "done": false
       }
     ],
-    "budget": "45k tris · 2048² textures · 2 LODs",
+    "budget": "8k–15k tris · 2048² baked textures",
     "path": "game/assets/models/drop-transport/drop-transport.glb",
     "source": "art/drop-transport/drop-transport.blend",
     "decision": "Deployment: transport route, jump window and drop rules are undecided.",
     "notes": "Flies a straight line across Ringfall at match start; players jump from the rear ramp. Original colony-carrier design, readable against the ringed sky.",
-    "order": 42
+    "order": 43
   },
   {
     "id": "descent-device",
@@ -1688,12 +1717,12 @@
         "done": false
       }
     ],
-    "budget": "5k tris",
+    "budget": "500–1.5k tris (main item)",
     "path": "game/assets/models/drop-transport/descent-device.glb",
     "source": "art/drop-transport/descent-device.blend",
     "decision": "Whether players use a glider, thruster pack or nothing (no fall damage) is undecided.",
     "notes": "",
-    "order": 43
+    "order": 44
   },
   {
     "id": "drop-transport-audio",
@@ -1734,7 +1763,7 @@
     "source": "art/drop-transport/drop-transport-audio/",
     "decision": null,
     "notes": "",
-    "order": 44
+    "order": 45
   },
   {
     "id": "ringed-sky-dome",
@@ -1767,7 +1796,7 @@
     "source": "art/environment/ringed-sky-dome.blend",
     "decision": null,
     "notes": "Rings visible from most outdoor locations; start with fixed sky and lighting.",
-    "order": 45
+    "order": 46
   },
   {
     "id": "ringfall-terrain",
@@ -1804,7 +1833,7 @@
     "source": "art/environment/ringfall-terrain.blend",
     "decision": "Map size and final location layout are undecided.",
     "notes": "",
-    "order": 46
+    "order": 47
   },
   {
     "id": "luminous-vegetation-kit",
@@ -1836,12 +1865,12 @@
         "done": false
       }
     ],
-    "budget": "1–4k tris per plant · instanced",
+    "budget": "100–800 tris per plant (prop) · instanced",
     "path": "game/assets/models/environment/luminous-vegetation-kit.glb",
     "source": "art/environment/luminous-vegetation-kit.blend",
     "decision": null,
     "notes": "",
-    "order": 47
+    "order": 48
   },
   {
     "id": "colony-structure-kit",
@@ -1881,12 +1910,12 @@
         "done": false
       }
     ],
-    "budget": "Modular · 2048² trim sheets",
+    "budget": "Modular pieces under 1k tris each where possible",
     "path": "game/assets/models/environment/colony-structure-kit.glb",
     "source": "art/environment/colony-structure-kit.blend",
     "decision": null,
     "notes": "",
-    "order": 48
+    "order": 49
   },
   {
     "id": "ancient-ruins-kit",
@@ -1914,12 +1943,12 @@
         "done": false
       }
     ],
-    "budget": "Modular · 2048² trim sheets",
+    "budget": "Modular pieces under 1k tris each where possible",
     "path": "game/assets/models/environment/ancient-ruins-kit.glb",
     "source": "art/environment/ancient-ruins-kit.blend",
     "decision": null,
     "notes": "",
-    "order": 49
+    "order": 50
   },
   {
     "id": "crown-observatory",
@@ -1952,7 +1981,7 @@
     "source": "art/locations/crown-observatory.blend",
     "decision": null,
     "notes": "Every elevated position needs two attack routes and an escape route.",
-    "order": 50
+    "order": 51
   },
   {
     "id": "anchorport",
@@ -1989,7 +2018,7 @@
     "source": "art/locations/anchorport.blend",
     "decision": null,
     "notes": "Every elevated position needs two attack routes and an escape route.",
-    "order": 51
+    "order": 52
   },
   {
     "id": "glass-basin",
@@ -2026,7 +2055,7 @@
     "source": "art/locations/glass-basin.blend",
     "decision": null,
     "notes": "Every elevated position needs two attack routes and an escape route.",
-    "order": 52
+    "order": 53
   },
   {
     "id": "relay-nine",
@@ -2063,7 +2092,7 @@
     "source": "art/locations/relay-nine.blend",
     "decision": null,
     "notes": "Every elevated position needs two attack routes and an escape route.",
-    "order": 53
+    "order": 54
   },
   {
     "id": "the-spine",
@@ -2096,7 +2125,7 @@
     "source": "art/locations/the-spine.blend",
     "decision": null,
     "notes": "Every elevated position needs two attack routes and an escape route.",
-    "order": 54
+    "order": 55
   },
   {
     "id": "hollow-array",
@@ -2129,7 +2158,7 @@
     "source": "art/locations/hollow-array.blend",
     "decision": null,
     "notes": "Every elevated position needs two attack routes and an escape route.",
-    "order": 55
+    "order": 56
   },
   {
     "id": "bloomwild",
@@ -2162,7 +2191,7 @@
     "source": "art/locations/bloomwild.blend",
     "decision": null,
     "notes": "Every elevated position needs two attack routes and an escape route.",
-    "order": 56
+    "order": 57
   },
   {
     "id": "prop-kit",
@@ -2194,12 +2223,12 @@
         "done": false
       }
     ],
-    "budget": "0.5–3k tris each",
+    "budget": "100–800 tris each",
     "path": "game/assets/models/environment/prop-kit.glb",
     "source": "art/environment/prop-kit.blend",
     "decision": null,
     "notes": "",
-    "order": 57
+    "order": 58
   },
   {
     "id": "ion-storm",
@@ -2232,7 +2261,7 @@
     "source": "art/vfx/ion-storm.blend",
     "decision": null,
     "notes": "Edge must stay unmistakable in a firefight.",
-    "order": 58
+    "order": 59
   },
   {
     "id": "combat-impacts",
@@ -2265,7 +2294,7 @@
     "source": "art/vfx/combat-impacts.blend",
     "decision": null,
     "notes": "",
-    "order": 59
+    "order": 60
   },
   {
     "id": "healing-effects",
@@ -2290,7 +2319,7 @@
     "source": "art/vfx/healing-effects.blend",
     "decision": null,
     "notes": "",
-    "order": 60
+    "order": 61
   },
   {
     "id": "traversal-effects",
@@ -2319,7 +2348,7 @@
     "source": "art/vfx/traversal-effects.blend",
     "decision": null,
     "notes": "",
-    "order": 61
+    "order": 62
   },
   {
     "id": "orbit-logo-masters",
@@ -2360,7 +2389,7 @@
     "source": null,
     "decision": null,
     "notes": "Planetary O crossed by one orbital arc; ring must not obscure the counter.",
-    "order": 62
+    "order": 63
   },
   {
     "id": "item-and-weapon-icons",
@@ -2397,7 +2426,7 @@
     "source": null,
     "decision": null,
     "notes": "",
-    "order": 63
+    "order": 64
   },
   {
     "id": "hud-icon-set",
@@ -2442,7 +2471,7 @@
     "source": null,
     "decision": null,
     "notes": "",
-    "order": 64
+    "order": 65
   },
   {
     "id": "controller-and-key-glyphs",
@@ -2471,7 +2500,7 @@
     "source": null,
     "decision": null,
     "notes": "",
-    "order": 65
+    "order": 66
   },
   {
     "id": "ringfall-map-illustration",
@@ -2500,7 +2529,7 @@
     "source": null,
     "decision": null,
     "notes": "",
-    "order": 66
+    "order": 67
   },
   {
     "id": "loading-and-menu-key-art",
@@ -2529,7 +2558,7 @@
     "source": null,
     "decision": null,
     "notes": "",
-    "order": 67
+    "order": 68
   },
   {
     "id": "font-files",
@@ -2562,7 +2591,7 @@
     "source": null,
     "decision": null,
     "notes": "",
-    "order": 68
+    "order": 69
   },
   {
     "id": "main-menu-theme",
@@ -2591,7 +2620,7 @@
     "source": "art/music/main-menu-theme/",
     "decision": null,
     "notes": "",
-    "order": 69
+    "order": 70
   },
   {
     "id": "match-stingers",
@@ -2628,7 +2657,7 @@
     "source": "art/music/match-stingers/",
     "decision": null,
     "notes": "",
-    "order": 70
+    "order": 71
   },
   {
     "id": "ringfall-ambience",
@@ -2665,7 +2694,7 @@
     "source": "art/ambience/ringfall-ambience/",
     "decision": null,
     "notes": "",
-    "order": 71
+    "order": 72
   },
   {
     "id": "ion-storm-audio",
@@ -2694,7 +2723,7 @@
     "source": "art/ambience/ion-storm-audio/",
     "decision": null,
     "notes": "",
-    "order": 72
+    "order": 73
   },
   {
     "id": "interface-sounds",
@@ -2735,7 +2764,7 @@
     "source": "art/ui-audio/interface-sounds/",
     "decision": null,
     "notes": "",
-    "order": 73
+    "order": 74
   },
   {
     "id": "match-feedback-sounds",
@@ -2780,7 +2809,7 @@
     "source": "art/ui-audio/match-feedback-sounds/",
     "decision": null,
     "notes": "",
-    "order": 74
+    "order": 75
   },
   {
     "id": "footsteps",
@@ -2821,7 +2850,7 @@
     "source": "art/foley/footsteps/",
     "decision": null,
     "notes": "",
-    "order": 75
+    "order": 76
   },
   {
     "id": "announcer-callouts",
@@ -2850,6 +2879,6 @@
     "source": "art/voice/announcer-callouts/",
     "decision": "Whether the game has announcer voice lines is undecided (subtitles are planned).",
     "notes": "",
-    "order": 76
+    "order": 77
   }
 ]

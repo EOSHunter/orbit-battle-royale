@@ -25,8 +25,9 @@ function add(category, kind, name, o) {
 }
 
 // ---- Characters
-add('Characters', 'model', 'Operator (third-person)', { milestone: M.combat, budget: '20k tris · 2048² textures · 3 LODs', parts: ['Concept sheet', 'Base mesh', 'Materials and textures', 'Rig and skinning', 'LODs', 'Bot variants (gear and color swaps)'], notes: 'One original expedition-suit operator. Bots reuse it with gear and color swaps so 59 bots stay readable.' });
-add('Characters', 'model', 'First-person arms', { milestone: M.trav, budget: '8k tris · 2048² textures', parts: ['Mesh', 'Materials', 'Rig matching the operator skeleton'], decision: 'Combat camera: first-person combat is proposed, not approved.' });
+add('Characters', 'model', 'Operator (third-person)', { milestone: M.combat, budget: '5k–15k tris · 2048² baked textures', parts: ['Concept sheet', 'Base mesh', 'Materials and textures', 'Rig and skinning', 'LODs', 'Bot variants (gear and color swaps)'], notes: 'One original expedition-suit operator for players.' });
+add('Characters', 'model', 'Bot operator', { milestone: M.combat, budget: '1k–3k tris · 512² baked textures', parts: ['Mesh', 'Materials and color variants', 'Rig matching the operator skeleton'], notes: 'Lighter build of the operator so 59 bots stay cheap and readable; same skeleton and silhouette.' });
+add('Characters', 'model', 'First-person arms', { milestone: M.trav, budget: 'Part of the 5k–15k character budget · 1024² baked textures', parts: ['Mesh', 'Materials', 'Rig matching the operator skeleton'], decision: 'Combat camera: first-person combat is proposed, not approved.' });
 add('Characters', 'animation', 'Locomotion set', { milestone: M.trav, parts: ['Idle', 'Walk', 'Sprint', 'Crouch and crouch-walk', 'Jump, fall, land', 'Slow walk while healing'], notes: 'No fall damage: landings from any height need a clean recovery, not a stagger.' });
 add('Characters', 'animation', 'Tethercaster traversal set', { milestone: M.trav, parts: ['Fire hook', 'Reel in', 'Swing loop', 'Release and momentum carry'] });
 add('Characters', 'animation', 'Weapon handling set', { milestone: M.combat, parts: ['Equip and holster per weapon', 'Hip and aim poses', 'Fire and recoil', 'Reload per weapon', 'Grenade throw'] });
@@ -41,7 +42,7 @@ const W = [
   ['P-12 Spark', 'Pistol', M.equip], ['S-9 Wisp', 'SMG', M.equip], ['SR-8 Longview', 'Sniper', M.equip]
 ];
 for (const [name, group, ms] of W) {
-  add('Weapons', 'model', name, { group, milestone: ms, budget: '12k tris viewmodel · 3k world model · 2048² textures', parts: ['Concept and silhouette', 'First-person viewmodel mesh', 'World / pickup mesh + LODs', 'Materials and textures', 'Rig (magazine, bolt, trigger)', 'Animations: equip, fire, reload, sprint', 'Inventory and HUD icon', 'Fire VFX: muzzle, tracer, casing'] });
+  add('Weapons', 'model', name, { group, milestone: ms, budget: '500–1.5k tris (one model for view, pickup and bots) · 1024² baked textures', parts: ['Concept and silhouette', 'First-person viewmodel mesh', 'World / pickup mesh + LODs', 'Materials and textures', 'Rig (magazine, bolt, trigger)', 'Animations: equip, fire, reload, sprint', 'Inventory and HUD icon', 'Fire VFX: muzzle, tracer, casing'] });
   add('Weapon audio', 'audio', `${name} audio`, { id: slug(name) + '-audio', group, milestone: ms, budget: 'WAV 48 kHz mono one-shots (QOA-compressed on import)', parts: ['Fire (close)', 'Fire (distant tail)', 'Reload', 'Equip', 'Dry fire'] });
 }
 
@@ -50,37 +51,37 @@ const H = [
   ['Field Patch', '+25 health · stack 6'], ['Shield Cell', '+25 shields · stack 6'], ['Shield Pack', '+50 shields · stack 3'],
   ['Shield Core', 'Full shields · stack 1'], ['Trauma Kit', 'Full health · stack 1'], ['Phoenix Capsule', 'Full health and shields · stack 1']
 ];
-for (const [name, effect] of H) add('Healing items', 'model', name, { group: effect, milestone: ['Field Patch', 'Shield Pack'].includes(name) ? M.combat : M.equip, budget: '2k tris · 1024² textures', parts: ['Pickup mesh', 'Held mesh', 'Materials', 'Inventory icon', 'Use VFX'], notes: 'Distinct silhouette per item; health items coral, shield items cyan.' });
+for (const [name, effect] of H) add('Healing items', 'model', name, { group: effect, milestone: ['Field Patch', 'Shield Pack'].includes(name) ? M.combat : M.equip, budget: '500–1.5k tris · 1024² baked textures', parts: ['Pickup mesh', 'Held mesh', 'Materials', 'Inventory icon', 'Use VFX'], notes: 'Distinct silhouette per item; health items coral, shield items cyan.' });
 add('Item audio', 'audio', 'Healing item audio', { milestone: M.combat, parts: ['Use loop per item (6)', 'Use complete', 'Use interrupted', 'Pickup'] });
 const G = [['Fragmentation grenade', 'Timed explosive'], ['Arc grenade', 'Shield and vehicle disruption'], ['Veil grenade', 'Concealment cloud']];
-for (const [name, role] of G) add('Grenades', 'model', name, { group: role, milestone: M.equip, budget: '1.5k tris · 1024² textures', parts: ['Mesh', 'Materials', 'Inventory icon', 'Detonation VFX'] });
+for (const [name, role] of G) add('Grenades', 'model', name, { group: role, milestone: M.equip, budget: '500–1.5k tris · 1024² baked textures', parts: ['Mesh', 'Materials', 'Inventory icon', 'Detonation VFX'] });
 add('Item audio', 'audio', 'Grenade audio', { milestone: M.equip, parts: ['Pin and throw', 'Bounce', 'Frag detonation (close / distant)', 'Arc burst', 'Veil hiss and cloud'] });
-add('Utility', 'model', 'Tethercaster', { group: 'Grapple', milestone: M.trav, budget: '6k tris viewmodel · 2048² textures', parts: ['Viewmodel mesh', 'Pickup mesh', 'Hook head', 'Cable material and shader', 'Rig', 'Inventory icon', 'Recharge indicator'] });
+add('Utility', 'model', 'Tethercaster', { group: 'Grapple', milestone: M.trav, budget: '500–1.5k tris · 1024² baked textures', parts: ['Viewmodel mesh', 'Pickup mesh', 'Hook head', 'Cable material and shader', 'Rig', 'Inventory icon', 'Recharge indicator'] });
 add('Item audio', 'audio', 'Tethercaster audio', { milestone: M.trav, parts: ['Fire', 'Anchor hit', 'Reel loop', 'Release', 'Recharge complete'] });
-add('Pickups', 'model', 'Ammunition boxes', { milestone: M.combat, budget: '800 tris each', parts: ['Light', 'Medium', 'Heavy', 'Shells'] });
-add('Pickups', 'model', 'Colony supply crate', { milestone: M.combat, budget: '3k tris', parts: ['Mesh', 'Open animation', 'Loot glow VFX'], notes: 'Proposed loot source; confirm looting design.' });
+add('Pickups', 'model', 'Ammunition boxes', { milestone: M.combat, budget: '100–800 tris each (prop)', parts: ['Light', 'Medium', 'Heavy', 'Shells'] });
+add('Pickups', 'model', 'Colony supply crate', { milestone: M.combat, budget: '100–800 tris (prop)', parts: ['Mesh', 'Open animation', 'Loot glow VFX'], notes: 'Proposed loot source; confirm looting design.' });
 
 // ---- Vehicles
 const V = [
-  ['Mule', 'Colony buggy · reliable, loud', '35k tris'], ['Skimmer', 'One-seat hover bike · fast, exposed', '25k tris'],
-  ['Strider', 'Heavy survey rover · slow, durable', '40k tris'], ['Kestrel', 'Unarmed utility rotorcraft', '40k tris']
+  ['Mule', 'Colony buggy · reliable, loud', '4k–8k tris'], ['Skimmer', 'One-seat hover bike · fast, exposed', '3k–6k tris'],
+  ['Strider', 'Heavy survey rover · slow, durable', '4k–8k tris'], ['Kestrel', 'Unarmed utility rotorcraft', '4k–8k tris']
 ];
 for (const [name, role, tris] of V) {
-  add('Vehicles', 'model', name, { group: role, milestone: M.equip, budget: `${tris} · 2048² textures · 3 LODs`, parts: ['Concept and silhouette', 'Blockout and scale test', 'Exterior mesh + LODs', name === 'Kestrel' ? 'Cockpit interior' : 'Seat and controls', 'Damage states', 'Materials and textures', 'Rig: ' + (name === 'Kestrel' ? 'rotors, skids, doors' : name === 'Skimmer' ? 'hover pads, handlebars' : 'wheels, suspension, doors'), name === 'Kestrel' ? 'Rotor wash VFX' : 'Dust and exhaust VFX'], decision: name === 'Kestrel' ? 'Seating, flight ceiling, energy and airborne exit rules are open.' : null });
+  add('Vehicles', 'model', name, { group: role, milestone: M.equip, budget: `${tris} · 2048² baked textures`, parts: ['Concept and silhouette', 'Blockout and scale test', 'Exterior mesh + LODs', name === 'Kestrel' ? 'Cockpit interior' : 'Seat and controls', 'Damage states', 'Materials and textures', 'Rig: ' + (name === 'Kestrel' ? 'rotors, skids, doors' : name === 'Skimmer' ? 'hover pads, handlebars' : 'wheels, suspension, doors'), name === 'Kestrel' ? 'Rotor wash VFX' : 'Dust and exhaust VFX'], decision: name === 'Kestrel' ? 'Seating, flight ceiling, energy and airborne exit rules are open.' : null });
   add('Vehicle audio', 'audio', `${name} audio`, { id: slug(name) + '-audio', milestone: M.equip, budget: 'Ogg Vorbis 48 kHz · seamless loops', parts: ['Engine loop (idle / load / high)', 'Distant pass-by (audible warning)', 'Enter / exit', 'Impacts', 'Destroyed'] });
 }
 
 // ---- Drop transport
-add('Drop transport', 'model', 'Drop transport', { group: 'Start-of-match carrier (working name needed)', milestone: M.loop, budget: '45k tris · 2048² textures · 2 LODs', parts: ['Concept and silhouette', 'Blockout and scale (60 jumpers)', 'Exterior mesh + LODs', 'Interior hold and rear ramp', 'Materials and textures', 'Rig: ramp, engines, landing gear', 'Flight-path and ramp-open animation', 'Engine contrail VFX'], notes: 'Flies a straight line across Ringfall at match start; players jump from the rear ramp. Original colony-carrier design, readable against the ringed sky.', decision: 'Deployment: transport route, jump window and drop rules are undecided.' });
-add('Drop transport', 'model', 'Descent device', { milestone: M.loop, budget: '5k tris', parts: ['Concept', 'Mesh', 'Deploy animation', 'Trail VFX'], decision: 'Whether players use a glider, thruster pack or nothing (no fall damage) is undecided.' });
+add('Drop transport', 'model', 'Drop transport', { group: 'Start-of-match carrier (working name needed)', milestone: M.loop, budget: '8k–15k tris · 2048² baked textures', parts: ['Concept and silhouette', 'Blockout and scale (60 jumpers)', 'Exterior mesh + LODs', 'Interior hold and rear ramp', 'Materials and textures', 'Rig: ramp, engines, landing gear', 'Flight-path and ramp-open animation', 'Engine contrail VFX'], notes: 'Flies a straight line across Ringfall at match start; players jump from the rear ramp. Original colony-carrier design, readable against the ringed sky.', decision: 'Deployment: transport route, jump window and drop rules are undecided.' });
+add('Drop transport', 'model', 'Descent device', { milestone: M.loop, budget: '500–1.5k tris (main item)', parts: ['Concept', 'Mesh', 'Deploy animation', 'Trail VFX'], decision: 'Whether players use a glider, thruster pack or nothing (no fall damage) is undecided.' });
 add('Drop transport', 'audio', 'Drop transport audio', { milestone: M.loop, parts: ['Engine loop (exterior, distant)', 'Hold interior ambience', 'Ramp open', 'Jump-out wind gust', 'Freefall wind loop', 'Landing'] });
 
 // ---- Environment: Ringfall
 add('Environment', 'model', 'Ringed sky dome', { milestone: M.visual, budget: 'Sky shader + 4096² ring texture', parts: ['Ring band texture and shader', 'Planet and moon', 'Stars and haze', 'Fixed lighting setup'], notes: 'Rings visible from most outdoor locations; start with fixed sky and lighting.' });
 add('Environment', 'model', 'Ringfall terrain', { milestone: M.visual, budget: 'Heightmap + 4 splat layers', parts: ['Greybox heightmap', 'Crater lake basin', 'Final heightmap', 'Terrain materials: basalt, grassland, black glass, sand', 'Water shader (turquoise lakes)'], decision: 'Map size and final location layout are undecided.' });
-add('Environment', 'model', 'Luminous vegetation kit', { milestone: M.visual, budget: '1–4k tris per plant · instanced', parts: ['Pale grass cards', 'Glowing shrubs', 'Giant Bloomwild plants', 'Luminous roots', 'Emissive material'] });
-add('Environment', 'model', 'Colony structure kit', { milestone: M.visual, budget: 'Modular · 2048² trim sheets', parts: ['Habitat module', 'Warehouse', 'Cargo pad', 'Comms mast', 'Gantries and stairs', 'Pipes and cables', 'Amber work lights'] });
-add('Environment', 'model', 'Ancient ruins kit', { milestone: M.full, budget: 'Modular · 2048² trim sheets', parts: ['Wall and arch pieces', 'Pillars', 'Bridge spans (The Spine)', 'Canyon ruin set (Hollow Array)'] });
+add('Environment', 'model', 'Luminous vegetation kit', { milestone: M.visual, budget: '100–800 tris per plant (prop) · instanced', parts: ['Pale grass cards', 'Glowing shrubs', 'Giant Bloomwild plants', 'Luminous roots', 'Emissive material'] });
+add('Environment', 'model', 'Colony structure kit', { milestone: M.visual, budget: 'Modular pieces under 1k tris each where possible', parts: ['Habitat module', 'Warehouse', 'Cargo pad', 'Comms mast', 'Gantries and stairs', 'Pipes and cables', 'Amber work lights'] });
+add('Environment', 'model', 'Ancient ruins kit', { milestone: M.full, budget: 'Modular pieces under 1k tris each where possible', parts: ['Wall and arch pieces', 'Pillars', 'Bridge spans (The Spine)', 'Canyon ruin set (Hollow Array)'] });
 for (const [name, parts] of [
   ['Crown Observatory', ['Telescope domes', 'Fractured comms dish']],
   ['Anchorport', ['Grounded transports', 'Warehouses', 'Cargo containers']],
@@ -90,7 +91,7 @@ for (const [name, parts] of [
   ['Hollow Array', ['Canyon ruins', 'Array structures']],
   ['Bloomwild', ['Giant plant canopy', 'Streams']]
 ]) add('Locations', 'model', name, { milestone: name === 'Glass Basin' ? M.visual : M.full, parts: ['Layout blockout', ...parts, 'Landmark silhouette pass'], notes: 'Every elevated position needs two attack routes and an escape route.' });
-add('Environment', 'model', 'Prop kit', { milestone: M.visual, budget: '0.5–3k tris each', parts: ['Crates and barrels', 'Fences and barriers', 'Lamps', 'Debris', 'Vehicle spawn pads'] });
+add('Environment', 'model', 'Prop kit', { milestone: M.visual, budget: '100–800 tris each', parts: ['Crates and barrels', 'Fences and barriers', 'Lamps', 'Debris', 'Vehicle spawn pads'] });
 
 // ---- VFX
 add('VFX', 'vfx', 'Ion storm', { milestone: M.loop, parts: ['Storm wall shader', 'Clouds and particles', 'Distant lightning', 'Boundary interference (screen)'], notes: 'Edge must stay unmistakable in a firefight.' });
