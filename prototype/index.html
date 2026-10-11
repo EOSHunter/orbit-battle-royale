@@ -1,0 +1,50 @@
+<title>Orbit Royale Prototype</title>
+<link rel="stylesheet" href="ds/tokens.css">
+<link rel="stylesheet" href="ds/bundle.css">
+<link rel="stylesheet" href="app.css">
+
+<canvas id="world" aria-hidden="true"></canvas>
+<main id="app">
+  <section class="screen" id="s-loading" aria-label="Loading"></section>
+  <section class="screen" id="s-menu" aria-label="Main menu"></section>
+  <section class="screen" id="s-lobby" aria-label="Lobby"></section>
+  <section class="screen" id="s-deploy" aria-label="Deployment"></section>
+  <section class="screen" id="s-game" aria-label="Match"></section>
+  <section class="screen" id="s-settings" aria-label="Settings"></section>
+  <section class="screen" id="s-credits" aria-label="Credits"></section>
+  <section class="screen" id="s-results" aria-label="Results"></section>
+</main>
+<div class="layer" id="layer"></div>
+<div class="toast-dock" id="toasts" aria-live="polite"></div>
+
+<button class="proto-btn" id="proto-btn" aria-controls="proto">` Prototype · <span id="proto-screen"></span></button>
+<aside class="proto" id="proto" aria-label="Prototype controls">
+  <p>Prototype controls, not part of the game UI. Toggle with the <b>`</b> key.</p>
+  <h4>Jump to screen</h4>
+  <div class="grid">
+    <button class="p" data-go="loading">Loading</button><button class="p" data-go="menu">Main menu</button>
+    <button class="p" data-go="lobby">Lobby</button><button class="p" data-go="deploy">Deploy</button>
+    <button class="p" data-go="game">Match HUD</button><button class="p" data-go="inventory">Inventory</button>
+    <button class="p" data-go="map">Map</button><button class="p" data-go="pause">Pause</button>
+    <button class="p" data-go="settings">Settings</button><button class="p" data-go="results">Results</button>
+  </div>
+  <h4>Match events</h4>
+  <div class="grid">
+    <button class="p" data-ev="front">Hit from front</button><button class="p" data-ev="behind">Hit from behind</button>
+    <button class="p" data-ev="left">Hit from left</button><button class="p" data-ev="right">Hit from right</button>
+    <button class="p" data-ev="random">Random hit (T)</button><button class="p" data-ev="lowhp">Low health</button>
+    <button class="p" data-ev="heal">Full health</button><button class="p" data-ev="refill">Add loot nearby</button>
+    <button class="p" data-ev="storm">Storm in 0:30</button><button class="p" data-ev="shrink">Close storm now</button>
+    <button class="p" data-ev="die">Get eliminated</button><button class="p" data-ev="win">Win match</button>
+  </div>
+  <h4>Options</h4>
+  <label><input type="checkbox" id="p-bots" checked> Bots shoot back</label>
+  <label><input type="checkbox" id="p-fail"> Fail the download at 412 MB</label>
+  <label><input type="checkbox" id="p-freeze"> Pause menu freezes the match</label>
+  <p>Magazine sizes, damage, timers and loot are placeholders, not balance decisions.</p>
+</aside>
+
+<script src="ds/bundle.js"></script>
+<script src="world.js"></script>
+<script src="app.js"></script>
+<script src="game.js"></script>

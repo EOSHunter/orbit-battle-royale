@@ -1,0 +1,2855 @@
+[
+  {
+    "id": "operator-third-person",
+    "name": "Operator (third-person)",
+    "category": "Characters",
+    "kind": "model",
+    "group": null,
+    "milestone": "Combat and inventory",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Concept sheet",
+        "done": false
+      },
+      {
+        "n": "Base mesh",
+        "done": false
+      },
+      {
+        "n": "Materials and textures",
+        "done": false
+      },
+      {
+        "n": "Rig and skinning",
+        "done": false
+      },
+      {
+        "n": "LODs",
+        "done": false
+      },
+      {
+        "n": "Bot variants (gear and color swaps)",
+        "done": false
+      }
+    ],
+    "budget": "20k tris · 2048² textures · 3 LODs",
+    "path": "assets/models/characters/operator-third-person.glb",
+    "source": "assets/source/characters/operator-third-person.blend",
+    "decision": null,
+    "notes": "One original expedition-suit operator. Bots reuse it with gear and color swaps so 59 bots stay readable.",
+    "order": 0
+  },
+  {
+    "id": "first-person-arms",
+    "name": "First-person arms",
+    "category": "Characters",
+    "kind": "model",
+    "group": null,
+    "milestone": "Traversal",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Mesh",
+        "done": false
+      },
+      {
+        "n": "Materials",
+        "done": false
+      },
+      {
+        "n": "Rig matching the operator skeleton",
+        "done": false
+      }
+    ],
+    "budget": "8k tris · 2048² textures",
+    "path": "assets/models/characters/first-person-arms.glb",
+    "source": "assets/source/characters/first-person-arms.blend",
+    "decision": "Combat camera: first-person combat is proposed, not approved.",
+    "notes": "",
+    "order": 1
+  },
+  {
+    "id": "locomotion-set",
+    "name": "Locomotion set",
+    "category": "Characters",
+    "kind": "animation",
+    "group": null,
+    "milestone": "Traversal",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Idle",
+        "done": false
+      },
+      {
+        "n": "Walk",
+        "done": false
+      },
+      {
+        "n": "Sprint",
+        "done": false
+      },
+      {
+        "n": "Crouch and crouch-walk",
+        "done": false
+      },
+      {
+        "n": "Jump, fall, land",
+        "done": false
+      },
+      {
+        "n": "Slow walk while healing",
+        "done": false
+      }
+    ],
+    "budget": null,
+    "path": "assets/animations/characters/locomotion-set.glb",
+    "source": "assets/source/characters/locomotion-set.blend",
+    "decision": null,
+    "notes": "No fall damage: landings from any height need a clean recovery, not a stagger.",
+    "order": 2
+  },
+  {
+    "id": "tethercaster-traversal-set",
+    "name": "Tethercaster traversal set",
+    "category": "Characters",
+    "kind": "animation",
+    "group": null,
+    "milestone": "Traversal",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Fire hook",
+        "done": false
+      },
+      {
+        "n": "Reel in",
+        "done": false
+      },
+      {
+        "n": "Swing loop",
+        "done": false
+      },
+      {
+        "n": "Release and momentum carry",
+        "done": false
+      }
+    ],
+    "budget": null,
+    "path": "assets/animations/characters/tethercaster-traversal-set.glb",
+    "source": "assets/source/characters/tethercaster-traversal-set.blend",
+    "decision": null,
+    "notes": "",
+    "order": 3
+  },
+  {
+    "id": "weapon-handling-set",
+    "name": "Weapon handling set",
+    "category": "Characters",
+    "kind": "animation",
+    "group": null,
+    "milestone": "Combat and inventory",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Equip and holster per weapon",
+        "done": false
+      },
+      {
+        "n": "Hip and aim poses",
+        "done": false
+      },
+      {
+        "n": "Fire and recoil",
+        "done": false
+      },
+      {
+        "n": "Reload per weapon",
+        "done": false
+      },
+      {
+        "n": "Grenade throw",
+        "done": false
+      }
+    ],
+    "budget": null,
+    "path": "assets/animations/characters/weapon-handling-set.glb",
+    "source": "assets/source/characters/weapon-handling-set.blend",
+    "decision": null,
+    "notes": "",
+    "order": 4
+  },
+  {
+    "id": "healing-use-set",
+    "name": "Healing use set",
+    "category": "Characters",
+    "kind": "animation",
+    "group": null,
+    "milestone": "Combat and inventory",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Field Patch / Trauma Kit (apply)",
+        "done": false
+      },
+      {
+        "n": "Shield Cell / Pack / Core (insert)",
+        "done": false
+      },
+      {
+        "n": "Phoenix Capsule (inject)",
+        "done": false
+      },
+      {
+        "n": "Interrupted exit",
+        "done": false
+      }
+    ],
+    "budget": null,
+    "path": "assets/animations/characters/healing-use-set.glb",
+    "source": "assets/source/characters/healing-use-set.blend",
+    "decision": null,
+    "notes": "",
+    "order": 5
+  },
+  {
+    "id": "freefall-and-landing",
+    "name": "Freefall and landing",
+    "category": "Characters",
+    "kind": "animation",
+    "group": null,
+    "milestone": "Match loop",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Exit transport",
+        "done": false
+      },
+      {
+        "n": "Freefall pose and steering",
+        "done": false
+      },
+      {
+        "n": "Descent device deploy",
+        "done": false
+      },
+      {
+        "n": "Landing",
+        "done": false
+      }
+    ],
+    "budget": null,
+    "path": "assets/animations/characters/freefall-and-landing.glb",
+    "source": "assets/source/characters/freefall-and-landing.blend",
+    "decision": "Drop rules: how players slow down after jumping (glider, thruster pack, or none) is undecided.",
+    "notes": "",
+    "order": 6
+  },
+  {
+    "id": "vehicle-set",
+    "name": "Vehicle set",
+    "category": "Characters",
+    "kind": "animation",
+    "group": null,
+    "milestone": "Equipment and rotation",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Enter and exit (ground vehicles)",
+        "done": false
+      },
+      {
+        "n": "Driver sit and steer",
+        "done": false
+      },
+      {
+        "n": "Kestrel pilot",
+        "done": false
+      },
+      {
+        "n": "Airborne exit",
+        "done": false
+      }
+    ],
+    "budget": null,
+    "path": "assets/animations/characters/vehicle-set.glb",
+    "source": "assets/source/characters/vehicle-set.blend",
+    "decision": null,
+    "notes": "",
+    "order": 7
+  },
+  {
+    "id": "elimination",
+    "name": "Elimination",
+    "category": "Characters",
+    "kind": "animation",
+    "group": null,
+    "milestone": "Match loop",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Elimination fall",
+        "done": false
+      },
+      {
+        "n": "Results screen pose",
+        "done": false
+      }
+    ],
+    "budget": null,
+    "path": "assets/animations/characters/elimination.glb",
+    "source": "assets/source/characters/elimination.blend",
+    "decision": null,
+    "notes": "",
+    "order": 8
+  },
+  {
+    "id": "ar-7-wayfarer",
+    "name": "AR-7 Wayfarer",
+    "category": "Weapons",
+    "kind": "model",
+    "group": "Assault rifle",
+    "milestone": "Combat and inventory",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Concept and silhouette",
+        "done": false
+      },
+      {
+        "n": "First-person viewmodel mesh",
+        "done": false
+      },
+      {
+        "n": "World / pickup mesh + LODs",
+        "done": false
+      },
+      {
+        "n": "Materials and textures",
+        "done": false
+      },
+      {
+        "n": "Rig (magazine, bolt, trigger)",
+        "done": false
+      },
+      {
+        "n": "Animations: equip, fire, reload, sprint",
+        "done": false
+      },
+      {
+        "n": "Inventory and HUD icon",
+        "done": false
+      },
+      {
+        "n": "Fire VFX: muzzle, tracer, casing",
+        "done": false
+      }
+    ],
+    "budget": "12k tris viewmodel · 3k world model · 2048² textures",
+    "path": "assets/models/weapons/ar-7-wayfarer.glb",
+    "source": "assets/source/weapons/ar-7-wayfarer.blend",
+    "decision": null,
+    "notes": "",
+    "order": 9
+  },
+  {
+    "id": "ar-7-wayfarer-audio",
+    "name": "AR-7 Wayfarer audio",
+    "category": "Weapon audio",
+    "kind": "audio",
+    "group": "Assault rifle",
+    "milestone": "Combat and inventory",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Fire (close)",
+        "done": false
+      },
+      {
+        "n": "Fire (distant tail)",
+        "done": false
+      },
+      {
+        "n": "Reload",
+        "done": false
+      },
+      {
+        "n": "Equip",
+        "done": false
+      },
+      {
+        "n": "Dry fire",
+        "done": false
+      }
+    ],
+    "budget": "Ogg Opus 48 kHz · mono one-shots",
+    "path": "assets/audio/weapon-audio/ar-7-wayfarer-audio.ogg",
+    "source": null,
+    "decision": null,
+    "notes": "",
+    "order": 10
+  },
+  {
+    "id": "sg-4-breaker",
+    "name": "SG-4 Breaker",
+    "category": "Weapons",
+    "kind": "model",
+    "group": "Shotgun",
+    "milestone": "Combat and inventory",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Concept and silhouette",
+        "done": false
+      },
+      {
+        "n": "First-person viewmodel mesh",
+        "done": false
+      },
+      {
+        "n": "World / pickup mesh + LODs",
+        "done": false
+      },
+      {
+        "n": "Materials and textures",
+        "done": false
+      },
+      {
+        "n": "Rig (magazine, bolt, trigger)",
+        "done": false
+      },
+      {
+        "n": "Animations: equip, fire, reload, sprint",
+        "done": false
+      },
+      {
+        "n": "Inventory and HUD icon",
+        "done": false
+      },
+      {
+        "n": "Fire VFX: muzzle, tracer, casing",
+        "done": false
+      }
+    ],
+    "budget": "12k tris viewmodel · 3k world model · 2048² textures",
+    "path": "assets/models/weapons/sg-4-breaker.glb",
+    "source": "assets/source/weapons/sg-4-breaker.blend",
+    "decision": null,
+    "notes": "",
+    "order": 11
+  },
+  {
+    "id": "sg-4-breaker-audio",
+    "name": "SG-4 Breaker audio",
+    "category": "Weapon audio",
+    "kind": "audio",
+    "group": "Shotgun",
+    "milestone": "Combat and inventory",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Fire (close)",
+        "done": false
+      },
+      {
+        "n": "Fire (distant tail)",
+        "done": false
+      },
+      {
+        "n": "Reload",
+        "done": false
+      },
+      {
+        "n": "Equip",
+        "done": false
+      },
+      {
+        "n": "Dry fire",
+        "done": false
+      }
+    ],
+    "budget": "Ogg Opus 48 kHz · mono one-shots",
+    "path": "assets/audio/weapon-audio/sg-4-breaker-audio.ogg",
+    "source": null,
+    "decision": null,
+    "notes": "",
+    "order": 12
+  },
+  {
+    "id": "p-12-spark",
+    "name": "P-12 Spark",
+    "category": "Weapons",
+    "kind": "model",
+    "group": "Pistol",
+    "milestone": "Equipment and rotation",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Concept and silhouette",
+        "done": false
+      },
+      {
+        "n": "First-person viewmodel mesh",
+        "done": false
+      },
+      {
+        "n": "World / pickup mesh + LODs",
+        "done": false
+      },
+      {
+        "n": "Materials and textures",
+        "done": false
+      },
+      {
+        "n": "Rig (magazine, bolt, trigger)",
+        "done": false
+      },
+      {
+        "n": "Animations: equip, fire, reload, sprint",
+        "done": false
+      },
+      {
+        "n": "Inventory and HUD icon",
+        "done": false
+      },
+      {
+        "n": "Fire VFX: muzzle, tracer, casing",
+        "done": false
+      }
+    ],
+    "budget": "12k tris viewmodel · 3k world model · 2048² textures",
+    "path": "assets/models/weapons/p-12-spark.glb",
+    "source": "assets/source/weapons/p-12-spark.blend",
+    "decision": null,
+    "notes": "",
+    "order": 13
+  },
+  {
+    "id": "p-12-spark-audio",
+    "name": "P-12 Spark audio",
+    "category": "Weapon audio",
+    "kind": "audio",
+    "group": "Pistol",
+    "milestone": "Equipment and rotation",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Fire (close)",
+        "done": false
+      },
+      {
+        "n": "Fire (distant tail)",
+        "done": false
+      },
+      {
+        "n": "Reload",
+        "done": false
+      },
+      {
+        "n": "Equip",
+        "done": false
+      },
+      {
+        "n": "Dry fire",
+        "done": false
+      }
+    ],
+    "budget": "Ogg Opus 48 kHz · mono one-shots",
+    "path": "assets/audio/weapon-audio/p-12-spark-audio.ogg",
+    "source": null,
+    "decision": null,
+    "notes": "",
+    "order": 14
+  },
+  {
+    "id": "s-9-wisp",
+    "name": "S-9 Wisp",
+    "category": "Weapons",
+    "kind": "model",
+    "group": "SMG",
+    "milestone": "Equipment and rotation",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Concept and silhouette",
+        "done": false
+      },
+      {
+        "n": "First-person viewmodel mesh",
+        "done": false
+      },
+      {
+        "n": "World / pickup mesh + LODs",
+        "done": false
+      },
+      {
+        "n": "Materials and textures",
+        "done": false
+      },
+      {
+        "n": "Rig (magazine, bolt, trigger)",
+        "done": false
+      },
+      {
+        "n": "Animations: equip, fire, reload, sprint",
+        "done": false
+      },
+      {
+        "n": "Inventory and HUD icon",
+        "done": false
+      },
+      {
+        "n": "Fire VFX: muzzle, tracer, casing",
+        "done": false
+      }
+    ],
+    "budget": "12k tris viewmodel · 3k world model · 2048² textures",
+    "path": "assets/models/weapons/s-9-wisp.glb",
+    "source": "assets/source/weapons/s-9-wisp.blend",
+    "decision": null,
+    "notes": "",
+    "order": 15
+  },
+  {
+    "id": "s-9-wisp-audio",
+    "name": "S-9 Wisp audio",
+    "category": "Weapon audio",
+    "kind": "audio",
+    "group": "SMG",
+    "milestone": "Equipment and rotation",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Fire (close)",
+        "done": false
+      },
+      {
+        "n": "Fire (distant tail)",
+        "done": false
+      },
+      {
+        "n": "Reload",
+        "done": false
+      },
+      {
+        "n": "Equip",
+        "done": false
+      },
+      {
+        "n": "Dry fire",
+        "done": false
+      }
+    ],
+    "budget": "Ogg Opus 48 kHz · mono one-shots",
+    "path": "assets/audio/weapon-audio/s-9-wisp-audio.ogg",
+    "source": null,
+    "decision": null,
+    "notes": "",
+    "order": 16
+  },
+  {
+    "id": "sr-8-longview",
+    "name": "SR-8 Longview",
+    "category": "Weapons",
+    "kind": "model",
+    "group": "Sniper",
+    "milestone": "Equipment and rotation",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Concept and silhouette",
+        "done": false
+      },
+      {
+        "n": "First-person viewmodel mesh",
+        "done": false
+      },
+      {
+        "n": "World / pickup mesh + LODs",
+        "done": false
+      },
+      {
+        "n": "Materials and textures",
+        "done": false
+      },
+      {
+        "n": "Rig (magazine, bolt, trigger)",
+        "done": false
+      },
+      {
+        "n": "Animations: equip, fire, reload, sprint",
+        "done": false
+      },
+      {
+        "n": "Inventory and HUD icon",
+        "done": false
+      },
+      {
+        "n": "Fire VFX: muzzle, tracer, casing",
+        "done": false
+      }
+    ],
+    "budget": "12k tris viewmodel · 3k world model · 2048² textures",
+    "path": "assets/models/weapons/sr-8-longview.glb",
+    "source": "assets/source/weapons/sr-8-longview.blend",
+    "decision": null,
+    "notes": "",
+    "order": 17
+  },
+  {
+    "id": "sr-8-longview-audio",
+    "name": "SR-8 Longview audio",
+    "category": "Weapon audio",
+    "kind": "audio",
+    "group": "Sniper",
+    "milestone": "Equipment and rotation",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Fire (close)",
+        "done": false
+      },
+      {
+        "n": "Fire (distant tail)",
+        "done": false
+      },
+      {
+        "n": "Reload",
+        "done": false
+      },
+      {
+        "n": "Equip",
+        "done": false
+      },
+      {
+        "n": "Dry fire",
+        "done": false
+      }
+    ],
+    "budget": "Ogg Opus 48 kHz · mono one-shots",
+    "path": "assets/audio/weapon-audio/sr-8-longview-audio.ogg",
+    "source": null,
+    "decision": null,
+    "notes": "",
+    "order": 18
+  },
+  {
+    "id": "field-patch",
+    "name": "Field Patch",
+    "category": "Healing items",
+    "kind": "model",
+    "group": "+25 health · stack 6",
+    "milestone": "Combat and inventory",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Pickup mesh",
+        "done": false
+      },
+      {
+        "n": "Held mesh",
+        "done": false
+      },
+      {
+        "n": "Materials",
+        "done": false
+      },
+      {
+        "n": "Inventory icon",
+        "done": false
+      },
+      {
+        "n": "Use VFX",
+        "done": false
+      }
+    ],
+    "budget": "2k tris · 1024² textures",
+    "path": "assets/models/healing-items/field-patch.glb",
+    "source": "assets/source/healing-items/field-patch.blend",
+    "decision": null,
+    "notes": "Distinct silhouette per item; health items coral, shield items cyan.",
+    "order": 19
+  },
+  {
+    "id": "shield-cell",
+    "name": "Shield Cell",
+    "category": "Healing items",
+    "kind": "model",
+    "group": "+25 shields · stack 6",
+    "milestone": "Equipment and rotation",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Pickup mesh",
+        "done": false
+      },
+      {
+        "n": "Held mesh",
+        "done": false
+      },
+      {
+        "n": "Materials",
+        "done": false
+      },
+      {
+        "n": "Inventory icon",
+        "done": false
+      },
+      {
+        "n": "Use VFX",
+        "done": false
+      }
+    ],
+    "budget": "2k tris · 1024² textures",
+    "path": "assets/models/healing-items/shield-cell.glb",
+    "source": "assets/source/healing-items/shield-cell.blend",
+    "decision": null,
+    "notes": "Distinct silhouette per item; health items coral, shield items cyan.",
+    "order": 20
+  },
+  {
+    "id": "shield-pack",
+    "name": "Shield Pack",
+    "category": "Healing items",
+    "kind": "model",
+    "group": "+50 shields · stack 3",
+    "milestone": "Combat and inventory",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Pickup mesh",
+        "done": false
+      },
+      {
+        "n": "Held mesh",
+        "done": false
+      },
+      {
+        "n": "Materials",
+        "done": false
+      },
+      {
+        "n": "Inventory icon",
+        "done": false
+      },
+      {
+        "n": "Use VFX",
+        "done": false
+      }
+    ],
+    "budget": "2k tris · 1024² textures",
+    "path": "assets/models/healing-items/shield-pack.glb",
+    "source": "assets/source/healing-items/shield-pack.blend",
+    "decision": null,
+    "notes": "Distinct silhouette per item; health items coral, shield items cyan.",
+    "order": 21
+  },
+  {
+    "id": "shield-core",
+    "name": "Shield Core",
+    "category": "Healing items",
+    "kind": "model",
+    "group": "Full shields · stack 1",
+    "milestone": "Equipment and rotation",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Pickup mesh",
+        "done": false
+      },
+      {
+        "n": "Held mesh",
+        "done": false
+      },
+      {
+        "n": "Materials",
+        "done": false
+      },
+      {
+        "n": "Inventory icon",
+        "done": false
+      },
+      {
+        "n": "Use VFX",
+        "done": false
+      }
+    ],
+    "budget": "2k tris · 1024² textures",
+    "path": "assets/models/healing-items/shield-core.glb",
+    "source": "assets/source/healing-items/shield-core.blend",
+    "decision": null,
+    "notes": "Distinct silhouette per item; health items coral, shield items cyan.",
+    "order": 22
+  },
+  {
+    "id": "trauma-kit",
+    "name": "Trauma Kit",
+    "category": "Healing items",
+    "kind": "model",
+    "group": "Full health · stack 1",
+    "milestone": "Equipment and rotation",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Pickup mesh",
+        "done": false
+      },
+      {
+        "n": "Held mesh",
+        "done": false
+      },
+      {
+        "n": "Materials",
+        "done": false
+      },
+      {
+        "n": "Inventory icon",
+        "done": false
+      },
+      {
+        "n": "Use VFX",
+        "done": false
+      }
+    ],
+    "budget": "2k tris · 1024² textures",
+    "path": "assets/models/healing-items/trauma-kit.glb",
+    "source": "assets/source/healing-items/trauma-kit.blend",
+    "decision": null,
+    "notes": "Distinct silhouette per item; health items coral, shield items cyan.",
+    "order": 23
+  },
+  {
+    "id": "phoenix-capsule",
+    "name": "Phoenix Capsule",
+    "category": "Healing items",
+    "kind": "model",
+    "group": "Full health and shields · stack 1",
+    "milestone": "Equipment and rotation",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Pickup mesh",
+        "done": false
+      },
+      {
+        "n": "Held mesh",
+        "done": false
+      },
+      {
+        "n": "Materials",
+        "done": false
+      },
+      {
+        "n": "Inventory icon",
+        "done": false
+      },
+      {
+        "n": "Use VFX",
+        "done": false
+      }
+    ],
+    "budget": "2k tris · 1024² textures",
+    "path": "assets/models/healing-items/phoenix-capsule.glb",
+    "source": "assets/source/healing-items/phoenix-capsule.blend",
+    "decision": null,
+    "notes": "Distinct silhouette per item; health items coral, shield items cyan.",
+    "order": 24
+  },
+  {
+    "id": "healing-item-audio",
+    "name": "Healing item audio",
+    "category": "Item audio",
+    "kind": "audio",
+    "group": null,
+    "milestone": "Combat and inventory",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Use loop per item (6)",
+        "done": false
+      },
+      {
+        "n": "Use complete",
+        "done": false
+      },
+      {
+        "n": "Use interrupted",
+        "done": false
+      },
+      {
+        "n": "Pickup",
+        "done": false
+      }
+    ],
+    "budget": null,
+    "path": "assets/audio/item-audio/healing-item-audio.ogg",
+    "source": null,
+    "decision": null,
+    "notes": "",
+    "order": 25
+  },
+  {
+    "id": "fragmentation-grenade",
+    "name": "Fragmentation grenade",
+    "category": "Grenades",
+    "kind": "model",
+    "group": "Timed explosive",
+    "milestone": "Equipment and rotation",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Mesh",
+        "done": false
+      },
+      {
+        "n": "Materials",
+        "done": false
+      },
+      {
+        "n": "Inventory icon",
+        "done": false
+      },
+      {
+        "n": "Detonation VFX",
+        "done": false
+      }
+    ],
+    "budget": "1.5k tris · 1024² textures",
+    "path": "assets/models/grenades/fragmentation-grenade.glb",
+    "source": "assets/source/grenades/fragmentation-grenade.blend",
+    "decision": null,
+    "notes": "",
+    "order": 26
+  },
+  {
+    "id": "arc-grenade",
+    "name": "Arc grenade",
+    "category": "Grenades",
+    "kind": "model",
+    "group": "Shield and vehicle disruption",
+    "milestone": "Equipment and rotation",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Mesh",
+        "done": false
+      },
+      {
+        "n": "Materials",
+        "done": false
+      },
+      {
+        "n": "Inventory icon",
+        "done": false
+      },
+      {
+        "n": "Detonation VFX",
+        "done": false
+      }
+    ],
+    "budget": "1.5k tris · 1024² textures",
+    "path": "assets/models/grenades/arc-grenade.glb",
+    "source": "assets/source/grenades/arc-grenade.blend",
+    "decision": null,
+    "notes": "",
+    "order": 27
+  },
+  {
+    "id": "veil-grenade",
+    "name": "Veil grenade",
+    "category": "Grenades",
+    "kind": "model",
+    "group": "Concealment cloud",
+    "milestone": "Equipment and rotation",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Mesh",
+        "done": false
+      },
+      {
+        "n": "Materials",
+        "done": false
+      },
+      {
+        "n": "Inventory icon",
+        "done": false
+      },
+      {
+        "n": "Detonation VFX",
+        "done": false
+      }
+    ],
+    "budget": "1.5k tris · 1024² textures",
+    "path": "assets/models/grenades/veil-grenade.glb",
+    "source": "assets/source/grenades/veil-grenade.blend",
+    "decision": null,
+    "notes": "",
+    "order": 28
+  },
+  {
+    "id": "grenade-audio",
+    "name": "Grenade audio",
+    "category": "Item audio",
+    "kind": "audio",
+    "group": null,
+    "milestone": "Equipment and rotation",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Pin and throw",
+        "done": false
+      },
+      {
+        "n": "Bounce",
+        "done": false
+      },
+      {
+        "n": "Frag detonation (close / distant)",
+        "done": false
+      },
+      {
+        "n": "Arc burst",
+        "done": false
+      },
+      {
+        "n": "Veil hiss and cloud",
+        "done": false
+      }
+    ],
+    "budget": null,
+    "path": "assets/audio/item-audio/grenade-audio.ogg",
+    "source": null,
+    "decision": null,
+    "notes": "",
+    "order": 29
+  },
+  {
+    "id": "tethercaster",
+    "name": "Tethercaster",
+    "category": "Utility",
+    "kind": "model",
+    "group": "Grapple",
+    "milestone": "Traversal",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Viewmodel mesh",
+        "done": false
+      },
+      {
+        "n": "Pickup mesh",
+        "done": false
+      },
+      {
+        "n": "Hook head",
+        "done": false
+      },
+      {
+        "n": "Cable material and shader",
+        "done": false
+      },
+      {
+        "n": "Rig",
+        "done": false
+      },
+      {
+        "n": "Inventory icon",
+        "done": false
+      },
+      {
+        "n": "Recharge indicator",
+        "done": false
+      }
+    ],
+    "budget": "6k tris viewmodel · 2048² textures",
+    "path": "assets/models/utility/tethercaster.glb",
+    "source": "assets/source/utility/tethercaster.blend",
+    "decision": null,
+    "notes": "",
+    "order": 30
+  },
+  {
+    "id": "tethercaster-audio",
+    "name": "Tethercaster audio",
+    "category": "Item audio",
+    "kind": "audio",
+    "group": null,
+    "milestone": "Traversal",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Fire",
+        "done": false
+      },
+      {
+        "n": "Anchor hit",
+        "done": false
+      },
+      {
+        "n": "Reel loop",
+        "done": false
+      },
+      {
+        "n": "Release",
+        "done": false
+      },
+      {
+        "n": "Recharge complete",
+        "done": false
+      }
+    ],
+    "budget": null,
+    "path": "assets/audio/item-audio/tethercaster-audio.ogg",
+    "source": null,
+    "decision": null,
+    "notes": "",
+    "order": 31
+  },
+  {
+    "id": "ammunition-boxes",
+    "name": "Ammunition boxes",
+    "category": "Pickups",
+    "kind": "model",
+    "group": null,
+    "milestone": "Combat and inventory",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Light",
+        "done": false
+      },
+      {
+        "n": "Medium",
+        "done": false
+      },
+      {
+        "n": "Heavy",
+        "done": false
+      },
+      {
+        "n": "Shells",
+        "done": false
+      }
+    ],
+    "budget": "800 tris each",
+    "path": "assets/models/pickups/ammunition-boxes.glb",
+    "source": "assets/source/pickups/ammunition-boxes.blend",
+    "decision": null,
+    "notes": "",
+    "order": 32
+  },
+  {
+    "id": "colony-supply-crate",
+    "name": "Colony supply crate",
+    "category": "Pickups",
+    "kind": "model",
+    "group": null,
+    "milestone": "Combat and inventory",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Mesh",
+        "done": false
+      },
+      {
+        "n": "Open animation",
+        "done": false
+      },
+      {
+        "n": "Loot glow VFX",
+        "done": false
+      }
+    ],
+    "budget": "3k tris",
+    "path": "assets/models/pickups/colony-supply-crate.glb",
+    "source": "assets/source/pickups/colony-supply-crate.blend",
+    "decision": null,
+    "notes": "Proposed loot source; confirm looting design.",
+    "order": 33
+  },
+  {
+    "id": "mule",
+    "name": "Mule",
+    "category": "Vehicles",
+    "kind": "model",
+    "group": "Colony buggy · reliable, loud",
+    "milestone": "Equipment and rotation",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Concept and silhouette",
+        "done": false
+      },
+      {
+        "n": "Blockout and scale test",
+        "done": false
+      },
+      {
+        "n": "Exterior mesh + LODs",
+        "done": false
+      },
+      {
+        "n": "Seat and controls",
+        "done": false
+      },
+      {
+        "n": "Damage states",
+        "done": false
+      },
+      {
+        "n": "Materials and textures",
+        "done": false
+      },
+      {
+        "n": "Rig: wheels, suspension, doors",
+        "done": false
+      },
+      {
+        "n": "Dust and exhaust VFX",
+        "done": false
+      }
+    ],
+    "budget": "35k tris · 2048² textures · 3 LODs",
+    "path": "assets/models/vehicles/mule.glb",
+    "source": "assets/source/vehicles/mule.blend",
+    "decision": null,
+    "notes": "",
+    "order": 34
+  },
+  {
+    "id": "mule-audio",
+    "name": "Mule audio",
+    "category": "Vehicle audio",
+    "kind": "audio",
+    "group": null,
+    "milestone": "Equipment and rotation",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Engine loop (idle / load / high)",
+        "done": false
+      },
+      {
+        "n": "Distant pass-by (audible warning)",
+        "done": false
+      },
+      {
+        "n": "Enter / exit",
+        "done": false
+      },
+      {
+        "n": "Impacts",
+        "done": false
+      },
+      {
+        "n": "Destroyed",
+        "done": false
+      }
+    ],
+    "budget": "Ogg Opus 48 kHz · seamless loops",
+    "path": "assets/audio/vehicle-audio/mule-audio.ogg",
+    "source": null,
+    "decision": null,
+    "notes": "",
+    "order": 35
+  },
+  {
+    "id": "skimmer",
+    "name": "Skimmer",
+    "category": "Vehicles",
+    "kind": "model",
+    "group": "One-seat hover bike · fast, exposed",
+    "milestone": "Equipment and rotation",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Concept and silhouette",
+        "done": false
+      },
+      {
+        "n": "Blockout and scale test",
+        "done": false
+      },
+      {
+        "n": "Exterior mesh + LODs",
+        "done": false
+      },
+      {
+        "n": "Seat and controls",
+        "done": false
+      },
+      {
+        "n": "Damage states",
+        "done": false
+      },
+      {
+        "n": "Materials and textures",
+        "done": false
+      },
+      {
+        "n": "Rig: hover pads, handlebars",
+        "done": false
+      },
+      {
+        "n": "Dust and exhaust VFX",
+        "done": false
+      }
+    ],
+    "budget": "25k tris · 2048² textures · 3 LODs",
+    "path": "assets/models/vehicles/skimmer.glb",
+    "source": "assets/source/vehicles/skimmer.blend",
+    "decision": null,
+    "notes": "",
+    "order": 36
+  },
+  {
+    "id": "skimmer-audio",
+    "name": "Skimmer audio",
+    "category": "Vehicle audio",
+    "kind": "audio",
+    "group": null,
+    "milestone": "Equipment and rotation",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Engine loop (idle / load / high)",
+        "done": false
+      },
+      {
+        "n": "Distant pass-by (audible warning)",
+        "done": false
+      },
+      {
+        "n": "Enter / exit",
+        "done": false
+      },
+      {
+        "n": "Impacts",
+        "done": false
+      },
+      {
+        "n": "Destroyed",
+        "done": false
+      }
+    ],
+    "budget": "Ogg Opus 48 kHz · seamless loops",
+    "path": "assets/audio/vehicle-audio/skimmer-audio.ogg",
+    "source": null,
+    "decision": null,
+    "notes": "",
+    "order": 37
+  },
+  {
+    "id": "strider",
+    "name": "Strider",
+    "category": "Vehicles",
+    "kind": "model",
+    "group": "Heavy survey rover · slow, durable",
+    "milestone": "Equipment and rotation",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Concept and silhouette",
+        "done": false
+      },
+      {
+        "n": "Blockout and scale test",
+        "done": false
+      },
+      {
+        "n": "Exterior mesh + LODs",
+        "done": false
+      },
+      {
+        "n": "Seat and controls",
+        "done": false
+      },
+      {
+        "n": "Damage states",
+        "done": false
+      },
+      {
+        "n": "Materials and textures",
+        "done": false
+      },
+      {
+        "n": "Rig: wheels, suspension, doors",
+        "done": false
+      },
+      {
+        "n": "Dust and exhaust VFX",
+        "done": false
+      }
+    ],
+    "budget": "40k tris · 2048² textures · 3 LODs",
+    "path": "assets/models/vehicles/strider.glb",
+    "source": "assets/source/vehicles/strider.blend",
+    "decision": null,
+    "notes": "",
+    "order": 38
+  },
+  {
+    "id": "strider-audio",
+    "name": "Strider audio",
+    "category": "Vehicle audio",
+    "kind": "audio",
+    "group": null,
+    "milestone": "Equipment and rotation",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Engine loop (idle / load / high)",
+        "done": false
+      },
+      {
+        "n": "Distant pass-by (audible warning)",
+        "done": false
+      },
+      {
+        "n": "Enter / exit",
+        "done": false
+      },
+      {
+        "n": "Impacts",
+        "done": false
+      },
+      {
+        "n": "Destroyed",
+        "done": false
+      }
+    ],
+    "budget": "Ogg Opus 48 kHz · seamless loops",
+    "path": "assets/audio/vehicle-audio/strider-audio.ogg",
+    "source": null,
+    "decision": null,
+    "notes": "",
+    "order": 39
+  },
+  {
+    "id": "kestrel",
+    "name": "Kestrel",
+    "category": "Vehicles",
+    "kind": "model",
+    "group": "Unarmed utility rotorcraft",
+    "milestone": "Equipment and rotation",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Concept and silhouette",
+        "done": false
+      },
+      {
+        "n": "Blockout and scale test",
+        "done": false
+      },
+      {
+        "n": "Exterior mesh + LODs",
+        "done": false
+      },
+      {
+        "n": "Cockpit interior",
+        "done": false
+      },
+      {
+        "n": "Damage states",
+        "done": false
+      },
+      {
+        "n": "Materials and textures",
+        "done": false
+      },
+      {
+        "n": "Rig: rotors, skids, doors",
+        "done": false
+      },
+      {
+        "n": "Rotor wash VFX",
+        "done": false
+      }
+    ],
+    "budget": "40k tris · 2048² textures · 3 LODs",
+    "path": "assets/models/vehicles/kestrel.glb",
+    "source": "assets/source/vehicles/kestrel.blend",
+    "decision": "Seating, flight ceiling, energy and airborne exit rules are open.",
+    "notes": "",
+    "order": 40
+  },
+  {
+    "id": "kestrel-audio",
+    "name": "Kestrel audio",
+    "category": "Vehicle audio",
+    "kind": "audio",
+    "group": null,
+    "milestone": "Equipment and rotation",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Engine loop (idle / load / high)",
+        "done": false
+      },
+      {
+        "n": "Distant pass-by (audible warning)",
+        "done": false
+      },
+      {
+        "n": "Enter / exit",
+        "done": false
+      },
+      {
+        "n": "Impacts",
+        "done": false
+      },
+      {
+        "n": "Destroyed",
+        "done": false
+      }
+    ],
+    "budget": "Ogg Opus 48 kHz · seamless loops",
+    "path": "assets/audio/vehicle-audio/kestrel-audio.ogg",
+    "source": null,
+    "decision": null,
+    "notes": "",
+    "order": 41
+  },
+  {
+    "id": "drop-transport",
+    "name": "Drop transport",
+    "category": "Drop transport",
+    "kind": "model",
+    "group": "Start-of-match carrier (working name needed)",
+    "milestone": "Match loop",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Concept and silhouette",
+        "done": false
+      },
+      {
+        "n": "Blockout and scale (60 jumpers)",
+        "done": false
+      },
+      {
+        "n": "Exterior mesh + LODs",
+        "done": false
+      },
+      {
+        "n": "Interior hold and rear ramp",
+        "done": false
+      },
+      {
+        "n": "Materials and textures",
+        "done": false
+      },
+      {
+        "n": "Rig: ramp, engines, landing gear",
+        "done": false
+      },
+      {
+        "n": "Flight-path and ramp-open animation",
+        "done": false
+      },
+      {
+        "n": "Engine contrail VFX",
+        "done": false
+      }
+    ],
+    "budget": "45k tris · 2048² textures · 2 LODs",
+    "path": "assets/models/drop-transport/drop-transport.glb",
+    "source": "assets/source/drop-transport/drop-transport.blend",
+    "decision": "Deployment: transport route, jump window and drop rules are undecided.",
+    "notes": "Flies a straight line across Ringfall at match start; players jump from the rear ramp. Original colony-carrier design, readable against the ringed sky.",
+    "order": 42
+  },
+  {
+    "id": "descent-device",
+    "name": "Descent device",
+    "category": "Drop transport",
+    "kind": "model",
+    "group": null,
+    "milestone": "Match loop",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Concept",
+        "done": false
+      },
+      {
+        "n": "Mesh",
+        "done": false
+      },
+      {
+        "n": "Deploy animation",
+        "done": false
+      },
+      {
+        "n": "Trail VFX",
+        "done": false
+      }
+    ],
+    "budget": "5k tris",
+    "path": "assets/models/drop-transport/descent-device.glb",
+    "source": "assets/source/drop-transport/descent-device.blend",
+    "decision": "Whether players use a glider, thruster pack or nothing (no fall damage) is undecided.",
+    "notes": "",
+    "order": 43
+  },
+  {
+    "id": "drop-transport-audio",
+    "name": "Drop transport audio",
+    "category": "Drop transport",
+    "kind": "audio",
+    "group": null,
+    "milestone": "Match loop",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Engine loop (exterior, distant)",
+        "done": false
+      },
+      {
+        "n": "Hold interior ambience",
+        "done": false
+      },
+      {
+        "n": "Ramp open",
+        "done": false
+      },
+      {
+        "n": "Jump-out wind gust",
+        "done": false
+      },
+      {
+        "n": "Freefall wind loop",
+        "done": false
+      },
+      {
+        "n": "Landing",
+        "done": false
+      }
+    ],
+    "budget": null,
+    "path": "assets/audio/drop-transport/drop-transport-audio.ogg",
+    "source": null,
+    "decision": null,
+    "notes": "",
+    "order": 44
+  },
+  {
+    "id": "ringed-sky-dome",
+    "name": "Ringed sky dome",
+    "category": "Environment",
+    "kind": "model",
+    "group": null,
+    "milestone": "Visual slice",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Ring band texture and shader",
+        "done": false
+      },
+      {
+        "n": "Planet and moon",
+        "done": false
+      },
+      {
+        "n": "Stars and haze",
+        "done": false
+      },
+      {
+        "n": "Fixed lighting setup",
+        "done": false
+      }
+    ],
+    "budget": "Sky shader + 4096² ring texture",
+    "path": "assets/models/environment/ringed-sky-dome.glb",
+    "source": "assets/source/environment/ringed-sky-dome.blend",
+    "decision": null,
+    "notes": "Rings visible from most outdoor locations; start with fixed sky and lighting.",
+    "order": 45
+  },
+  {
+    "id": "ringfall-terrain",
+    "name": "Ringfall terrain",
+    "category": "Environment",
+    "kind": "model",
+    "group": null,
+    "milestone": "Visual slice",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Greybox heightmap",
+        "done": false
+      },
+      {
+        "n": "Crater lake basin",
+        "done": false
+      },
+      {
+        "n": "Final heightmap",
+        "done": false
+      },
+      {
+        "n": "Terrain materials: basalt, grassland, black glass, sand",
+        "done": false
+      },
+      {
+        "n": "Water shader (turquoise lakes)",
+        "done": false
+      }
+    ],
+    "budget": "Heightmap + 4 splat layers",
+    "path": "assets/models/environment/ringfall-terrain.glb",
+    "source": "assets/source/environment/ringfall-terrain.blend",
+    "decision": "Map size and final location layout are undecided.",
+    "notes": "",
+    "order": 46
+  },
+  {
+    "id": "luminous-vegetation-kit",
+    "name": "Luminous vegetation kit",
+    "category": "Environment",
+    "kind": "model",
+    "group": null,
+    "milestone": "Visual slice",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Pale grass cards",
+        "done": false
+      },
+      {
+        "n": "Glowing shrubs",
+        "done": false
+      },
+      {
+        "n": "Giant Bloomwild plants",
+        "done": false
+      },
+      {
+        "n": "Luminous roots",
+        "done": false
+      },
+      {
+        "n": "Emissive material",
+        "done": false
+      }
+    ],
+    "budget": "1–4k tris per plant · instanced",
+    "path": "assets/models/environment/luminous-vegetation-kit.glb",
+    "source": "assets/source/environment/luminous-vegetation-kit.blend",
+    "decision": null,
+    "notes": "",
+    "order": 47
+  },
+  {
+    "id": "colony-structure-kit",
+    "name": "Colony structure kit",
+    "category": "Environment",
+    "kind": "model",
+    "group": null,
+    "milestone": "Visual slice",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Habitat module",
+        "done": false
+      },
+      {
+        "n": "Warehouse",
+        "done": false
+      },
+      {
+        "n": "Cargo pad",
+        "done": false
+      },
+      {
+        "n": "Comms mast",
+        "done": false
+      },
+      {
+        "n": "Gantries and stairs",
+        "done": false
+      },
+      {
+        "n": "Pipes and cables",
+        "done": false
+      },
+      {
+        "n": "Amber work lights",
+        "done": false
+      }
+    ],
+    "budget": "Modular · 2048² trim sheets",
+    "path": "assets/models/environment/colony-structure-kit.glb",
+    "source": "assets/source/environment/colony-structure-kit.blend",
+    "decision": null,
+    "notes": "",
+    "order": 48
+  },
+  {
+    "id": "ancient-ruins-kit",
+    "name": "Ancient ruins kit",
+    "category": "Environment",
+    "kind": "model",
+    "group": null,
+    "milestone": "Full local match",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Wall and arch pieces",
+        "done": false
+      },
+      {
+        "n": "Pillars",
+        "done": false
+      },
+      {
+        "n": "Bridge spans (The Spine)",
+        "done": false
+      },
+      {
+        "n": "Canyon ruin set (Hollow Array)",
+        "done": false
+      }
+    ],
+    "budget": "Modular · 2048² trim sheets",
+    "path": "assets/models/environment/ancient-ruins-kit.glb",
+    "source": "assets/source/environment/ancient-ruins-kit.blend",
+    "decision": null,
+    "notes": "",
+    "order": 49
+  },
+  {
+    "id": "crown-observatory",
+    "name": "Crown Observatory",
+    "category": "Locations",
+    "kind": "model",
+    "group": null,
+    "milestone": "Full local match",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Layout blockout",
+        "done": false
+      },
+      {
+        "n": "Telescope domes",
+        "done": false
+      },
+      {
+        "n": "Fractured comms dish",
+        "done": false
+      },
+      {
+        "n": "Landmark silhouette pass",
+        "done": false
+      }
+    ],
+    "budget": null,
+    "path": "assets/models/locations/crown-observatory.glb",
+    "source": "assets/source/locations/crown-observatory.blend",
+    "decision": null,
+    "notes": "Every elevated position needs two attack routes and an escape route.",
+    "order": 50
+  },
+  {
+    "id": "anchorport",
+    "name": "Anchorport",
+    "category": "Locations",
+    "kind": "model",
+    "group": null,
+    "milestone": "Full local match",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Layout blockout",
+        "done": false
+      },
+      {
+        "n": "Grounded transports",
+        "done": false
+      },
+      {
+        "n": "Warehouses",
+        "done": false
+      },
+      {
+        "n": "Cargo containers",
+        "done": false
+      },
+      {
+        "n": "Landmark silhouette pass",
+        "done": false
+      }
+    ],
+    "budget": null,
+    "path": "assets/models/locations/anchorport.glb",
+    "source": "assets/source/locations/anchorport.blend",
+    "decision": null,
+    "notes": "Every elevated position needs two attack routes and an escape route.",
+    "order": 51
+  },
+  {
+    "id": "glass-basin",
+    "name": "Glass Basin",
+    "category": "Locations",
+    "kind": "model",
+    "group": null,
+    "milestone": "Visual slice",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Layout blockout",
+        "done": false
+      },
+      {
+        "n": "Black glass formations",
+        "done": false
+      },
+      {
+        "n": "Islands",
+        "done": false
+      },
+      {
+        "n": "Ring fragment impact",
+        "done": false
+      },
+      {
+        "n": "Landmark silhouette pass",
+        "done": false
+      }
+    ],
+    "budget": null,
+    "path": "assets/models/locations/glass-basin.glb",
+    "source": "assets/source/locations/glass-basin.blend",
+    "decision": null,
+    "notes": "Every elevated position needs two attack routes and an escape route.",
+    "order": 52
+  },
+  {
+    "id": "relay-nine",
+    "name": "Relay Nine",
+    "category": "Locations",
+    "kind": "model",
+    "group": null,
+    "milestone": "Full local match",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Layout blockout",
+        "done": false
+      },
+      {
+        "n": "Power station",
+        "done": false
+      },
+      {
+        "n": "Maintenance tunnels",
+        "done": false
+      },
+      {
+        "n": "Gantry network",
+        "done": false
+      },
+      {
+        "n": "Landmark silhouette pass",
+        "done": false
+      }
+    ],
+    "budget": null,
+    "path": "assets/models/locations/relay-nine.glb",
+    "source": "assets/source/locations/relay-nine.blend",
+    "decision": null,
+    "notes": "Every elevated position needs two attack routes and an escape route.",
+    "order": 53
+  },
+  {
+    "id": "the-spine",
+    "name": "The Spine",
+    "category": "Locations",
+    "kind": "model",
+    "group": null,
+    "milestone": "Full local match",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Layout blockout",
+        "done": false
+      },
+      {
+        "n": "Ancient bridge",
+        "done": false
+      },
+      {
+        "n": "Cliff high ground",
+        "done": false
+      },
+      {
+        "n": "Landmark silhouette pass",
+        "done": false
+      }
+    ],
+    "budget": null,
+    "path": "assets/models/locations/the-spine.glb",
+    "source": "assets/source/locations/the-spine.blend",
+    "decision": null,
+    "notes": "Every elevated position needs two attack routes and an escape route.",
+    "order": 54
+  },
+  {
+    "id": "hollow-array",
+    "name": "Hollow Array",
+    "category": "Locations",
+    "kind": "model",
+    "group": null,
+    "milestone": "Full local match",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Layout blockout",
+        "done": false
+      },
+      {
+        "n": "Canyon ruins",
+        "done": false
+      },
+      {
+        "n": "Array structures",
+        "done": false
+      },
+      {
+        "n": "Landmark silhouette pass",
+        "done": false
+      }
+    ],
+    "budget": null,
+    "path": "assets/models/locations/hollow-array.glb",
+    "source": "assets/source/locations/hollow-array.blend",
+    "decision": null,
+    "notes": "Every elevated position needs two attack routes and an escape route.",
+    "order": 55
+  },
+  {
+    "id": "bloomwild",
+    "name": "Bloomwild",
+    "category": "Locations",
+    "kind": "model",
+    "group": null,
+    "milestone": "Full local match",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Layout blockout",
+        "done": false
+      },
+      {
+        "n": "Giant plant canopy",
+        "done": false
+      },
+      {
+        "n": "Streams",
+        "done": false
+      },
+      {
+        "n": "Landmark silhouette pass",
+        "done": false
+      }
+    ],
+    "budget": null,
+    "path": "assets/models/locations/bloomwild.glb",
+    "source": "assets/source/locations/bloomwild.blend",
+    "decision": null,
+    "notes": "Every elevated position needs two attack routes and an escape route.",
+    "order": 56
+  },
+  {
+    "id": "prop-kit",
+    "name": "Prop kit",
+    "category": "Environment",
+    "kind": "model",
+    "group": null,
+    "milestone": "Visual slice",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Crates and barrels",
+        "done": false
+      },
+      {
+        "n": "Fences and barriers",
+        "done": false
+      },
+      {
+        "n": "Lamps",
+        "done": false
+      },
+      {
+        "n": "Debris",
+        "done": false
+      },
+      {
+        "n": "Vehicle spawn pads",
+        "done": false
+      }
+    ],
+    "budget": "0.5–3k tris each",
+    "path": "assets/models/environment/prop-kit.glb",
+    "source": "assets/source/environment/prop-kit.blend",
+    "decision": null,
+    "notes": "",
+    "order": 57
+  },
+  {
+    "id": "ion-storm",
+    "name": "Ion storm",
+    "category": "VFX",
+    "kind": "vfx",
+    "group": null,
+    "milestone": "Match loop",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Storm wall shader",
+        "done": false
+      },
+      {
+        "n": "Clouds and particles",
+        "done": false
+      },
+      {
+        "n": "Distant lightning",
+        "done": false
+      },
+      {
+        "n": "Boundary interference (screen)",
+        "done": false
+      }
+    ],
+    "budget": null,
+    "path": "assets/vfx/vfx/ion-storm.glb",
+    "source": null,
+    "decision": null,
+    "notes": "Edge must stay unmistakable in a firefight.",
+    "order": 58
+  },
+  {
+    "id": "combat-impacts",
+    "name": "Combat impacts",
+    "category": "VFX",
+    "kind": "vfx",
+    "group": null,
+    "milestone": "Combat and inventory",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Bullet impacts: basalt, grass, metal, glass, water",
+        "done": false
+      },
+      {
+        "n": "Shield hit",
+        "done": false
+      },
+      {
+        "n": "Shield break",
+        "done": false
+      },
+      {
+        "n": "Health hit",
+        "done": false
+      }
+    ],
+    "budget": null,
+    "path": "assets/vfx/vfx/combat-impacts.glb",
+    "source": null,
+    "decision": null,
+    "notes": "",
+    "order": 59
+  },
+  {
+    "id": "healing-effects",
+    "name": "Healing effects",
+    "category": "VFX",
+    "kind": "vfx",
+    "group": null,
+    "milestone": "Combat and inventory",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Health heal particles",
+        "done": false
+      },
+      {
+        "n": "Shield recharge shimmer",
+        "done": false
+      }
+    ],
+    "budget": null,
+    "path": "assets/vfx/vfx/healing-effects.glb",
+    "source": null,
+    "decision": null,
+    "notes": "",
+    "order": 60
+  },
+  {
+    "id": "traversal-effects",
+    "name": "Traversal effects",
+    "category": "VFX",
+    "kind": "vfx",
+    "group": null,
+    "milestone": "Traversal",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Landing dust",
+        "done": false
+      },
+      {
+        "n": "Sprint dust",
+        "done": false
+      },
+      {
+        "n": "Water splash",
+        "done": false
+      }
+    ],
+    "budget": null,
+    "path": "assets/vfx/vfx/traversal-effects.glb",
+    "source": null,
+    "decision": null,
+    "notes": "",
+    "order": 61
+  },
+  {
+    "id": "orbit-logo-masters",
+    "name": "ORBIT logo masters",
+    "category": "Brand and UI",
+    "kind": "ui",
+    "group": null,
+    "milestone": "Visual slice",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Stacked lockup",
+        "done": false
+      },
+      {
+        "n": "Horizontal lockup",
+        "done": false
+      },
+      {
+        "n": "Orbital emblem",
+        "done": false
+      },
+      {
+        "n": "Monochrome dark / light",
+        "done": false
+      },
+      {
+        "n": "Favicon",
+        "done": false
+      },
+      {
+        "n": "Small-size variants",
+        "done": false
+      }
+    ],
+    "budget": null,
+    "path": "assets/ui/brand-and-ui/orbit-logo-masters.svg",
+    "source": null,
+    "decision": null,
+    "notes": "Planetary O crossed by one orbital arc; ring must not obscure the counter.",
+    "order": 62
+  },
+  {
+    "id": "item-and-weapon-icons",
+    "name": "Item and weapon icons",
+    "category": "Brand and UI",
+    "kind": "ui",
+    "group": null,
+    "milestone": "Combat and inventory",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "5 weapons",
+        "done": false
+      },
+      {
+        "n": "6 healing items",
+        "done": false
+      },
+      {
+        "n": "3 grenades",
+        "done": false
+      },
+      {
+        "n": "Tethercaster",
+        "done": false
+      },
+      {
+        "n": "4 ammo types",
+        "done": false
+      }
+    ],
+    "budget": null,
+    "path": "assets/ui/brand-and-ui/item-and-weapon-icons.svg",
+    "source": null,
+    "decision": null,
+    "notes": "",
+    "order": 63
+  },
+  {
+    "id": "hud-icon-set",
+    "name": "HUD icon set",
+    "category": "Brand and UI",
+    "kind": "ui",
+    "group": null,
+    "milestone": "Combat and inventory",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Health",
+        "done": false
+      },
+      {
+        "n": "Shield",
+        "done": false
+      },
+      {
+        "n": "Survivors",
+        "done": false
+      },
+      {
+        "n": "Eliminations",
+        "done": false
+      },
+      {
+        "n": "Storm",
+        "done": false
+      },
+      {
+        "n": "Map markers",
+        "done": false
+      },
+      {
+        "n": "Status: success / warning / error",
+        "done": false
+      }
+    ],
+    "budget": null,
+    "path": "assets/ui/brand-and-ui/hud-icon-set.svg",
+    "source": null,
+    "decision": null,
+    "notes": "",
+    "order": 64
+  },
+  {
+    "id": "controller-and-key-glyphs",
+    "name": "Controller and key glyphs",
+    "category": "Brand and UI",
+    "kind": "ui",
+    "group": null,
+    "milestone": "Match loop",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Keyboard and mouse",
+        "done": false
+      },
+      {
+        "n": "Xbox",
+        "done": false
+      },
+      {
+        "n": "PlayStation",
+        "done": false
+      }
+    ],
+    "budget": null,
+    "path": "assets/ui/brand-and-ui/controller-and-key-glyphs.svg",
+    "source": null,
+    "decision": null,
+    "notes": "",
+    "order": 65
+  },
+  {
+    "id": "ringfall-map-illustration",
+    "name": "Ringfall map illustration",
+    "category": "Brand and UI",
+    "kind": "art",
+    "group": null,
+    "milestone": "Match loop",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Top-down render",
+        "done": false
+      },
+      {
+        "n": "Location labels",
+        "done": false
+      },
+      {
+        "n": "Minimap version",
+        "done": false
+      }
+    ],
+    "budget": "4096² top-down",
+    "path": "assets/art/brand-and-ui/ringfall-map-illustration.png",
+    "source": null,
+    "decision": null,
+    "notes": "",
+    "order": 66
+  },
+  {
+    "id": "loading-and-menu-key-art",
+    "name": "Loading and menu key art",
+    "category": "Brand and UI",
+    "kind": "art",
+    "group": null,
+    "milestone": "Visual slice",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Ringfall vista",
+        "done": false
+      },
+      {
+        "n": "Menu composition",
+        "done": false
+      },
+      {
+        "n": "Loading variants",
+        "done": false
+      }
+    ],
+    "budget": "3840×2160",
+    "path": "assets/art/brand-and-ui/loading-and-menu-key-art.png",
+    "source": null,
+    "decision": null,
+    "notes": "",
+    "order": 67
+  },
+  {
+    "id": "font-files",
+    "name": "Font files",
+    "category": "Brand and UI",
+    "kind": "ui",
+    "group": null,
+    "milestone": "Visual slice",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Compare specimens",
+        "done": false
+      },
+      {
+        "n": "Display family",
+        "done": false
+      },
+      {
+        "n": "UI family",
+        "done": false
+      },
+      {
+        "n": "License check and bundling",
+        "done": false
+      }
+    ],
+    "budget": null,
+    "path": "assets/ui/brand-and-ui/font-files.svg",
+    "source": null,
+    "decision": null,
+    "notes": "",
+    "order": 68
+  },
+  {
+    "id": "main-menu-theme",
+    "name": "Main menu theme",
+    "category": "Music",
+    "kind": "audio",
+    "group": null,
+    "milestone": "Match loop",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Composition",
+        "done": false
+      },
+      {
+        "n": "Loop edit",
+        "done": false
+      },
+      {
+        "n": "Mix",
+        "done": false
+      }
+    ],
+    "budget": "Loopable · stereo",
+    "path": "assets/audio/music/main-menu-theme.ogg",
+    "source": null,
+    "decision": null,
+    "notes": "",
+    "order": 69
+  },
+  {
+    "id": "match-stingers",
+    "name": "Match stingers",
+    "category": "Music",
+    "kind": "audio",
+    "group": null,
+    "milestone": "Match loop",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Drop start",
+        "done": false
+      },
+      {
+        "n": "Storm closing",
+        "done": false
+      },
+      {
+        "n": "Final survivors",
+        "done": false
+      },
+      {
+        "n": "Victory",
+        "done": false
+      },
+      {
+        "n": "Eliminated",
+        "done": false
+      }
+    ],
+    "budget": null,
+    "path": "assets/audio/music/match-stingers.ogg",
+    "source": null,
+    "decision": null,
+    "notes": "",
+    "order": 70
+  },
+  {
+    "id": "ringfall-ambience",
+    "name": "Ringfall ambience",
+    "category": "Ambience",
+    "kind": "audio",
+    "group": null,
+    "milestone": "Visual slice",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Wind (open ground)",
+        "done": false
+      },
+      {
+        "n": "Bloomwild wildlife",
+        "done": false
+      },
+      {
+        "n": "Glass Basin water",
+        "done": false
+      },
+      {
+        "n": "Colony hum",
+        "done": false
+      },
+      {
+        "n": "Interior tone",
+        "done": false
+      }
+    ],
+    "budget": null,
+    "path": "assets/audio/ambience/ringfall-ambience.ogg",
+    "source": null,
+    "decision": null,
+    "notes": "",
+    "order": 71
+  },
+  {
+    "id": "ion-storm-audio",
+    "name": "Ion storm audio",
+    "category": "Ambience",
+    "kind": "audio",
+    "group": null,
+    "milestone": "Match loop",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Storm wall loop",
+        "done": false
+      },
+      {
+        "n": "Thunder (distant / close)",
+        "done": false
+      },
+      {
+        "n": "Inside-storm damage tone",
+        "done": false
+      }
+    ],
+    "budget": null,
+    "path": "assets/audio/ambience/ion-storm-audio.ogg",
+    "source": null,
+    "decision": null,
+    "notes": "",
+    "order": 72
+  },
+  {
+    "id": "interface-sounds",
+    "name": "Interface sounds",
+    "category": "UI audio",
+    "kind": "audio",
+    "group": null,
+    "milestone": "Match loop",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Navigate",
+        "done": false
+      },
+      {
+        "n": "Confirm",
+        "done": false
+      },
+      {
+        "n": "Back",
+        "done": false
+      },
+      {
+        "n": "Toggle",
+        "done": false
+      },
+      {
+        "n": "Slider tick",
+        "done": false
+      },
+      {
+        "n": "Error",
+        "done": false
+      }
+    ],
+    "budget": null,
+    "path": "assets/audio/ui-audio/interface-sounds.ogg",
+    "source": null,
+    "decision": null,
+    "notes": "",
+    "order": 73
+  },
+  {
+    "id": "match-feedback-sounds",
+    "name": "Match feedback sounds",
+    "category": "UI audio",
+    "kind": "audio",
+    "group": null,
+    "milestone": "Combat and inventory",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Hit marker",
+        "done": false
+      },
+      {
+        "n": "Elimination confirm",
+        "done": false
+      },
+      {
+        "n": "Shield break",
+        "done": false
+      },
+      {
+        "n": "Low health",
+        "done": false
+      },
+      {
+        "n": "Pickup",
+        "done": false
+      },
+      {
+        "n": "Inventory full",
+        "done": false
+      },
+      {
+        "n": "Storm warning",
+        "done": false
+      }
+    ],
+    "budget": null,
+    "path": "assets/audio/ui-audio/match-feedback-sounds.ogg",
+    "source": null,
+    "decision": null,
+    "notes": "",
+    "order": 74
+  },
+  {
+    "id": "footsteps",
+    "name": "Footsteps",
+    "category": "Foley",
+    "kind": "audio",
+    "group": null,
+    "milestone": "Traversal",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Basalt",
+        "done": false
+      },
+      {
+        "n": "Grass",
+        "done": false
+      },
+      {
+        "n": "Metal",
+        "done": false
+      },
+      {
+        "n": "Glass",
+        "done": false
+      },
+      {
+        "n": "Shallow water",
+        "done": false
+      },
+      {
+        "n": "Jump and land",
+        "done": false
+      }
+    ],
+    "budget": null,
+    "path": "assets/audio/foley/footsteps.ogg",
+    "source": null,
+    "decision": null,
+    "notes": "",
+    "order": 75
+  },
+  {
+    "id": "announcer-callouts",
+    "name": "Announcer callouts",
+    "category": "Voice",
+    "kind": "audio",
+    "group": null,
+    "milestone": "Full local match",
+    "stage": "Not started",
+    "parts": [
+      {
+        "n": "Storm closing",
+        "done": false
+      },
+      {
+        "n": "Survivors remaining",
+        "done": false
+      },
+      {
+        "n": "Victory",
+        "done": false
+      }
+    ],
+    "budget": null,
+    "path": "assets/audio/voice/announcer-callouts.ogg",
+    "source": null,
+    "decision": "Whether the game has announcer voice lines is undecided (subtitles are planned).",
+    "notes": "",
+    "order": 76
+  }
+]

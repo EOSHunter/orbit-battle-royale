@@ -1,0 +1,51 @@
+<!-- @dsCard height=300 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>cover</title>
+<style>
+  html, body { margin: 0; height: 300px; background: var(--background); overflow: hidden; }
+  .cv { position: relative; width: 960px; height: 300px; }
+  svg { position: absolute; inset: 0; }
+  .ground { fill: var(--background); }
+  .slab { fill: var(--surface-raised); }
+  .lime { fill: var(--accent); }
+  .cyan { fill: var(--shield); }
+  .violet { fill: var(--storm); }
+  .amber { fill: var(--colony-amber); }
+  .ring { fill: none; stroke: var(--accent); stroke-width: 4px; }
+  .ring.thin { stroke: var(--text-secondary); stroke-width: 1px; }
+  .ring.mid { stroke: var(--shield); stroke-width: 2px; }
+  .r-panel { rx: var(--radius-panel); }
+  .r-round { rx: 9999px; }
+  .txt { position: absolute; left: 48px; bottom: 40px; width: 440px; }
+  .name { margin: 0; font-family: var(--font-display); font-stretch: 112%; font-weight: 800; font-size: 92px; line-height: 0.95; color: var(--text-primary); }
+  .tag { margin: 16px 0 0; font-family: var(--font-ui); font-size: 14px; line-height: 20px; color: var(--text-secondary); }
+</style></head>
+<body>
+<div class="cv">
+<svg viewBox="0 0 960 300" aria-hidden="true">
+  <!--
+    blocks: surface-raised slab 440x300 (bleeds top/right/bottom); accent 192x96; shield 96x96; storm 64x64; colony-amber 48x48 (sides = space-12/space-16 multiples)
+    arrangement: one tall slab with satellites stepped down its left edge, like moons against the planet face
+    pattern: literal motif, the planetary rings ("enormous rings form a memorable diagonal across the sky") as three concentric ellipse arcs crossing the slab diagonally
+    scales: gaps space-4 (16) and space-6 (24); radius-panel on the slab, radius-control-free square blocks, discs at half the short side
+  -->
+  <defs><clipPath id="zone"><rect x="480" y="0" width="480" height="300"/></clipPath></defs>
+  <g clip-path="url(#zone)">
+    <rect class="slab r-panel" x="584" y="-8" width="400" height="316"/>
+    <circle class="ground" cx="836" cy="150" r="96"/>
+    <circle class="violet" cx="836" cy="150" r="80"/>
+    <g transform="rotate(-18 836 150)">
+      <ellipse class="ring" cx="836" cy="150" rx="232" ry="40"/>
+      <ellipse class="ring mid" cx="836" cy="150" rx="276" ry="52"/>
+      <ellipse class="ring thin" cx="836" cy="150" rx="320" ry="64"/>
+    </g>
+    <rect class="lime" x="488" y="32" width="192" height="96"/>
+    <rect class="cyan" x="520" y="152" width="96" height="96"/>
+    <rect class="amber" x="632" y="200" width="48" height="48"/>
+  </g>
+</svg>
+<div class="txt"><h1 class="name">Orbit Royale</h1><p class="tag">One world. One survivor. Expedition-grade interface for a battle royale under the rings of Veyra.</p></div>
+</div>
+</body>
+</html>

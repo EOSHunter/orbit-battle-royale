@@ -1,0 +1,15 @@
+<!-- @dsCard group="Overlays" height=200 subtitle="Brief feedback, with icon and words" -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>preview</title></head>
+<body>
+<div class="or-stack">
+  <div class="or-toast or-toast--success"><span data-icon="check" data-cls="or-toast__icon"></span>Bindings saved on this device</div>
+  <div class="or-toast or-toast--warning"><span data-icon="warning" data-cls="or-toast__icon"></span>Storm closing in 0:30</div>
+  <div class="or-toast or-toast--danger"><span data-icon="error" data-cls="or-toast__icon"></span>Ringfall terrain failed to download<button class="or-toast__action">Retry</button></div>
+</div>
+<script>
+document.querySelectorAll('[data-icon]').forEach(function (el) { el.outerHTML = Orbit.icon(el.dataset.icon, el.dataset.cls); });
+</script>
+</body>
+</html>

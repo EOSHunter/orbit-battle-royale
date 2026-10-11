@@ -1,0 +1,13 @@
+<!-- @dsCard group="Settings" height=120 subtitle="Continuous values with a numeric readout" -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>preview</title></head>
+<body>
+<div class="or-stack" style="max-width:420px"><div class="or-slider" id="s"><div class="or-slider__track"><div class="or-slider__fill" style="width:40%"></div><div class="or-slider__thumb" style="left:40%"></div></div><span class="or-slider__value">0.40</span></div></div>
+<script>
+var s = document.getElementById('s'), tr = s.querySelector('.or-slider__track');
+function set(e) { var r = tr.getBoundingClientRect(); var p = Math.max(0, Math.min(1, (e.clientX - r.left) / r.width)); s.querySelector('.or-slider__fill').style.width = p * 100 + '%'; s.querySelector('.or-slider__thumb').style.left = p * 100 + '%'; s.querySelector('.or-slider__value').textContent = p.toFixed(2); }
+tr.addEventListener('pointerdown', function (e) { set(e); tr.setPointerCapture(e.pointerId); tr.onpointermove = set; tr.onpointerup = function () { tr.onpointermove = null; }; });
+</script>
+</body>
+</html>

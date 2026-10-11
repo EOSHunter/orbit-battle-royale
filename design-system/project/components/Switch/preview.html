@@ -1,0 +1,11 @@
+<!-- @dsCard group="Settings" height=100 subtitle="On / off with a text state" -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>preview</title></head>
+<body>
+<div class="or-row"><span class="or-switch-state">On</span><button class="or-switch" role="switch" aria-checked="true"></button><span class="or-switch-state">Off</span><button class="or-switch" role="switch" aria-checked="false"></button><button class="or-switch" role="switch" aria-checked="true" style="outline:2px solid var(--focus);outline-offset:2px"></button><button class="or-switch" role="switch" aria-checked="false" disabled></button></div>
+<script>
+document.querySelectorAll('.or-switch:not([disabled])').forEach(function (s) { s.onclick = function () { s.setAttribute('aria-checked', s.getAttribute('aria-checked') === 'true' ? 'false' : 'true'); var t = s.previousElementSibling; if (t && t.classList.contains('or-switch-state')) t.textContent = s.getAttribute('aria-checked') === 'true' ? 'On' : 'Off'; }; });
+</script>
+</body>
+</html>

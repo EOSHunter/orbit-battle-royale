@@ -1,0 +1,49 @@
+/* Orbit Royale — generated from design-system/project/tokens.json. Do not edit. */
+:root {
+  color-scheme: dark;
+  --background: #0b101b;
+  --surface: #141d2d;
+  --surface-raised: #213047;
+  --scrim: rgba(11, 16, 27, 0.72);
+  --border: #46566d;
+  --border-control: #7083a0;
+  --text-primary: #f3f5fa;
+  --text-secondary: #b4bfd0;
+  --text-disabled: #7d889b;
+  --accent: #c5f277;
+  --text-on-accent: #0b101b;
+  --health: #ff8d7f;
+  --shield: #70d6ff;
+  --success: #8de0b0;
+  --warning: #ffd18a;
+  --danger: #ff797f;
+  --focus: #ffffff;
+  --storm: #a98bff;
+  --colony-amber: #ffb45c;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --control-height: 48px;
+  --primary-height: 56px;
+  --row-min-height: 72px;
+  --slot-size: 88px;
+  --focus-width: 2px;
+  --radius-control: 4px;
+  --radius-panel: 8px;
+  --radius-round: 9999px;
+  --font-display: "Archivo", "Arial Narrow", system-ui, sans-serif;
+  --font-ui: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", Consolas, ui-monospace, monospace;
+}
+.hero { font-family: var(--font-display); font-size: 80px; line-height: 88px; font-weight: 800; letter-spacing: 0.01em; }
+.page-title { font-family: var(--font-display); font-size: 56px; line-height: 64px; font-weight: 700; }
+.section-heading { font-family: var(--font-display); font-size: 28px; line-height: 36px; font-weight: 700; }
+.control-label { font-family: var(--font-ui); font-size: 20px; line-height: 28px; font-weight: 600; }
+.body { font-family: var(--font-ui); font-size: 18px; line-height: 27px; font-weight: 400; }
+.supporting { font-family: var(--font-ui); font-size: 16px; line-height: 24px; font-weight: 400; }
+.hud-number { font-family: var(--font-ui); font-size: 32px; line-height: 36px; font-weight: 600; }

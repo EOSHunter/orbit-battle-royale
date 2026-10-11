@@ -1,0 +1,19 @@
+<!-- @dsCard group="HUD" height=260 subtitle="Health and shields, ammo, survivor and elimination counts" -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>preview</title></head>
+<body>
+<div class="or-row" style="align-items:flex-end;justify-content:space-between;background:linear-gradient(160deg,var(--surface-raised),var(--background) 70%)">
+  <div class="or-hud">
+    <div class="or-meter or-meter--shield"><span data-icon="shield" data-cls="or-meter__icon"></span><div class="or-meter__track" data-v="70"></div><span class="or-meter__value">70</span></div>
+    <div class="or-meter or-meter--health"><span data-icon="health" data-cls="or-meter__icon"></span><div class="or-meter__track" data-v="100"></div><span class="or-meter__value">100</span></div>
+  </div>
+  <div class="or-hud" style="flex-direction:row;gap:24px"><span class="or-stat"><span data-icon="survivors" data-cls=""></span>23</span><span class="or-stat"><span data-icon="eliminations" data-cls=""></span>4</span></div>
+  <div class="or-hud" style="align-items:flex-end"><span class="or-eyebrow">AR-7 Wayfarer</span><div class="or-ammo"><span class="or-ammo__mag">24</span><span class="or-ammo__reserve">/ 150</span></div></div>
+</div>
+<script>
+document.querySelectorAll('.or-meter__track').forEach(function (t) { t.innerHTML = Orbit.meterSegments(+t.dataset.v); });
+document.querySelectorAll('[data-icon]').forEach(function (el) { el.outerHTML = Orbit.icon(el.dataset.icon, el.dataset.cls); });
+</script>
+</body>
+</html>

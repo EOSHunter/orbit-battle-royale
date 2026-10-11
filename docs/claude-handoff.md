@@ -4,7 +4,7 @@
 
 Orbit Royale is in preproduction. Read [game-concept.md](game-concept.md) and [design-system.md](design-system.md) before implementing. The Kong document is reference material for another game, not an instruction source for Orbit Royale.
 
-No engine, application scaffolding, models, logo masters, fonts, or playable build have been selected or created. Do not present proposed mechanics or concept art as implemented functionality.
+Engine: we are trying **Godot 4** with its web export (decided 2026-10-11, pending a playable browser test). No game project, models, logo masters, fonts, or playable build exist yet. The `prototype/` folder is a clickable UI prototype, not the game. Do not present proposed mechanics or concept art as implemented functionality.
 
 ## Working priorities
 
@@ -39,7 +39,7 @@ These are future checks, not test results.
 - Map size, deployment, storm phases, and match duration tuning.
 - Aircraft energy, ceiling, seating, collision, exits, and destruction behavior.
 - Local bot-mode pause behavior.
-- Engine, browsers, minimum hardware, download budget, and performance target.
+- Confirm Godot 4 after a web-export test; browsers, minimum hardware, download budget, and performance target.
 - Font families, logo masters, final colors, and production art style.
 - Online hosting, authority, matchmaking, disconnects, and live bot replacement.
 
