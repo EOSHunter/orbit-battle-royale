@@ -40,10 +40,10 @@ Settle what everything else depends on, and make every build tested and download
 
 **Work**
 - [x] Playtest the movement playground and lock first-pass `MoveTuning` values (2026-10-11).
-- [ ] Measure a baseline in the browser: frame time on the target machine, load time, and wasm size compressed with Brotli and gzip.
+- [x] Measure a baseline: see [performance-baseline.md](performance-baseline.md). Re-run on the target hardware once chosen.
 - [x] Continuous integration on GitHub Actions: headless tests and web export on every push that touches `game/`, with the build kept as a downloadable artifact for 14 days.
-- [ ] Confirm the first CI run passes on GitHub (the repo is private, so check the Actions tab).
-- [ ] Repo conventions: `assets/` folder layout, Git LFS for `.glb`, `.blend` and audio, and naming rules.
+- [x] First CI runs pass on GitHub (53 s: tests and web export).
+- [x] Repo conventions: `game/assets/` and `art/` layout, Git LFS rules, naming and export settings in [asset-pipeline.md](asset-pipeline.md).
 
 **Done when** the decisions are recorded, every push is tested and produces a downloadable build, and we have measured numbers to hold later phases against.
 

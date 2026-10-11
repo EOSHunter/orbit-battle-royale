@@ -16,8 +16,10 @@ function add(category, kind, name, o) {
     id, name, category, kind, group: o.group || null, milestone: o.milestone, stage: 'Not started',
     parts: (o.parts || []).map(n => ({ n, done: false })),
     budget: o.budget || null,
-    path: o.path || `assets/${folder}/${slug(category)}/${id}.${ext}`,
-    source: kind === 'model' || kind === 'animation' ? `assets/source/${slug(category)}/${id}.blend` : null,
+    // Game-ready exports live inside the Godot project (res://assets/...); multi-file
+    // sets (audio, UI icon sets) get a folder. Editable sources stay outside it in art/.
+    path: o.path || (kind === 'audio' || kind === 'ui' ? `game/assets/${folder}/${slug(category)}/${id}/` : `game/assets/${folder}/${slug(category)}/${id}.${ext}`),
+    source: ['model', 'animation', 'vfx'].includes(kind) ? `art/${slug(category)}/${id}.blend` : kind === 'audio' ? `art/${slug(category)}/${id}/` : null,
     decision: o.decision || null, notes: o.notes || '', order: order++
   });
 }
@@ -40,7 +42,7 @@ const W = [
 ];
 for (const [name, group, ms] of W) {
   add('Weapons', 'model', name, { group, milestone: ms, budget: '12k tris viewmodel · 3k world model · 2048² textures', parts: ['Concept and silhouette', 'First-person viewmodel mesh', 'World / pickup mesh + LODs', 'Materials and textures', 'Rig (magazine, bolt, trigger)', 'Animations: equip, fire, reload, sprint', 'Inventory and HUD icon', 'Fire VFX: muzzle, tracer, casing'] });
-  add('Weapon audio', 'audio', `${name} audio`, { id: slug(name) + '-audio', group, milestone: ms, budget: 'Ogg Opus 48 kHz · mono one-shots', parts: ['Fire (close)', 'Fire (distant tail)', 'Reload', 'Equip', 'Dry fire'] });
+  add('Weapon audio', 'audio', `${name} audio`, { id: slug(name) + '-audio', group, milestone: ms, budget: 'WAV 48 kHz mono one-shots (QOA-compressed on import)', parts: ['Fire (close)', 'Fire (distant tail)', 'Reload', 'Equip', 'Dry fire'] });
 }
 
 // ---- Items
@@ -65,7 +67,7 @@ const V = [
 ];
 for (const [name, role, tris] of V) {
   add('Vehicles', 'model', name, { group: role, milestone: M.equip, budget: `${tris} · 2048² textures · 3 LODs`, parts: ['Concept and silhouette', 'Blockout and scale test', 'Exterior mesh + LODs', name === 'Kestrel' ? 'Cockpit interior' : 'Seat and controls', 'Damage states', 'Materials and textures', 'Rig: ' + (name === 'Kestrel' ? 'rotors, skids, doors' : name === 'Skimmer' ? 'hover pads, handlebars' : 'wheels, suspension, doors'), name === 'Kestrel' ? 'Rotor wash VFX' : 'Dust and exhaust VFX'], decision: name === 'Kestrel' ? 'Seating, flight ceiling, energy and airborne exit rules are open.' : null });
-  add('Vehicle audio', 'audio', `${name} audio`, { id: slug(name) + '-audio', milestone: M.equip, budget: 'Ogg Opus 48 kHz · seamless loops', parts: ['Engine loop (idle / load / high)', 'Distant pass-by (audible warning)', 'Enter / exit', 'Impacts', 'Destroyed'] });
+  add('Vehicle audio', 'audio', `${name} audio`, { id: slug(name) + '-audio', milestone: M.equip, budget: 'Ogg Vorbis 48 kHz · seamless loops', parts: ['Engine loop (idle / load / high)', 'Distant pass-by (audible warning)', 'Enter / exit', 'Impacts', 'Destroyed'] });
 }
 
 // ---- Drop transport

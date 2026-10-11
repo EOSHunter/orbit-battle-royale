@@ -24,7 +24,7 @@ Then open http://localhost:5175 and click to play. The web export is single-thre
 | Release with a boost | Jump while tethered | A while tethered |
 | Swing without reeling in | Hold crouch while tethered | Hold B |
 | Teleport to Spawn, Towers, Gap, Range | 1–4 | — |
-| Respawn, tuning panel | R, F1 | Back, Start |
+| Respawn, tuning panel, performance readout | R, F1, F3 | Back, Start, — |
 
 ## The course
 
@@ -43,6 +43,7 @@ Then open http://localhost:5175 and click to play. The web export is single-thre
 | `scripts/move_tuning.gd` | Every movement and grapple number in one resource; F1 edits it live |
 | `scripts/hud.gd` | Crosshair eligibility, speed and state, landing readout, charge bar, tuning panel |
 | `scripts/controls.gd` | Default keyboard, mouse and controller bindings (autoload) |
+| `scripts/perf.gd` | F3 frame-time readout and the scripted benchmark (autoload); see [performance-baseline.md](../docs/performance-baseline.md) |
 | `tools/build_scenes.gd` | Generates `scenes/player.tscn` and `scenes/playground.tscn` from code |
 | `tests/movement_test.gd` | Headless checks that drive the real scene with simulated input |
 

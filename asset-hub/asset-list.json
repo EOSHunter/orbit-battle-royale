@@ -34,8 +34,8 @@
       }
     ],
     "budget": "20k tris · 2048² textures · 3 LODs",
-    "path": "assets/models/characters/operator-third-person.glb",
-    "source": "assets/source/characters/operator-third-person.blend",
+    "path": "game/assets/models/characters/operator-third-person.glb",
+    "source": "art/characters/operator-third-person.blend",
     "decision": null,
     "notes": "One original expedition-suit operator. Bots reuse it with gear and color swaps so 59 bots stay readable.",
     "order": 0
@@ -63,8 +63,8 @@
       }
     ],
     "budget": "8k tris · 2048² textures",
-    "path": "assets/models/characters/first-person-arms.glb",
-    "source": "assets/source/characters/first-person-arms.blend",
+    "path": "game/assets/models/characters/first-person-arms.glb",
+    "source": "art/characters/first-person-arms.blend",
     "decision": "Combat camera: first-person combat is proposed, not approved.",
     "notes": "",
     "order": 1
@@ -104,8 +104,8 @@
       }
     ],
     "budget": null,
-    "path": "assets/animations/characters/locomotion-set.glb",
-    "source": "assets/source/characters/locomotion-set.blend",
+    "path": "game/assets/animations/characters/locomotion-set.glb",
+    "source": "art/characters/locomotion-set.blend",
     "decision": null,
     "notes": "No fall damage: landings from any height need a clean recovery, not a stagger.",
     "order": 2
@@ -137,8 +137,8 @@
       }
     ],
     "budget": null,
-    "path": "assets/animations/characters/tethercaster-traversal-set.glb",
-    "source": "assets/source/characters/tethercaster-traversal-set.blend",
+    "path": "game/assets/animations/characters/tethercaster-traversal-set.glb",
+    "source": "art/characters/tethercaster-traversal-set.blend",
     "decision": null,
     "notes": "",
     "order": 3
@@ -174,8 +174,8 @@
       }
     ],
     "budget": null,
-    "path": "assets/animations/characters/weapon-handling-set.glb",
-    "source": "assets/source/characters/weapon-handling-set.blend",
+    "path": "game/assets/animations/characters/weapon-handling-set.glb",
+    "source": "art/characters/weapon-handling-set.blend",
     "decision": null,
     "notes": "",
     "order": 4
@@ -207,8 +207,8 @@
       }
     ],
     "budget": null,
-    "path": "assets/animations/characters/healing-use-set.glb",
-    "source": "assets/source/characters/healing-use-set.blend",
+    "path": "game/assets/animations/characters/healing-use-set.glb",
+    "source": "art/characters/healing-use-set.blend",
     "decision": null,
     "notes": "",
     "order": 5
@@ -240,8 +240,8 @@
       }
     ],
     "budget": null,
-    "path": "assets/animations/characters/freefall-and-landing.glb",
-    "source": "assets/source/characters/freefall-and-landing.blend",
+    "path": "game/assets/animations/characters/freefall-and-landing.glb",
+    "source": "art/characters/freefall-and-landing.blend",
     "decision": "Drop rules: how players slow down after jumping (glider, thruster pack, or none) is undecided.",
     "notes": "",
     "order": 6
@@ -273,8 +273,8 @@
       }
     ],
     "budget": null,
-    "path": "assets/animations/characters/vehicle-set.glb",
-    "source": "assets/source/characters/vehicle-set.blend",
+    "path": "game/assets/animations/characters/vehicle-set.glb",
+    "source": "art/characters/vehicle-set.blend",
     "decision": null,
     "notes": "",
     "order": 7
@@ -298,8 +298,8 @@
       }
     ],
     "budget": null,
-    "path": "assets/animations/characters/elimination.glb",
-    "source": "assets/source/characters/elimination.blend",
+    "path": "game/assets/animations/characters/elimination.glb",
+    "source": "art/characters/elimination.blend",
     "decision": null,
     "notes": "",
     "order": 8
@@ -347,8 +347,8 @@
       }
     ],
     "budget": "12k tris viewmodel · 3k world model · 2048² textures",
-    "path": "assets/models/weapons/ar-7-wayfarer.glb",
-    "source": "assets/source/weapons/ar-7-wayfarer.blend",
+    "path": "game/assets/models/weapons/ar-7-wayfarer.glb",
+    "source": "art/weapons/ar-7-wayfarer.blend",
     "decision": null,
     "notes": "",
     "order": 9
@@ -383,9 +383,9 @@
         "done": false
       }
     ],
-    "budget": "Ogg Opus 48 kHz · mono one-shots",
-    "path": "assets/audio/weapon-audio/ar-7-wayfarer-audio.ogg",
-    "source": null,
+    "budget": "WAV 48 kHz mono one-shots (QOA-compressed on import)",
+    "path": "game/assets/audio/weapon-audio/ar-7-wayfarer-audio/",
+    "source": "art/weapon-audio/ar-7-wayfarer-audio/",
     "decision": null,
     "notes": "",
     "order": 10
@@ -433,8 +433,8 @@
       }
     ],
     "budget": "12k tris viewmodel · 3k world model · 2048² textures",
-    "path": "assets/models/weapons/sg-4-breaker.glb",
-    "source": "assets/source/weapons/sg-4-breaker.blend",
+    "path": "game/assets/models/weapons/sg-4-breaker.glb",
+    "source": "art/weapons/sg-4-breaker.blend",
     "decision": null,
     "notes": "",
     "order": 11
@@ -469,9 +469,9 @@
         "done": false
       }
     ],
-    "budget": "Ogg Opus 48 kHz · mono one-shots",
-    "path": "assets/audio/weapon-audio/sg-4-breaker-audio.ogg",
-    "source": null,
+    "budget": "WAV 48 kHz mono one-shots (QOA-compressed on import)",
+    "path": "game/assets/audio/weapon-audio/sg-4-breaker-audio/",
+    "source": "art/weapon-audio/sg-4-breaker-audio/",
     "decision": null,
     "notes": "",
     "order": 12
@@ -519,8 +519,8 @@
       }
     ],
     "budget": "12k tris viewmodel · 3k world model · 2048² textures",
-    "path": "assets/models/weapons/p-12-spark.glb",
-    "source": "assets/source/weapons/p-12-spark.blend",
+    "path": "game/assets/models/weapons/p-12-spark.glb",
+    "source": "art/weapons/p-12-spark.blend",
     "decision": null,
     "notes": "",
     "order": 13
@@ -555,9 +555,9 @@
         "done": false
       }
     ],
-    "budget": "Ogg Opus 48 kHz · mono one-shots",
-    "path": "assets/audio/weapon-audio/p-12-spark-audio.ogg",
-    "source": null,
+    "budget": "WAV 48 kHz mono one-shots (QOA-compressed on import)",
+    "path": "game/assets/audio/weapon-audio/p-12-spark-audio/",
+    "source": "art/weapon-audio/p-12-spark-audio/",
     "decision": null,
     "notes": "",
     "order": 14
@@ -605,8 +605,8 @@
       }
     ],
     "budget": "12k tris viewmodel · 3k world model · 2048² textures",
-    "path": "assets/models/weapons/s-9-wisp.glb",
-    "source": "assets/source/weapons/s-9-wisp.blend",
+    "path": "game/assets/models/weapons/s-9-wisp.glb",
+    "source": "art/weapons/s-9-wisp.blend",
     "decision": null,
     "notes": "",
     "order": 15
@@ -641,9 +641,9 @@
         "done": false
       }
     ],
-    "budget": "Ogg Opus 48 kHz · mono one-shots",
-    "path": "assets/audio/weapon-audio/s-9-wisp-audio.ogg",
-    "source": null,
+    "budget": "WAV 48 kHz mono one-shots (QOA-compressed on import)",
+    "path": "game/assets/audio/weapon-audio/s-9-wisp-audio/",
+    "source": "art/weapon-audio/s-9-wisp-audio/",
     "decision": null,
     "notes": "",
     "order": 16
@@ -691,8 +691,8 @@
       }
     ],
     "budget": "12k tris viewmodel · 3k world model · 2048² textures",
-    "path": "assets/models/weapons/sr-8-longview.glb",
-    "source": "assets/source/weapons/sr-8-longview.blend",
+    "path": "game/assets/models/weapons/sr-8-longview.glb",
+    "source": "art/weapons/sr-8-longview.blend",
     "decision": null,
     "notes": "",
     "order": 17
@@ -727,9 +727,9 @@
         "done": false
       }
     ],
-    "budget": "Ogg Opus 48 kHz · mono one-shots",
-    "path": "assets/audio/weapon-audio/sr-8-longview-audio.ogg",
-    "source": null,
+    "budget": "WAV 48 kHz mono one-shots (QOA-compressed on import)",
+    "path": "game/assets/audio/weapon-audio/sr-8-longview-audio/",
+    "source": "art/weapon-audio/sr-8-longview-audio/",
     "decision": null,
     "notes": "",
     "order": 18
@@ -765,8 +765,8 @@
       }
     ],
     "budget": "2k tris · 1024² textures",
-    "path": "assets/models/healing-items/field-patch.glb",
-    "source": "assets/source/healing-items/field-patch.blend",
+    "path": "game/assets/models/healing-items/field-patch.glb",
+    "source": "art/healing-items/field-patch.blend",
     "decision": null,
     "notes": "Distinct silhouette per item; health items coral, shield items cyan.",
     "order": 19
@@ -802,8 +802,8 @@
       }
     ],
     "budget": "2k tris · 1024² textures",
-    "path": "assets/models/healing-items/shield-cell.glb",
-    "source": "assets/source/healing-items/shield-cell.blend",
+    "path": "game/assets/models/healing-items/shield-cell.glb",
+    "source": "art/healing-items/shield-cell.blend",
     "decision": null,
     "notes": "Distinct silhouette per item; health items coral, shield items cyan.",
     "order": 20
@@ -839,8 +839,8 @@
       }
     ],
     "budget": "2k tris · 1024² textures",
-    "path": "assets/models/healing-items/shield-pack.glb",
-    "source": "assets/source/healing-items/shield-pack.blend",
+    "path": "game/assets/models/healing-items/shield-pack.glb",
+    "source": "art/healing-items/shield-pack.blend",
     "decision": null,
     "notes": "Distinct silhouette per item; health items coral, shield items cyan.",
     "order": 21
@@ -876,8 +876,8 @@
       }
     ],
     "budget": "2k tris · 1024² textures",
-    "path": "assets/models/healing-items/shield-core.glb",
-    "source": "assets/source/healing-items/shield-core.blend",
+    "path": "game/assets/models/healing-items/shield-core.glb",
+    "source": "art/healing-items/shield-core.blend",
     "decision": null,
     "notes": "Distinct silhouette per item; health items coral, shield items cyan.",
     "order": 22
@@ -913,8 +913,8 @@
       }
     ],
     "budget": "2k tris · 1024² textures",
-    "path": "assets/models/healing-items/trauma-kit.glb",
-    "source": "assets/source/healing-items/trauma-kit.blend",
+    "path": "game/assets/models/healing-items/trauma-kit.glb",
+    "source": "art/healing-items/trauma-kit.blend",
     "decision": null,
     "notes": "Distinct silhouette per item; health items coral, shield items cyan.",
     "order": 23
@@ -950,8 +950,8 @@
       }
     ],
     "budget": "2k tris · 1024² textures",
-    "path": "assets/models/healing-items/phoenix-capsule.glb",
-    "source": "assets/source/healing-items/phoenix-capsule.blend",
+    "path": "game/assets/models/healing-items/phoenix-capsule.glb",
+    "source": "art/healing-items/phoenix-capsule.blend",
     "decision": null,
     "notes": "Distinct silhouette per item; health items coral, shield items cyan.",
     "order": 24
@@ -983,8 +983,8 @@
       }
     ],
     "budget": null,
-    "path": "assets/audio/item-audio/healing-item-audio.ogg",
-    "source": null,
+    "path": "game/assets/audio/item-audio/healing-item-audio/",
+    "source": "art/item-audio/healing-item-audio/",
     "decision": null,
     "notes": "",
     "order": 25
@@ -1016,8 +1016,8 @@
       }
     ],
     "budget": "1.5k tris · 1024² textures",
-    "path": "assets/models/grenades/fragmentation-grenade.glb",
-    "source": "assets/source/grenades/fragmentation-grenade.blend",
+    "path": "game/assets/models/grenades/fragmentation-grenade.glb",
+    "source": "art/grenades/fragmentation-grenade.blend",
     "decision": null,
     "notes": "",
     "order": 26
@@ -1049,8 +1049,8 @@
       }
     ],
     "budget": "1.5k tris · 1024² textures",
-    "path": "assets/models/grenades/arc-grenade.glb",
-    "source": "assets/source/grenades/arc-grenade.blend",
+    "path": "game/assets/models/grenades/arc-grenade.glb",
+    "source": "art/grenades/arc-grenade.blend",
     "decision": null,
     "notes": "",
     "order": 27
@@ -1082,8 +1082,8 @@
       }
     ],
     "budget": "1.5k tris · 1024² textures",
-    "path": "assets/models/grenades/veil-grenade.glb",
-    "source": "assets/source/grenades/veil-grenade.blend",
+    "path": "game/assets/models/grenades/veil-grenade.glb",
+    "source": "art/grenades/veil-grenade.blend",
     "decision": null,
     "notes": "",
     "order": 28
@@ -1119,8 +1119,8 @@
       }
     ],
     "budget": null,
-    "path": "assets/audio/item-audio/grenade-audio.ogg",
-    "source": null,
+    "path": "game/assets/audio/item-audio/grenade-audio/",
+    "source": "art/item-audio/grenade-audio/",
     "decision": null,
     "notes": "",
     "order": 29
@@ -1164,8 +1164,8 @@
       }
     ],
     "budget": "6k tris viewmodel · 2048² textures",
-    "path": "assets/models/utility/tethercaster.glb",
-    "source": "assets/source/utility/tethercaster.blend",
+    "path": "game/assets/models/utility/tethercaster.glb",
+    "source": "art/utility/tethercaster.blend",
     "decision": null,
     "notes": "",
     "order": 30
@@ -1201,8 +1201,8 @@
       }
     ],
     "budget": null,
-    "path": "assets/audio/item-audio/tethercaster-audio.ogg",
-    "source": null,
+    "path": "game/assets/audio/item-audio/tethercaster-audio/",
+    "source": "art/item-audio/tethercaster-audio/",
     "decision": null,
     "notes": "",
     "order": 31
@@ -1234,8 +1234,8 @@
       }
     ],
     "budget": "800 tris each",
-    "path": "assets/models/pickups/ammunition-boxes.glb",
-    "source": "assets/source/pickups/ammunition-boxes.blend",
+    "path": "game/assets/models/pickups/ammunition-boxes.glb",
+    "source": "art/pickups/ammunition-boxes.blend",
     "decision": null,
     "notes": "",
     "order": 32
@@ -1263,8 +1263,8 @@
       }
     ],
     "budget": "3k tris",
-    "path": "assets/models/pickups/colony-supply-crate.glb",
-    "source": "assets/source/pickups/colony-supply-crate.blend",
+    "path": "game/assets/models/pickups/colony-supply-crate.glb",
+    "source": "art/pickups/colony-supply-crate.blend",
     "decision": null,
     "notes": "Proposed loot source; confirm looting design.",
     "order": 33
@@ -1312,8 +1312,8 @@
       }
     ],
     "budget": "35k tris · 2048² textures · 3 LODs",
-    "path": "assets/models/vehicles/mule.glb",
-    "source": "assets/source/vehicles/mule.blend",
+    "path": "game/assets/models/vehicles/mule.glb",
+    "source": "art/vehicles/mule.blend",
     "decision": null,
     "notes": "",
     "order": 34
@@ -1348,9 +1348,9 @@
         "done": false
       }
     ],
-    "budget": "Ogg Opus 48 kHz · seamless loops",
-    "path": "assets/audio/vehicle-audio/mule-audio.ogg",
-    "source": null,
+    "budget": "Ogg Vorbis 48 kHz · seamless loops",
+    "path": "game/assets/audio/vehicle-audio/mule-audio/",
+    "source": "art/vehicle-audio/mule-audio/",
     "decision": null,
     "notes": "",
     "order": 35
@@ -1398,8 +1398,8 @@
       }
     ],
     "budget": "25k tris · 2048² textures · 3 LODs",
-    "path": "assets/models/vehicles/skimmer.glb",
-    "source": "assets/source/vehicles/skimmer.blend",
+    "path": "game/assets/models/vehicles/skimmer.glb",
+    "source": "art/vehicles/skimmer.blend",
     "decision": null,
     "notes": "",
     "order": 36
@@ -1434,9 +1434,9 @@
         "done": false
       }
     ],
-    "budget": "Ogg Opus 48 kHz · seamless loops",
-    "path": "assets/audio/vehicle-audio/skimmer-audio.ogg",
-    "source": null,
+    "budget": "Ogg Vorbis 48 kHz · seamless loops",
+    "path": "game/assets/audio/vehicle-audio/skimmer-audio/",
+    "source": "art/vehicle-audio/skimmer-audio/",
     "decision": null,
     "notes": "",
     "order": 37
@@ -1484,8 +1484,8 @@
       }
     ],
     "budget": "40k tris · 2048² textures · 3 LODs",
-    "path": "assets/models/vehicles/strider.glb",
-    "source": "assets/source/vehicles/strider.blend",
+    "path": "game/assets/models/vehicles/strider.glb",
+    "source": "art/vehicles/strider.blend",
     "decision": null,
     "notes": "",
     "order": 38
@@ -1520,9 +1520,9 @@
         "done": false
       }
     ],
-    "budget": "Ogg Opus 48 kHz · seamless loops",
-    "path": "assets/audio/vehicle-audio/strider-audio.ogg",
-    "source": null,
+    "budget": "Ogg Vorbis 48 kHz · seamless loops",
+    "path": "game/assets/audio/vehicle-audio/strider-audio/",
+    "source": "art/vehicle-audio/strider-audio/",
     "decision": null,
     "notes": "",
     "order": 39
@@ -1570,8 +1570,8 @@
       }
     ],
     "budget": "40k tris · 2048² textures · 3 LODs",
-    "path": "assets/models/vehicles/kestrel.glb",
-    "source": "assets/source/vehicles/kestrel.blend",
+    "path": "game/assets/models/vehicles/kestrel.glb",
+    "source": "art/vehicles/kestrel.blend",
     "decision": "Seating, flight ceiling, energy and airborne exit rules are open.",
     "notes": "",
     "order": 40
@@ -1606,9 +1606,9 @@
         "done": false
       }
     ],
-    "budget": "Ogg Opus 48 kHz · seamless loops",
-    "path": "assets/audio/vehicle-audio/kestrel-audio.ogg",
-    "source": null,
+    "budget": "Ogg Vorbis 48 kHz · seamless loops",
+    "path": "game/assets/audio/vehicle-audio/kestrel-audio/",
+    "source": "art/vehicle-audio/kestrel-audio/",
     "decision": null,
     "notes": "",
     "order": 41
@@ -1656,8 +1656,8 @@
       }
     ],
     "budget": "45k tris · 2048² textures · 2 LODs",
-    "path": "assets/models/drop-transport/drop-transport.glb",
-    "source": "assets/source/drop-transport/drop-transport.blend",
+    "path": "game/assets/models/drop-transport/drop-transport.glb",
+    "source": "art/drop-transport/drop-transport.blend",
     "decision": "Deployment: transport route, jump window and drop rules are undecided.",
     "notes": "Flies a straight line across Ringfall at match start; players jump from the rear ramp. Original colony-carrier design, readable against the ringed sky.",
     "order": 42
@@ -1689,8 +1689,8 @@
       }
     ],
     "budget": "5k tris",
-    "path": "assets/models/drop-transport/descent-device.glb",
-    "source": "assets/source/drop-transport/descent-device.blend",
+    "path": "game/assets/models/drop-transport/descent-device.glb",
+    "source": "art/drop-transport/descent-device.blend",
     "decision": "Whether players use a glider, thruster pack or nothing (no fall damage) is undecided.",
     "notes": "",
     "order": 43
@@ -1730,8 +1730,8 @@
       }
     ],
     "budget": null,
-    "path": "assets/audio/drop-transport/drop-transport-audio.ogg",
-    "source": null,
+    "path": "game/assets/audio/drop-transport/drop-transport-audio/",
+    "source": "art/drop-transport/drop-transport-audio/",
     "decision": null,
     "notes": "",
     "order": 44
@@ -1763,8 +1763,8 @@
       }
     ],
     "budget": "Sky shader + 4096² ring texture",
-    "path": "assets/models/environment/ringed-sky-dome.glb",
-    "source": "assets/source/environment/ringed-sky-dome.blend",
+    "path": "game/assets/models/environment/ringed-sky-dome.glb",
+    "source": "art/environment/ringed-sky-dome.blend",
     "decision": null,
     "notes": "Rings visible from most outdoor locations; start with fixed sky and lighting.",
     "order": 45
@@ -1800,8 +1800,8 @@
       }
     ],
     "budget": "Heightmap + 4 splat layers",
-    "path": "assets/models/environment/ringfall-terrain.glb",
-    "source": "assets/source/environment/ringfall-terrain.blend",
+    "path": "game/assets/models/environment/ringfall-terrain.glb",
+    "source": "art/environment/ringfall-terrain.blend",
     "decision": "Map size and final location layout are undecided.",
     "notes": "",
     "order": 46
@@ -1837,8 +1837,8 @@
       }
     ],
     "budget": "1–4k tris per plant · instanced",
-    "path": "assets/models/environment/luminous-vegetation-kit.glb",
-    "source": "assets/source/environment/luminous-vegetation-kit.blend",
+    "path": "game/assets/models/environment/luminous-vegetation-kit.glb",
+    "source": "art/environment/luminous-vegetation-kit.blend",
     "decision": null,
     "notes": "",
     "order": 47
@@ -1882,8 +1882,8 @@
       }
     ],
     "budget": "Modular · 2048² trim sheets",
-    "path": "assets/models/environment/colony-structure-kit.glb",
-    "source": "assets/source/environment/colony-structure-kit.blend",
+    "path": "game/assets/models/environment/colony-structure-kit.glb",
+    "source": "art/environment/colony-structure-kit.blend",
     "decision": null,
     "notes": "",
     "order": 48
@@ -1915,8 +1915,8 @@
       }
     ],
     "budget": "Modular · 2048² trim sheets",
-    "path": "assets/models/environment/ancient-ruins-kit.glb",
-    "source": "assets/source/environment/ancient-ruins-kit.blend",
+    "path": "game/assets/models/environment/ancient-ruins-kit.glb",
+    "source": "art/environment/ancient-ruins-kit.blend",
     "decision": null,
     "notes": "",
     "order": 49
@@ -1948,8 +1948,8 @@
       }
     ],
     "budget": null,
-    "path": "assets/models/locations/crown-observatory.glb",
-    "source": "assets/source/locations/crown-observatory.blend",
+    "path": "game/assets/models/locations/crown-observatory.glb",
+    "source": "art/locations/crown-observatory.blend",
     "decision": null,
     "notes": "Every elevated position needs two attack routes and an escape route.",
     "order": 50
@@ -1985,8 +1985,8 @@
       }
     ],
     "budget": null,
-    "path": "assets/models/locations/anchorport.glb",
-    "source": "assets/source/locations/anchorport.blend",
+    "path": "game/assets/models/locations/anchorport.glb",
+    "source": "art/locations/anchorport.blend",
     "decision": null,
     "notes": "Every elevated position needs two attack routes and an escape route.",
     "order": 51
@@ -2022,8 +2022,8 @@
       }
     ],
     "budget": null,
-    "path": "assets/models/locations/glass-basin.glb",
-    "source": "assets/source/locations/glass-basin.blend",
+    "path": "game/assets/models/locations/glass-basin.glb",
+    "source": "art/locations/glass-basin.blend",
     "decision": null,
     "notes": "Every elevated position needs two attack routes and an escape route.",
     "order": 52
@@ -2059,8 +2059,8 @@
       }
     ],
     "budget": null,
-    "path": "assets/models/locations/relay-nine.glb",
-    "source": "assets/source/locations/relay-nine.blend",
+    "path": "game/assets/models/locations/relay-nine.glb",
+    "source": "art/locations/relay-nine.blend",
     "decision": null,
     "notes": "Every elevated position needs two attack routes and an escape route.",
     "order": 53
@@ -2092,8 +2092,8 @@
       }
     ],
     "budget": null,
-    "path": "assets/models/locations/the-spine.glb",
-    "source": "assets/source/locations/the-spine.blend",
+    "path": "game/assets/models/locations/the-spine.glb",
+    "source": "art/locations/the-spine.blend",
     "decision": null,
     "notes": "Every elevated position needs two attack routes and an escape route.",
     "order": 54
@@ -2125,8 +2125,8 @@
       }
     ],
     "budget": null,
-    "path": "assets/models/locations/hollow-array.glb",
-    "source": "assets/source/locations/hollow-array.blend",
+    "path": "game/assets/models/locations/hollow-array.glb",
+    "source": "art/locations/hollow-array.blend",
     "decision": null,
     "notes": "Every elevated position needs two attack routes and an escape route.",
     "order": 55
@@ -2158,8 +2158,8 @@
       }
     ],
     "budget": null,
-    "path": "assets/models/locations/bloomwild.glb",
-    "source": "assets/source/locations/bloomwild.blend",
+    "path": "game/assets/models/locations/bloomwild.glb",
+    "source": "art/locations/bloomwild.blend",
     "decision": null,
     "notes": "Every elevated position needs two attack routes and an escape route.",
     "order": 56
@@ -2195,8 +2195,8 @@
       }
     ],
     "budget": "0.5–3k tris each",
-    "path": "assets/models/environment/prop-kit.glb",
-    "source": "assets/source/environment/prop-kit.blend",
+    "path": "game/assets/models/environment/prop-kit.glb",
+    "source": "art/environment/prop-kit.blend",
     "decision": null,
     "notes": "",
     "order": 57
@@ -2228,8 +2228,8 @@
       }
     ],
     "budget": null,
-    "path": "assets/vfx/vfx/ion-storm.glb",
-    "source": null,
+    "path": "game/assets/vfx/vfx/ion-storm.glb",
+    "source": "art/vfx/ion-storm.blend",
     "decision": null,
     "notes": "Edge must stay unmistakable in a firefight.",
     "order": 58
@@ -2261,8 +2261,8 @@
       }
     ],
     "budget": null,
-    "path": "assets/vfx/vfx/combat-impacts.glb",
-    "source": null,
+    "path": "game/assets/vfx/vfx/combat-impacts.glb",
+    "source": "art/vfx/combat-impacts.blend",
     "decision": null,
     "notes": "",
     "order": 59
@@ -2286,8 +2286,8 @@
       }
     ],
     "budget": null,
-    "path": "assets/vfx/vfx/healing-effects.glb",
-    "source": null,
+    "path": "game/assets/vfx/vfx/healing-effects.glb",
+    "source": "art/vfx/healing-effects.blend",
     "decision": null,
     "notes": "",
     "order": 60
@@ -2315,8 +2315,8 @@
       }
     ],
     "budget": null,
-    "path": "assets/vfx/vfx/traversal-effects.glb",
-    "source": null,
+    "path": "game/assets/vfx/vfx/traversal-effects.glb",
+    "source": "art/vfx/traversal-effects.blend",
     "decision": null,
     "notes": "",
     "order": 61
@@ -2356,7 +2356,7 @@
       }
     ],
     "budget": null,
-    "path": "assets/ui/brand-and-ui/orbit-logo-masters.svg",
+    "path": "game/assets/ui/brand-and-ui/orbit-logo-masters/",
     "source": null,
     "decision": null,
     "notes": "Planetary O crossed by one orbital arc; ring must not obscure the counter.",
@@ -2393,7 +2393,7 @@
       }
     ],
     "budget": null,
-    "path": "assets/ui/brand-and-ui/item-and-weapon-icons.svg",
+    "path": "game/assets/ui/brand-and-ui/item-and-weapon-icons/",
     "source": null,
     "decision": null,
     "notes": "",
@@ -2438,7 +2438,7 @@
       }
     ],
     "budget": null,
-    "path": "assets/ui/brand-and-ui/hud-icon-set.svg",
+    "path": "game/assets/ui/brand-and-ui/hud-icon-set/",
     "source": null,
     "decision": null,
     "notes": "",
@@ -2467,7 +2467,7 @@
       }
     ],
     "budget": null,
-    "path": "assets/ui/brand-and-ui/controller-and-key-glyphs.svg",
+    "path": "game/assets/ui/brand-and-ui/controller-and-key-glyphs/",
     "source": null,
     "decision": null,
     "notes": "",
@@ -2496,7 +2496,7 @@
       }
     ],
     "budget": "4096² top-down",
-    "path": "assets/art/brand-and-ui/ringfall-map-illustration.png",
+    "path": "game/assets/art/brand-and-ui/ringfall-map-illustration.png",
     "source": null,
     "decision": null,
     "notes": "",
@@ -2525,7 +2525,7 @@
       }
     ],
     "budget": "3840×2160",
-    "path": "assets/art/brand-and-ui/loading-and-menu-key-art.png",
+    "path": "game/assets/art/brand-and-ui/loading-and-menu-key-art.png",
     "source": null,
     "decision": null,
     "notes": "",
@@ -2558,7 +2558,7 @@
       }
     ],
     "budget": null,
-    "path": "assets/ui/brand-and-ui/font-files.svg",
+    "path": "game/assets/ui/brand-and-ui/font-files/",
     "source": null,
     "decision": null,
     "notes": "",
@@ -2587,8 +2587,8 @@
       }
     ],
     "budget": "Loopable · stereo",
-    "path": "assets/audio/music/main-menu-theme.ogg",
-    "source": null,
+    "path": "game/assets/audio/music/main-menu-theme/",
+    "source": "art/music/main-menu-theme/",
     "decision": null,
     "notes": "",
     "order": 69
@@ -2624,8 +2624,8 @@
       }
     ],
     "budget": null,
-    "path": "assets/audio/music/match-stingers.ogg",
-    "source": null,
+    "path": "game/assets/audio/music/match-stingers/",
+    "source": "art/music/match-stingers/",
     "decision": null,
     "notes": "",
     "order": 70
@@ -2661,8 +2661,8 @@
       }
     ],
     "budget": null,
-    "path": "assets/audio/ambience/ringfall-ambience.ogg",
-    "source": null,
+    "path": "game/assets/audio/ambience/ringfall-ambience/",
+    "source": "art/ambience/ringfall-ambience/",
     "decision": null,
     "notes": "",
     "order": 71
@@ -2690,8 +2690,8 @@
       }
     ],
     "budget": null,
-    "path": "assets/audio/ambience/ion-storm-audio.ogg",
-    "source": null,
+    "path": "game/assets/audio/ambience/ion-storm-audio/",
+    "source": "art/ambience/ion-storm-audio/",
     "decision": null,
     "notes": "",
     "order": 72
@@ -2731,8 +2731,8 @@
       }
     ],
     "budget": null,
-    "path": "assets/audio/ui-audio/interface-sounds.ogg",
-    "source": null,
+    "path": "game/assets/audio/ui-audio/interface-sounds/",
+    "source": "art/ui-audio/interface-sounds/",
     "decision": null,
     "notes": "",
     "order": 73
@@ -2776,8 +2776,8 @@
       }
     ],
     "budget": null,
-    "path": "assets/audio/ui-audio/match-feedback-sounds.ogg",
-    "source": null,
+    "path": "game/assets/audio/ui-audio/match-feedback-sounds/",
+    "source": "art/ui-audio/match-feedback-sounds/",
     "decision": null,
     "notes": "",
     "order": 74
@@ -2817,8 +2817,8 @@
       }
     ],
     "budget": null,
-    "path": "assets/audio/foley/footsteps.ogg",
-    "source": null,
+    "path": "game/assets/audio/foley/footsteps/",
+    "source": "art/foley/footsteps/",
     "decision": null,
     "notes": "",
     "order": 75
@@ -2846,8 +2846,8 @@
       }
     ],
     "budget": null,
-    "path": "assets/audio/voice/announcer-callouts.ogg",
-    "source": null,
+    "path": "game/assets/audio/voice/announcer-callouts/",
+    "source": "art/voice/announcer-callouts/",
     "decision": "Whether the game has announcer voice lines is undecided (subtitles are planned).",
     "notes": "",
     "order": 76

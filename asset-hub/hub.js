@@ -516,7 +516,9 @@ function openAddDialog() {
     try {
       await S.db.collection('assets').doc(id).set({ name, category: cat, kind, group: null, milestone: $('#a-ms', l).value, stage: 'Not started',
         parts: $('#a-parts', l).value.split('\n').map(s => s.trim()).filter(Boolean).map(n => ({ n, done: false })),
-        budget: null, path: `assets/${folder}/${cslug}/${id}.${ext}`, source: ['model', 'animation', 'vfx'].includes(kind) ? `assets/source/${cslug}/${id}.blend` : null,
+        budget: null,
+        path: kind === 'audio' || kind === 'ui' ? `game/assets/${folder}/${cslug}/${id}/` : `game/assets/${folder}/${cslug}/${id}.${ext}`,
+        source: ['model', 'animation', 'vfx'].includes(kind) ? `art/${cslug}/${id}.blend` : kind === 'audio' ? `art/${cslug}/${id}/` : null,
         decision: null, notes: '', order: Math.max(0, ...S.assets.map(a => a.order || 0)) + 1, files: [], createdAt: new Date().toISOString(), updatedBy: S.me || null });
       closeLayer(); S.sel = id; toast('success', `${name} added`);
     } catch (e) { $('#a-err', l).textContent = e && e.code === 'quota_exceeded' ? 'The tracker is full. Delete unused assets first.' : 'Could not add the asset. Try again.'; }

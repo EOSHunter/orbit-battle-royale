@@ -6,3 +6,8 @@ dist/
 build/
 .DS_Store
 Thumbs.db
+
+# Blender backups and autosaves
+*.blend1
+*.blend2
+*.blend@

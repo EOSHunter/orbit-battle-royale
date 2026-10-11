@@ -8,6 +8,7 @@ A browser battle royale on an alien planet whose enormous rings dominate the sky
 
 - [Build plan](docs/plan.md): where the project stands and the phases, decisions and tasks ahead.
 - [Godot game](game/README.md): the movement and Tethercaster playground, how to run it, and its tests.
+- [Asset pipeline](docs/asset-pipeline.md): folders, Git LFS, Blender export settings and the checklist for a finished asset.
 - [Codex workspace](codex/README.md): concept art, generation prompts, and original planning snapshots for Claude and other collaborators.
 - [Game concept](docs/game-concept.md): world, Ringfall map, combat, equipment, vehicles, bots, and match flow.
 - [Design system v0.1](docs/design-system.md): confirmed requirements, proposed inventory limits, brand direction, UI contracts, accessibility, and implementation sequence.
