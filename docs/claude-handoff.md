@@ -43,7 +43,7 @@ These are future checks, not test results.
 - Local bot-mode pause behavior.
 - Confirm Godot 4 after a web-export test; browsers, minimum hardware, download budget, and performance target.
 - Font families, logo masters, final colors, and production art style.
-- Online hosting, authority, matchmaking, disconnects, and live bot replacement.
+- Online authority, matchmaking, disconnects, and live bot replacement. (Web hosting is decided: `orbitroyale.r7orbit.io`, set up near launch.)
 
 ## Suggested first implementation brief
 

@@ -30,7 +30,7 @@ Nothing is tuned or production-ready yet. Every balance number is a starting poi
 
 ## Phase 0 · Lock the foundations (S–M) · next up
 
-Settle what everything else depends on, and get a playable link that updates itself.
+Settle what everything else depends on, and make every build tested and downloadable.
 
 **Decisions**
 - [ ] Combat camera: first-person combat with third-person vehicles (proposed), or third-person throughout.
@@ -39,13 +39,15 @@ Settle what everything else depends on, and get a playable link that updates its
 - [ ] Confirm Godot 4 after this phase's measurements.
 
 **Work**
-- [ ] Playtest the movement playground and lock first-pass `MoveTuning` values. The swing currently overshoots the gap at full speed.
+- [x] Playtest the movement playground and lock first-pass `MoveTuning` values (2026-10-11).
 - [ ] Measure a baseline in the browser: frame time on the target machine, load time, and wasm size compressed with Brotli and gzip.
-- [ ] Continuous integration on GitHub Actions: run the headless tests and web export on every push.
-- [ ] Publish the latest `main` build to GitHub Pages, so there's always a playable link without a local server.
+- [x] Continuous integration on GitHub Actions: headless tests and web export on every push that touches `game/`, with the build kept as a downloadable artifact for 14 days.
+- [ ] Confirm the first CI run passes on GitHub (the repo is private, so check the Actions tab).
 - [ ] Repo conventions: `assets/` folder layout, Git LFS for `.glb`, `.blend` and audio, and naming rules.
 
-**Done when** the decisions are recorded, there's a playable link that updates on every merge, and we have measured numbers to hold later phases against.
+**Done when** the decisions are recorded, every push is tested and produces a downloadable build, and we have measured numbers to hold later phases against.
+
+**Hosting (decided, later):** the game will be published at `orbitroyale.r7orbit.io`, a subdomain of r7orbit.io, once it is ready to launch. Until then, builds stay private: play them locally or download them from CI. The host will need to serve `.wasm` as `application/wasm` and compress it with Brotli or gzip. The single-threaded export needs no cross-origin isolation headers.
 
 ---
 

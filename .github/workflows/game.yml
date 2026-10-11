@@ -1,7 +1,8 @@
 name: Game
 
 # Runs the headless checks and exports the web build on every push that
-# touches the game. Pushes to main also publish the build to GitHub Pages.
+# touches the game. Each run keeps the web build as a downloadable artifact.
+# Public hosting comes later at orbitroyale.r7orbit.io (see docs/plan.md).
 
 on:
   push:
@@ -71,22 +72,10 @@ jobs:
           du -h game/build/web/* | sed 's/^/    /' >> "$GITHUB_STEP_SUMMARY"
           gzip -9 -c game/build/web/index.wasm | wc -c | awk '{printf "    index.wasm gzipped: %.1f MB\n", $1/1048576}' >> "$GITHUB_STEP_SUMMARY"
 
-      - name: Upload web build
-        uses: actions/upload-pages-artifact@v3
+      - name: Keep the web build
+        uses: actions/upload-artifact@v4
         with:
+          name: orbit-royale-web-${{ github.sha }}
           path: game/build/web
+          retention-days: 14
 
-  deploy:
-    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
-    needs: test-and-export
-    runs-on: ubuntu-24.04
-    permissions:
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Publish to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
