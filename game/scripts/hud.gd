@@ -199,6 +199,23 @@ func _sync_sliders() -> void:
 		slider.value_changed.emit(slider.value)
 
 
+var _lock_refused := false
+
+
+func set_lock_refused(refused: bool) -> void:
+	_lock_refused = refused
+	if refused:
+		_capture_hint.text = "This browser view blocks mouse capture.\nHold right-click and move the mouse to look. Left click or Q fires the tether.\nFor full mouse control, open the game in Chrome, Edge or Firefox."
+		_capture_hint.add_theme_font_size_override("font_size", 17)
+		_capture_hint.custom_minimum_size = Vector2(760, 0)
+		_pin(_capture_hint, Vector2(0.5, 0), Vector2i(Control.GROW_DIRECTION_BOTH, Control.GROW_DIRECTION_END), Vector2(0, 24))
+	else:
+		_capture_hint.text = "Click to play"
+		_capture_hint.add_theme_font_size_override("font_size", 22)
+		_capture_hint.custom_minimum_size = Vector2(400, 32)
+		_pin(_capture_hint, Vector2(0.5, 0.5), Vector2i(Control.GROW_DIRECTION_BOTH, Control.GROW_DIRECTION_END), Vector2(0, 80))
+
+
 func is_tuning_open() -> bool:
 	return _tuning.visible
 

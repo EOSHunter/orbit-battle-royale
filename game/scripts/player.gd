@@ -43,8 +43,14 @@ func _ready() -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
-		_turn((event as InputEventMouseMotion).screen_relative * 0.0022 * tuning.mouse_sensitivity)
+	var motion := event as InputEventMouseMotion
+	if motion == null:
+		return
+	# Captured mouse turns freely. Where the browser refuses pointer lock,
+	# holding right-click and moving the mouse turns instead.
+	var dragging := (motion.button_mask & MOUSE_BUTTON_MASK_RIGHT) != 0
+	if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED or dragging:
+		_turn(motion.relative * 0.0022 * tuning.mouse_sensitivity)
 
 
 func _turn(by: Vector2) -> void:
