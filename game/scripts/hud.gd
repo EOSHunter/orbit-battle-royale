@@ -75,8 +75,8 @@ func _ready() -> void:
 	help_panel.add_child(_help)
 
 	_capture_hint = _label(22, TEXT)
-	_capture_hint.text = "Click to play"
-	_capture_hint.custom_minimum_size = Vector2(400, 32)
+	_capture_hint.text = "Click to capture the cursor · Esc for menu"
+	_capture_hint.custom_minimum_size = Vector2(640, 32)
 	_pin(_capture_hint, Vector2(0.5, 0.5), Vector2i(Control.GROW_DIRECTION_BOTH, Control.GROW_DIRECTION_END), Vector2(0, 80))
 	_capture_hint.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	root.add_child(_capture_hint)
@@ -121,25 +121,6 @@ func _panel(parent: Control, anchor: Vector2, grow: Vector2i, offset: Vector2) -
 	return p
 
 
-var _lock_refused := false
-var _notice_time := 0.0
-
-
-func set_lock_refused(refused: bool) -> void:
-	_lock_refused = refused
-	if refused:
-		_capture_hint.text = "This browser view can't capture the mouse, so the hidden cursor turns the camera.\nPush toward a window edge to keep turning. Chrome, Edge or Firefox give full mouse control."
-		_notice_time = 7.0
-		_capture_hint.add_theme_font_size_override("font_size", 17)
-		_capture_hint.custom_minimum_size = Vector2(760, 0)
-		_pin(_capture_hint, Vector2(0.5, 0), Vector2i(Control.GROW_DIRECTION_BOTH, Control.GROW_DIRECTION_END), Vector2(0, 24))
-	else:
-		_capture_hint.text = "Click to play"
-		_capture_hint.add_theme_font_size_override("font_size", 22)
-		_capture_hint.custom_minimum_size = Vector2(400, 32)
-		_pin(_capture_hint, Vector2(0.5, 0.5), Vector2i(Control.GROW_DIRECTION_BOTH, Control.GROW_DIRECTION_END), Vector2(0, 80))
-
-
 func show_landing(drop: float) -> void:
 	_landing.text = "Landed from %.1f m · no fall damage" % drop
 	_landing_time = 3.0
@@ -148,17 +129,8 @@ func show_landing(drop: float) -> void:
 func _process(delta: float) -> void:
 	if player == null:
 		return
-	var captured := Input.mouse_mode == Input.MOUSE_MODE_CAPTURED
-	var free_playing := _lock_refused and Input.mouse_mode == Input.MOUSE_MODE_HIDDEN
-	_notice_time = maxf(0.0, _notice_time - delta)
-	if free_playing:
-		_capture_hint.visible = _notice_time > 0.0
-		_capture_hint.modulate.a = clampf(_notice_time, 0.0, 1.0)
-	else:
-		_capture_hint.visible = not captured and player.combat_input
-		_capture_hint.modulate.a = 1.0
-		if _lock_refused and _notice_time == 0.0:
-			_capture_hint.text = "Click to play"
+	_capture_hint.visible = not MouseLock.is_captured() and player.combat_input
+	_capture_hint.text = "Capturing the cursor…" if MouseLock.is_pending() else "Click to capture the cursor · Esc for menu"
 	_speed.text = "%.1f m/s" % player.horizontal_speed()
 	var state_name: String = ["On ground", "In air", "Tethered"][player.state]
 	if player.state == Player.State.TETHERED:

@@ -6,7 +6,6 @@ extends Node3D
 @export var kill_height := -60.0
 ## Bots in the round; names and weapons cycle through BOT_SETUP.
 @export var bot_count := 3
-const LOCK_TIMEOUT := 0.6
 const BOT_SETUP := [
 	{"name": "Bot Rhea", "weapon": &"ar7"},
 	{"name": "Bot Ivo", "weapon": &"sg4"},
@@ -28,8 +27,6 @@ const LOOT := [
 
 var _bots_alive := 0
 var _ended := false
-var _lock_wait := 0.0
-var _lock_refused := false
 
 
 func _ready() -> void:
@@ -124,8 +121,7 @@ func _on_player_eliminated(attacker: Node) -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	var button := event as InputEventMouseButton
-	var playing := Input.mouse_mode == Input.MOUSE_MODE_CAPTURED or (_lock_refused and Input.mouse_mode == Input.MOUSE_MODE_HIDDEN)
-	if button and button.pressed and button.button_index == MOUSE_BUTTON_LEFT and not playing and player.combat_input and not inventory_screen.is_open():
+	if button and button.pressed and button.button_index == MOUSE_BUTTON_LEFT and not MouseLock.is_captured() and player.combat_input and not inventory_screen.is_open():
 		get_viewport().set_input_as_handled()
 		player.input_grace = 0.25
 		_recapture()
@@ -135,26 +131,13 @@ func _unhandled_input(event: InputEvent) -> void:
 	elif event.is_action_pressed("respawn"):
 		start_round()
 	elif event.is_action_pressed("ui_cancel") and not inventory_screen.is_open():
-		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-		player.free_look = false
+		MouseLock.release()
 
 
 func _recapture() -> void:
-	if _lock_refused:
-		Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
-		player.free_look = true
-	else:
-		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-		_lock_wait = LOCK_TIMEOUT
+	MouseLock.capture()
 
 
-func _physics_process(delta: float) -> void:
-	if _lock_wait > 0.0:
-		_lock_wait -= delta
-		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
-			_lock_wait = 0.0
-		elif _lock_wait <= 0.0:
-			_lock_refused = true
-			_recapture()
+func _physics_process(_delta: float) -> void:
 	if player.global_position.y < kill_height:
 		player.teleport_to((_markers.get_node("PlayerSpawn") as Node3D).global_transform)

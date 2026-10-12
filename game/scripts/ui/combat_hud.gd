@@ -35,6 +35,7 @@ var _stats: Label
 var _feed: VBoxContainer
 var _toast: Label
 var _center: Label
+var _capture_hint: Label
 var _help: Label
 var _help_time := 15.0
 var _damage_glow: ColorRect
@@ -120,6 +121,11 @@ F1 tuning · F5 restart · F10 movement playground · H hide this help"
 	_center.custom_minimum_size = Vector2(900, 0)
 	_center.visible = false
 	_pin(_center, Vector2(0.5, 0.5), Vector2i(Control.GROW_DIRECTION_BOTH, Control.GROW_DIRECTION_BOTH), Vector2(0, -60))
+
+	_capture_hint = _label(16, TEXT)
+	_capture_hint.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	_capture_hint.custom_minimum_size = Vector2(640, 0)
+	_pin(_capture_hint, Vector2(0.5, 0.5), Vector2i(Control.GROW_DIRECTION_BOTH, Control.GROW_DIRECTION_END), Vector2(0, 120))
 
 
 func bind(p: Player) -> void:
@@ -241,6 +247,8 @@ func _process(delta: float) -> void:
 	if player == null:
 		return
 	_t += delta
+	_capture_hint.visible = not MouseLock.is_captured() and player.combat_input and player.is_alive()
+	_capture_hint.text = "CAPTURING THE CURSOR…" if MouseLock.is_pending() else "CLICK TO CAPTURE THE CURSOR · ESC FOR MENU"
 	_hit_time = maxf(0.0, _hit_time - delta)
 	_toast_time = maxf(0.0, _toast_time - delta)
 	_status_time = maxf(0.0, _status_time - delta)

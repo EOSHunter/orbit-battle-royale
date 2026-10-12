@@ -22,8 +22,6 @@ const HEAD_FROM_TOP := 0.18
 const SWIM_DEPTH := 1.35
 const SWIM_SPEED := 3.0
 const AIM_SENSITIVITY := 0.7
-const EDGE_ZONE := 0.12             # fraction of the window width / height
-const EDGE_TURN_SPEED := Vector2(2.6, 1.3)  # rad/s at the very edge
 
 @export var tuning: MoveTuning
 ## Load the values saved by the tuning panel. Tests turn this off to use defaults.
@@ -38,9 +36,6 @@ var sprinting := false
 var input_grace := 0.0
 ## False while a menu (like the inventory screen) owns the mouse.
 var combat_input := true
-## Set when the browser refuses pointer lock: the hidden cursor turns the
-## camera directly, and holding it near a window edge keeps turning.
-var free_look := false
 
 ## Healing in progress.
 var using: HealDef
@@ -129,30 +124,8 @@ func _unhandled_input(event: InputEvent) -> void:
 	var motion := event as InputEventMouseMotion
 	if motion == null or not combat_input:
 		return
-	if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED or free_look:
-		_turn(motion.relative * 0.0022 * tuning.mouse_sensitivity * (AIM_SENSITIVITY if weapons.aiming else 1.0))
-
-
-func _edge_turn(delta: float) -> void:
-	# Without pointer lock the cursor eventually reaches the window edge;
-	# keep turning while it is held there so the player never runs out of room.
-	var vp := get_viewport()
-	var size := vp.get_visible_rect().size
-	var pos := vp.get_mouse_position()
-	if not Rect2(Vector2.ZERO, size).has_point(pos):
-		return
-	var zone := size * EDGE_ZONE
-	var push := Vector2.ZERO
-	if pos.x < zone.x:
-		push.x = -(1.0 - pos.x / zone.x)
-	elif pos.x > size.x - zone.x:
-		push.x = 1.0 - (size.x - pos.x) / zone.x
-	if pos.y < zone.y:
-		push.y = -(1.0 - pos.y / zone.y)
-	elif pos.y > size.y - zone.y:
-		push.y = 1.0 - (size.y - pos.y) / zone.y
-	if push != Vector2.ZERO:
-		_turn(push * EDGE_TURN_SPEED * tuning.mouse_sensitivity * delta)
+	# Only a locked pointer turns the camera; a free cursor never does.
+	_turn(MouseLock.look_delta(motion) * 0.0022 * tuning.mouse_sensitivity * (AIM_SENSITIVITY if weapons.aiming else 1.0))
 
 
 func _turn(by: Vector2) -> void:
@@ -186,8 +159,6 @@ func _physics_process(delta: float) -> void:
 	var combat := accepts_input and combat_input
 
 	if combat_input:
-		if free_look and Input.mouse_mode != Input.MOUSE_MODE_CAPTURED:
-			_edge_turn(delta)
 		var look := Input.get_vector("look_left", "look_right", "look_up", "look_down")
 		if look != Vector2.ZERO:
 			_turn(look * look.length() * tuning.stick_sensitivity * (AIM_SENSITIVITY if weapons.aiming else 1.0) * delta)
