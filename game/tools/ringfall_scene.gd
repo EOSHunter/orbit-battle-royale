@@ -195,8 +195,13 @@ func _anchorport() -> void:
 	_put(a, COL + "colony-cargo-pad.glb", -46, 14)
 	_put(a, M + "drop-transport/drop-transport.glb", -52, -38, 32.0, true, 1.5, Vector3.ONE * 0.75, Vector2(4, -3))
 	# Pier: deck tiles out over the water, railings and lamps along it.
+	# Start the pier just before the shoreline south of the yard and run it out to sea.
 	var z := 34.0
-	while z < 110.0:
+	while z < 200.0 and _ground(a.position.x, a.position.z + z) > 0.8:
+		z += 2.0
+	z = maxf(34.0, z - 10.0)
+	var pier_end := z + 76.0
+	while z < pier_end:
 		for x: float in [-2.0, 2.0]:
 			_put(a, COL + "colony-floor.glb", x, z, 0.0, false, 0.3)
 		_put(a, COL + "colony-railing.glb", -4.0, z, 90.0, false, 0.3)
@@ -204,7 +209,8 @@ func _anchorport() -> void:
 		if int(z) % 16 == 2:
 			_put(a, PROP + "prop-lamp-post.glb", 3.4, z, 0.0, false, 0.3)
 		z += 4.0
-	_put(a, COL + "colony-cargo-pad.glb", 0, 116, 0.0, false, -0.7)
+	_put(a, COL + "colony-cargo-pad.glb", 0, pier_end + 6.0, 0.0, false, -0.7)
+	_mark_at("LootSpots", a, 0, pier_end + 4.0, 0.6)
 	for p in [Vector2(-10, -30), Vector2(30, 30), Vector2(-34, 30)]:
 		_put(a, COL + "colony-work-light.glb", p.x, p.y, _rng.randf_range(0, 360))
 	_put(a, PROP + "prop-vehicle-spawn-pad.glb", 36, -42)
@@ -212,7 +218,7 @@ func _anchorport() -> void:
 	_put(a, PROP + "prop-generator.glb", 8, -34, 90.0)
 	_put(a, PROP + "prop-terminal.glb", -30, 8, 180.0)
 	_props_ring(a, Vector2(0, 0), 38.0, 18, [PROP + "prop-crate-small.glb", PROP + "prop-crate-large.glb", PROP + "prop-barrel.glb", PROP + "prop-fuel-canister.glb", PROP + "prop-barrier.glb"])
-	for p in [Vector2(-24, -10), Vector2(-30, -14), Vector2(24, -18), Vector2(0, 14), Vector2(10, 26), Vector2(0, 100), Vector2(44, 10), Vector2(-46, 14), Vector2(-50, -30), Vector2(30, -40)]:
+	for p in [Vector2(-24, -10), Vector2(-30, -14), Vector2(24, -18), Vector2(0, 14), Vector2(10, 26), Vector2(44, 10), Vector2(-46, 14), Vector2(-50, -30), Vector2(30, -40)]:
 		_mark_at("LootSpots", a, p.x, p.y)
 	for p in [Vector2(-8, 12), Vector2(14, 6), Vector2(-20, 24), Vector2(28, 26)]:
 		_mark_at("Cover", a, p.x, p.y)

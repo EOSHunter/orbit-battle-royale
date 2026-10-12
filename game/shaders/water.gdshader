@@ -50,7 +50,7 @@ void fragment() {
 	float t = TIME;
 	float ripple = noise(world_pos.xz * 0.15 + vec2(t * 0.3, t * 0.2)) + 0.5 * noise(world_pos.xz * 0.5 - vec2(t * 0.4, 0.0));
 	vec3 col = mix(shallow, deep, smoothstep(0.5, 14.0, depth));
-	float shore = smoothstep(1.4, 0.0, depth + 0.4 * sin(t * 1.5 + ripple * 4.0));
+	float shore = smoothstep(0.7, 0.05, depth + 0.25 * sin(t * 1.5 + ripple * 4.0));
 	col = mix(col, foam, shore * 0.85);
 	ALBEDO = col;
 	ROUGHNESS = 0.08;

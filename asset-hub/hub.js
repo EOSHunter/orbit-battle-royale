@@ -181,14 +181,15 @@ function renderStage() {
   $('#vhost').hidden = mode !== 'model';
   $('#audio-panel').hidden = mode !== 'audio';
   $('#image-panel').hidden = mode !== 'image';
-  const latest = a && (a.files || []).filter(f => f.kind === mode).slice(-1)[0];
+  const files = (a && a.files) || [];
+  const latest = files.filter(f => f.kind === mode).slice(-1)[0] || files.slice(-1)[0];
   const key = a ? a.id + ':' + (latest ? latest.id : '') + ':' + (a.concepts && a.concepts[0] ? a.concepts[0].id : '') : null;
   if (S.local && S.local.for === (a && a.id)) { renderTools(); return; }
   if (S.loadedFor === key) { renderTools(); return; }
   S.loadedFor = key; S.loaded = null;
   if (viewer) viewer.clear();
   stopAudio(); $('#image-panel').innerHTML = '';
-  if (latest) loadStored(latest, mode); else showEmpty(a, mode);
+  if (latest) loadStored(latest, latest.kind); else showEmpty(a, mode);
   renderTools();
 }
 
@@ -208,12 +209,26 @@ function showEmpty(a, mode) {
 }
 
 async function loadStored(f, mode) {
+  // A record can hold files of several kinds (a location has models and screenshots).
+  $('#vhost').hidden = mode !== 'model';
+  $('#audio-panel').hidden = mode !== 'audio';
+  $('#image-panel').hidden = mode !== 'image';
+  if (mode !== 'audio') stopAudio();
   const e = $('#empty'); e.hidden = false; e.innerHTML = `<p class="em-t">Loading ${esc(f.name)}…</p>`;
   try {
     const res = await fetch('/_blob/' + f.id);
     if (!res.ok) throw new Error('missing');
-    if (mode === 'model') { const { info } = await getViewer().load(await res.text()); S.loaded = { info, file: f }; }
-    else if (mode === 'audio') { const w = await res.json(); const bytes = Uint8Array.from(atob(w.data), c => c.charCodeAt(0)); await showAudio(new Blob([bytes], { type: w.mime }), f.name); S.loaded = { file: f }; }
+    if (mode === 'model') {
+      // .glb files from the repo are binary; copies stored in the artifact are glTF JSON.
+      const buf = await res.arrayBuffer();
+      const glb = buf.byteLength > 4 && new TextDecoder().decode(new Uint8Array(buf, 0, 4)) === 'glTF';
+      const { info } = await getViewer().load(glb ? buf : new TextDecoder().decode(buf));
+      S.loaded = { info, file: f };
+    } else if (mode === 'audio') {
+      if ((res.headers.get('content-type') || '').startsWith('audio/')) await showAudio(await res.blob(), f.name);
+      else { const w = await res.json(); const bytes = Uint8Array.from(atob(w.data), c => c.charCodeAt(0)); await showAudio(new Blob([bytes], { type: w.mime }), f.name); }
+      S.loaded = { file: f };
+    }
     else { showImage('/_blob/' + f.id, f.name); S.loaded = { file: f }; }
     e.hidden = true;
   } catch (err) {

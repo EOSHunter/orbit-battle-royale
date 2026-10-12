@@ -1,0 +1,6869 @@
+[
+ {
+  "id": "operator-third-person",
+  "budget": "5k–15k tris · 2048² baked textures",
+  "category": "Characters",
+  "concepts": [
+   {
+    "at": "2026-10-11T17:33:30.750Z",
+    "by": null,
+    "id": "969a919e1055ceaf15b46031940fecc0",
+    "name": "01-operator.webp",
+    "source": "codex/concepts/v0.2/01-operator.png"
+   },
+   {
+    "at": "2026-10-11T17:33:30.750Z",
+    "by": null,
+    "id": "b5d8933638a322a6de2791b337f27a97",
+    "name": "02-operator-bot-variants.webp",
+    "source": "codex/concepts/v0.2/02-operator-bot-variants.png"
+   }
+  ],
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": null,
+  "files": [
+   {
+    "id": "repo/game/assets/models/characters/operator.glb",
+    "kind": "model",
+    "name": "operator.glb",
+    "bytes": 1860496,
+    "at": "2026-10-11T21:41:58.726Z",
+    "by": null,
+    "tris": 5432,
+    "animations": 16
+   }
+  ],
+  "group": null,
+  "kind": "model",
+  "milestone": "Combat and inventory",
+  "name": "Operator (third-person)",
+  "notes": "One original expedition-suit operator. Bots reuse it with gear and color swaps so 59 bots stay readable.",
+  "order": 0,
+  "parts": [
+   {
+    "done": true,
+    "n": "Concept sheet"
+   },
+   {
+    "done": true,
+    "n": "Base mesh"
+   },
+   {
+    "done": true,
+    "n": "Materials and textures"
+   },
+   {
+    "done": true,
+    "n": "Rig and skinning"
+   },
+   {
+    "done": false,
+    "n": "LODs"
+   },
+   {
+    "done": true,
+    "n": "Bot variants (gear and color swaps)"
+   }
+  ],
+  "path": "game/assets/models/characters/operator.glb",
+  "source": "art/characters/models/operator.py",
+  "stage": "Review",
+  "thumb": "repo/asset-hub/data/thumbs/operator.jpg",
+  "updatedAt": "2026-10-11T23:30:00.000Z",
+  "updatedBy": null
+ },
+ {
+  "id": "bot-operator",
+  "budget": "1k–3k tris · 512² baked textures",
+  "category": "Characters",
+  "concepts": [],
+  "createdAt": "2026-10-11T23:30:00.000Z",
+  "decision": null,
+  "files": [
+   {
+    "id": "repo/game/assets/models/characters/bot-operator-black.glb",
+    "kind": "model",
+    "name": "bot-operator-black.glb",
+    "bytes": 607328,
+    "at": "2026-10-11T21:25:14.445Z",
+    "by": null,
+    "tris": 2504,
+    "animations": 16
+   },
+   {
+    "id": "repo/game/assets/models/characters/bot-operator-olive.glb",
+    "kind": "model",
+    "name": "bot-operator-olive.glb",
+    "bytes": 612444,
+    "at": "2026-10-11T21:28:02.696Z",
+    "by": null,
+    "tris": 2504,
+    "animations": 16
+   },
+   {
+    "id": "repo/game/assets/models/characters/bot-operator-rust.glb",
+    "kind": "model",
+    "name": "bot-operator-rust.glb",
+    "bytes": 614716,
+    "at": "2026-10-11T21:29:02.399Z",
+    "by": null,
+    "tris": 2504,
+    "animations": 16
+   },
+   {
+    "id": "repo/game/assets/models/characters/bot-operator-tan.glb",
+    "kind": "model",
+    "name": "bot-operator-tan.glb",
+    "bytes": 619768,
+    "at": "2026-10-11T21:30:38.918Z",
+    "by": null,
+    "tris": 2504,
+    "animations": 16
+   },
+   {
+    "id": "repo/game/assets/models/characters/bot-operator-white.glb",
+    "kind": "model",
+    "name": "bot-operator-white.glb",
+    "bytes": 623624,
+    "at": "2026-10-11T21:31:35.607Z",
+    "by": null,
+    "tris": 2504,
+    "animations": 16
+   }
+  ],
+  "group": null,
+  "kind": "model",
+  "milestone": "Combat and inventory",
+  "name": "Bot operator",
+  "notes": "Lighter build of the operator so 59 bots stay cheap and readable; same skeleton and silhouette.",
+  "order": 1,
+  "parts": [
+   {
+    "done": true,
+    "n": "Mesh"
+   },
+   {
+    "done": true,
+    "n": "Materials and color variants"
+   },
+   {
+    "done": true,
+    "n": "Rig matching the operator skeleton"
+   }
+  ],
+  "path": "game/assets/models/characters/",
+  "source": "art/characters/models/",
+  "stage": "In engine",
+  "thumb": "repo/asset-hub/data/thumbs/bot-operator-black.jpg",
+  "updatedAt": "2026-10-11T23:30:00.000Z",
+  "updatedBy": null
+ },
+ {
+  "id": "first-person-arms",
+  "budget": "Part of the 5k–15k character budget · 1024² baked textures",
+  "category": "Characters",
+  "concepts": [
+   {
+    "at": "2026-10-11T17:33:30.750Z",
+    "by": null,
+    "id": "97c8b80fc97d3c1d0861c798c00e5a43",
+    "name": "03-first-person-arms.webp",
+    "source": "codex/concepts/v0.2/03-first-person-arms.png"
+   }
+  ],
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": "Combat camera: first-person combat is proposed, not approved.",
+  "files": [
+   {
+    "id": "repo/game/assets/models/characters/first-person-arms.glb",
+    "kind": "model",
+    "name": "first-person-arms.glb",
+    "bytes": 518544,
+    "at": "2026-10-11T21:33:23.221Z",
+    "by": null,
+    "tris": 1360,
+    "animations": 0
+   }
+  ],
+  "group": null,
+  "kind": "model",
+  "milestone": "Traversal",
+  "name": "First-person arms",
+  "notes": "",
+  "order": 1,
+  "parts": [
+   {
+    "done": true,
+    "n": "Mesh"
+   },
+   {
+    "done": true,
+    "n": "Materials"
+   },
+   {
+    "done": true,
+    "n": "Rig matching the operator skeleton"
+   }
+  ],
+  "path": "game/assets/models/characters/first-person-arms.glb",
+  "source": "art/characters/models/first-person-arms.py",
+  "stage": "Review",
+  "thumb": "repo/asset-hub/data/thumbs/first-person-arms.jpg",
+  "updatedAt": "2026-10-11T23:30:00.000Z",
+  "updatedBy": null
+ },
+ {
+  "id": "locomotion-set",
+  "budget": null,
+  "category": "Characters",
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": null,
+  "files": [
+   {
+    "id": "repo/game/assets/models/characters/operator.glb",
+    "kind": "model",
+    "name": "operator.glb",
+    "bytes": 1860496,
+    "at": "2026-10-11T21:41:58.726Z",
+    "by": null,
+    "tris": 5432,
+    "animations": 16
+   }
+  ],
+  "group": null,
+  "kind": "animation",
+  "milestone": "Traversal",
+  "name": "Locomotion set",
+  "notes": "No fall damage: landings from any height need a clean recovery, not a stagger.",
+  "order": 2,
+  "parts": [
+   {
+    "done": true,
+    "n": "Idle"
+   },
+   {
+    "done": true,
+    "n": "Walk"
+   },
+   {
+    "done": true,
+    "n": "Sprint"
+   },
+   {
+    "done": true,
+    "n": "Crouch and crouch-walk"
+   },
+   {
+    "done": true,
+    "n": "Jump, fall, land"
+   },
+   {
+    "done": false,
+    "n": "Slow walk while healing"
+   }
+  ],
+  "path": "game/assets/animations/characters/locomotion-set.glb",
+  "source": "art/characters/locomotion-set.blend",
+  "stage": "In engine",
+  "updatedAt": "2026-10-12T01:58:53.931Z",
+  "updatedBy": null,
+  "thumb": "repo/asset-hub/data/thumbs/operator.jpg"
+ },
+ {
+  "id": "tethercaster-traversal-set",
+  "budget": null,
+  "category": "Characters",
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": null,
+  "files": [
+   {
+    "id": "repo/game/assets/models/characters/operator.glb",
+    "kind": "model",
+    "name": "operator.glb",
+    "bytes": 1860496,
+    "at": "2026-10-11T21:41:58.726Z",
+    "by": null,
+    "tris": 5432,
+    "animations": 16
+   }
+  ],
+  "group": null,
+  "kind": "animation",
+  "milestone": "Traversal",
+  "name": "Tethercaster traversal set",
+  "notes": "",
+  "order": 3,
+  "parts": [
+   {
+    "done": false,
+    "n": "Fire hook"
+   },
+   {
+    "done": false,
+    "n": "Reel in"
+   },
+   {
+    "done": false,
+    "n": "Swing loop"
+   },
+   {
+    "done": false,
+    "n": "Release and momentum carry"
+   }
+  ],
+  "path": "game/assets/animations/characters/tethercaster-traversal-set.glb",
+  "source": "art/characters/tethercaster-traversal-set.blend",
+  "stage": "Not started",
+  "updatedAt": "2026-10-11T18:24:13.149Z",
+  "updatedBy": null,
+  "thumb": "repo/asset-hub/data/thumbs/operator.jpg"
+ },
+ {
+  "id": "weapon-handling-set",
+  "budget": null,
+  "category": "Characters",
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": null,
+  "files": [
+   {
+    "id": "repo/game/assets/models/characters/operator.glb",
+    "kind": "model",
+    "name": "operator.glb",
+    "bytes": 1860496,
+    "at": "2026-10-11T21:41:58.726Z",
+    "by": null,
+    "tris": 5432,
+    "animations": 16
+   }
+  ],
+  "group": null,
+  "kind": "animation",
+  "milestone": "Combat and inventory",
+  "name": "Weapon handling set",
+  "notes": "",
+  "order": 4,
+  "parts": [
+   {
+    "done": false,
+    "n": "Equip and holster per weapon"
+   },
+   {
+    "done": true,
+    "n": "Hip and aim poses"
+   },
+   {
+    "done": true,
+    "n": "Fire and recoil"
+   },
+   {
+    "done": false,
+    "n": "Reload per weapon"
+   },
+   {
+    "done": true,
+    "n": "Grenade throw"
+   }
+  ],
+  "path": "game/assets/animations/characters/weapon-handling-set.glb",
+  "source": "art/characters/weapon-handling-set.blend",
+  "stage": "Draft",
+  "updatedAt": "2026-10-12T01:58:53.931Z",
+  "updatedBy": null,
+  "thumb": "repo/asset-hub/data/thumbs/operator.jpg"
+ },
+ {
+  "id": "healing-use-set",
+  "budget": null,
+  "category": "Characters",
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": null,
+  "files": [
+   {
+    "id": "repo/game/assets/models/characters/operator.glb",
+    "kind": "model",
+    "name": "operator.glb",
+    "bytes": 1860496,
+    "at": "2026-10-11T21:41:58.726Z",
+    "by": null,
+    "tris": 5432,
+    "animations": 16
+   }
+  ],
+  "group": null,
+  "kind": "animation",
+  "milestone": "Combat and inventory",
+  "name": "Healing use set",
+  "notes": "",
+  "order": 5,
+  "parts": [
+   {
+    "done": true,
+    "n": "Field Patch / Trauma Kit (apply)"
+   },
+   {
+    "done": false,
+    "n": "Shield Cell / Pack / Core (insert)"
+   },
+   {
+    "done": false,
+    "n": "Phoenix Capsule (inject)"
+   },
+   {
+    "done": false,
+    "n": "Interrupted exit"
+   }
+  ],
+  "path": "game/assets/animations/characters/healing-use-set.glb",
+  "source": "art/characters/healing-use-set.blend",
+  "stage": "Draft",
+  "updatedAt": "2026-10-12T01:58:53.931Z",
+  "updatedBy": null,
+  "thumb": "repo/asset-hub/data/thumbs/operator.jpg"
+ },
+ {
+  "id": "freefall-and-landing",
+  "budget": null,
+  "category": "Characters",
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": "Drop rules: how players slow down after jumping (glider, thruster pack, or none) is undecided.",
+  "files": [
+   {
+    "id": "repo/game/assets/models/characters/operator.glb",
+    "kind": "model",
+    "name": "operator.glb",
+    "bytes": 1860496,
+    "at": "2026-10-11T21:41:58.726Z",
+    "by": null,
+    "tris": 5432,
+    "animations": 16
+   }
+  ],
+  "group": null,
+  "kind": "animation",
+  "milestone": "Match loop",
+  "name": "Freefall and landing",
+  "notes": "",
+  "order": 6,
+  "parts": [
+   {
+    "done": false,
+    "n": "Exit transport"
+   },
+   {
+    "done": true,
+    "n": "Freefall pose and steering"
+   },
+   {
+    "done": true,
+    "n": "Descent device deploy"
+   },
+   {
+    "done": true,
+    "n": "Landing"
+   }
+  ],
+  "path": "game/assets/animations/characters/freefall-and-landing.glb",
+  "source": "art/characters/freefall-and-landing.blend",
+  "stage": "Draft",
+  "updatedAt": "2026-10-12T01:58:53.931Z",
+  "updatedBy": null,
+  "thumb": "repo/asset-hub/data/thumbs/operator.jpg"
+ },
+ {
+  "id": "vehicle-set",
+  "budget": null,
+  "category": "Characters",
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": null,
+  "files": [
+   {
+    "id": "repo/game/assets/models/characters/operator.glb",
+    "kind": "model",
+    "name": "operator.glb",
+    "bytes": 1860496,
+    "at": "2026-10-11T21:41:58.726Z",
+    "by": null,
+    "tris": 5432,
+    "animations": 16
+   }
+  ],
+  "group": null,
+  "kind": "animation",
+  "milestone": "Equipment and rotation",
+  "name": "Vehicle set",
+  "notes": "",
+  "order": 7,
+  "parts": [
+   {
+    "done": false,
+    "n": "Enter and exit (ground vehicles)"
+   },
+   {
+    "done": true,
+    "n": "Driver sit and steer"
+   },
+   {
+    "done": false,
+    "n": "Kestrel pilot"
+   },
+   {
+    "done": false,
+    "n": "Airborne exit"
+   }
+  ],
+  "path": "game/assets/animations/characters/vehicle-set.glb",
+  "source": "art/characters/vehicle-set.blend",
+  "stage": "Draft",
+  "updatedAt": "2026-10-12T01:58:53.931Z",
+  "updatedBy": null,
+  "thumb": "repo/asset-hub/data/thumbs/operator.jpg"
+ },
+ {
+  "id": "elimination",
+  "budget": null,
+  "category": "Characters",
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": null,
+  "files": [
+   {
+    "id": "repo/game/assets/models/characters/operator.glb",
+    "kind": "model",
+    "name": "operator.glb",
+    "bytes": 1860496,
+    "at": "2026-10-11T21:41:58.726Z",
+    "by": null,
+    "tris": 5432,
+    "animations": 16
+   }
+  ],
+  "group": null,
+  "kind": "animation",
+  "milestone": "Match loop",
+  "name": "Elimination",
+  "notes": "",
+  "order": 8,
+  "parts": [
+   {
+    "done": true,
+    "n": "Elimination fall"
+   },
+   {
+    "done": false,
+    "n": "Results screen pose"
+   }
+  ],
+  "path": "game/assets/animations/characters/elimination.glb",
+  "source": "art/characters/elimination.blend",
+  "stage": "In engine",
+  "updatedAt": "2026-10-12T01:58:53.931Z",
+  "updatedBy": null,
+  "thumb": "repo/asset-hub/data/thumbs/operator.jpg"
+ },
+ {
+  "id": "ar-7-wayfarer",
+  "budget": "500–1.5k tris (one model for view, pickup and bots) · 1024² baked textures",
+  "category": "Weapons",
+  "concepts": [
+   {
+    "at": "2026-10-11T17:33:30.750Z",
+    "by": null,
+    "id": "ce5958fbe5980bbf1cfb831f81b4049a",
+    "name": "04-ar-7-wayfarer.webp",
+    "source": "codex/concepts/v0.2/04-ar-7-wayfarer.png"
+   }
+  ],
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": null,
+  "files": [
+   {
+    "id": "repo/game/assets/models/weapons/ar-7-wayfarer.glb",
+    "kind": "model",
+    "name": "ar-7-wayfarer.glb",
+    "bytes": 473560,
+    "at": "2026-10-11T19:57:42.989Z",
+    "by": null,
+    "tris": 1380,
+    "animations": 0
+   }
+  ],
+  "group": "Assault rifle",
+  "kind": "model",
+  "milestone": "Combat and inventory",
+  "name": "AR-7 Wayfarer",
+  "notes": "",
+  "order": 9,
+  "parts": [
+   {
+    "done": true,
+    "n": "Concept and silhouette"
+   },
+   {
+    "done": true,
+    "n": "First-person viewmodel mesh"
+   },
+   {
+    "done": true,
+    "n": "World / pickup mesh + LODs"
+   },
+   {
+    "done": true,
+    "n": "Materials and textures"
+   },
+   {
+    "done": false,
+    "n": "Rig (magazine, bolt, trigger)"
+   },
+   {
+    "done": false,
+    "n": "Animations: equip, fire, reload, sprint"
+   },
+   {
+    "done": true,
+    "n": "Inventory and HUD icon"
+   },
+   {
+    "done": true,
+    "n": "Fire VFX: muzzle, tracer, casing"
+   }
+  ],
+  "path": "game/assets/models/weapons/ar-7-wayfarer.glb",
+  "source": "art/weapons/models/ar-7-wayfarer.py",
+  "stage": "In engine",
+  "thumb": "repo/asset-hub/data/thumbs/ar-7-wayfarer.jpg",
+  "updatedAt": "2026-10-11T23:30:00.000Z",
+  "updatedBy": null
+ },
+ {
+  "id": "ar-7-wayfarer-audio",
+  "budget": "WAV 48 kHz mono one-shots (QOA-compressed on import)",
+  "category": "Weapon audio",
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": null,
+  "files": [
+   {
+    "id": "repo/game/assets/audio/weapon-audio/ar-7-wayfarer-audio/dry-fire.wav",
+    "kind": "audio",
+    "name": "dry-fire.wav",
+    "bytes": 25206,
+    "at": "2026-10-11T21:12:33.713Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/weapon-audio/ar-7-wayfarer-audio/equip.wav",
+    "kind": "audio",
+    "name": "equip.wav",
+    "bytes": 50550,
+    "at": "2026-10-11T21:12:33.686Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/weapon-audio/ar-7-wayfarer-audio/fire-close-01.wav",
+    "kind": "audio",
+    "name": "fire-close-01.wav",
+    "bytes": 124844,
+    "at": "2026-10-11T21:12:33.212Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/weapon-audio/ar-7-wayfarer-audio/fire-close-02.wav",
+    "kind": "audio",
+    "name": "fire-close-02.wav",
+    "bytes": 124844,
+    "at": "2026-10-11T21:12:33.282Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/weapon-audio/ar-7-wayfarer-audio/fire-close-03.wav",
+    "kind": "audio",
+    "name": "fire-close-03.wav",
+    "bytes": 124844,
+    "at": "2026-10-11T21:12:33.362Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/weapon-audio/ar-7-wayfarer-audio/fire-distant.wav",
+    "kind": "audio",
+    "name": "fire-distant.wav",
+    "bytes": 297644,
+    "at": "2026-10-11T21:12:33.562Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/weapon-audio/ar-7-wayfarer-audio/reload.wav",
+    "kind": "audio",
+    "name": "reload.wav",
+    "bytes": 196422,
+    "at": "2026-10-11T21:12:33.659Z",
+    "by": null
+   }
+  ],
+  "group": "Assault rifle",
+  "kind": "audio",
+  "milestone": "Combat and inventory",
+  "name": "AR-7 Wayfarer audio",
+  "notes": "Synthesized placeholders (art/audio-tools); replace with recorded or designed sounds before launch.",
+  "order": 10,
+  "parts": [
+   {
+    "done": true,
+    "n": "Fire (close)"
+   },
+   {
+    "done": true,
+    "n": "Fire (distant tail)"
+   },
+   {
+    "done": true,
+    "n": "Reload"
+   },
+   {
+    "done": true,
+    "n": "Equip"
+   },
+   {
+    "done": true,
+    "n": "Dry fire"
+   }
+  ],
+  "path": "game/assets/audio/weapon-audio/ar-7-wayfarer-audio/",
+  "source": "art/weapon-audio/ar-7-wayfarer-audio/",
+  "stage": "Review",
+  "updatedAt": "2026-10-11T18:24:13.149Z",
+  "updatedBy": null,
+  "thumb": null
+ },
+ {
+  "id": "sg-4-breaker",
+  "budget": "500–1.5k tris (one model for view, pickup and bots) · 1024² baked textures",
+  "category": "Weapons",
+  "concepts": [
+   {
+    "at": "2026-10-11T17:33:30.750Z",
+    "by": null,
+    "id": "9935cfdb18da79646d5271aab2b34059",
+    "name": "05-sg-4-breaker.webp",
+    "source": "codex/concepts/v0.2/05-sg-4-breaker.png"
+   }
+  ],
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": null,
+  "files": [
+   {
+    "id": "repo/game/assets/models/weapons/sg-4-breaker.glb",
+    "kind": "model",
+    "name": "sg-4-breaker.glb",
+    "bytes": 512880,
+    "at": "2026-10-11T19:53:51.845Z",
+    "by": null,
+    "tris": 1400,
+    "animations": 0
+   }
+  ],
+  "group": "Shotgun",
+  "kind": "model",
+  "milestone": "Combat and inventory",
+  "name": "SG-4 Breaker",
+  "notes": "",
+  "order": 11,
+  "parts": [
+   {
+    "done": true,
+    "n": "Concept and silhouette"
+   },
+   {
+    "done": true,
+    "n": "First-person viewmodel mesh"
+   },
+   {
+    "done": true,
+    "n": "World / pickup mesh + LODs"
+   },
+   {
+    "done": true,
+    "n": "Materials and textures"
+   },
+   {
+    "done": false,
+    "n": "Rig (magazine, bolt, trigger)"
+   },
+   {
+    "done": false,
+    "n": "Animations: equip, fire, reload, sprint"
+   },
+   {
+    "done": true,
+    "n": "Inventory and HUD icon"
+   },
+   {
+    "done": true,
+    "n": "Fire VFX: muzzle, tracer, casing"
+   }
+  ],
+  "path": "game/assets/models/weapons/sg-4-breaker.glb",
+  "source": "art/weapons/models/sg-4-breaker.py",
+  "stage": "In engine",
+  "thumb": "repo/asset-hub/data/thumbs/sg-4-breaker.jpg",
+  "updatedAt": "2026-10-11T23:30:00.000Z",
+  "updatedBy": null
+ },
+ {
+  "id": "sg-4-breaker-audio",
+  "budget": "WAV 48 kHz mono one-shots (QOA-compressed on import)",
+  "category": "Weapon audio",
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": null,
+  "files": [
+   {
+    "id": "repo/game/assets/audio/weapon-audio/sg-4-breaker-audio/dry-fire.wav",
+    "kind": "audio",
+    "name": "dry-fire.wav",
+    "bytes": 27300,
+    "at": "2026-10-11T21:12:34.330Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/weapon-audio/sg-4-breaker-audio/equip.wav",
+    "kind": "audio",
+    "name": "equip.wav",
+    "bytes": 52292,
+    "at": "2026-10-11T21:12:34.320Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/weapon-audio/sg-4-breaker-audio/fire-close-01.wav",
+    "kind": "audio",
+    "name": "fire-close-01.wav",
+    "bytes": 163244,
+    "at": "2026-10-11T21:12:33.805Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/weapon-audio/sg-4-breaker-audio/fire-close-02.wav",
+    "kind": "audio",
+    "name": "fire-close-02.wav",
+    "bytes": 163244,
+    "at": "2026-10-11T21:12:33.934Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/weapon-audio/sg-4-breaker-audio/fire-close-03.wav",
+    "kind": "audio",
+    "name": "fire-close-03.wav",
+    "bytes": 163244,
+    "at": "2026-10-11T21:12:34.023Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/weapon-audio/sg-4-breaker-audio/fire-distant.wav",
+    "kind": "audio",
+    "name": "fire-distant.wav",
+    "bytes": 336044,
+    "at": "2026-10-11T21:12:34.219Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/weapon-audio/sg-4-breaker-audio/reload.wav",
+    "kind": "audio",
+    "name": "reload.wav",
+    "bytes": 228298,
+    "at": "2026-10-11T21:12:34.293Z",
+    "by": null
+   }
+  ],
+  "group": "Shotgun",
+  "kind": "audio",
+  "milestone": "Combat and inventory",
+  "name": "SG-4 Breaker audio",
+  "notes": "Synthesized placeholders (art/audio-tools); replace with recorded or designed sounds before launch.",
+  "order": 12,
+  "parts": [
+   {
+    "done": true,
+    "n": "Fire (close)"
+   },
+   {
+    "done": true,
+    "n": "Fire (distant tail)"
+   },
+   {
+    "done": true,
+    "n": "Reload"
+   },
+   {
+    "done": true,
+    "n": "Equip"
+   },
+   {
+    "done": true,
+    "n": "Dry fire"
+   }
+  ],
+  "path": "game/assets/audio/weapon-audio/sg-4-breaker-audio/",
+  "source": "art/weapon-audio/sg-4-breaker-audio/",
+  "stage": "Review",
+  "updatedAt": "2026-10-11T18:24:13.149Z",
+  "updatedBy": null,
+  "thumb": null
+ },
+ {
+  "id": "p-12-spark",
+  "budget": "500–1.5k tris (one model for view, pickup and bots) · 1024² baked textures",
+  "category": "Weapons",
+  "concepts": [
+   {
+    "at": "2026-10-11T17:33:30.750Z",
+    "by": null,
+    "id": "e0b664c3cbf4c561f42b05d163bac13c",
+    "name": "06-p-12-spark.webp",
+    "source": "codex/concepts/v0.2/06-p-12-spark.png"
+   }
+  ],
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": null,
+  "files": [
+   {
+    "id": "repo/game/assets/models/weapons/p-12-spark.glb",
+    "kind": "model",
+    "name": "p-12-spark.glb",
+    "bytes": 548192,
+    "at": "2026-10-11T19:52:12.288Z",
+    "by": null,
+    "tris": 832,
+    "animations": 0
+   }
+  ],
+  "group": "Pistol",
+  "kind": "model",
+  "milestone": "Equipment and rotation",
+  "name": "P-12 Spark",
+  "notes": "",
+  "order": 13,
+  "parts": [
+   {
+    "done": true,
+    "n": "Concept and silhouette"
+   },
+   {
+    "done": true,
+    "n": "First-person viewmodel mesh"
+   },
+   {
+    "done": true,
+    "n": "World / pickup mesh + LODs"
+   },
+   {
+    "done": true,
+    "n": "Materials and textures"
+   },
+   {
+    "done": false,
+    "n": "Rig (magazine, bolt, trigger)"
+   },
+   {
+    "done": false,
+    "n": "Animations: equip, fire, reload, sprint"
+   },
+   {
+    "done": true,
+    "n": "Inventory and HUD icon"
+   },
+   {
+    "done": true,
+    "n": "Fire VFX: muzzle, tracer, casing"
+   }
+  ],
+  "path": "game/assets/models/weapons/p-12-spark.glb",
+  "source": "art/weapons/models/p-12-spark.py",
+  "stage": "Review",
+  "thumb": "repo/asset-hub/data/thumbs/p-12-spark.jpg",
+  "updatedAt": "2026-10-11T23:30:00.000Z",
+  "updatedBy": null
+ },
+ {
+  "id": "p-12-spark-audio",
+  "budget": "WAV 48 kHz mono one-shots (QOA-compressed on import)",
+  "category": "Weapon audio",
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": null,
+  "files": [
+   {
+    "id": "repo/game/assets/audio/weapon-audio/p-12-spark-audio/dry-fire.wav",
+    "kind": "audio",
+    "name": "dry-fire.wav",
+    "bytes": 29172,
+    "at": "2026-10-11T21:12:34.794Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/weapon-audio/p-12-spark-audio/equip.wav",
+    "kind": "audio",
+    "name": "equip.wav",
+    "bytes": 70640,
+    "at": "2026-10-11T21:12:34.782Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/weapon-audio/p-12-spark-audio/fire-close-01.wav",
+    "kind": "audio",
+    "name": "fire-close-01.wav",
+    "bytes": 96044,
+    "at": "2026-10-11T21:12:34.392Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/weapon-audio/p-12-spark-audio/fire-close-02.wav",
+    "kind": "audio",
+    "name": "fire-close-02.wav",
+    "bytes": 96044,
+    "at": "2026-10-11T21:12:34.458Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/weapon-audio/p-12-spark-audio/fire-close-03.wav",
+    "kind": "audio",
+    "name": "fire-close-03.wav",
+    "bytes": 96044,
+    "at": "2026-10-11T21:12:34.531Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/weapon-audio/p-12-spark-audio/fire-distant.wav",
+    "kind": "audio",
+    "name": "fire-distant.wav",
+    "bytes": 268844,
+    "at": "2026-10-11T21:12:34.706Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/weapon-audio/p-12-spark-audio/reload.wav",
+    "kind": "audio",
+    "name": "reload.wav",
+    "bytes": 150588,
+    "at": "2026-10-11T21:12:34.749Z",
+    "by": null
+   }
+  ],
+  "group": "Pistol",
+  "kind": "audio",
+  "milestone": "Equipment and rotation",
+  "name": "P-12 Spark audio",
+  "notes": "Synthesized placeholders (art/audio-tools); replace with recorded or designed sounds before launch.",
+  "order": 14,
+  "parts": [
+   {
+    "done": true,
+    "n": "Fire (close)"
+   },
+   {
+    "done": true,
+    "n": "Fire (distant tail)"
+   },
+   {
+    "done": true,
+    "n": "Reload"
+   },
+   {
+    "done": true,
+    "n": "Equip"
+   },
+   {
+    "done": true,
+    "n": "Dry fire"
+   }
+  ],
+  "path": "game/assets/audio/weapon-audio/p-12-spark-audio/",
+  "source": "art/weapon-audio/p-12-spark-audio/",
+  "stage": "Review",
+  "updatedAt": "2026-10-11T18:24:13.149Z",
+  "updatedBy": null,
+  "thumb": null
+ },
+ {
+  "id": "s-9-wisp",
+  "budget": "500–1.5k tris (one model for view, pickup and bots) · 1024² baked textures",
+  "category": "Weapons",
+  "concepts": [
+   {
+    "at": "2026-10-11T17:33:30.750Z",
+    "by": null,
+    "id": "c83f19f0890fc7c69ee6fbe75b16fd84",
+    "name": "07-s-9-wisp.webp",
+    "source": "codex/concepts/v0.2/07-s-9-wisp.png"
+   }
+  ],
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": null,
+  "files": [
+   {
+    "id": "repo/game/assets/models/weapons/s-9-wisp.glb",
+    "kind": "model",
+    "name": "s-9-wisp.glb",
+    "bytes": 507488,
+    "at": "2026-10-11T19:52:59.488Z",
+    "by": null,
+    "tris": 1396,
+    "animations": 0
+   }
+  ],
+  "group": "SMG",
+  "kind": "model",
+  "milestone": "Equipment and rotation",
+  "name": "S-9 Wisp",
+  "notes": "",
+  "order": 15,
+  "parts": [
+   {
+    "done": true,
+    "n": "Concept and silhouette"
+   },
+   {
+    "done": true,
+    "n": "First-person viewmodel mesh"
+   },
+   {
+    "done": true,
+    "n": "World / pickup mesh + LODs"
+   },
+   {
+    "done": true,
+    "n": "Materials and textures"
+   },
+   {
+    "done": false,
+    "n": "Rig (magazine, bolt, trigger)"
+   },
+   {
+    "done": false,
+    "n": "Animations: equip, fire, reload, sprint"
+   },
+   {
+    "done": true,
+    "n": "Inventory and HUD icon"
+   },
+   {
+    "done": true,
+    "n": "Fire VFX: muzzle, tracer, casing"
+   }
+  ],
+  "path": "game/assets/models/weapons/s-9-wisp.glb",
+  "source": "art/weapons/models/s-9-wisp.py",
+  "stage": "Review",
+  "thumb": "repo/asset-hub/data/thumbs/s-9-wisp.jpg",
+  "updatedAt": "2026-10-11T23:30:00.000Z",
+  "updatedBy": null
+ },
+ {
+  "id": "s-9-wisp-audio",
+  "budget": "WAV 48 kHz mono one-shots (QOA-compressed on import)",
+  "category": "Weapon audio",
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": null,
+  "files": [
+   {
+    "id": "repo/game/assets/audio/weapon-audio/s-9-wisp-audio/dry-fire.wav",
+    "kind": "audio",
+    "name": "dry-fire.wav",
+    "bytes": 29178,
+    "at": "2026-10-11T21:12:36.999Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/weapon-audio/s-9-wisp-audio/equip.wav",
+    "kind": "audio",
+    "name": "equip.wav",
+    "bytes": 70642,
+    "at": "2026-10-11T21:12:36.987Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/weapon-audio/s-9-wisp-audio/fire-close-01.wav",
+    "kind": "audio",
+    "name": "fire-close-01.wav",
+    "bytes": 81644,
+    "at": "2026-10-11T21:12:34.906Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/weapon-audio/s-9-wisp-audio/fire-close-02.wav",
+    "kind": "audio",
+    "name": "fire-close-02.wav",
+    "bytes": 81644,
+    "at": "2026-10-11T21:12:35.141Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/weapon-audio/s-9-wisp-audio/fire-close-03.wav",
+    "kind": "audio",
+    "name": "fire-close-03.wav",
+    "bytes": 81644,
+    "at": "2026-10-11T21:12:35.309Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/weapon-audio/s-9-wisp-audio/fire-distant.wav",
+    "kind": "audio",
+    "name": "fire-distant.wav",
+    "bytes": 254444,
+    "at": "2026-10-11T21:12:36.666Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/weapon-audio/s-9-wisp-audio/reload.wav",
+    "kind": "audio",
+    "name": "reload.wav",
+    "bytes": 169694,
+    "at": "2026-10-11T21:12:36.888Z",
+    "by": null
+   }
+  ],
+  "group": "SMG",
+  "kind": "audio",
+  "milestone": "Equipment and rotation",
+  "name": "S-9 Wisp audio",
+  "notes": "Synthesized placeholders (art/audio-tools); replace with recorded or designed sounds before launch.",
+  "order": 16,
+  "parts": [
+   {
+    "done": true,
+    "n": "Fire (close)"
+   },
+   {
+    "done": true,
+    "n": "Fire (distant tail)"
+   },
+   {
+    "done": true,
+    "n": "Reload"
+   },
+   {
+    "done": true,
+    "n": "Equip"
+   },
+   {
+    "done": true,
+    "n": "Dry fire"
+   }
+  ],
+  "path": "game/assets/audio/weapon-audio/s-9-wisp-audio/",
+  "source": "art/weapon-audio/s-9-wisp-audio/",
+  "stage": "Review",
+  "updatedAt": "2026-10-11T18:24:13.149Z",
+  "updatedBy": null,
+  "thumb": null
+ },
+ {
+  "id": "sr-8-longview",
+  "budget": "500–1.5k tris (one model for view, pickup and bots) · 1024² baked textures",
+  "category": "Weapons",
+  "concepts": [
+   {
+    "at": "2026-10-11T17:33:30.750Z",
+    "by": null,
+    "id": "130f69b3b6d4649998a60b657effe17d",
+    "name": "08-sr-8-longview.webp",
+    "source": "codex/concepts/v0.2/08-sr-8-longview.png"
+   }
+  ],
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": null,
+  "files": [
+   {
+    "id": "repo/game/assets/models/weapons/sr-8-longview.glb",
+    "kind": "model",
+    "name": "sr-8-longview.glb",
+    "bytes": 494780,
+    "at": "2026-10-11T19:54:42.834Z",
+    "by": null,
+    "tris": 1464,
+    "animations": 0
+   }
+  ],
+  "group": "Sniper",
+  "kind": "model",
+  "milestone": "Equipment and rotation",
+  "name": "SR-8 Longview",
+  "notes": "",
+  "order": 17,
+  "parts": [
+   {
+    "done": true,
+    "n": "Concept and silhouette"
+   },
+   {
+    "done": true,
+    "n": "First-person viewmodel mesh"
+   },
+   {
+    "done": true,
+    "n": "World / pickup mesh + LODs"
+   },
+   {
+    "done": true,
+    "n": "Materials and textures"
+   },
+   {
+    "done": false,
+    "n": "Rig (magazine, bolt, trigger)"
+   },
+   {
+    "done": false,
+    "n": "Animations: equip, fire, reload, sprint"
+   },
+   {
+    "done": true,
+    "n": "Inventory and HUD icon"
+   },
+   {
+    "done": true,
+    "n": "Fire VFX: muzzle, tracer, casing"
+   }
+  ],
+  "path": "game/assets/models/weapons/sr-8-longview.glb",
+  "source": "art/weapons/models/sr-8-longview.py",
+  "stage": "Review",
+  "thumb": "repo/asset-hub/data/thumbs/sr-8-longview.jpg",
+  "updatedAt": "2026-10-11T23:30:00.000Z",
+  "updatedBy": null
+ },
+ {
+  "id": "sr-8-longview-audio",
+  "budget": "WAV 48 kHz mono one-shots (QOA-compressed on import)",
+  "category": "Weapon audio",
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": null,
+  "files": [
+   {
+    "id": "repo/game/assets/audio/weapon-audio/sr-8-longview-audio/dry-fire.wav",
+    "kind": "audio",
+    "name": "dry-fire.wav",
+    "bytes": 25208,
+    "at": "2026-10-11T21:12:38.537Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/weapon-audio/sr-8-longview-audio/equip.wav",
+    "kind": "audio",
+    "name": "equip.wav",
+    "bytes": 54314,
+    "at": "2026-10-11T21:12:38.527Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/weapon-audio/sr-8-longview-audio/fire-close-01.wav",
+    "kind": "audio",
+    "name": "fire-close-01.wav",
+    "bytes": 218564,
+    "at": "2026-10-11T21:12:37.250Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/weapon-audio/sr-8-longview-audio/fire-close-02.wav",
+    "kind": "audio",
+    "name": "fire-close-02.wav",
+    "bytes": 212078,
+    "at": "2026-10-11T21:12:37.686Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/weapon-audio/sr-8-longview-audio/fire-close-03.wav",
+    "kind": "audio",
+    "name": "fire-close-03.wav",
+    "bytes": 216924,
+    "at": "2026-10-11T21:12:37.892Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/weapon-audio/sr-8-longview-audio/fire-distant.wav",
+    "kind": "audio",
+    "name": "fire-distant.wav",
+    "bytes": 422444,
+    "at": "2026-10-11T21:12:38.117Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/weapon-audio/sr-8-longview-audio/reload.wav",
+    "kind": "audio",
+    "name": "reload.wav",
+    "bytes": 267536,
+    "at": "2026-10-11T21:12:38.468Z",
+    "by": null
+   }
+  ],
+  "group": "Sniper",
+  "kind": "audio",
+  "milestone": "Equipment and rotation",
+  "name": "SR-8 Longview audio",
+  "notes": "Synthesized placeholders (art/audio-tools); replace with recorded or designed sounds before launch.",
+  "order": 18,
+  "parts": [
+   {
+    "done": true,
+    "n": "Fire (close)"
+   },
+   {
+    "done": true,
+    "n": "Fire (distant tail)"
+   },
+   {
+    "done": true,
+    "n": "Reload"
+   },
+   {
+    "done": true,
+    "n": "Equip"
+   },
+   {
+    "done": true,
+    "n": "Dry fire"
+   }
+  ],
+  "path": "game/assets/audio/weapon-audio/sr-8-longview-audio/",
+  "source": "art/weapon-audio/sr-8-longview-audio/",
+  "stage": "Review",
+  "updatedAt": "2026-10-11T18:24:13.149Z",
+  "updatedBy": null,
+  "thumb": null
+ },
+ {
+  "id": "field-patch",
+  "budget": "500–1.5k tris · 1024² baked textures",
+  "category": "Healing items",
+  "concepts": [
+   {
+    "at": "2026-10-11T17:33:30.750Z",
+    "by": null,
+    "id": "df78f87061c0add986891b5356a8067b",
+    "name": "09-field-patch-refined.webp",
+    "source": "codex/concepts/v0.2/09-field-patch-refined.png"
+   }
+  ],
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": null,
+  "files": [
+   {
+    "id": "repo/game/assets/models/healing-items/field-patch.glb",
+    "kind": "model",
+    "name": "field-patch.glb",
+    "bytes": 433212,
+    "at": "2026-10-11T20:34:29.163Z",
+    "by": null,
+    "tris": 600,
+    "animations": 0
+   }
+  ],
+  "group": "+25 health · stack 6",
+  "kind": "model",
+  "milestone": "Combat and inventory",
+  "name": "Field Patch",
+  "notes": "Distinct silhouette per item; health items coral, shield items cyan.",
+  "order": 19,
+  "parts": [
+   {
+    "done": true,
+    "n": "Pickup mesh"
+   },
+   {
+    "done": true,
+    "n": "Held mesh"
+   },
+   {
+    "done": true,
+    "n": "Materials"
+   },
+   {
+    "done": true,
+    "n": "Inventory icon"
+   },
+   {
+    "done": true,
+    "n": "Use VFX"
+   }
+  ],
+  "path": "game/assets/models/healing-items/field-patch.glb",
+  "source": "art/healing-items/models/field-patch.py",
+  "stage": "In engine",
+  "thumb": "repo/asset-hub/data/thumbs/field-patch.jpg",
+  "updatedAt": "2026-10-11T23:30:00.000Z",
+  "updatedBy": null
+ },
+ {
+  "id": "shield-cell",
+  "budget": "500–1.5k tris · 1024² baked textures",
+  "category": "Healing items",
+  "concepts": [
+   {
+    "at": "2026-10-11T17:33:30.750Z",
+    "by": null,
+    "id": "f0a373dafeeb0e50878eaec28ae6b0ae",
+    "name": "11-shield-cell.webp",
+    "source": "codex/concepts/v0.2/11-shield-cell.png"
+   }
+  ],
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": null,
+  "files": [
+   {
+    "id": "repo/game/assets/models/healing-items/shield-cell.glb",
+    "kind": "model",
+    "name": "shield-cell.glb",
+    "bytes": 543924,
+    "at": "2026-10-11T20:40:24.219Z",
+    "by": null,
+    "tris": 1088,
+    "animations": 0
+   }
+  ],
+  "group": "+25 shields · stack 6",
+  "kind": "model",
+  "milestone": "Equipment and rotation",
+  "name": "Shield Cell",
+  "notes": "Distinct silhouette per item; health items coral, shield items cyan.",
+  "order": 20,
+  "parts": [
+   {
+    "done": true,
+    "n": "Pickup mesh"
+   },
+   {
+    "done": true,
+    "n": "Held mesh"
+   },
+   {
+    "done": true,
+    "n": "Materials"
+   },
+   {
+    "done": true,
+    "n": "Inventory icon"
+   },
+   {
+    "done": true,
+    "n": "Use VFX"
+   }
+  ],
+  "path": "game/assets/models/healing-items/shield-cell.glb",
+  "source": "art/healing-items/models/shield-cell.py",
+  "stage": "In engine",
+  "thumb": "repo/asset-hub/data/thumbs/shield-cell.jpg",
+  "updatedAt": "2026-10-11T23:30:00.000Z",
+  "updatedBy": null
+ },
+ {
+  "id": "shield-pack",
+  "budget": "500–1.5k tris · 1024² baked textures",
+  "category": "Healing items",
+  "concepts": [
+   {
+    "at": "2026-10-11T17:33:30.750Z",
+    "by": null,
+    "id": "2ef98ed61f7ae83f21ab7dfb96c60a5c",
+    "name": "12-shield-pack.webp",
+    "source": "codex/concepts/v0.2/12-shield-pack.png"
+   }
+  ],
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": null,
+  "files": [
+   {
+    "id": "repo/game/assets/models/healing-items/shield-pack.glb",
+    "kind": "model",
+    "name": "shield-pack.glb",
+    "bytes": 547140,
+    "at": "2026-10-11T20:46:39.213Z",
+    "by": null,
+    "tris": 1144,
+    "animations": 0
+   }
+  ],
+  "group": "+50 shields · stack 3",
+  "kind": "model",
+  "milestone": "Combat and inventory",
+  "name": "Shield Pack",
+  "notes": "Distinct silhouette per item; health items coral, shield items cyan.",
+  "order": 21,
+  "parts": [
+   {
+    "done": true,
+    "n": "Pickup mesh"
+   },
+   {
+    "done": true,
+    "n": "Held mesh"
+   },
+   {
+    "done": true,
+    "n": "Materials"
+   },
+   {
+    "done": true,
+    "n": "Inventory icon"
+   },
+   {
+    "done": true,
+    "n": "Use VFX"
+   }
+  ],
+  "path": "game/assets/models/healing-items/shield-pack.glb",
+  "source": "art/healing-items/models/shield-pack.py",
+  "stage": "In engine",
+  "thumb": "repo/asset-hub/data/thumbs/shield-pack.jpg",
+  "updatedAt": "2026-10-11T23:30:00.000Z",
+  "updatedBy": null
+ },
+ {
+  "id": "shield-core",
+  "budget": "500–1.5k tris · 1024² baked textures",
+  "category": "Healing items",
+  "concepts": [
+   {
+    "at": "2026-10-11T17:33:30.750Z",
+    "by": null,
+    "id": "cf145c399af2923ecb9ed778e003c1f4",
+    "name": "13-shield-core.webp",
+    "source": "codex/concepts/v0.2/13-shield-core.png"
+   }
+  ],
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": null,
+  "files": [
+   {
+    "id": "repo/game/assets/models/healing-items/shield-core.glb",
+    "kind": "model",
+    "name": "shield-core.glb",
+    "bytes": 556704,
+    "at": "2026-10-11T20:43:49.898Z",
+    "by": null,
+    "tris": 1320,
+    "animations": 0
+   }
+  ],
+  "group": "Full shields · stack 1",
+  "kind": "model",
+  "milestone": "Equipment and rotation",
+  "name": "Shield Core",
+  "notes": "Distinct silhouette per item; health items coral, shield items cyan.",
+  "order": 22,
+  "parts": [
+   {
+    "done": true,
+    "n": "Pickup mesh"
+   },
+   {
+    "done": true,
+    "n": "Held mesh"
+   },
+   {
+    "done": true,
+    "n": "Materials"
+   },
+   {
+    "done": true,
+    "n": "Inventory icon"
+   },
+   {
+    "done": true,
+    "n": "Use VFX"
+   }
+  ],
+  "path": "game/assets/models/healing-items/shield-core.glb",
+  "source": "art/healing-items/models/shield-core.py",
+  "stage": "Review",
+  "thumb": "repo/asset-hub/data/thumbs/shield-core.jpg",
+  "updatedAt": "2026-10-11T23:30:00.000Z",
+  "updatedBy": null
+ },
+ {
+  "id": "trauma-kit",
+  "budget": "500–1.5k tris · 1024² baked textures",
+  "category": "Healing items",
+  "concepts": [
+   {
+    "at": "2026-10-11T17:33:30.750Z",
+    "by": null,
+    "id": "394fc89666a57ea279794964a70e64d8",
+    "name": "10-trauma-kit.webp",
+    "source": "codex/concepts/v0.2/10-trauma-kit.png"
+   }
+  ],
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": null,
+  "files": [
+   {
+    "id": "repo/game/assets/models/healing-items/trauma-kit.glb",
+    "kind": "model",
+    "name": "trauma-kit.glb",
+    "bytes": 447216,
+    "at": "2026-10-11T20:51:14.565Z",
+    "by": null,
+    "tris": 1012,
+    "animations": 0
+   }
+  ],
+  "group": "Full health · stack 1",
+  "kind": "model",
+  "milestone": "Equipment and rotation",
+  "name": "Trauma Kit",
+  "notes": "Distinct silhouette per item; health items coral, shield items cyan.",
+  "order": 23,
+  "parts": [
+   {
+    "done": true,
+    "n": "Pickup mesh"
+   },
+   {
+    "done": true,
+    "n": "Held mesh"
+   },
+   {
+    "done": true,
+    "n": "Materials"
+   },
+   {
+    "done": true,
+    "n": "Inventory icon"
+   },
+   {
+    "done": true,
+    "n": "Use VFX"
+   }
+  ],
+  "path": "game/assets/models/healing-items/trauma-kit.glb",
+  "source": "art/healing-items/models/trauma-kit.py",
+  "stage": "Review",
+  "thumb": "repo/asset-hub/data/thumbs/trauma-kit.jpg",
+  "updatedAt": "2026-10-11T23:30:00.000Z",
+  "updatedBy": null
+ },
+ {
+  "id": "phoenix-capsule",
+  "budget": "500–1.5k tris · 1024² baked textures",
+  "category": "Healing items",
+  "concepts": [
+   {
+    "at": "2026-10-11T17:33:30.750Z",
+    "by": null,
+    "id": "1a6139af05c44783fc0cfd00d201333f",
+    "name": "14-phoenix-capsule.webp",
+    "source": "codex/concepts/v0.2/14-phoenix-capsule.png"
+   }
+  ],
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": null,
+  "files": [
+   {
+    "id": "repo/game/assets/models/healing-items/phoenix-capsule.glb",
+    "kind": "model",
+    "name": "phoenix-capsule.glb",
+    "bytes": 608068,
+    "at": "2026-10-11T21:11:30.546Z",
+    "by": null,
+    "tris": 1496,
+    "animations": 0
+   }
+  ],
+  "group": "Full health and shields · stack 1",
+  "kind": "model",
+  "milestone": "Equipment and rotation",
+  "name": "Phoenix Capsule",
+  "notes": "Distinct silhouette per item; health items coral, shield items cyan.",
+  "order": 24,
+  "parts": [
+   {
+    "done": true,
+    "n": "Pickup mesh"
+   },
+   {
+    "done": true,
+    "n": "Held mesh"
+   },
+   {
+    "done": true,
+    "n": "Materials"
+   },
+   {
+    "done": true,
+    "n": "Inventory icon"
+   },
+   {
+    "done": true,
+    "n": "Use VFX"
+   }
+  ],
+  "path": "game/assets/models/healing-items/phoenix-capsule.glb",
+  "source": "art/healing-items/models/phoenix-capsule.py",
+  "stage": "Review",
+  "thumb": "repo/asset-hub/data/thumbs/phoenix-capsule.jpg",
+  "updatedAt": "2026-10-11T23:30:00.000Z",
+  "updatedBy": null
+ },
+ {
+  "id": "healing-item-audio",
+  "budget": null,
+  "category": "Item audio",
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": null,
+  "files": [
+   {
+    "id": "repo/game/assets/audio/item-audio/healing-item-audio/field-patch-use-loop.wav",
+    "kind": "audio",
+    "name": "field-patch-use-loop.wav",
+    "bytes": 288044,
+    "at": "2026-10-11T21:23:43.407Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/item-audio/healing-item-audio/phoenix-capsule-use-loop.wav",
+    "kind": "audio",
+    "name": "phoenix-capsule-use-loop.wav",
+    "bytes": 288044,
+    "at": "2026-10-11T21:23:44.386Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/item-audio/healing-item-audio/pickup.wav",
+    "kind": "audio",
+    "name": "pickup.wav",
+    "bytes": 37686,
+    "at": "2026-10-11T21:23:44.625Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/item-audio/healing-item-audio/shield-cell-use-loop.wav",
+    "kind": "audio",
+    "name": "shield-cell-use-loop.wav",
+    "bytes": 288044,
+    "at": "2026-10-11T21:23:43.726Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/item-audio/healing-item-audio/shield-core-use-loop.wav",
+    "kind": "audio",
+    "name": "shield-core-use-loop.wav",
+    "bytes": 288044,
+    "at": "2026-10-11T21:23:44.218Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/item-audio/healing-item-audio/shield-pack-use-loop.wav",
+    "kind": "audio",
+    "name": "shield-pack-use-loop.wav",
+    "bytes": 288044,
+    "at": "2026-10-11T21:23:44.038Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/item-audio/healing-item-audio/trauma-kit-use-loop.wav",
+    "kind": "audio",
+    "name": "trauma-kit-use-loop.wav",
+    "bytes": 288044,
+    "at": "2026-10-11T21:23:43.562Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/item-audio/healing-item-audio/use-complete.wav",
+    "kind": "audio",
+    "name": "use-complete.wav",
+    "bytes": 165820,
+    "at": "2026-10-11T21:23:44.465Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/item-audio/healing-item-audio/use-interrupted.wav",
+    "kind": "audio",
+    "name": "use-interrupted.wav",
+    "bytes": 52812,
+    "at": "2026-10-11T21:23:44.523Z",
+    "by": null
+   }
+  ],
+  "group": null,
+  "kind": "audio",
+  "milestone": "Combat and inventory",
+  "name": "Healing item audio",
+  "notes": "Synthesized placeholders (art/audio-tools); replace with recorded or designed sounds before launch.",
+  "order": 25,
+  "parts": [
+   {
+    "done": true,
+    "n": "Use loop per item (6)"
+   },
+   {
+    "done": true,
+    "n": "Use complete"
+   },
+   {
+    "done": true,
+    "n": "Use interrupted"
+   },
+   {
+    "done": true,
+    "n": "Pickup"
+   }
+  ],
+  "path": "game/assets/audio/item-audio/healing-item-audio/",
+  "source": "art/item-audio/healing-item-audio/",
+  "stage": "Review",
+  "updatedAt": "2026-10-11T18:24:13.149Z",
+  "updatedBy": null,
+  "thumb": null
+ },
+ {
+  "id": "fragmentation-grenade",
+  "budget": "500–1.5k tris · 1024² baked textures",
+  "category": "Grenades",
+  "concepts": [
+   {
+    "at": "2026-10-11T17:33:30.750Z",
+    "by": null,
+    "id": "8b336c6a6e40080a5a3adfb0a46a344e",
+    "name": "15-fragmentation-grenade.webp",
+    "source": "codex/concepts/v0.2/15-fragmentation-grenade.png"
+   }
+  ],
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": null,
+  "files": [
+   {
+    "id": "repo/game/assets/models/grenades/fragmentation-grenade.glb",
+    "kind": "model",
+    "name": "fragmentation-grenade.glb",
+    "bytes": 676440,
+    "at": "2026-10-11T21:05:38.420Z",
+    "by": null,
+    "tris": 1416,
+    "animations": 0
+   }
+  ],
+  "group": "Timed explosive",
+  "kind": "model",
+  "milestone": "Equipment and rotation",
+  "name": "Fragmentation grenade",
+  "notes": "",
+  "order": 26,
+  "parts": [
+   {
+    "done": true,
+    "n": "Mesh"
+   },
+   {
+    "done": true,
+    "n": "Materials"
+   },
+   {
+    "done": true,
+    "n": "Inventory icon"
+   },
+   {
+    "done": false,
+    "n": "Detonation VFX"
+   }
+  ],
+  "path": "game/assets/models/grenades/fragmentation-grenade.glb",
+  "source": "art/grenades/models/fragmentation-grenade.py",
+  "stage": "Review",
+  "thumb": "repo/asset-hub/data/thumbs/fragmentation-grenade.jpg",
+  "updatedAt": "2026-10-11T23:30:00.000Z",
+  "updatedBy": null
+ },
+ {
+  "id": "arc-grenade",
+  "budget": "500–1.5k tris · 1024² baked textures",
+  "category": "Grenades",
+  "concepts": [
+   {
+    "at": "2026-10-11T17:33:30.750Z",
+    "by": null,
+    "id": "e8430dc13290572b238aeb1b33ac2230",
+    "name": "16-arc-grenade.webp",
+    "source": "codex/concepts/v0.2/16-arc-grenade.png"
+   }
+  ],
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": null,
+  "files": [
+   {
+    "id": "repo/game/assets/models/grenades/arc-grenade.glb",
+    "kind": "model",
+    "name": "arc-grenade.glb",
+    "bytes": 605212,
+    "at": "2026-10-11T21:01:54.752Z",
+    "by": null,
+    "tris": 1296,
+    "animations": 0
+   }
+  ],
+  "group": "Shield and vehicle disruption",
+  "kind": "model",
+  "milestone": "Equipment and rotation",
+  "name": "Arc grenade",
+  "notes": "",
+  "order": 27,
+  "parts": [
+   {
+    "done": true,
+    "n": "Mesh"
+   },
+   {
+    "done": true,
+    "n": "Materials"
+   },
+   {
+    "done": true,
+    "n": "Inventory icon"
+   },
+   {
+    "done": false,
+    "n": "Detonation VFX"
+   }
+  ],
+  "path": "game/assets/models/grenades/arc-grenade.glb",
+  "source": "art/grenades/models/arc-grenade.py",
+  "stage": "Review",
+  "thumb": "repo/asset-hub/data/thumbs/arc-grenade.jpg",
+  "updatedAt": "2026-10-11T23:30:00.000Z",
+  "updatedBy": null
+ },
+ {
+  "id": "veil-grenade",
+  "budget": "500–1.5k tris · 1024² baked textures",
+  "category": "Grenades",
+  "concepts": [
+   {
+    "at": "2026-10-11T17:33:30.750Z",
+    "by": null,
+    "id": "889a7379f521c6151d19472e7db90aea",
+    "name": "17-veil-grenade.webp",
+    "source": "codex/concepts/v0.2/17-veil-grenade.png"
+   }
+  ],
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": null,
+  "files": [
+   {
+    "id": "repo/game/assets/models/grenades/veil-grenade.glb",
+    "kind": "model",
+    "name": "veil-grenade.glb",
+    "bytes": 707928,
+    "at": "2026-10-11T21:09:18.542Z",
+    "by": null,
+    "tris": 1260,
+    "animations": 0
+   }
+  ],
+  "group": "Concealment cloud",
+  "kind": "model",
+  "milestone": "Equipment and rotation",
+  "name": "Veil grenade",
+  "notes": "",
+  "order": 28,
+  "parts": [
+   {
+    "done": true,
+    "n": "Mesh"
+   },
+   {
+    "done": true,
+    "n": "Materials"
+   },
+   {
+    "done": true,
+    "n": "Inventory icon"
+   },
+   {
+    "done": false,
+    "n": "Detonation VFX"
+   }
+  ],
+  "path": "game/assets/models/grenades/veil-grenade.glb",
+  "source": "art/grenades/models/veil-grenade.py",
+  "stage": "Review",
+  "thumb": "repo/asset-hub/data/thumbs/veil-grenade.jpg",
+  "updatedAt": "2026-10-11T23:30:00.000Z",
+  "updatedBy": null
+ },
+ {
+  "id": "grenade-audio",
+  "budget": null,
+  "category": "Item audio",
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": null,
+  "files": [
+   {
+    "id": "repo/game/assets/audio/item-audio/grenade-audio/arc-burst.wav",
+    "kind": "audio",
+    "name": "arc-burst.wav",
+    "bytes": 232190,
+    "at": "2026-10-11T21:23:46.830Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/item-audio/grenade-audio/bounce-01.wav",
+    "kind": "audio",
+    "name": "bounce-01.wav",
+    "bytes": 153352,
+    "at": "2026-10-11T21:23:44.782Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/item-audio/grenade-audio/bounce-02.wav",
+    "kind": "audio",
+    "name": "bounce-02.wav",
+    "bytes": 152524,
+    "at": "2026-10-11T21:23:44.842Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/item-audio/grenade-audio/bounce-03.wav",
+    "kind": "audio",
+    "name": "bounce-03.wav",
+    "bytes": 147626,
+    "at": "2026-10-11T21:23:44.904Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/item-audio/grenade-audio/frag-detonation-close.wav",
+    "kind": "audio",
+    "name": "frag-detonation-close.wav",
+    "bytes": 428272,
+    "at": "2026-10-11T21:23:45.541Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/item-audio/grenade-audio/frag-detonation-distant.wav",
+    "kind": "audio",
+    "name": "frag-detonation-distant.wav",
+    "bytes": 576044,
+    "at": "2026-10-11T21:23:46.163Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/item-audio/grenade-audio/pin-and-throw.wav",
+    "kind": "audio",
+    "name": "pin-and-throw.wav",
+    "bytes": 119618,
+    "at": "2026-10-11T21:23:44.695Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/item-audio/grenade-audio/veil-hiss-loop.wav",
+    "kind": "audio",
+    "name": "veil-hiss-loop.wav",
+    "bytes": 384044,
+    "at": "2026-10-11T21:23:51.078Z",
+    "by": null
+   }
+  ],
+  "group": null,
+  "kind": "audio",
+  "milestone": "Equipment and rotation",
+  "name": "Grenade audio",
+  "notes": "Synthesized placeholders (art/audio-tools); replace with recorded or designed sounds before launch.",
+  "order": 29,
+  "parts": [
+   {
+    "done": true,
+    "n": "Pin and throw"
+   },
+   {
+    "done": true,
+    "n": "Bounce"
+   },
+   {
+    "done": true,
+    "n": "Frag detonation (close / distant)"
+   },
+   {
+    "done": true,
+    "n": "Arc burst"
+   },
+   {
+    "done": true,
+    "n": "Veil hiss and cloud"
+   }
+  ],
+  "path": "game/assets/audio/item-audio/grenade-audio/",
+  "source": "art/item-audio/grenade-audio/",
+  "stage": "Review",
+  "updatedAt": "2026-10-11T18:24:13.149Z",
+  "updatedBy": null,
+  "thumb": null
+ },
+ {
+  "id": "tethercaster",
+  "budget": "6k tris viewmodel · 2048² textures",
+  "category": "Utility",
+  "concepts": [
+   {
+    "at": "2026-10-11T17:33:30.750Z",
+    "by": null,
+    "id": "500d71d8ed2d5b8ee605c5e511324373",
+    "name": "18-tethercaster.webp",
+    "source": "codex/concepts/v0.2/18-tethercaster.png"
+   }
+  ],
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": null,
+  "files": [],
+  "group": "Grapple",
+  "kind": "model",
+  "milestone": "Traversal",
+  "name": "Tethercaster",
+  "notes": "",
+  "order": 30,
+  "parts": [
+   {
+    "done": false,
+    "n": "Viewmodel mesh"
+   },
+   {
+    "done": false,
+    "n": "Pickup mesh"
+   },
+   {
+    "done": false,
+    "n": "Hook head"
+   },
+   {
+    "done": false,
+    "n": "Cable material and shader"
+   },
+   {
+    "done": false,
+    "n": "Rig"
+   },
+   {
+    "done": false,
+    "n": "Inventory icon"
+   },
+   {
+    "done": false,
+    "n": "Recharge indicator"
+   }
+  ],
+  "path": "game/assets/models/utility/tethercaster.glb",
+  "source": "art/utility/tethercaster.blend",
+  "stage": "Concept",
+  "updatedAt": "2026-10-11T18:24:13.149Z",
+  "updatedBy": null,
+  "thumb": null
+ },
+ {
+  "id": "tethercaster-audio",
+  "budget": null,
+  "category": "Item audio",
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": null,
+  "files": [
+   {
+    "id": "repo/game/assets/audio/item-audio/tethercaster-audio/anchor-hit.wav",
+    "kind": "audio",
+    "name": "anchor-hit.wav",
+    "bytes": 164142,
+    "at": "2026-10-11T21:23:51.666Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/item-audio/tethercaster-audio/fire.wav",
+    "kind": "audio",
+    "name": "fire.wav",
+    "bytes": 161526,
+    "at": "2026-10-11T21:23:51.482Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/item-audio/tethercaster-audio/recharge-complete.wav",
+    "kind": "audio",
+    "name": "recharge-complete.wav",
+    "bytes": 120950,
+    "at": "2026-10-11T21:23:52.016Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/item-audio/tethercaster-audio/reel-loop.wav",
+    "kind": "audio",
+    "name": "reel-loop.wav",
+    "bytes": 192044,
+    "at": "2026-10-11T21:23:51.706Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/item-audio/tethercaster-audio/release.wav",
+    "kind": "audio",
+    "name": "release.wav",
+    "bytes": 117584,
+    "at": "2026-10-11T21:23:51.991Z",
+    "by": null
+   }
+  ],
+  "group": null,
+  "kind": "audio",
+  "milestone": "Traversal",
+  "name": "Tethercaster audio",
+  "notes": "Synthesized placeholders (art/audio-tools); replace with recorded or designed sounds before launch.",
+  "order": 31,
+  "parts": [
+   {
+    "done": true,
+    "n": "Fire"
+   },
+   {
+    "done": true,
+    "n": "Anchor hit"
+   },
+   {
+    "done": true,
+    "n": "Reel loop"
+   },
+   {
+    "done": true,
+    "n": "Release"
+   },
+   {
+    "done": true,
+    "n": "Recharge complete"
+   }
+  ],
+  "path": "game/assets/audio/item-audio/tethercaster-audio/",
+  "source": "art/item-audio/tethercaster-audio/",
+  "stage": "Review",
+  "updatedAt": "2026-10-11T18:24:13.149Z",
+  "updatedBy": null,
+  "thumb": null
+ },
+ {
+  "id": "ammunition-boxes",
+  "budget": "100–800 tris each (prop)",
+  "category": "Pickups",
+  "concepts": [
+   {
+    "at": "2026-10-11T17:33:30.750Z",
+    "by": null,
+    "id": "d68cc46f098172b964eaa7f732832ed5",
+    "name": "19-ammunition-boxes.webp",
+    "source": "codex/concepts/v0.2/19-ammunition-boxes.png"
+   }
+  ],
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": null,
+  "files": [
+   {
+    "id": "repo/game/assets/models/pickups/ammo-heavy.glb",
+    "kind": "model",
+    "name": "ammo-heavy.glb",
+    "bytes": 117036,
+    "at": "2026-10-11T21:12:24.003Z",
+    "by": null,
+    "tris": 496,
+    "animations": 0
+   },
+   {
+    "id": "repo/game/assets/models/pickups/ammo-light.glb",
+    "kind": "model",
+    "name": "ammo-light.glb",
+    "bytes": 142344,
+    "at": "2026-10-11T21:12:55.527Z",
+    "by": null,
+    "tris": 580,
+    "animations": 0
+   },
+   {
+    "id": "repo/game/assets/models/pickups/ammo-medium.glb",
+    "kind": "model",
+    "name": "ammo-medium.glb",
+    "bytes": 125480,
+    "at": "2026-10-11T21:14:00.166Z",
+    "by": null,
+    "tris": 496,
+    "animations": 0
+   },
+   {
+    "id": "repo/game/assets/models/pickups/ammo-shells.glb",
+    "kind": "model",
+    "name": "ammo-shells.glb",
+    "bytes": 164432,
+    "at": "2026-10-11T21:15:23.389Z",
+    "by": null,
+    "tris": 792,
+    "animations": 0
+   }
+  ],
+  "group": null,
+  "kind": "model",
+  "milestone": "Combat and inventory",
+  "name": "Ammunition boxes",
+  "notes": "",
+  "order": 32,
+  "parts": [
+   {
+    "done": true,
+    "n": "Light"
+   },
+   {
+    "done": true,
+    "n": "Medium"
+   },
+   {
+    "done": true,
+    "n": "Heavy"
+   },
+   {
+    "done": true,
+    "n": "Shells"
+   }
+  ],
+  "path": "game/assets/models/pickups/",
+  "source": "art/pickups/models/",
+  "stage": "In engine",
+  "thumb": "repo/asset-hub/data/thumbs/ammo-heavy.jpg",
+  "updatedAt": "2026-10-11T23:30:00.000Z",
+  "updatedBy": null
+ },
+ {
+  "id": "colony-supply-crate",
+  "budget": "100–800 tris (prop)",
+  "category": "Pickups",
+  "concepts": [
+   {
+    "at": "2026-10-11T17:33:30.750Z",
+    "by": null,
+    "id": "cef19199053a9f0c32c58717d788de6f",
+    "name": "20-colony-supply-crate.webp",
+    "source": "codex/concepts/v0.2/20-colony-supply-crate.png"
+   }
+  ],
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": null,
+  "files": [
+   {
+    "id": "repo/game/assets/models/pickups/colony-supply-crate.glb",
+    "kind": "model",
+    "name": "colony-supply-crate.glb",
+    "bytes": 370276,
+    "at": "2026-10-11T20:51:49.691Z",
+    "by": null,
+    "tris": 720,
+    "animations": 0
+   }
+  ],
+  "group": null,
+  "kind": "model",
+  "milestone": "Combat and inventory",
+  "name": "Colony supply crate",
+  "notes": "Proposed loot source; confirm looting design.",
+  "order": 33,
+  "parts": [
+   {
+    "done": true,
+    "n": "Mesh"
+   },
+   {
+    "done": false,
+    "n": "Open animation"
+   },
+   {
+    "done": false,
+    "n": "Loot glow VFX"
+   }
+  ],
+  "path": "game/assets/models/pickups/colony-supply-crate.glb",
+  "source": "art/pickups/models/colony-supply-crate.py",
+  "stage": "Review",
+  "thumb": "repo/asset-hub/data/thumbs/colony-supply-crate.jpg",
+  "updatedAt": "2026-10-11T23:30:00.000Z",
+  "updatedBy": null
+ },
+ {
+  "id": "mule",
+  "budget": "4k–8k tris · 2048² baked textures",
+  "category": "Vehicles",
+  "concepts": [
+   {
+    "at": "2026-10-11T17:33:30.750Z",
+    "by": null,
+    "id": "23039dfa391680caa25d57fc6591ffdb",
+    "name": "21-mule.webp",
+    "source": "codex/concepts/v0.2/21-mule.png"
+   }
+  ],
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": null,
+  "files": [
+   {
+    "id": "repo/game/assets/models/vehicles/mule.glb",
+    "kind": "model",
+    "name": "mule.glb",
+    "bytes": 1835404,
+    "at": "2026-10-11T20:45:43.590Z",
+    "by": null,
+    "tris": 7068,
+    "animations": 0
+   }
+  ],
+  "group": "Colony buggy · reliable, loud",
+  "kind": "model",
+  "milestone": "Equipment and rotation",
+  "name": "Mule",
+  "notes": "",
+  "order": 34,
+  "parts": [
+   {
+    "done": true,
+    "n": "Concept and silhouette"
+   },
+   {
+    "done": true,
+    "n": "Blockout and scale test"
+   },
+   {
+    "done": true,
+    "n": "Exterior mesh + LODs"
+   },
+   {
+    "done": true,
+    "n": "Seat and controls"
+   },
+   {
+    "done": false,
+    "n": "Damage states"
+   },
+   {
+    "done": true,
+    "n": "Materials and textures"
+   },
+   {
+    "done": false,
+    "n": "Rig: wheels, suspension, doors"
+   },
+   {
+    "done": false,
+    "n": "Dust and exhaust VFX"
+   }
+  ],
+  "path": "game/assets/models/vehicles/mule.glb",
+  "source": "art/vehicles/models/mule.py",
+  "stage": "Review",
+  "thumb": "repo/asset-hub/data/thumbs/mule.jpg",
+  "updatedAt": "2026-10-11T23:30:00.000Z",
+  "updatedBy": null
+ },
+ {
+  "id": "mule-audio",
+  "budget": "Ogg Vorbis 48 kHz · seamless loops",
+  "category": "Vehicle audio",
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": null,
+  "files": [
+   {
+    "id": "repo/game/assets/audio/vehicle-audio/mule-audio/destroyed.wav",
+    "kind": "audio",
+    "name": "destroyed.wav",
+    "bytes": 449920,
+    "at": "2026-10-11T21:27:11.852Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/vehicle-audio/mule-audio/engine-high-loop.wav",
+    "kind": "audio",
+    "name": "engine-high-loop.wav",
+    "bytes": 384044,
+    "at": "2026-10-11T21:26:10.569Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/vehicle-audio/mule-audio/engine-idle-loop.wav",
+    "kind": "audio",
+    "name": "engine-idle-loop.wav",
+    "bytes": 384044,
+    "at": "2026-10-11T21:24:52.193Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/vehicle-audio/mule-audio/engine-load-loop.wav",
+    "kind": "audio",
+    "name": "engine-load-loop.wav",
+    "bytes": 384044,
+    "at": "2026-10-11T21:25:40.554Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/vehicle-audio/mule-audio/enter.wav",
+    "kind": "audio",
+    "name": "enter.wav",
+    "bytes": 157062,
+    "at": "2026-10-11T21:27:05.280Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/vehicle-audio/mule-audio/exit.wav",
+    "kind": "audio",
+    "name": "exit.wav",
+    "bytes": 144720,
+    "at": "2026-10-11T21:27:05.294Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/vehicle-audio/mule-audio/impact-01.wav",
+    "kind": "audio",
+    "name": "impact-01.wav",
+    "bytes": 173394,
+    "at": "2026-10-11T21:27:05.523Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/vehicle-audio/mule-audio/impact-02.wav",
+    "kind": "audio",
+    "name": "impact-02.wav",
+    "bytes": 167228,
+    "at": "2026-10-11T21:27:05.720Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/vehicle-audio/mule-audio/pass-by-distant.wav",
+    "kind": "audio",
+    "name": "pass-by-distant.wav",
+    "bytes": 672044,
+    "at": "2026-10-11T21:27:04.939Z",
+    "by": null
+   }
+  ],
+  "group": null,
+  "kind": "audio",
+  "milestone": "Equipment and rotation",
+  "name": "Mule audio",
+  "notes": "Synthesized placeholders (art/audio-tools); replace with recorded or designed sounds before launch.",
+  "order": 35,
+  "parts": [
+   {
+    "done": true,
+    "n": "Engine loop (idle / load / high)"
+   },
+   {
+    "done": true,
+    "n": "Distant pass-by (audible warning)"
+   },
+   {
+    "done": true,
+    "n": "Enter / exit"
+   },
+   {
+    "done": true,
+    "n": "Impacts"
+   },
+   {
+    "done": true,
+    "n": "Destroyed"
+   }
+  ],
+  "path": "game/assets/audio/vehicle-audio/mule-audio/",
+  "source": "art/vehicle-audio/mule-audio/",
+  "stage": "Review",
+  "updatedAt": "2026-10-11T18:24:13.149Z",
+  "updatedBy": null,
+  "thumb": null
+ },
+ {
+  "id": "skimmer",
+  "budget": "3k–6k tris · 2048² baked textures",
+  "category": "Vehicles",
+  "concepts": [
+   {
+    "at": "2026-10-11T17:33:30.750Z",
+    "by": null,
+    "id": "b8ac36e6bcde25a70149bd86cb81673f",
+    "name": "22-skimmer.webp",
+    "source": "codex/concepts/v0.2/22-skimmer.png"
+   }
+  ],
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": null,
+  "files": [
+   {
+    "id": "repo/game/assets/models/vehicles/skimmer.glb",
+    "kind": "model",
+    "name": "skimmer.glb",
+    "bytes": 1915944,
+    "at": "2026-10-11T21:56:31.710Z",
+    "by": null,
+    "tris": 3980,
+    "animations": 0
+   }
+  ],
+  "group": "One-seat hover bike · fast, exposed",
+  "kind": "model",
+  "milestone": "Equipment and rotation",
+  "name": "Skimmer",
+  "notes": "",
+  "order": 36,
+  "parts": [
+   {
+    "done": true,
+    "n": "Concept and silhouette"
+   },
+   {
+    "done": true,
+    "n": "Blockout and scale test"
+   },
+   {
+    "done": true,
+    "n": "Exterior mesh + LODs"
+   },
+   {
+    "done": true,
+    "n": "Seat and controls"
+   },
+   {
+    "done": false,
+    "n": "Damage states"
+   },
+   {
+    "done": true,
+    "n": "Materials and textures"
+   },
+   {
+    "done": false,
+    "n": "Rig: hover pads, handlebars"
+   },
+   {
+    "done": false,
+    "n": "Dust and exhaust VFX"
+   }
+  ],
+  "path": "game/assets/models/vehicles/skimmer.glb",
+  "source": "art/vehicles/models/skimmer.py",
+  "stage": "Review",
+  "thumb": "repo/asset-hub/data/thumbs/skimmer.jpg",
+  "updatedAt": "2026-10-11T23:30:00.000Z",
+  "updatedBy": null
+ },
+ {
+  "id": "skimmer-audio",
+  "budget": "Ogg Vorbis 48 kHz · seamless loops",
+  "category": "Vehicle audio",
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": null,
+  "files": [
+   {
+    "id": "repo/game/assets/audio/vehicle-audio/skimmer-audio/destroyed.wav",
+    "kind": "audio",
+    "name": "destroyed.wav",
+    "bytes": 441320,
+    "at": "2026-10-11T21:27:25.830Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/vehicle-audio/skimmer-audio/engine-high-loop.wav",
+    "kind": "audio",
+    "name": "engine-high-loop.wav",
+    "bytes": 384044,
+    "at": "2026-10-11T21:27:13.943Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/vehicle-audio/skimmer-audio/engine-idle-loop.wav",
+    "kind": "audio",
+    "name": "engine-idle-loop.wav",
+    "bytes": 384044,
+    "at": "2026-10-11T21:27:12.487Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/vehicle-audio/skimmer-audio/engine-load-loop.wav",
+    "kind": "audio",
+    "name": "engine-load-loop.wav",
+    "bytes": 384044,
+    "at": "2026-10-11T21:27:13.125Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/vehicle-audio/skimmer-audio/enter.wav",
+    "kind": "audio",
+    "name": "enter.wav",
+    "bytes": 78478,
+    "at": "2026-10-11T21:27:24.422Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/vehicle-audio/skimmer-audio/exit.wav",
+    "kind": "audio",
+    "name": "exit.wav",
+    "bytes": 75608,
+    "at": "2026-10-11T21:27:24.433Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/vehicle-audio/skimmer-audio/impact-01.wav",
+    "kind": "audio",
+    "name": "impact-01.wav",
+    "bytes": 173622,
+    "at": "2026-10-11T21:27:24.653Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/vehicle-audio/skimmer-audio/impact-02.wav",
+    "kind": "audio",
+    "name": "impact-02.wav",
+    "bytes": 163628,
+    "at": "2026-10-11T21:27:25.111Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/vehicle-audio/skimmer-audio/pass-by-distant.wav",
+    "kind": "audio",
+    "name": "pass-by-distant.wav",
+    "bytes": 672044,
+    "at": "2026-10-11T21:27:23.222Z",
+    "by": null
+   }
+  ],
+  "group": null,
+  "kind": "audio",
+  "milestone": "Equipment and rotation",
+  "name": "Skimmer audio",
+  "notes": "Synthesized placeholders (art/audio-tools); replace with recorded or designed sounds before launch.",
+  "order": 37,
+  "parts": [
+   {
+    "done": true,
+    "n": "Engine loop (idle / load / high)"
+   },
+   {
+    "done": true,
+    "n": "Distant pass-by (audible warning)"
+   },
+   {
+    "done": true,
+    "n": "Enter / exit"
+   },
+   {
+    "done": true,
+    "n": "Impacts"
+   },
+   {
+    "done": true,
+    "n": "Destroyed"
+   }
+  ],
+  "path": "game/assets/audio/vehicle-audio/skimmer-audio/",
+  "source": "art/vehicle-audio/skimmer-audio/",
+  "stage": "Review",
+  "updatedAt": "2026-10-11T18:24:13.149Z",
+  "updatedBy": null,
+  "thumb": null
+ },
+ {
+  "id": "strider",
+  "budget": "4k–8k tris · 2048² baked textures",
+  "category": "Vehicles",
+  "concepts": [
+   {
+    "at": "2026-10-11T17:33:30.750Z",
+    "by": null,
+    "id": "adde4f5dd881a8e00a637ae222d4c2ea",
+    "name": "23-strider.webp",
+    "source": "codex/concepts/v0.2/23-strider.png"
+   }
+  ],
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": null,
+  "files": [
+   {
+    "id": "repo/game/assets/models/vehicles/strider.glb",
+    "kind": "model",
+    "name": "strider.glb",
+    "bytes": 1805328,
+    "at": "2026-10-11T22:07:37.006Z",
+    "by": null,
+    "tris": 6872,
+    "animations": 0
+   }
+  ],
+  "group": "Heavy survey rover · slow, durable",
+  "kind": "model",
+  "milestone": "Equipment and rotation",
+  "name": "Strider",
+  "notes": "",
+  "order": 38,
+  "parts": [
+   {
+    "done": true,
+    "n": "Concept and silhouette"
+   },
+   {
+    "done": true,
+    "n": "Blockout and scale test"
+   },
+   {
+    "done": true,
+    "n": "Exterior mesh + LODs"
+   },
+   {
+    "done": true,
+    "n": "Seat and controls"
+   },
+   {
+    "done": false,
+    "n": "Damage states"
+   },
+   {
+    "done": true,
+    "n": "Materials and textures"
+   },
+   {
+    "done": false,
+    "n": "Rig: wheels, suspension, doors"
+   },
+   {
+    "done": false,
+    "n": "Dust and exhaust VFX"
+   }
+  ],
+  "path": "game/assets/models/vehicles/strider.glb",
+  "source": "art/vehicles/models/strider.py",
+  "stage": "Review",
+  "thumb": "repo/asset-hub/data/thumbs/strider.jpg",
+  "updatedAt": "2026-10-11T23:30:00.000Z",
+  "updatedBy": null
+ },
+ {
+  "id": "strider-audio",
+  "budget": "Ogg Vorbis 48 kHz · seamless loops",
+  "category": "Vehicle audio",
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": null,
+  "files": [
+   {
+    "id": "repo/game/assets/audio/vehicle-audio/strider-audio/destroyed.wav",
+    "kind": "audio",
+    "name": "destroyed.wav",
+    "bytes": 448712,
+    "at": "2026-10-11T21:29:02.053Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/vehicle-audio/strider-audio/engine-high-loop.wav",
+    "kind": "audio",
+    "name": "engine-high-loop.wav",
+    "bytes": 384044,
+    "at": "2026-10-11T21:28:30.291Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/vehicle-audio/strider-audio/engine-idle-loop.wav",
+    "kind": "audio",
+    "name": "engine-idle-loop.wav",
+    "bytes": 384044,
+    "at": "2026-10-11T21:28:15.960Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/vehicle-audio/strider-audio/engine-load-loop.wav",
+    "kind": "audio",
+    "name": "engine-load-loop.wav",
+    "bytes": 384044,
+    "at": "2026-10-11T21:28:20.043Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/vehicle-audio/strider-audio/enter.wav",
+    "kind": "audio",
+    "name": "enter.wav",
+    "bytes": 188448,
+    "at": "2026-10-11T21:28:52.822Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/vehicle-audio/strider-audio/exit.wav",
+    "kind": "audio",
+    "name": "exit.wav",
+    "bytes": 180204,
+    "at": "2026-10-11T21:28:54.067Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/vehicle-audio/strider-audio/impact-01.wav",
+    "kind": "audio",
+    "name": "impact-01.wav",
+    "bytes": 176690,
+    "at": "2026-10-11T21:28:54.125Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/vehicle-audio/strider-audio/impact-02.wav",
+    "kind": "audio",
+    "name": "impact-02.wav",
+    "bytes": 172460,
+    "at": "2026-10-11T21:28:56.579Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/vehicle-audio/strider-audio/pass-by-distant.wav",
+    "kind": "audio",
+    "name": "pass-by-distant.wav",
+    "bytes": 672044,
+    "at": "2026-10-11T21:28:52.023Z",
+    "by": null
+   }
+  ],
+  "group": null,
+  "kind": "audio",
+  "milestone": "Equipment and rotation",
+  "name": "Strider audio",
+  "notes": "Synthesized placeholders (art/audio-tools); replace with recorded or designed sounds before launch.",
+  "order": 39,
+  "parts": [
+   {
+    "done": true,
+    "n": "Engine loop (idle / load / high)"
+   },
+   {
+    "done": true,
+    "n": "Distant pass-by (audible warning)"
+   },
+   {
+    "done": true,
+    "n": "Enter / exit"
+   },
+   {
+    "done": true,
+    "n": "Impacts"
+   },
+   {
+    "done": true,
+    "n": "Destroyed"
+   }
+  ],
+  "path": "game/assets/audio/vehicle-audio/strider-audio/",
+  "source": "art/vehicle-audio/strider-audio/",
+  "stage": "Review",
+  "updatedAt": "2026-10-11T18:24:13.149Z",
+  "updatedBy": null,
+  "thumb": null
+ },
+ {
+  "id": "kestrel",
+  "budget": "4k–8k tris · 2048² baked textures",
+  "category": "Vehicles",
+  "concepts": [
+   {
+    "at": "2026-10-11T17:33:30.750Z",
+    "by": null,
+    "id": "b90ee63443e1cf824bf8767b80ccb8a1",
+    "name": "24-kestrel.webp",
+    "source": "codex/concepts/v0.2/24-kestrel.png"
+   }
+  ],
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": "Seating, flight ceiling, energy and airborne exit rules are open.",
+  "files": [
+   {
+    "id": "repo/game/assets/models/vehicles/kestrel.glb",
+    "kind": "model",
+    "name": "kestrel.glb",
+    "bytes": 1675544,
+    "at": "2026-10-11T21:42:38.546Z",
+    "by": null,
+    "tris": 5254,
+    "animations": 0
+   }
+  ],
+  "group": "Unarmed utility rotorcraft",
+  "kind": "model",
+  "milestone": "Equipment and rotation",
+  "name": "Kestrel",
+  "notes": "",
+  "order": 40,
+  "parts": [
+   {
+    "done": true,
+    "n": "Concept and silhouette"
+   },
+   {
+    "done": true,
+    "n": "Blockout and scale test"
+   },
+   {
+    "done": true,
+    "n": "Exterior mesh + LODs"
+   },
+   {
+    "done": true,
+    "n": "Cockpit interior"
+   },
+   {
+    "done": false,
+    "n": "Damage states"
+   },
+   {
+    "done": true,
+    "n": "Materials and textures"
+   },
+   {
+    "done": false,
+    "n": "Rig: rotors, skids, doors"
+   },
+   {
+    "done": false,
+    "n": "Rotor wash VFX"
+   }
+  ],
+  "path": "game/assets/models/vehicles/kestrel.glb",
+  "source": "art/vehicles/models/kestrel.py",
+  "stage": "Review",
+  "thumb": "repo/asset-hub/data/thumbs/kestrel.jpg",
+  "updatedAt": "2026-10-11T23:30:00.000Z",
+  "updatedBy": null
+ },
+ {
+  "id": "kestrel-audio",
+  "budget": "Ogg Vorbis 48 kHz · seamless loops",
+  "category": "Vehicle audio",
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": null,
+  "files": [
+   {
+    "id": "repo/game/assets/audio/vehicle-audio/kestrel-audio/destroyed.wav",
+    "kind": "audio",
+    "name": "destroyed.wav",
+    "bytes": 444554,
+    "at": "2026-10-11T21:44:51.985Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/vehicle-audio/kestrel-audio/engine-high-loop.wav",
+    "kind": "audio",
+    "name": "engine-high-loop.wav",
+    "bytes": 384044,
+    "at": "2026-10-11T21:44:42.834Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/vehicle-audio/kestrel-audio/engine-idle-loop.wav",
+    "kind": "audio",
+    "name": "engine-idle-loop.wav",
+    "bytes": 384044,
+    "at": "2026-10-11T21:44:37.612Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/vehicle-audio/kestrel-audio/engine-load-loop.wav",
+    "kind": "audio",
+    "name": "engine-load-loop.wav",
+    "bytes": 384044,
+    "at": "2026-10-11T21:44:42.324Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/vehicle-audio/kestrel-audio/enter.wav",
+    "kind": "audio",
+    "name": "enter.wav",
+    "bytes": 174840,
+    "at": "2026-10-11T21:44:46.627Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/vehicle-audio/kestrel-audio/exit.wav",
+    "kind": "audio",
+    "name": "exit.wav",
+    "bytes": 150030,
+    "at": "2026-10-11T21:44:46.650Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/vehicle-audio/kestrel-audio/impact-01.wav",
+    "kind": "audio",
+    "name": "impact-01.wav",
+    "bytes": 167922,
+    "at": "2026-10-11T21:44:47.014Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/vehicle-audio/kestrel-audio/impact-02.wav",
+    "kind": "audio",
+    "name": "impact-02.wav",
+    "bytes": 167856,
+    "at": "2026-10-11T21:44:47.204Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/vehicle-audio/kestrel-audio/pass-by-distant.wav",
+    "kind": "audio",
+    "name": "pass-by-distant.wav",
+    "bytes": 672044,
+    "at": "2026-10-11T21:44:46.245Z",
+    "by": null
+   }
+  ],
+  "group": null,
+  "kind": "audio",
+  "milestone": "Equipment and rotation",
+  "name": "Kestrel audio",
+  "notes": "Synthesized placeholders (art/audio-tools); replace with recorded or designed sounds before launch.",
+  "order": 41,
+  "parts": [
+   {
+    "done": true,
+    "n": "Engine loop (idle / load / high)"
+   },
+   {
+    "done": true,
+    "n": "Distant pass-by (audible warning)"
+   },
+   {
+    "done": true,
+    "n": "Enter / exit"
+   },
+   {
+    "done": true,
+    "n": "Impacts"
+   },
+   {
+    "done": true,
+    "n": "Destroyed"
+   }
+  ],
+  "path": "game/assets/audio/vehicle-audio/kestrel-audio/",
+  "source": "art/vehicle-audio/kestrel-audio/",
+  "stage": "Review",
+  "updatedAt": "2026-10-11T18:24:13.149Z",
+  "updatedBy": null,
+  "thumb": null
+ },
+ {
+  "id": "drop-transport",
+  "budget": "8k–15k tris · 2048² baked textures",
+  "category": "Drop transport",
+  "concepts": [
+   {
+    "at": "2026-10-11T17:33:30.750Z",
+    "by": null,
+    "id": "6602b91fafa434c8574bf3784fc514dc",
+    "name": "25-drop-transport.webp",
+    "source": "codex/concepts/v0.2/25-drop-transport.png"
+   },
+   {
+    "at": "2026-10-11T17:33:30.750Z",
+    "by": null,
+    "id": "8a31e33e3ffa040cc65a6d2bf2923d0b",
+    "name": "26-drop-transport-interior.webp",
+    "source": "codex/concepts/v0.2/26-drop-transport-interior.png"
+   }
+  ],
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": "Deployment: transport route, jump window and drop rules are undecided.",
+  "files": [
+   {
+    "id": "repo/game/assets/models/drop-transport/drop-transport.glb",
+    "kind": "model",
+    "name": "drop-transport.glb",
+    "bytes": 2094392,
+    "at": "2026-10-11T21:35:16.936Z",
+    "by": null,
+    "tris": 9580,
+    "animations": 0
+   }
+  ],
+  "group": "Start-of-match carrier (working name needed)",
+  "kind": "model",
+  "milestone": "Match loop",
+  "name": "Drop transport",
+  "notes": "Flies a straight line across Ringfall at match start; players jump from the rear ramp. Original colony-carrier design, readable against the ringed sky.",
+  "order": 42,
+  "parts": [
+   {
+    "done": true,
+    "n": "Concept and silhouette"
+   },
+   {
+    "done": true,
+    "n": "Blockout and scale (60 jumpers)"
+   },
+   {
+    "done": true,
+    "n": "Exterior mesh + LODs"
+   },
+   {
+    "done": true,
+    "n": "Interior hold and rear ramp"
+   },
+   {
+    "done": true,
+    "n": "Materials and textures"
+   },
+   {
+    "done": false,
+    "n": "Rig: ramp, engines, landing gear"
+   },
+   {
+    "done": false,
+    "n": "Flight-path and ramp-open animation"
+   },
+   {
+    "done": false,
+    "n": "Engine contrail VFX"
+   }
+  ],
+  "path": "game/assets/models/drop-transport/drop-transport.glb",
+  "source": "art/drop-transport/models/drop-transport.py",
+  "stage": "Review",
+  "thumb": "repo/asset-hub/data/thumbs/drop-transport.jpg",
+  "updatedAt": "2026-10-11T23:30:00.000Z",
+  "updatedBy": null
+ },
+ {
+  "id": "descent-device",
+  "budget": "500–1.5k tris (main item)",
+  "category": "Drop transport",
+  "concepts": [
+   {
+    "at": "2026-10-11T17:33:30.750Z",
+    "by": null,
+    "id": "6c834ede281ad3de7f8ef6e981ac69ca",
+    "name": "27-descent-device-options.webp",
+    "source": "codex/concepts/v0.2/27-descent-device-options.png"
+   }
+  ],
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": "Whether players use a glider, thruster pack or nothing (no fall damage) is undecided.",
+  "files": [
+   {
+    "id": "repo/game/assets/models/drop-transport/descent-device.glb",
+    "kind": "model",
+    "name": "descent-device.glb",
+    "bytes": 508564,
+    "at": "2026-10-11T21:30:15.525Z",
+    "by": null,
+    "tris": 1204,
+    "animations": 0
+   }
+  ],
+  "group": null,
+  "kind": "model",
+  "milestone": "Match loop",
+  "name": "Descent device",
+  "notes": "",
+  "order": 43,
+  "parts": [
+   {
+    "done": true,
+    "n": "Concept"
+   },
+   {
+    "done": true,
+    "n": "Mesh"
+   },
+   {
+    "done": false,
+    "n": "Deploy animation"
+   },
+   {
+    "done": false,
+    "n": "Trail VFX"
+   }
+  ],
+  "path": "game/assets/models/drop-transport/descent-device.glb",
+  "source": "art/drop-transport/models/descent-device.py",
+  "stage": "Review",
+  "thumb": "repo/asset-hub/data/thumbs/descent-device.jpg",
+  "updatedAt": "2026-10-11T23:30:00.000Z",
+  "updatedBy": null
+ },
+ {
+  "id": "drop-transport-audio",
+  "budget": null,
+  "category": "Drop transport",
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": null,
+  "files": [
+   {
+    "id": "repo/game/assets/audio/drop-transport/drop-transport-audio/engine-exterior-loop.wav",
+    "kind": "audio",
+    "name": "engine-exterior-loop.wav",
+    "bytes": 768044,
+    "at": "2026-10-11T21:29:24.835Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/drop-transport/drop-transport-audio/freefall-wind-loop.wav",
+    "kind": "audio",
+    "name": "freefall-wind-loop.wav",
+    "bytes": 576044,
+    "at": "2026-10-11T21:29:45.317Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/drop-transport/drop-transport-audio/hold-interior-loop.wav",
+    "kind": "audio",
+    "name": "hold-interior-loop.wav",
+    "bytes": 768044,
+    "at": "2026-10-11T21:29:33.486Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/drop-transport/drop-transport-audio/jump-wind-gust.wav",
+    "kind": "audio",
+    "name": "jump-wind-gust.wav",
+    "bytes": 211244,
+    "at": "2026-10-11T21:29:40.951Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/drop-transport/drop-transport-audio/landing.wav",
+    "kind": "audio",
+    "name": "landing.wav",
+    "bytes": 159866,
+    "at": "2026-10-11T21:29:46.600Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/drop-transport/drop-transport-audio/ramp-open.wav",
+    "kind": "audio",
+    "name": "ramp-open.wav",
+    "bytes": 467604,
+    "at": "2026-10-11T21:29:37.610Z",
+    "by": null
+   }
+  ],
+  "group": null,
+  "kind": "audio",
+  "milestone": "Match loop",
+  "name": "Drop transport audio",
+  "notes": "Synthesized placeholders (art/audio-tools); replace with recorded or designed sounds before launch.",
+  "order": 44,
+  "parts": [
+   {
+    "done": true,
+    "n": "Engine loop (exterior, distant)"
+   },
+   {
+    "done": true,
+    "n": "Hold interior ambience"
+   },
+   {
+    "done": true,
+    "n": "Ramp open"
+   },
+   {
+    "done": true,
+    "n": "Jump-out wind gust"
+   },
+   {
+    "done": true,
+    "n": "Freefall wind loop"
+   },
+   {
+    "done": true,
+    "n": "Landing"
+   }
+  ],
+  "path": "game/assets/audio/drop-transport/drop-transport-audio/",
+  "source": "art/drop-transport/drop-transport-audio/",
+  "stage": "Review",
+  "updatedAt": "2026-10-11T18:24:13.149Z",
+  "updatedBy": null,
+  "thumb": null
+ },
+ {
+  "id": "ringed-sky-dome",
+  "budget": "Sky shader + 4096² ring texture",
+  "category": "Environment",
+  "concepts": [
+   {
+    "at": "2026-10-11T17:33:30.750Z",
+    "by": null,
+    "id": "4cb5f4973b2d58375d26f6d32427345a",
+    "name": "28-ringed-sky.webp",
+    "source": "codex/concepts/v0.2/28-ringed-sky.png"
+   }
+  ],
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": null,
+  "files": [
+   {
+    "id": "repo/asset-hub/data/shots/ringfall-overview.jpg",
+    "kind": "image",
+    "name": "ringfall-overview.jpg",
+    "bytes": 70731,
+    "at": "2026-10-12T01:57:33.527Z",
+    "by": null
+   }
+  ],
+  "group": null,
+  "kind": "model",
+  "milestone": "Visual slice",
+  "name": "Ringed sky dome",
+  "notes": "Rings visible from most outdoor locations; start with fixed sky and lighting.",
+  "order": 45,
+  "parts": [
+   {
+    "done": true,
+    "n": "Ring band texture and shader"
+   },
+   {
+    "done": true,
+    "n": "Planet and moon"
+   },
+   {
+    "done": true,
+    "n": "Stars and haze"
+   },
+   {
+    "done": true,
+    "n": "Fixed lighting setup"
+   }
+  ],
+  "path": "game/assets/models/environment/ringed-sky-dome.glb",
+  "source": "art/environment/ringed-sky-dome.blend",
+  "stage": "In engine",
+  "updatedAt": "2026-10-12T01:58:53.931Z",
+  "updatedBy": null,
+  "thumb": "repo/asset-hub/data/shots/ringfall-overview.jpg"
+ },
+ {
+  "id": "ringfall-terrain",
+  "budget": "Heightmap + 4 splat layers",
+  "category": "Environment",
+  "concepts": [
+   {
+    "at": "2026-10-11T17:33:30.750Z",
+    "by": null,
+    "id": "d0c0eb054bd59af80147d22930c5c0b0",
+    "name": "29-ringfall-terrain-overview.webp",
+    "source": "codex/concepts/v0.2/29-ringfall-terrain-overview.png"
+   }
+  ],
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": "Map size and final location layout are undecided.",
+  "files": [
+   {
+    "id": "repo/asset-hub/data/shots/ringfall-overview.jpg",
+    "kind": "image",
+    "name": "ringfall-overview.jpg",
+    "bytes": 70731,
+    "at": "2026-10-12T01:57:33.527Z",
+    "by": null
+   },
+   {
+    "id": "repo/asset-hub/data/shots/ringfall-height-map.jpg",
+    "kind": "image",
+    "name": "ringfall-height-map.jpg",
+    "bytes": 48867,
+    "at": "2026-10-12T01:57:33.435Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/models/terrain-kit/rock-basalt-columns.glb",
+    "kind": "model",
+    "name": "rock-basalt-columns.glb",
+    "bytes": 388604,
+    "at": "2026-10-11T21:46:59.432Z",
+    "by": null,
+    "tris": 760,
+    "animations": 0
+   },
+   {
+    "id": "repo/game/assets/models/terrain-kit/rock-boulder-a.glb",
+    "kind": "model",
+    "name": "rock-boulder-a.glb",
+    "bytes": 221548,
+    "at": "2026-10-11T21:47:26.251Z",
+    "by": null,
+    "tris": 400,
+    "animations": 0
+   },
+   {
+    "id": "repo/game/assets/models/terrain-kit/rock-boulder-b.glb",
+    "kind": "model",
+    "name": "rock-boulder-b.glb",
+    "bytes": 267152,
+    "at": "2026-10-11T21:47:29.359Z",
+    "by": null,
+    "tris": 400,
+    "animations": 0
+   },
+   {
+    "id": "repo/game/assets/models/terrain-kit/rock-cliff-chunk.glb",
+    "kind": "model",
+    "name": "rock-cliff-chunk.glb",
+    "bytes": 304420,
+    "at": "2026-10-11T21:47:27.735Z",
+    "by": null,
+    "tris": 560,
+    "animations": 0
+   },
+   {
+    "id": "repo/game/assets/models/terrain-kit/ring-fragment.glb",
+    "kind": "model",
+    "name": "ring-fragment.glb",
+    "bytes": 327228,
+    "at": "2026-10-11T21:51:38.668Z",
+    "by": null,
+    "tris": 498,
+    "animations": 0
+   }
+  ],
+  "group": null,
+  "kind": "model",
+  "milestone": "Visual slice",
+  "name": "Ringfall terrain",
+  "notes": "Generated by game/tools/ringfall_gen.gd and baked by build_ringfall.gd (1 km island, 513² heightmap). The rocks and ring fragment here are the terrain kit.",
+  "order": 46,
+  "parts": [
+   {
+    "done": true,
+    "n": "Greybox heightmap"
+   },
+   {
+    "done": true,
+    "n": "Crater lake basin"
+   },
+   {
+    "done": false,
+    "n": "Final heightmap"
+   },
+   {
+    "done": true,
+    "n": "Terrain materials: basalt, grassland, black glass, sand"
+   },
+   {
+    "done": true,
+    "n": "Water shader (turquoise lakes)"
+   }
+  ],
+  "path": "game/assets/models/terrain-kit/",
+  "source": "art/terrain-kit/models/",
+  "stage": "In engine",
+  "thumb": "repo/asset-hub/data/shots/ringfall-overview.jpg",
+  "updatedAt": "2026-10-12T01:58:53.931Z",
+  "updatedBy": null
+ },
+ {
+  "id": "luminous-vegetation-kit",
+  "budget": "100–800 tris per plant (prop) · instanced",
+  "category": "Environment",
+  "concepts": [
+   {
+    "at": "2026-10-11T17:33:30.750Z",
+    "by": null,
+    "id": "51cfe32beb4d926c2b6265985028d355",
+    "name": "30-luminous-vegetation.webp",
+    "source": "codex/concepts/v0.2/30-luminous-vegetation.png"
+   }
+  ],
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": null,
+  "files": [
+   {
+    "id": "repo/game/assets/models/vegetation/veg-bloom-cap.glb",
+    "kind": "model",
+    "name": "veg-bloom-cap.glb",
+    "bytes": 566784,
+    "at": "2026-10-11T21:19:21.865Z",
+    "by": null,
+    "tris": 720,
+    "animations": 0
+   },
+   {
+    "id": "repo/game/assets/models/vegetation/veg-bloom-flower.glb",
+    "kind": "model",
+    "name": "veg-bloom-flower.glb",
+    "bytes": 509672,
+    "at": "2026-10-11T21:28:49.724Z",
+    "by": null,
+    "tris": 698,
+    "animations": 0
+   },
+   {
+    "id": "repo/game/assets/models/vegetation/veg-bloom-stalk.glb",
+    "kind": "model",
+    "name": "veg-bloom-stalk.glb",
+    "bytes": 517188,
+    "at": "2026-10-11T21:19:01.301Z",
+    "by": null,
+    "tris": 670,
+    "animations": 0
+   },
+   {
+    "id": "repo/game/assets/models/vegetation/veg-fern.glb",
+    "kind": "model",
+    "name": "veg-fern.glb",
+    "bytes": 219044,
+    "at": "2026-10-11T21:33:17.220Z",
+    "by": null,
+    "tris": 760,
+    "animations": 0
+   },
+   {
+    "id": "repo/game/assets/models/vegetation/veg-giant-leaf.glb",
+    "kind": "model",
+    "name": "veg-giant-leaf.glb",
+    "bytes": 459540,
+    "at": "2026-10-11T21:28:57.798Z",
+    "by": null,
+    "tris": 412,
+    "animations": 0
+   },
+   {
+    "id": "repo/game/assets/models/vegetation/veg-glow-shrub.glb",
+    "kind": "model",
+    "name": "veg-glow-shrub.glb",
+    "bytes": 242732,
+    "at": "2026-10-11T21:17:22.677Z",
+    "by": null,
+    "tris": 696,
+    "animations": 0
+   },
+   {
+    "id": "repo/game/assets/models/vegetation/veg-grass-clump.glb",
+    "kind": "model",
+    "name": "veg-grass-clump.glb",
+    "bytes": 196980,
+    "at": "2026-10-11T21:17:17.654Z",
+    "by": null,
+    "tris": 782,
+    "animations": 0
+   },
+   {
+    "id": "repo/game/assets/models/vegetation/veg-luminous-roots.glb",
+    "kind": "model",
+    "name": "veg-luminous-roots.glb",
+    "bytes": 490584,
+    "at": "2026-10-11T21:27:44.380Z",
+    "by": null,
+    "tris": 680,
+    "animations": 0
+   },
+   {
+    "id": "repo/game/assets/models/vegetation/veg-mushroom-cluster.glb",
+    "kind": "model",
+    "name": "veg-mushroom-cluster.glb",
+    "bytes": 378980,
+    "at": "2026-10-11T21:35:16.586Z",
+    "by": null,
+    "tris": 748,
+    "animations": 0
+   },
+   {
+    "id": "repo/game/assets/models/vegetation/veg-tree-canopy.glb",
+    "kind": "model",
+    "name": "veg-tree-canopy.glb",
+    "bytes": 277520,
+    "at": "2026-10-11T21:33:11.866Z",
+    "by": null,
+    "tris": 590,
+    "animations": 0
+   },
+   {
+    "id": "repo/game/assets/models/vegetation/veg-tree-trunk.glb",
+    "kind": "model",
+    "name": "veg-tree-trunk.glb",
+    "bytes": 438640,
+    "at": "2026-10-11T21:28:55.382Z",
+    "by": null,
+    "tris": 652,
+    "animations": 0
+   }
+  ],
+  "group": null,
+  "kind": "model",
+  "milestone": "Visual slice",
+  "name": "Luminous vegetation kit",
+  "notes": "",
+  "order": 47,
+  "parts": [
+   {
+    "done": true,
+    "n": "Pale grass cards"
+   },
+   {
+    "done": true,
+    "n": "Glowing shrubs"
+   },
+   {
+    "done": true,
+    "n": "Giant Bloomwild plants"
+   },
+   {
+    "done": true,
+    "n": "Luminous roots"
+   },
+   {
+    "done": true,
+    "n": "Emissive material"
+   }
+  ],
+  "path": "game/assets/models/vegetation/",
+  "source": "art/vegetation/models/",
+  "stage": "Review",
+  "thumb": "repo/asset-hub/data/thumbs/veg-bloom-cap.jpg",
+  "updatedAt": "2026-10-11T23:30:00.000Z",
+  "updatedBy": null
+ },
+ {
+  "id": "colony-structure-kit",
+  "budget": "Modular pieces under 1k tris each where possible",
+  "category": "Environment",
+  "concepts": [
+   {
+    "at": "2026-10-11T17:33:30.750Z",
+    "by": null,
+    "id": "bebb6d053aab123a0063e388546b70aa",
+    "name": "31-colony-structure-kit.webp",
+    "source": "codex/concepts/v0.2/31-colony-structure-kit.png"
+   }
+  ],
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": null,
+  "files": [
+   {
+    "id": "repo/game/assets/models/colony-kit/colony-cargo-container.glb",
+    "kind": "model",
+    "name": "colony-cargo-container.glb",
+    "bytes": 492032,
+    "at": "2026-10-11T21:23:40.861Z",
+    "by": null,
+    "tris": 800,
+    "animations": 0
+   },
+   {
+    "id": "repo/game/assets/models/colony-kit/colony-cargo-pad.glb",
+    "kind": "model",
+    "name": "colony-cargo-pad.glb",
+    "bytes": 650192,
+    "at": "2026-10-11T21:12:29.266Z",
+    "by": null,
+    "tris": 612,
+    "animations": 0
+   },
+   {
+    "id": "repo/game/assets/models/colony-kit/colony-comms-mast.glb",
+    "kind": "model",
+    "name": "colony-comms-mast.glb",
+    "bytes": 464720,
+    "at": "2026-10-11T21:15:42.621Z",
+    "by": null,
+    "tris": 986,
+    "animations": 0
+   },
+   {
+    "id": "repo/game/assets/models/colony-kit/colony-corner.glb",
+    "kind": "model",
+    "name": "colony-corner.glb",
+    "bytes": 168068,
+    "at": "2026-10-11T20:26:21.229Z",
+    "by": null,
+    "tris": 328,
+    "animations": 0
+   },
+   {
+    "id": "repo/game/assets/models/colony-kit/colony-floor.glb",
+    "kind": "model",
+    "name": "colony-floor.glb",
+    "bytes": 435956,
+    "at": "2026-10-11T20:30:37.184Z",
+    "by": null,
+    "tris": 180,
+    "animations": 0
+   },
+   {
+    "id": "repo/game/assets/models/colony-kit/colony-gantry.glb",
+    "kind": "model",
+    "name": "colony-gantry.glb",
+    "bytes": 445224,
+    "at": "2026-10-11T21:03:00.721Z",
+    "by": null,
+    "tris": 796,
+    "animations": 0
+   },
+   {
+    "id": "repo/game/assets/models/colony-kit/colony-habitat-module.glb",
+    "kind": "model",
+    "name": "colony-habitat-module.glb",
+    "bytes": 479348,
+    "at": "2026-10-11T21:40:19.916Z",
+    "by": null,
+    "tris": 980,
+    "animations": 0
+   },
+   {
+    "id": "repo/game/assets/models/colony-kit/colony-pipe-bend.glb",
+    "kind": "model",
+    "name": "colony-pipe-bend.glb",
+    "bytes": 148032,
+    "at": "2026-10-11T20:58:42.510Z",
+    "by": null,
+    "tris": 700,
+    "animations": 0
+   },
+   {
+    "id": "repo/game/assets/models/colony-kit/colony-pipe-straight.glb",
+    "kind": "model",
+    "name": "colony-pipe-straight.glb",
+    "bytes": 140376,
+    "at": "2026-10-11T20:49:03.123Z",
+    "by": null,
+    "tris": 504,
+    "animations": 0
+   },
+   {
+    "id": "repo/game/assets/models/colony-kit/colony-railing.glb",
+    "kind": "model",
+    "name": "colony-railing.glb",
+    "bytes": 120068,
+    "at": "2026-10-11T20:59:12.187Z",
+    "by": null,
+    "tris": 476,
+    "animations": 0
+   },
+   {
+    "id": "repo/game/assets/models/colony-kit/colony-ramp.glb",
+    "kind": "model",
+    "name": "colony-ramp.glb",
+    "bytes": 360676,
+    "at": "2026-10-11T20:58:42.327Z",
+    "by": null,
+    "tris": 308,
+    "animations": 0
+   },
+   {
+    "id": "repo/game/assets/models/colony-kit/colony-roof.glb",
+    "kind": "model",
+    "name": "colony-roof.glb",
+    "bytes": 502136,
+    "at": "2026-10-11T20:24:32.658Z",
+    "by": null,
+    "tris": 432,
+    "animations": 0
+   },
+   {
+    "id": "repo/game/assets/models/colony-kit/colony-stairs.glb",
+    "kind": "model",
+    "name": "colony-stairs.glb",
+    "bytes": 438008,
+    "at": "2026-10-11T21:40:59.291Z",
+    "by": null,
+    "tris": 708,
+    "animations": 0
+   },
+   {
+    "id": "repo/game/assets/models/colony-kit/colony-wall-door.glb",
+    "kind": "model",
+    "name": "colony-wall-door.glb",
+    "bytes": 520884,
+    "at": "2026-10-11T20:32:43.910Z",
+    "by": null,
+    "tris": 696,
+    "animations": 0
+   },
+   {
+    "id": "repo/game/assets/models/colony-kit/colony-wall-window.glb",
+    "kind": "model",
+    "name": "colony-wall-window.glb",
+    "bytes": 540408,
+    "at": "2026-10-11T21:31:44.446Z",
+    "by": null,
+    "tris": 648,
+    "animations": 0
+   },
+   {
+    "id": "repo/game/assets/models/colony-kit/colony-wall.glb",
+    "kind": "model",
+    "name": "colony-wall.glb",
+    "bytes": 375176,
+    "at": "2026-10-11T20:24:25.076Z",
+    "by": null,
+    "tris": 512,
+    "animations": 0
+   },
+   {
+    "id": "repo/game/assets/models/colony-kit/colony-warehouse-door.glb",
+    "kind": "model",
+    "name": "colony-warehouse-door.glb",
+    "bytes": 599200,
+    "at": "2026-10-11T21:16:07.954Z",
+    "by": null,
+    "tris": 700,
+    "animations": 0
+   },
+   {
+    "id": "repo/game/assets/models/colony-kit/colony-work-light.glb",
+    "kind": "model",
+    "name": "colony-work-light.glb",
+    "bytes": 176524,
+    "at": "2026-10-11T21:27:13.845Z",
+    "by": null,
+    "tris": 532,
+    "animations": 0
+   }
+  ],
+  "group": null,
+  "kind": "model",
+  "milestone": "Visual slice",
+  "name": "Colony structure kit",
+  "notes": "",
+  "order": 48,
+  "parts": [
+   {
+    "done": true,
+    "n": "Habitat module"
+   },
+   {
+    "done": true,
+    "n": "Warehouse"
+   },
+   {
+    "done": true,
+    "n": "Cargo pad"
+   },
+   {
+    "done": true,
+    "n": "Comms mast"
+   },
+   {
+    "done": true,
+    "n": "Gantries and stairs"
+   },
+   {
+    "done": true,
+    "n": "Pipes and cables"
+   },
+   {
+    "done": true,
+    "n": "Amber work lights"
+   }
+  ],
+  "path": "game/assets/models/colony-kit/",
+  "source": "art/colony-kit/models/",
+  "stage": "Review",
+  "thumb": "repo/asset-hub/data/thumbs/colony-cargo-container.jpg",
+  "updatedAt": "2026-10-11T23:30:00.000Z",
+  "updatedBy": null
+ },
+ {
+  "id": "ancient-ruins-kit",
+  "budget": "Modular pieces under 1k tris each where possible",
+  "category": "Environment",
+  "concepts": [
+   {
+    "at": "2026-10-11T17:33:30.750Z",
+    "by": null,
+    "id": "12d98aedb7a67aaa5021bae6143ab00a",
+    "name": "32-ancient-ruins-kit.webp",
+    "source": "codex/concepts/v0.2/32-ancient-ruins-kit.png"
+   }
+  ],
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": null,
+  "files": [
+   {
+    "id": "repo/game/assets/models/ruins-kit/ruin-arch.glb",
+    "kind": "model",
+    "name": "ruin-arch.glb",
+    "bytes": 370424,
+    "at": "2026-10-11T21:57:48.950Z",
+    "by": null,
+    "tris": 688,
+    "animations": 0
+   },
+   {
+    "id": "repo/game/assets/models/ruins-kit/ruin-array-monolith.glb",
+    "kind": "model",
+    "name": "ruin-array-monolith.glb",
+    "bytes": 352604,
+    "at": "2026-10-11T22:06:28.835Z",
+    "by": null,
+    "tris": 616,
+    "animations": 0
+   },
+   {
+    "id": "repo/game/assets/models/ruins-kit/ruin-bridge-pier.glb",
+    "kind": "model",
+    "name": "ruin-bridge-pier.glb",
+    "bytes": 379212,
+    "at": "2026-10-11T22:02:21.084Z",
+    "by": null,
+    "tris": 880,
+    "animations": 0
+   },
+   {
+    "id": "repo/game/assets/models/ruins-kit/ruin-bridge-span.glb",
+    "kind": "model",
+    "name": "ruin-bridge-span.glb",
+    "bytes": 324156,
+    "at": "2026-10-11T22:04:38.170Z",
+    "by": null,
+    "tris": 684,
+    "animations": 0
+   },
+   {
+    "id": "repo/game/assets/models/ruins-kit/ruin-canyon-arch.glb",
+    "kind": "model",
+    "name": "ruin-canyon-arch.glb",
+    "bytes": 346292,
+    "at": "2026-10-11T22:06:59.777Z",
+    "by": null,
+    "tris": 704,
+    "animations": 0
+   },
+   {
+    "id": "repo/game/assets/models/ruins-kit/ruin-floor-slab.glb",
+    "kind": "model",
+    "name": "ruin-floor-slab.glb",
+    "bytes": 311816,
+    "at": "2026-10-11T22:01:26.562Z",
+    "by": null,
+    "tris": 440,
+    "animations": 0
+   },
+   {
+    "id": "repo/game/assets/models/ruins-kit/ruin-pillar-broken.glb",
+    "kind": "model",
+    "name": "ruin-pillar-broken.glb",
+    "bytes": 342756,
+    "at": "2026-10-11T22:02:42.244Z",
+    "by": null,
+    "tris": 564,
+    "animations": 0
+   },
+   {
+    "id": "repo/game/assets/models/ruins-kit/ruin-pillar.glb",
+    "kind": "model",
+    "name": "ruin-pillar.glb",
+    "bytes": 346216,
+    "at": "2026-10-11T21:57:24.578Z",
+    "by": null,
+    "tris": 352,
+    "animations": 0
+   },
+   {
+    "id": "repo/game/assets/models/ruins-kit/ruin-rubble.glb",
+    "kind": "model",
+    "name": "ruin-rubble.glb",
+    "bytes": 352884,
+    "at": "2026-10-11T22:07:15.218Z",
+    "by": null,
+    "tris": 404,
+    "animations": 0
+   },
+   {
+    "id": "repo/game/assets/models/ruins-kit/ruin-stairs.glb",
+    "kind": "model",
+    "name": "ruin-stairs.glb",
+    "bytes": 369368,
+    "at": "2026-10-11T20:56:17.198Z",
+    "by": null,
+    "tris": 548,
+    "animations": 0
+   },
+   {
+    "id": "repo/game/assets/models/ruins-kit/ruin-wall-broken.glb",
+    "kind": "model",
+    "name": "ruin-wall-broken.glb",
+    "bytes": 340448,
+    "at": "2026-10-11T21:57:13.806Z",
+    "by": null,
+    "tris": 620,
+    "animations": 0
+   },
+   {
+    "id": "repo/game/assets/models/ruins-kit/ruin-wall.glb",
+    "kind": "model",
+    "name": "ruin-wall.glb",
+    "bytes": 366540,
+    "at": "2026-10-11T21:57:55.823Z",
+    "by": null,
+    "tris": 672,
+    "animations": 0
+   }
+  ],
+  "group": null,
+  "kind": "model",
+  "milestone": "Full local match",
+  "name": "Ancient ruins kit",
+  "notes": "",
+  "order": 49,
+  "parts": [
+   {
+    "done": true,
+    "n": "Wall and arch pieces"
+   },
+   {
+    "done": true,
+    "n": "Pillars"
+   },
+   {
+    "done": true,
+    "n": "Bridge spans (The Spine)"
+   },
+   {
+    "done": true,
+    "n": "Canyon ruin set (Hollow Array)"
+   }
+  ],
+  "path": "game/assets/models/ruins-kit/",
+  "source": "art/ruins-kit/models/",
+  "stage": "Review",
+  "thumb": "repo/asset-hub/data/thumbs/ruin-arch.jpg",
+  "updatedAt": "2026-10-11T23:30:00.000Z",
+  "updatedBy": null
+ },
+ {
+  "id": "crown-observatory",
+  "budget": null,
+  "category": "Locations",
+  "concepts": [
+   {
+    "at": "2026-10-11T17:33:30.750Z",
+    "by": null,
+    "id": "5befbd4445945fa3455a409219e1a010",
+    "name": "33-crown-observatory.webp",
+    "source": "codex/concepts/v0.2/33-crown-observatory.png"
+   }
+  ],
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": null,
+  "files": [
+   {
+    "id": "repo/asset-hub/data/shots/crown-observatory.jpg",
+    "kind": "image",
+    "name": "crown-observatory.jpg",
+    "bytes": 84761,
+    "at": "2026-10-12T01:57:33.167Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/models/locations/observatory-dome.glb",
+    "kind": "model",
+    "name": "observatory-dome.glb",
+    "bytes": 461484,
+    "at": "2026-10-11T23:36:58.398Z",
+    "by": null,
+    "tris": 804,
+    "animations": 0
+   },
+   {
+    "id": "repo/game/assets/models/locations/comms-dish.glb",
+    "kind": "model",
+    "name": "comms-dish.glb",
+    "bytes": 411312,
+    "at": "2026-10-11T23:35:47.436Z",
+    "by": null,
+    "tris": 960,
+    "animations": 0
+   }
+  ],
+  "group": null,
+  "kind": "model",
+  "milestone": "Full local match",
+  "name": "Crown Observatory",
+  "notes": "Every elevated position needs two attack routes and an escape route.",
+  "order": 50,
+  "parts": [
+   {
+    "done": true,
+    "n": "Layout blockout"
+   },
+   {
+    "done": true,
+    "n": "Telescope domes"
+   },
+   {
+    "done": true,
+    "n": "Fractured comms dish"
+   },
+   {
+    "done": false,
+    "n": "Landmark silhouette pass"
+   }
+  ],
+  "path": "game/assets/models/locations/crown-observatory.glb",
+  "source": "art/locations/crown-observatory.blend",
+  "stage": "Review",
+  "updatedAt": "2026-10-12T01:58:53.931Z",
+  "updatedBy": null,
+  "thumb": "repo/asset-hub/data/shots/crown-observatory.jpg"
+ },
+ {
+  "id": "anchorport",
+  "budget": null,
+  "category": "Locations",
+  "concepts": [
+   {
+    "at": "2026-10-11T17:33:30.750Z",
+    "by": null,
+    "id": "7006739eb6332fe333560be3be31121a",
+    "name": "34-anchorport.webp",
+    "source": "codex/concepts/v0.2/34-anchorport.png"
+   }
+  ],
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": null,
+  "files": [
+   {
+    "id": "repo/asset-hub/data/shots/anchorport.jpg",
+    "kind": "image",
+    "name": "anchorport.jpg",
+    "bytes": 82043,
+    "at": "2026-10-12T01:57:32.995Z",
+    "by": null
+   }
+  ],
+  "group": null,
+  "kind": "model",
+  "milestone": "Full local match",
+  "name": "Anchorport",
+  "notes": "Every elevated position needs two attack routes and an escape route.",
+  "order": 51,
+  "parts": [
+   {
+    "done": true,
+    "n": "Layout blockout"
+   },
+   {
+    "done": true,
+    "n": "Grounded transports"
+   },
+   {
+    "done": true,
+    "n": "Warehouses"
+   },
+   {
+    "done": true,
+    "n": "Cargo containers"
+   },
+   {
+    "done": false,
+    "n": "Landmark silhouette pass"
+   }
+  ],
+  "path": "game/assets/models/locations/anchorport.glb",
+  "source": "art/locations/anchorport.blend",
+  "stage": "Review",
+  "updatedAt": "2026-10-12T01:58:53.931Z",
+  "updatedBy": null,
+  "thumb": "repo/asset-hub/data/shots/anchorport.jpg"
+ },
+ {
+  "id": "glass-basin",
+  "budget": null,
+  "category": "Locations",
+  "concepts": [
+   {
+    "at": "2026-10-11T17:33:30.750Z",
+    "by": null,
+    "id": "3efd941515aaebbb15ddc76b4545216c",
+    "name": "35-glass-basin.webp",
+    "source": "codex/concepts/v0.2/35-glass-basin.png"
+   }
+  ],
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": null,
+  "files": [
+   {
+    "id": "repo/asset-hub/data/shots/glass-basin.jpg",
+    "kind": "image",
+    "name": "glass-basin.jpg",
+    "bytes": 83010,
+    "at": "2026-10-12T01:57:33.254Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/models/terrain-kit/glass-shard-cluster.glb",
+    "kind": "model",
+    "name": "glass-shard-cluster.glb",
+    "bytes": 325932,
+    "at": "2026-10-11T21:51:37.770Z",
+    "by": null,
+    "tris": 322,
+    "animations": 0
+   },
+   {
+    "id": "repo/game/assets/models/terrain-kit/glass-spire.glb",
+    "kind": "model",
+    "name": "glass-spire.glb",
+    "bytes": 276832,
+    "at": "2026-10-11T21:51:35.385Z",
+    "by": null,
+    "tris": 432,
+    "animations": 0
+   },
+   {
+    "id": "repo/game/assets/models/terrain-kit/ring-fragment.glb",
+    "kind": "model",
+    "name": "ring-fragment.glb",
+    "bytes": 327228,
+    "at": "2026-10-11T21:51:38.668Z",
+    "by": null,
+    "tris": 498,
+    "animations": 0
+   }
+  ],
+  "group": null,
+  "kind": "model",
+  "milestone": "Visual slice",
+  "name": "Glass Basin",
+  "notes": "Every elevated position needs two attack routes and an escape route.",
+  "order": 52,
+  "parts": [
+   {
+    "done": true,
+    "n": "Layout blockout"
+   },
+   {
+    "done": true,
+    "n": "Black glass formations"
+   },
+   {
+    "done": true,
+    "n": "Islands"
+   },
+   {
+    "done": true,
+    "n": "Ring fragment impact"
+   },
+   {
+    "done": false,
+    "n": "Landmark silhouette pass"
+   }
+  ],
+  "path": "game/assets/models/terrain-kit/",
+  "source": "art/terrain-kit/models/",
+  "stage": "Review",
+  "thumb": "repo/asset-hub/data/shots/glass-basin.jpg",
+  "updatedAt": "2026-10-12T01:58:53.931Z",
+  "updatedBy": null
+ },
+ {
+  "id": "relay-nine",
+  "budget": null,
+  "category": "Locations",
+  "concepts": [
+   {
+    "at": "2026-10-11T17:33:30.750Z",
+    "by": null,
+    "id": "2a1a840ce9049fae32bd9010a3b225f2",
+    "name": "37-relay-nine.webp",
+    "source": "codex/concepts/v0.2/37-relay-nine.png"
+   }
+  ],
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": null,
+  "files": [
+   {
+    "id": "repo/asset-hub/data/shots/relay-nine.jpg",
+    "kind": "image",
+    "name": "relay-nine.jpg",
+    "bytes": 85258,
+    "at": "2026-10-12T01:57:33.426Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/models/locations/relay-power-core.glb",
+    "kind": "model",
+    "name": "relay-power-core.glb",
+    "bytes": 483944,
+    "at": "2026-10-11T23:37:55.696Z",
+    "by": null,
+    "tris": 952,
+    "animations": 0
+   }
+  ],
+  "group": null,
+  "kind": "model",
+  "milestone": "Full local match",
+  "name": "Relay Nine",
+  "notes": "Maintenance tunnels still need tunnel kit pieces.",
+  "order": 53,
+  "parts": [
+   {
+    "done": true,
+    "n": "Layout blockout"
+   },
+   {
+    "done": true,
+    "n": "Power station"
+   },
+   {
+    "done": false,
+    "n": "Maintenance tunnels"
+   },
+   {
+    "done": true,
+    "n": "Gantry network"
+   },
+   {
+    "done": false,
+    "n": "Landmark silhouette pass"
+   }
+  ],
+  "path": "game/assets/models/locations/relay-nine.glb",
+  "source": "art/locations/relay-nine.blend",
+  "stage": "Review",
+  "updatedAt": "2026-10-12T01:58:53.931Z",
+  "updatedBy": null,
+  "thumb": "repo/asset-hub/data/shots/relay-nine.jpg"
+ },
+ {
+  "id": "the-spine",
+  "budget": null,
+  "category": "Locations",
+  "concepts": [
+   {
+    "at": "2026-10-11T17:33:30.750Z",
+    "by": null,
+    "id": "09517b2505d200a69b1943e7d47e28f5",
+    "name": "38-the-spine.webp",
+    "source": "codex/concepts/v0.2/38-the-spine.png"
+   }
+  ],
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": null,
+  "files": [
+   {
+    "id": "repo/asset-hub/data/shots/the-spine.jpg",
+    "kind": "image",
+    "name": "the-spine.jpg",
+    "bytes": 91076,
+    "at": "2026-10-12T01:57:33.618Z",
+    "by": null
+   }
+  ],
+  "group": null,
+  "kind": "model",
+  "milestone": "Full local match",
+  "name": "The Spine",
+  "notes": "Every elevated position needs two attack routes and an escape route.",
+  "order": 54,
+  "parts": [
+   {
+    "done": true,
+    "n": "Layout blockout"
+   },
+   {
+    "done": true,
+    "n": "Ancient bridge"
+   },
+   {
+    "done": true,
+    "n": "Cliff high ground"
+   },
+   {
+    "done": false,
+    "n": "Landmark silhouette pass"
+   }
+  ],
+  "path": "game/assets/models/locations/the-spine.glb",
+  "source": "art/locations/the-spine.blend",
+  "stage": "Review",
+  "updatedAt": "2026-10-12T01:58:53.931Z",
+  "updatedBy": null,
+  "thumb": "repo/asset-hub/data/shots/the-spine.jpg"
+ },
+ {
+  "id": "hollow-array",
+  "budget": null,
+  "category": "Locations",
+  "concepts": [
+   {
+    "at": "2026-10-11T17:33:30.750Z",
+    "by": null,
+    "id": "7f96fc9ae26dd678aedc1ceb42cfcf40",
+    "name": "39-hollow-array.webp",
+    "source": "codex/concepts/v0.2/39-hollow-array.png"
+   }
+  ],
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": null,
+  "files": [
+   {
+    "id": "repo/asset-hub/data/shots/hollow-array.jpg",
+    "kind": "image",
+    "name": "hollow-array.jpg",
+    "bytes": 87218,
+    "at": "2026-10-12T01:57:33.340Z",
+    "by": null
+   }
+  ],
+  "group": null,
+  "kind": "model",
+  "milestone": "Full local match",
+  "name": "Hollow Array",
+  "notes": "Every elevated position needs two attack routes and an escape route.",
+  "order": 55,
+  "parts": [
+   {
+    "done": true,
+    "n": "Layout blockout"
+   },
+   {
+    "done": true,
+    "n": "Canyon ruins"
+   },
+   {
+    "done": true,
+    "n": "Array structures"
+   },
+   {
+    "done": false,
+    "n": "Landmark silhouette pass"
+   }
+  ],
+  "path": "game/assets/models/locations/hollow-array.glb",
+  "source": "art/locations/hollow-array.blend",
+  "stage": "Review",
+  "updatedAt": "2026-10-12T01:58:53.931Z",
+  "updatedBy": null,
+  "thumb": "repo/asset-hub/data/shots/hollow-array.jpg"
+ },
+ {
+  "id": "bloomwild",
+  "budget": null,
+  "category": "Locations",
+  "concepts": [
+   {
+    "at": "2026-10-11T17:33:30.750Z",
+    "by": null,
+    "id": "bbaddbe89fbef83afbeb39bb8af7bef9",
+    "name": "36-bloomwild.webp",
+    "source": "codex/concepts/v0.2/36-bloomwild.png"
+   }
+  ],
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": null,
+  "files": [
+   {
+    "id": "repo/asset-hub/data/shots/bloomwild.jpg",
+    "kind": "image",
+    "name": "bloomwild.jpg",
+    "bytes": 90951,
+    "at": "2026-10-12T01:57:33.082Z",
+    "by": null
+   }
+  ],
+  "group": null,
+  "kind": "model",
+  "milestone": "Full local match",
+  "name": "Bloomwild",
+  "notes": "Every elevated position needs two attack routes and an escape route.",
+  "order": 56,
+  "parts": [
+   {
+    "done": true,
+    "n": "Layout blockout"
+   },
+   {
+    "done": true,
+    "n": "Giant plant canopy"
+   },
+   {
+    "done": true,
+    "n": "Streams"
+   },
+   {
+    "done": false,
+    "n": "Landmark silhouette pass"
+   }
+  ],
+  "path": "game/assets/models/locations/bloomwild.glb",
+  "source": "art/locations/bloomwild.blend",
+  "stage": "Review",
+  "updatedAt": "2026-10-12T01:58:53.931Z",
+  "updatedBy": null,
+  "thumb": "repo/asset-hub/data/shots/bloomwild.jpg"
+ },
+ {
+  "id": "prop-kit",
+  "budget": "100–800 tris each",
+  "category": "Environment",
+  "concepts": [
+   {
+    "at": "2026-10-11T17:33:30.750Z",
+    "by": null,
+    "id": "129170bd4d3e20ebd7a7c34500c52937",
+    "name": "40-prop-kit.webp",
+    "source": "codex/concepts/v0.2/40-prop-kit.png"
+   }
+  ],
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": null,
+  "files": [
+   {
+    "id": "repo/game/assets/models/props/prop-barrel.glb",
+    "kind": "model",
+    "name": "prop-barrel.glb",
+    "bytes": 131428,
+    "at": "2026-10-11T21:21:53.877Z",
+    "by": null,
+    "tris": 440,
+    "animations": 0
+   },
+   {
+    "id": "repo/game/assets/models/props/prop-barrier.glb",
+    "kind": "model",
+    "name": "prop-barrier.glb",
+    "bytes": 134136,
+    "at": "2026-10-11T21:45:32.356Z",
+    "by": null,
+    "tris": 292,
+    "animations": 0
+   },
+   {
+    "id": "repo/game/assets/models/props/prop-cable-reel.glb",
+    "kind": "model",
+    "name": "prop-cable-reel.glb",
+    "bytes": 170732,
+    "at": "2026-10-11T21:58:32.048Z",
+    "by": null,
+    "tris": 480,
+    "animations": 0
+   },
+   {
+    "id": "repo/game/assets/models/props/prop-crate-large.glb",
+    "kind": "model",
+    "name": "prop-crate-large.glb",
+    "bytes": 168096,
+    "at": "2026-10-11T21:16:24.809Z",
+    "by": null,
+    "tris": 528,
+    "animations": 0
+   },
+   {
+    "id": "repo/game/assets/models/props/prop-crate-small.glb",
+    "kind": "model",
+    "name": "prop-crate-small.glb",
+    "bytes": 148248,
+    "at": "2026-10-11T21:42:38.411Z",
+    "by": null,
+    "tris": 408,
+    "animations": 0
+   },
+   {
+    "id": "repo/game/assets/models/props/prop-debris-pile.glb",
+    "kind": "model",
+    "name": "prop-debris-pile.glb",
+    "bytes": 442472,
+    "at": "2026-10-11T22:06:15.399Z",
+    "by": null,
+    "tris": 784,
+    "animations": 0
+   },
+   {
+    "id": "repo/game/assets/models/props/prop-fence.glb",
+    "kind": "model",
+    "name": "prop-fence.glb",
+    "bytes": 457672,
+    "at": "2026-10-11T21:54:33.589Z",
+    "by": null,
+    "tris": 760,
+    "animations": 0
+   },
+   {
+    "id": "repo/game/assets/models/props/prop-fuel-canister.glb",
+    "kind": "model",
+    "name": "prop-fuel-canister.glb",
+    "bytes": 138004,
+    "at": "2026-10-11T21:27:40.467Z",
+    "by": null,
+    "tris": 508,
+    "animations": 0
+   },
+   {
+    "id": "repo/game/assets/models/props/prop-generator.glb",
+    "kind": "model",
+    "name": "prop-generator.glb",
+    "bytes": 174596,
+    "at": "2026-10-11T21:40:21.532Z",
+    "by": null,
+    "tris": 468,
+    "animations": 0
+   },
+   {
+    "id": "repo/game/assets/models/props/prop-lamp-post.glb",
+    "kind": "model",
+    "name": "prop-lamp-post.glb",
+    "bytes": 178736,
+    "at": "2026-10-11T21:48:39.732Z",
+    "by": null,
+    "tris": 472,
+    "animations": 0
+   },
+   {
+    "id": "repo/game/assets/models/props/prop-sandbag-wall.glb",
+    "kind": "model",
+    "name": "prop-sandbag-wall.glb",
+    "bytes": 162384,
+    "at": "2026-10-11T21:52:37.964Z",
+    "by": null,
+    "tris": 768,
+    "animations": 0
+   },
+   {
+    "id": "repo/game/assets/models/props/prop-terminal.glb",
+    "kind": "model",
+    "name": "prop-terminal.glb",
+    "bytes": 143512,
+    "at": "2026-10-11T21:46:59.418Z",
+    "by": null,
+    "tris": 228,
+    "animations": 0
+   },
+   {
+    "id": "repo/game/assets/models/props/prop-vehicle-spawn-pad.glb",
+    "kind": "model",
+    "name": "prop-vehicle-spawn-pad.glb",
+    "bytes": 438208,
+    "at": "2026-10-11T21:31:27.467Z",
+    "by": null,
+    "tris": 604,
+    "animations": 0
+   }
+  ],
+  "group": null,
+  "kind": "model",
+  "milestone": "Visual slice",
+  "name": "Prop kit",
+  "notes": "",
+  "order": 57,
+  "parts": [
+   {
+    "done": true,
+    "n": "Crates and barrels"
+   },
+   {
+    "done": true,
+    "n": "Fences and barriers"
+   },
+   {
+    "done": true,
+    "n": "Lamps"
+   },
+   {
+    "done": true,
+    "n": "Debris"
+   },
+   {
+    "done": true,
+    "n": "Vehicle spawn pads"
+   }
+  ],
+  "path": "game/assets/models/props/",
+  "source": "art/props/models/",
+  "stage": "Review",
+  "thumb": "repo/asset-hub/data/thumbs/prop-barrel.jpg",
+  "updatedAt": "2026-10-11T23:30:00.000Z",
+  "updatedBy": null
+ },
+ {
+  "id": "ion-storm",
+  "budget": null,
+  "category": "VFX",
+  "concepts": [
+   {
+    "at": "2026-10-11T17:33:30.750Z",
+    "by": null,
+    "id": "66d6c465c476a1e5673181e538e033ee",
+    "name": "41-ion-storm.webp",
+    "source": "codex/concepts/v0.2/41-ion-storm.png"
+   }
+  ],
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": null,
+  "files": [],
+  "group": null,
+  "kind": "vfx",
+  "milestone": "Match loop",
+  "name": "Ion storm",
+  "notes": "Edge must stay unmistakable in a firefight.",
+  "order": 58,
+  "parts": [
+   {
+    "done": true,
+    "n": "Storm wall shader"
+   },
+   {
+    "done": false,
+    "n": "Clouds and particles"
+   },
+   {
+    "done": false,
+    "n": "Distant lightning"
+   },
+   {
+    "done": false,
+    "n": "Boundary interference (screen)"
+   }
+  ],
+  "path": "game/assets/vfx/vfx/ion-storm.glb",
+  "source": "art/vfx/ion-storm.blend",
+  "stage": "In engine",
+  "updatedAt": "2026-10-12T01:58:53.931Z",
+  "updatedBy": null,
+  "thumb": null
+ },
+ {
+  "id": "combat-impacts",
+  "budget": null,
+  "category": "VFX",
+  "concepts": [
+   {
+    "at": "2026-10-11T17:33:30.750Z",
+    "by": null,
+    "id": "746742acfb586181bb33a20a0117abf3",
+    "name": "42-combat-effects.webp",
+    "source": "codex/concepts/v0.2/42-combat-effects.png"
+   }
+  ],
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": null,
+  "files": [],
+  "group": null,
+  "kind": "vfx",
+  "milestone": "Combat and inventory",
+  "name": "Combat impacts",
+  "notes": "",
+  "order": 59,
+  "parts": [
+   {
+    "done": true,
+    "n": "Bullet impacts: basalt, grass, metal, glass, water"
+   },
+   {
+    "done": true,
+    "n": "Shield hit"
+   },
+   {
+    "done": true,
+    "n": "Shield break"
+   },
+   {
+    "done": true,
+    "n": "Health hit"
+   }
+  ],
+  "path": "game/assets/vfx/vfx/combat-impacts.glb",
+  "source": "art/vfx/combat-impacts.blend",
+  "stage": "In engine",
+  "updatedAt": "2026-10-12T01:58:53.931Z",
+  "updatedBy": null,
+  "thumb": null
+ },
+ {
+  "id": "healing-effects",
+  "budget": null,
+  "category": "VFX",
+  "concepts": [
+   {
+    "at": "2026-10-11T17:33:30.750Z",
+    "by": null,
+    "id": "46339f897806640f530ce1e9b5ef6bd2",
+    "name": "43-healing-effects.webp",
+    "source": "codex/concepts/v0.2/43-healing-effects.png"
+   }
+  ],
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": null,
+  "files": [],
+  "group": null,
+  "kind": "vfx",
+  "milestone": "Combat and inventory",
+  "name": "Healing effects",
+  "notes": "",
+  "order": 60,
+  "parts": [
+   {
+    "done": true,
+    "n": "Health heal particles"
+   },
+   {
+    "done": true,
+    "n": "Shield recharge shimmer"
+   }
+  ],
+  "path": "game/assets/vfx/vfx/healing-effects.glb",
+  "source": "art/vfx/healing-effects.blend",
+  "stage": "In engine",
+  "updatedAt": "2026-10-12T01:58:53.931Z",
+  "updatedBy": null,
+  "thumb": null
+ },
+ {
+  "id": "traversal-effects",
+  "budget": null,
+  "category": "VFX",
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": null,
+  "files": [],
+  "group": null,
+  "kind": "vfx",
+  "milestone": "Traversal",
+  "name": "Traversal effects",
+  "notes": "",
+  "order": 61,
+  "parts": [
+   {
+    "done": true,
+    "n": "Landing dust"
+   },
+   {
+    "done": true,
+    "n": "Sprint dust"
+   },
+   {
+    "done": true,
+    "n": "Water splash"
+   }
+  ],
+  "path": "game/assets/vfx/vfx/traversal-effects.glb",
+  "source": "art/vfx/traversal-effects.blend",
+  "stage": "In engine",
+  "updatedAt": "2026-10-12T01:58:53.931Z",
+  "updatedBy": null,
+  "thumb": null
+ },
+ {
+  "id": "orbit-logo-masters",
+  "budget": null,
+  "category": "Brand and UI",
+  "concepts": [
+   {
+    "at": "2026-10-11T17:33:30.750Z",
+    "by": null,
+    "id": "09ab4b1a9c2c37ed5f201cb71ef7ef42",
+    "name": "44-logo-exploration.webp",
+    "source": "codex/concepts/v0.2/44-logo-exploration.png"
+   }
+  ],
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": null,
+  "files": [
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/orbit-logo-masters/emblem-small.svg",
+    "kind": "image",
+    "name": "emblem-small.svg",
+    "bytes": 696,
+    "at": "2026-10-11T21:45:45.310Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/orbit-logo-masters/emblem.svg",
+    "kind": "image",
+    "name": "emblem.svg",
+    "bytes": 821,
+    "at": "2026-10-11T21:45:45.292Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/orbit-logo-masters/favicon.svg",
+    "kind": "image",
+    "name": "favicon.svg",
+    "bytes": 443,
+    "at": "2026-10-11T21:45:45.305Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/orbit-logo-masters/logo-horizontal.svg",
+    "kind": "image",
+    "name": "logo-horizontal.svg",
+    "bytes": 1998,
+    "at": "2026-10-11T21:45:45.288Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/orbit-logo-masters/logo-mono-dark.svg",
+    "kind": "image",
+    "name": "logo-mono-dark.svg",
+    "bytes": 2029,
+    "at": "2026-10-11T21:45:45.297Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/orbit-logo-masters/logo-mono-light.svg",
+    "kind": "image",
+    "name": "logo-mono-light.svg",
+    "bytes": 2030,
+    "at": "2026-10-11T21:45:45.303Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/orbit-logo-masters/logo-stacked.svg",
+    "kind": "image",
+    "name": "logo-stacked.svg",
+    "bytes": 2006,
+    "at": "2026-10-11T21:45:45.283Z",
+    "by": null
+   }
+  ],
+  "group": null,
+  "kind": "ui",
+  "milestone": "Visual slice",
+  "name": "ORBIT logo masters",
+  "notes": "Planetary O crossed by one orbital arc; ring must not obscure the counter.",
+  "order": 62,
+  "parts": [
+   {
+    "done": true,
+    "n": "Stacked lockup"
+   },
+   {
+    "done": true,
+    "n": "Horizontal lockup"
+   },
+   {
+    "done": true,
+    "n": "Orbital emblem"
+   },
+   {
+    "done": true,
+    "n": "Monochrome dark / light"
+   },
+   {
+    "done": true,
+    "n": "Favicon"
+   },
+   {
+    "done": true,
+    "n": "Small-size variants"
+   }
+  ],
+  "path": "game/assets/ui/brand-and-ui/orbit-logo-masters/",
+  "source": null,
+  "stage": "Review",
+  "updatedAt": "2026-10-11T18:24:13.149Z",
+  "updatedBy": null,
+  "thumb": "repo/game/assets/ui/brand-and-ui/orbit-logo-masters/emblem-small.svg"
+ },
+ {
+  "id": "item-and-weapon-icons",
+  "budget": null,
+  "category": "Brand and UI",
+  "concepts": [
+   {
+    "at": "2026-10-11T17:33:30.750Z",
+    "by": null,
+    "id": "a90472f583e298b951ed78d26b1a7633",
+    "name": "45-item-and-weapon-icons-refined.webp",
+    "source": "codex/concepts/v0.2/45-item-and-weapon-icons-refined.png"
+   }
+  ],
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": null,
+  "files": [
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/item-and-weapon-icons/ammo-heavy.svg",
+    "kind": "image",
+    "name": "ammo-heavy.svg",
+    "bytes": 789,
+    "at": "2026-10-11T21:45:45.435Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/item-and-weapon-icons/ammo-light.svg",
+    "kind": "image",
+    "name": "ammo-light.svg",
+    "bytes": 921,
+    "at": "2026-10-11T21:45:45.433Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/item-and-weapon-icons/ammo-medium.svg",
+    "kind": "image",
+    "name": "ammo-medium.svg",
+    "bytes": 754,
+    "at": "2026-10-11T21:45:45.434Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/item-and-weapon-icons/ammo-shells.svg",
+    "kind": "image",
+    "name": "ammo-shells.svg",
+    "bytes": 1082,
+    "at": "2026-10-11T21:45:45.435Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/item-and-weapon-icons/ar-7-wayfarer.svg",
+    "kind": "image",
+    "name": "ar-7-wayfarer.svg",
+    "bytes": 4956,
+    "at": "2026-10-11T21:45:45.315Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/item-and-weapon-icons/arc-grenade.svg",
+    "kind": "image",
+    "name": "arc-grenade.svg",
+    "bytes": 1324,
+    "at": "2026-10-11T21:45:45.432Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/item-and-weapon-icons/field-patch.svg",
+    "kind": "image",
+    "name": "field-patch.svg",
+    "bytes": 937,
+    "at": "2026-10-11T21:45:45.428Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/item-and-weapon-icons/fragmentation-grenade.svg",
+    "kind": "image",
+    "name": "fragmentation-grenade.svg",
+    "bytes": 811,
+    "at": "2026-10-11T21:45:45.431Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/item-and-weapon-icons/p-12-spark.svg",
+    "kind": "image",
+    "name": "p-12-spark.svg",
+    "bytes": 3726,
+    "at": "2026-10-11T21:45:45.422Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/item-and-weapon-icons/phoenix-capsule.svg",
+    "kind": "image",
+    "name": "phoenix-capsule.svg",
+    "bytes": 1219,
+    "at": "2026-10-11T21:45:45.431Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/item-and-weapon-icons/s-9-wisp.svg",
+    "kind": "image",
+    "name": "s-9-wisp.svg",
+    "bytes": 4150,
+    "at": "2026-10-11T21:45:45.425Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/item-and-weapon-icons/sg-4-breaker.svg",
+    "kind": "image",
+    "name": "sg-4-breaker.svg",
+    "bytes": 5536,
+    "at": "2026-10-11T21:45:45.420Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/item-and-weapon-icons/shield-cell.svg",
+    "kind": "image",
+    "name": "shield-cell.svg",
+    "bytes": 721,
+    "at": "2026-10-11T21:45:45.429Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/item-and-weapon-icons/shield-core.svg",
+    "kind": "image",
+    "name": "shield-core.svg",
+    "bytes": 1332,
+    "at": "2026-10-11T21:45:45.430Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/item-and-weapon-icons/shield-pack.svg",
+    "kind": "image",
+    "name": "shield-pack.svg",
+    "bytes": 993,
+    "at": "2026-10-11T21:45:45.430Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/item-and-weapon-icons/sr-8-longview.svg",
+    "kind": "image",
+    "name": "sr-8-longview.svg",
+    "bytes": 4916,
+    "at": "2026-10-11T21:45:45.427Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/item-and-weapon-icons/tethercaster.svg",
+    "kind": "image",
+    "name": "tethercaster.svg",
+    "bytes": 1130,
+    "at": "2026-10-11T21:45:45.433Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/item-and-weapon-icons/trauma-kit.svg",
+    "kind": "image",
+    "name": "trauma-kit.svg",
+    "bytes": 945,
+    "at": "2026-10-11T21:45:45.429Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/item-and-weapon-icons/veil-grenade.svg",
+    "kind": "image",
+    "name": "veil-grenade.svg",
+    "bytes": 1535,
+    "at": "2026-10-11T21:45:45.432Z",
+    "by": null
+   }
+  ],
+  "group": null,
+  "kind": "ui",
+  "milestone": "Combat and inventory",
+  "name": "Item and weapon icons",
+  "notes": "",
+  "order": 63,
+  "parts": [
+   {
+    "done": true,
+    "n": "5 weapons"
+   },
+   {
+    "done": true,
+    "n": "6 healing items"
+   },
+   {
+    "done": true,
+    "n": "3 grenades"
+   },
+   {
+    "done": true,
+    "n": "Tethercaster"
+   },
+   {
+    "done": true,
+    "n": "4 ammo types"
+   }
+  ],
+  "path": "game/assets/ui/brand-and-ui/item-and-weapon-icons/",
+  "source": null,
+  "stage": "Review",
+  "updatedAt": "2026-10-11T18:24:13.149Z",
+  "updatedBy": null,
+  "thumb": "repo/game/assets/ui/brand-and-ui/item-and-weapon-icons/ammo-heavy.svg"
+ },
+ {
+  "id": "hud-icon-set",
+  "budget": null,
+  "category": "Brand and UI",
+  "concepts": [
+   {
+    "at": "2026-10-11T17:33:30.750Z",
+    "by": null,
+    "id": "0d1b0a1b02314397b5449ee5dd300acf",
+    "name": "46-hud-icons.webp",
+    "source": "codex/concepts/v0.2/46-hud-icons.png"
+   }
+  ],
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": null,
+  "files": [
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/hud-icon-set/ammo.svg",
+    "kind": "image",
+    "name": "ammo.svg",
+    "bytes": 462,
+    "at": "2026-10-11T21:45:45.442Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/hud-icon-set/eliminations.svg",
+    "kind": "image",
+    "name": "eliminations.svg",
+    "bytes": 381,
+    "at": "2026-10-11T21:45:45.437Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/hud-icon-set/health.svg",
+    "kind": "image",
+    "name": "health.svg",
+    "bytes": 222,
+    "at": "2026-10-11T21:45:45.436Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/hud-icon-set/inventory.svg",
+    "kind": "image",
+    "name": "inventory.svg",
+    "bytes": 714,
+    "at": "2026-10-11T21:45:45.441Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/hud-icon-set/map.svg",
+    "kind": "image",
+    "name": "map.svg",
+    "bytes": 309,
+    "at": "2026-10-11T21:45:45.441Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/hud-icon-set/marker-danger.svg",
+    "kind": "image",
+    "name": "marker-danger.svg",
+    "bytes": 350,
+    "at": "2026-10-11T21:45:45.439Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/hud-icon-set/marker-loot.svg",
+    "kind": "image",
+    "name": "marker-loot.svg",
+    "bytes": 389,
+    "at": "2026-10-11T21:45:45.438Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/hud-icon-set/marker-ping.svg",
+    "kind": "image",
+    "name": "marker-ping.svg",
+    "bytes": 258,
+    "at": "2026-10-11T21:45:45.438Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/hud-icon-set/marker-vehicle.svg",
+    "kind": "image",
+    "name": "marker-vehicle.svg",
+    "bytes": 379,
+    "at": "2026-10-11T21:45:45.438Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/hud-icon-set/reload.svg",
+    "kind": "image",
+    "name": "reload.svg",
+    "bytes": 368,
+    "at": "2026-10-11T21:45:45.442Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/hud-icon-set/settings.svg",
+    "kind": "image",
+    "name": "settings.svg",
+    "bytes": 573,
+    "at": "2026-10-11T21:45:45.441Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/hud-icon-set/shield.svg",
+    "kind": "image",
+    "name": "shield.svg",
+    "bytes": 205,
+    "at": "2026-10-11T21:45:45.436Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/hud-icon-set/status-error.svg",
+    "kind": "image",
+    "name": "status-error.svg",
+    "bytes": 326,
+    "at": "2026-10-11T21:45:45.440Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/hud-icon-set/status-success.svg",
+    "kind": "image",
+    "name": "status-success.svg",
+    "bytes": 252,
+    "at": "2026-10-11T21:45:45.439Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/hud-icon-set/status-warning.svg",
+    "kind": "image",
+    "name": "status-warning.svg",
+    "bytes": 357,
+    "at": "2026-10-11T21:45:45.440Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/hud-icon-set/storm.svg",
+    "kind": "image",
+    "name": "storm.svg",
+    "bytes": 197,
+    "at": "2026-10-11T21:45:45.437Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/hud-icon-set/survivors.svg",
+    "kind": "image",
+    "name": "survivors.svg",
+    "bytes": 437,
+    "at": "2026-10-11T21:45:45.436Z",
+    "by": null
+   }
+  ],
+  "group": null,
+  "kind": "ui",
+  "milestone": "Combat and inventory",
+  "name": "HUD icon set",
+  "notes": "",
+  "order": 64,
+  "parts": [
+   {
+    "done": true,
+    "n": "Health"
+   },
+   {
+    "done": true,
+    "n": "Shield"
+   },
+   {
+    "done": true,
+    "n": "Survivors"
+   },
+   {
+    "done": true,
+    "n": "Eliminations"
+   },
+   {
+    "done": true,
+    "n": "Storm"
+   },
+   {
+    "done": true,
+    "n": "Map markers"
+   },
+   {
+    "done": true,
+    "n": "Status: success / warning / error"
+   }
+  ],
+  "path": "game/assets/ui/brand-and-ui/hud-icon-set/",
+  "source": null,
+  "stage": "Review",
+  "updatedAt": "2026-10-11T18:24:13.149Z",
+  "updatedBy": null,
+  "thumb": "repo/game/assets/ui/brand-and-ui/hud-icon-set/ammo.svg"
+ },
+ {
+  "id": "controller-and-key-glyphs",
+  "budget": null,
+  "category": "Brand and UI",
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": null,
+  "files": [
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/controller-and-key-glyphs/key-1.svg",
+    "kind": "image",
+    "name": "key-1.svg",
+    "bytes": 533,
+    "at": "2026-10-11T21:45:45.446Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/controller-and-key-glyphs/key-2.svg",
+    "kind": "image",
+    "name": "key-2.svg",
+    "bytes": 577,
+    "at": "2026-10-11T21:45:45.446Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/controller-and-key-glyphs/key-3.svg",
+    "kind": "image",
+    "name": "key-3.svg",
+    "bytes": 595,
+    "at": "2026-10-11T21:45:45.446Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/controller-and-key-glyphs/key-4.svg",
+    "kind": "image",
+    "name": "key-4.svg",
+    "bytes": 535,
+    "at": "2026-10-11T21:45:45.447Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/controller-and-key-glyphs/key-5.svg",
+    "kind": "image",
+    "name": "key-5.svg",
+    "bytes": 563,
+    "at": "2026-10-11T21:45:45.447Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/controller-and-key-glyphs/key-a.svg",
+    "kind": "image",
+    "name": "key-a.svg",
+    "bytes": 548,
+    "at": "2026-10-11T21:45:45.443Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/controller-and-key-glyphs/key-c.svg",
+    "kind": "image",
+    "name": "key-c.svg",
+    "bytes": 575,
+    "at": "2026-10-11T21:45:45.445Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/controller-and-key-glyphs/key-d.svg",
+    "kind": "image",
+    "name": "key-d.svg",
+    "bytes": 576,
+    "at": "2026-10-11T21:45:45.444Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/controller-and-key-glyphs/key-e.svg",
+    "kind": "image",
+    "name": "key-e.svg",
+    "bytes": 542,
+    "at": "2026-10-11T21:45:45.444Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/controller-and-key-glyphs/key-esc.svg",
+    "kind": "image",
+    "name": "key-esc.svg",
+    "bytes": 782,
+    "at": "2026-10-11T21:45:45.448Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/controller-and-key-glyphs/key-f.svg",
+    "kind": "image",
+    "name": "key-f.svg",
+    "bytes": 538,
+    "at": "2026-10-11T21:45:45.444Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/controller-and-key-glyphs/key-f1.svg",
+    "kind": "image",
+    "name": "key-f1.svg",
+    "bytes": 595,
+    "at": "2026-10-11T21:45:45.447Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/controller-and-key-glyphs/key-f5.svg",
+    "kind": "image",
+    "name": "key-f5.svg",
+    "bytes": 625,
+    "at": "2026-10-11T21:45:45.448Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/controller-and-key-glyphs/key-q.svg",
+    "kind": "image",
+    "name": "key-q.svg",
+    "bytes": 641,
+    "at": "2026-10-11T21:45:45.444Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/controller-and-key-glyphs/key-r.svg",
+    "kind": "image",
+    "name": "key-r.svg",
+    "bytes": 570,
+    "at": "2026-10-11T21:45:45.445Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/controller-and-key-glyphs/key-s.svg",
+    "kind": "image",
+    "name": "key-s.svg",
+    "bytes": 623,
+    "at": "2026-10-11T21:45:45.443Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/controller-and-key-glyphs/key-shift.svg",
+    "kind": "image",
+    "name": "key-shift.svg",
+    "bytes": 452,
+    "at": "2026-10-11T21:45:45.449Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/controller-and-key-glyphs/key-space.svg",
+    "kind": "image",
+    "name": "key-space.svg",
+    "bytes": 442,
+    "at": "2026-10-11T21:45:45.448Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/controller-and-key-glyphs/key-tab.svg",
+    "kind": "image",
+    "name": "key-tab.svg",
+    "bytes": 461,
+    "at": "2026-10-11T21:45:45.449Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/controller-and-key-glyphs/key-w.svg",
+    "kind": "image",
+    "name": "key-w.svg",
+    "bytes": 546,
+    "at": "2026-10-11T21:45:45.443Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/controller-and-key-glyphs/mouse-left.svg",
+    "kind": "image",
+    "name": "mouse-left.svg",
+    "bytes": 500,
+    "at": "2026-10-11T21:45:45.450Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/controller-and-key-glyphs/mouse-right.svg",
+    "kind": "image",
+    "name": "mouse-right.svg",
+    "bytes": 499,
+    "at": "2026-10-11T21:45:45.450Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/controller-and-key-glyphs/mouse-side.svg",
+    "kind": "image",
+    "name": "mouse-side.svg",
+    "bytes": 837,
+    "at": "2026-10-11T21:45:45.451Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/controller-and-key-glyphs/mouse-wheel.svg",
+    "kind": "image",
+    "name": "mouse-wheel.svg",
+    "bytes": 737,
+    "at": "2026-10-11T21:45:45.450Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/controller-and-key-glyphs/ps-circle.svg",
+    "kind": "image",
+    "name": "ps-circle.svg",
+    "bytes": 310,
+    "at": "2026-10-11T21:45:45.651Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/controller-and-key-glyphs/ps-cross.svg",
+    "kind": "image",
+    "name": "ps-cross.svg",
+    "bytes": 360,
+    "at": "2026-10-11T21:45:45.650Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/controller-and-key-glyphs/ps-dpad.svg",
+    "kind": "image",
+    "name": "ps-dpad.svg",
+    "bytes": 887,
+    "at": "2026-10-11T21:45:45.655Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/controller-and-key-glyphs/ps-l1.svg",
+    "kind": "image",
+    "name": "ps-l1.svg",
+    "bytes": 540,
+    "at": "2026-10-11T21:45:45.652Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/controller-and-key-glyphs/ps-l2.svg",
+    "kind": "image",
+    "name": "ps-l2.svg",
+    "bytes": 600,
+    "at": "2026-10-11T21:45:45.653Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/controller-and-key-glyphs/ps-l3.svg",
+    "kind": "image",
+    "name": "ps-l3.svg",
+    "bytes": 647,
+    "at": "2026-10-11T21:45:45.653Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/controller-and-key-glyphs/ps-options.svg",
+    "kind": "image",
+    "name": "ps-options.svg",
+    "bytes": 383,
+    "at": "2026-10-11T21:45:45.654Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/controller-and-key-glyphs/ps-r1.svg",
+    "kind": "image",
+    "name": "ps-r1.svg",
+    "bytes": 579,
+    "at": "2026-10-11T21:45:45.652Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/controller-and-key-glyphs/ps-r2.svg",
+    "kind": "image",
+    "name": "ps-r2.svg",
+    "bytes": 639,
+    "at": "2026-10-11T21:45:45.653Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/controller-and-key-glyphs/ps-r3.svg",
+    "kind": "image",
+    "name": "ps-r3.svg",
+    "bytes": 688,
+    "at": "2026-10-11T21:45:45.654Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/controller-and-key-glyphs/ps-share.svg",
+    "kind": "image",
+    "name": "ps-share.svg",
+    "bytes": 402,
+    "at": "2026-10-11T21:45:45.655Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/controller-and-key-glyphs/ps-square.svg",
+    "kind": "image",
+    "name": "ps-square.svg",
+    "bytes": 333,
+    "at": "2026-10-11T21:45:45.651Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/controller-and-key-glyphs/ps-triangle.svg",
+    "kind": "image",
+    "name": "ps-triangle.svg",
+    "bytes": 359,
+    "at": "2026-10-11T21:45:45.651Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/controller-and-key-glyphs/xbox-a.svg",
+    "kind": "image",
+    "name": "xbox-a.svg",
+    "bytes": 451,
+    "at": "2026-10-11T21:45:45.451Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/controller-and-key-glyphs/xbox-b.svg",
+    "kind": "image",
+    "name": "xbox-b.svg",
+    "bytes": 501,
+    "at": "2026-10-11T21:45:45.451Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/controller-and-key-glyphs/xbox-dpad.svg",
+    "kind": "image",
+    "name": "xbox-dpad.svg",
+    "bytes": 421,
+    "at": "2026-10-11T21:45:45.650Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/controller-and-key-glyphs/xbox-lb.svg",
+    "kind": "image",
+    "name": "xbox-lb.svg",
+    "bytes": 607,
+    "at": "2026-10-11T21:45:45.453Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/controller-and-key-glyphs/xbox-ls.svg",
+    "kind": "image",
+    "name": "xbox-ls.svg",
+    "bytes": 657,
+    "at": "2026-10-11T21:45:45.454Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/controller-and-key-glyphs/xbox-lt.svg",
+    "kind": "image",
+    "name": "xbox-lt.svg",
+    "bytes": 561,
+    "at": "2026-10-11T21:45:45.453Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/controller-and-key-glyphs/xbox-rb.svg",
+    "kind": "image",
+    "name": "xbox-rb.svg",
+    "bytes": 647,
+    "at": "2026-10-11T21:45:45.453Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/controller-and-key-glyphs/xbox-rs.svg",
+    "kind": "image",
+    "name": "xbox-rs.svg",
+    "bytes": 698,
+    "at": "2026-10-11T21:45:45.454Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/controller-and-key-glyphs/xbox-rt.svg",
+    "kind": "image",
+    "name": "xbox-rt.svg",
+    "bytes": 601,
+    "at": "2026-10-11T21:45:45.454Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/controller-and-key-glyphs/xbox-start.svg",
+    "kind": "image",
+    "name": "xbox-start.svg",
+    "bytes": 353,
+    "at": "2026-10-11T21:45:45.649Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/controller-and-key-glyphs/xbox-view.svg",
+    "kind": "image",
+    "name": "xbox-view.svg",
+    "bytes": 440,
+    "at": "2026-10-11T21:45:45.649Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/controller-and-key-glyphs/xbox-x.svg",
+    "kind": "image",
+    "name": "xbox-x.svg",
+    "bytes": 441,
+    "at": "2026-10-11T21:45:45.452Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/ui/brand-and-ui/controller-and-key-glyphs/xbox-y.svg",
+    "kind": "image",
+    "name": "xbox-y.svg",
+    "bytes": 446,
+    "at": "2026-10-11T21:45:45.452Z",
+    "by": null
+   }
+  ],
+  "group": null,
+  "kind": "ui",
+  "milestone": "Match loop",
+  "name": "Controller and key glyphs",
+  "notes": "",
+  "order": 65,
+  "parts": [
+   {
+    "done": true,
+    "n": "Keyboard and mouse"
+   },
+   {
+    "done": true,
+    "n": "Xbox"
+   },
+   {
+    "done": true,
+    "n": "PlayStation"
+   }
+  ],
+  "path": "game/assets/ui/brand-and-ui/controller-and-key-glyphs/",
+  "source": null,
+  "stage": "Review",
+  "updatedAt": "2026-10-11T18:24:13.149Z",
+  "updatedBy": null,
+  "thumb": "repo/game/assets/ui/brand-and-ui/controller-and-key-glyphs/key-1.svg"
+ },
+ {
+  "id": "ringfall-map-illustration",
+  "budget": "4096² top-down",
+  "category": "Brand and UI",
+  "concepts": [
+   {
+    "at": "2026-10-11T17:33:30.750Z",
+    "by": null,
+    "id": "ec89ee909cc5179dc6f773fa79d5de2e",
+    "name": "47-ringfall-map.webp",
+    "source": "codex/concepts/v0.2/47-ringfall-map.png"
+   }
+  ],
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": null,
+  "files": [
+   {
+    "id": "repo/asset-hub/data/shots/ringfall-height-map.jpg",
+    "kind": "image",
+    "name": "ringfall-height-map.jpg",
+    "bytes": 48867,
+    "at": "2026-10-12T01:57:33.435Z",
+    "by": null
+   }
+  ],
+  "group": null,
+  "kind": "art",
+  "milestone": "Match loop",
+  "name": "Ringfall map illustration",
+  "notes": "",
+  "order": 66,
+  "parts": [
+   {
+    "done": true,
+    "n": "Top-down render"
+   },
+   {
+    "done": false,
+    "n": "Location labels"
+   },
+   {
+    "done": false,
+    "n": "Minimap version"
+   }
+  ],
+  "path": "game/assets/art/brand-and-ui/ringfall-map-illustration.png",
+  "source": null,
+  "stage": "Draft",
+  "updatedAt": "2026-10-12T01:58:53.931Z",
+  "updatedBy": null,
+  "thumb": "repo/asset-hub/data/shots/ringfall-height-map.jpg"
+ },
+ {
+  "id": "loading-and-menu-key-art",
+  "budget": "3840×2160",
+  "category": "Brand and UI",
+  "concepts": [
+   {
+    "at": "2026-10-11T17:33:30.750Z",
+    "by": null,
+    "id": "0663d63f886e8f18009cc93e5f80b3da",
+    "name": "48-key-art.webp",
+    "source": "codex/concepts/v0.2/48-key-art.png"
+   }
+  ],
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": null,
+  "files": [],
+  "group": null,
+  "kind": "art",
+  "milestone": "Visual slice",
+  "name": "Loading and menu key art",
+  "notes": "",
+  "order": 67,
+  "parts": [
+   {
+    "done": false,
+    "n": "Ringfall vista"
+   },
+   {
+    "done": false,
+    "n": "Menu composition"
+   },
+   {
+    "done": false,
+    "n": "Loading variants"
+   }
+  ],
+  "path": "game/assets/art/brand-and-ui/loading-and-menu-key-art.png",
+  "source": null,
+  "stage": "Concept",
+  "updatedAt": "2026-10-11T18:24:13.149Z",
+  "updatedBy": null,
+  "thumb": null
+ },
+ {
+  "id": "font-files",
+  "budget": null,
+  "category": "Brand and UI",
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": null,
+  "files": [],
+  "group": null,
+  "kind": "ui",
+  "milestone": "Visual slice",
+  "name": "Font files",
+  "notes": "",
+  "order": 68,
+  "parts": [
+   {
+    "done": false,
+    "n": "Compare specimens"
+   },
+   {
+    "done": false,
+    "n": "Display family"
+   },
+   {
+    "done": false,
+    "n": "UI family"
+   },
+   {
+    "done": false,
+    "n": "License check and bundling"
+   }
+  ],
+  "path": "game/assets/ui/brand-and-ui/font-files/",
+  "source": null,
+  "stage": "Not started",
+  "updatedAt": "2026-10-11T18:24:13.149Z",
+  "updatedBy": null,
+  "thumb": null
+ },
+ {
+  "id": "main-menu-theme",
+  "budget": "Loopable · stereo",
+  "category": "Music",
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": null,
+  "files": [
+   {
+    "id": "repo/game/assets/audio/music/main-menu-theme/main-menu-theme-loop.wav",
+    "kind": "audio",
+    "name": "main-menu-theme-loop.wav",
+    "bytes": 12288044,
+    "at": "2026-10-11T21:42:33.845Z",
+    "by": null
+   }
+  ],
+  "group": null,
+  "kind": "audio",
+  "milestone": "Match loop",
+  "name": "Main menu theme",
+  "notes": "Synthesized placeholders (art/audio-tools); replace with recorded or designed sounds before launch.",
+  "order": 69,
+  "parts": [
+   {
+    "done": true,
+    "n": "Composition"
+   },
+   {
+    "done": true,
+    "n": "Loop edit"
+   },
+   {
+    "done": true,
+    "n": "Mix"
+   }
+  ],
+  "path": "game/assets/audio/music/main-menu-theme/",
+  "source": "art/music/main-menu-theme/",
+  "stage": "Review",
+  "updatedAt": "2026-10-11T18:24:13.149Z",
+  "updatedBy": null,
+  "thumb": null
+ },
+ {
+  "id": "match-stingers",
+  "budget": null,
+  "category": "Music",
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": null,
+  "files": [
+   {
+    "id": "repo/game/assets/audio/music/match-stingers/drop-start.wav",
+    "kind": "audio",
+    "name": "drop-start.wav",
+    "bytes": 1248044,
+    "at": "2026-10-11T21:58:33.692Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/music/match-stingers/eliminated.wav",
+    "kind": "audio",
+    "name": "eliminated.wav",
+    "bytes": 1152044,
+    "at": "2026-10-11T21:58:43.266Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/music/match-stingers/final-survivors.wav",
+    "kind": "audio",
+    "name": "final-survivors.wav",
+    "bytes": 1344044,
+    "at": "2026-10-11T21:58:36.461Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/music/match-stingers/storm-closing.wav",
+    "kind": "audio",
+    "name": "storm-closing.wav",
+    "bytes": 1152044,
+    "at": "2026-10-11T21:58:34.528Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/music/match-stingers/victory.wav",
+    "kind": "audio",
+    "name": "victory.wav",
+    "bytes": 1344044,
+    "at": "2026-10-11T21:58:38.720Z",
+    "by": null
+   }
+  ],
+  "group": null,
+  "kind": "audio",
+  "milestone": "Match loop",
+  "name": "Match stingers",
+  "notes": "Synthesized placeholders (art/audio-tools); replace with recorded or designed sounds before launch.",
+  "order": 70,
+  "parts": [
+   {
+    "done": true,
+    "n": "Drop start"
+   },
+   {
+    "done": true,
+    "n": "Storm closing"
+   },
+   {
+    "done": true,
+    "n": "Final survivors"
+   },
+   {
+    "done": true,
+    "n": "Victory"
+   },
+   {
+    "done": true,
+    "n": "Eliminated"
+   }
+  ],
+  "path": "game/assets/audio/music/match-stingers/",
+  "source": "art/music/match-stingers/",
+  "stage": "Review",
+  "updatedAt": "2026-10-11T18:24:13.149Z",
+  "updatedBy": null,
+  "thumb": null
+ },
+ {
+  "id": "ringfall-ambience",
+  "budget": null,
+  "category": "Ambience",
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": null,
+  "files": [
+   {
+    "id": "repo/game/assets/audio/ambience/ringfall-ambience/bloomwild-wildlife-loop.wav",
+    "kind": "audio",
+    "name": "bloomwild-wildlife-loop.wav",
+    "bytes": 2496044,
+    "at": "2026-10-11T21:54:59.265Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/ambience/ringfall-ambience/colony-hum-loop.wav",
+    "kind": "audio",
+    "name": "colony-hum-loop.wav",
+    "bytes": 2304044,
+    "at": "2026-10-11T21:55:40.339Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/ambience/ringfall-ambience/glass-basin-water-loop.wav",
+    "kind": "audio",
+    "name": "glass-basin-water-loop.wav",
+    "bytes": 2304044,
+    "at": "2026-10-11T21:55:25.993Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/ambience/ringfall-ambience/interior-tone-loop.wav",
+    "kind": "audio",
+    "name": "interior-tone-loop.wav",
+    "bytes": 1920044,
+    "at": "2026-10-11T21:55:43.205Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/ambience/ringfall-ambience/wind-open-loop.wav",
+    "kind": "audio",
+    "name": "wind-open-loop.wav",
+    "bytes": 2304044,
+    "at": "2026-10-11T21:54:36.734Z",
+    "by": null
+   }
+  ],
+  "group": null,
+  "kind": "audio",
+  "milestone": "Visual slice",
+  "name": "Ringfall ambience",
+  "notes": "Synthesized placeholders (art/audio-tools); replace with recorded or designed sounds before launch.",
+  "order": 71,
+  "parts": [
+   {
+    "done": true,
+    "n": "Wind (open ground)"
+   },
+   {
+    "done": true,
+    "n": "Bloomwild wildlife"
+   },
+   {
+    "done": true,
+    "n": "Glass Basin water"
+   },
+   {
+    "done": true,
+    "n": "Colony hum"
+   },
+   {
+    "done": true,
+    "n": "Interior tone"
+   }
+  ],
+  "path": "game/assets/audio/ambience/ringfall-ambience/",
+  "source": "art/ambience/ringfall-ambience/",
+  "stage": "Review",
+  "updatedAt": "2026-10-11T18:24:13.149Z",
+  "updatedBy": null,
+  "thumb": null
+ },
+ {
+  "id": "ion-storm-audio",
+  "budget": null,
+  "category": "Ambience",
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": null,
+  "files": [
+   {
+    "id": "repo/game/assets/audio/ambience/ion-storm-audio/inside-storm-damage-loop.wav",
+    "kind": "audio",
+    "name": "inside-storm-damage-loop.wav",
+    "bytes": 576044,
+    "at": "2026-10-11T21:57:26.904Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/ambience/ion-storm-audio/storm-wall-loop.wav",
+    "kind": "audio",
+    "name": "storm-wall-loop.wav",
+    "bytes": 1536044,
+    "at": "2026-10-11T21:55:56.439Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/ambience/ion-storm-audio/thunder-close-01.wav",
+    "kind": "audio",
+    "name": "thunder-close-01.wav",
+    "bytes": 671594,
+    "at": "2026-10-11T21:56:31.428Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/ambience/ion-storm-audio/thunder-close-02.wav",
+    "kind": "audio",
+    "name": "thunder-close-02.wav",
+    "bytes": 672044,
+    "at": "2026-10-11T21:57:26.216Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/ambience/ion-storm-audio/thunder-distant-01.wav",
+    "kind": "audio",
+    "name": "thunder-distant-01.wav",
+    "bytes": 768044,
+    "at": "2026-10-11T21:56:20.275Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/ambience/ion-storm-audio/thunder-distant-02.wav",
+    "kind": "audio",
+    "name": "thunder-distant-02.wav",
+    "bytes": 768044,
+    "at": "2026-10-11T21:56:51.723Z",
+    "by": null
+   }
+  ],
+  "group": null,
+  "kind": "audio",
+  "milestone": "Match loop",
+  "name": "Ion storm audio",
+  "notes": "Synthesized placeholders (art/audio-tools); replace with recorded or designed sounds before launch.",
+  "order": 72,
+  "parts": [
+   {
+    "done": true,
+    "n": "Storm wall loop"
+   },
+   {
+    "done": true,
+    "n": "Thunder (distant / close)"
+   },
+   {
+    "done": true,
+    "n": "Inside-storm damage tone"
+   }
+  ],
+  "path": "game/assets/audio/ambience/ion-storm-audio/",
+  "source": "art/ambience/ion-storm-audio/",
+  "stage": "Review",
+  "updatedAt": "2026-10-11T18:24:13.149Z",
+  "updatedBy": null,
+  "thumb": null
+ },
+ {
+  "id": "interface-sounds",
+  "budget": null,
+  "category": "UI audio",
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": null,
+  "files": [
+   {
+    "id": "repo/game/assets/audio/ui-audio/interface-sounds/back.wav",
+    "kind": "audio",
+    "name": "back.wav",
+    "bytes": 65880,
+    "at": "2026-10-11T21:23:58.552Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/ui-audio/interface-sounds/confirm.wav",
+    "kind": "audio",
+    "name": "confirm.wav",
+    "bytes": 74440,
+    "at": "2026-10-11T21:23:58.402Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/ui-audio/interface-sounds/error.wav",
+    "kind": "audio",
+    "name": "error.wav",
+    "bytes": 73666,
+    "at": "2026-10-11T21:23:58.576Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/ui-audio/interface-sounds/navigate.wav",
+    "kind": "audio",
+    "name": "navigate.wav",
+    "bytes": 42718,
+    "at": "2026-10-11T21:23:58.386Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/ui-audio/interface-sounds/slider-tick.wav",
+    "kind": "audio",
+    "name": "slider-tick.wav",
+    "bytes": 5804,
+    "at": "2026-10-11T21:23:58.565Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/ui-audio/interface-sounds/toggle.wav",
+    "kind": "audio",
+    "name": "toggle.wav",
+    "bytes": 41196,
+    "at": "2026-10-11T21:23:58.563Z",
+    "by": null
+   }
+  ],
+  "group": null,
+  "kind": "audio",
+  "milestone": "Match loop",
+  "name": "Interface sounds",
+  "notes": "Synthesized placeholders (art/audio-tools); replace with recorded or designed sounds before launch.",
+  "order": 73,
+  "parts": [
+   {
+    "done": true,
+    "n": "Navigate"
+   },
+   {
+    "done": true,
+    "n": "Confirm"
+   },
+   {
+    "done": true,
+    "n": "Back"
+   },
+   {
+    "done": true,
+    "n": "Toggle"
+   },
+   {
+    "done": true,
+    "n": "Slider tick"
+   },
+   {
+    "done": true,
+    "n": "Error"
+   }
+  ],
+  "path": "game/assets/audio/ui-audio/interface-sounds/",
+  "source": "art/ui-audio/interface-sounds/",
+  "stage": "Review",
+  "updatedAt": "2026-10-11T18:24:13.149Z",
+  "updatedBy": null,
+  "thumb": null
+ },
+ {
+  "id": "match-feedback-sounds",
+  "budget": null,
+  "category": "UI audio",
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": null,
+  "files": [
+   {
+    "id": "repo/game/assets/audio/ui-audio/match-feedback-sounds/elimination-confirm.wav",
+    "kind": "audio",
+    "name": "elimination-confirm.wav",
+    "bytes": 135084,
+    "at": "2026-10-11T21:51:46.658Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/ui-audio/match-feedback-sounds/hit-marker-01.wav",
+    "kind": "audio",
+    "name": "hit-marker-01.wav",
+    "bytes": 14446,
+    "at": "2026-10-11T21:51:46.609Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/ui-audio/match-feedback-sounds/hit-marker-02.wav",
+    "kind": "audio",
+    "name": "hit-marker-02.wav",
+    "bytes": 14446,
+    "at": "2026-10-11T21:51:46.612Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/ui-audio/match-feedback-sounds/hit-marker-03.wav",
+    "kind": "audio",
+    "name": "hit-marker-03.wav",
+    "bytes": 14446,
+    "at": "2026-10-11T21:51:46.616Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/ui-audio/match-feedback-sounds/inventory-full.wav",
+    "kind": "audio",
+    "name": "inventory-full.wav",
+    "bytes": 66914,
+    "at": "2026-10-11T21:51:46.897Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/ui-audio/match-feedback-sounds/low-health-loop.wav",
+    "kind": "audio",
+    "name": "low-health-loop.wav",
+    "bytes": 153644,
+    "at": "2026-10-11T21:51:46.826Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/ui-audio/match-feedback-sounds/pickup.wav",
+    "kind": "audio",
+    "name": "pickup.wav",
+    "bytes": 51658,
+    "at": "2026-10-11T21:51:46.857Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/ui-audio/match-feedback-sounds/shield-break.wav",
+    "kind": "audio",
+    "name": "shield-break.wav",
+    "bytes": 102458,
+    "at": "2026-10-11T21:51:46.806Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/ui-audio/match-feedback-sounds/storm-warning.wav",
+    "kind": "audio",
+    "name": "storm-warning.wav",
+    "bytes": 272452,
+    "at": "2026-10-11T21:51:47.002Z",
+    "by": null
+   }
+  ],
+  "group": null,
+  "kind": "audio",
+  "milestone": "Combat and inventory",
+  "name": "Match feedback sounds",
+  "notes": "Synthesized placeholders (art/audio-tools); replace with recorded or designed sounds before launch.",
+  "order": 74,
+  "parts": [
+   {
+    "done": true,
+    "n": "Hit marker"
+   },
+   {
+    "done": true,
+    "n": "Elimination confirm"
+   },
+   {
+    "done": true,
+    "n": "Shield break"
+   },
+   {
+    "done": true,
+    "n": "Low health"
+   },
+   {
+    "done": true,
+    "n": "Pickup"
+   },
+   {
+    "done": true,
+    "n": "Inventory full"
+   },
+   {
+    "done": true,
+    "n": "Storm warning"
+   }
+  ],
+  "path": "game/assets/audio/ui-audio/match-feedback-sounds/",
+  "source": "art/ui-audio/match-feedback-sounds/",
+  "stage": "Review",
+  "updatedAt": "2026-10-11T18:24:13.149Z",
+  "updatedBy": null,
+  "thumb": null
+ },
+ {
+  "id": "footsteps",
+  "budget": null,
+  "category": "Foley",
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": null,
+  "files": [
+   {
+    "id": "repo/game/assets/audio/foley/footsteps/basalt-01.wav",
+    "kind": "audio",
+    "name": "basalt-01.wav",
+    "bytes": 30272,
+    "at": "2026-10-11T21:24:08.176Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/foley/footsteps/basalt-02.wav",
+    "kind": "audio",
+    "name": "basalt-02.wav",
+    "bytes": 28872,
+    "at": "2026-10-11T21:24:08.189Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/foley/footsteps/basalt-03.wav",
+    "kind": "audio",
+    "name": "basalt-03.wav",
+    "bytes": 31412,
+    "at": "2026-10-11T21:24:08.203Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/foley/footsteps/basalt-04.wav",
+    "kind": "audio",
+    "name": "basalt-04.wav",
+    "bytes": 31700,
+    "at": "2026-10-11T21:24:08.252Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/foley/footsteps/glass-01.wav",
+    "kind": "audio",
+    "name": "glass-01.wav",
+    "bytes": 29786,
+    "at": "2026-10-11T21:24:12.853Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/foley/footsteps/glass-02.wav",
+    "kind": "audio",
+    "name": "glass-02.wav",
+    "bytes": 28884,
+    "at": "2026-10-11T21:24:12.867Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/foley/footsteps/glass-03.wav",
+    "kind": "audio",
+    "name": "glass-03.wav",
+    "bytes": 29794,
+    "at": "2026-10-11T21:24:16.619Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/foley/footsteps/glass-04.wav",
+    "kind": "audio",
+    "name": "glass-04.wav",
+    "bytes": 29786,
+    "at": "2026-10-11T21:24:16.632Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/foley/footsteps/grass-01.wav",
+    "kind": "audio",
+    "name": "grass-01.wav",
+    "bytes": 27626,
+    "at": "2026-10-11T21:24:08.265Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/foley/footsteps/grass-02.wav",
+    "kind": "audio",
+    "name": "grass-02.wav",
+    "bytes": 31322,
+    "at": "2026-10-11T21:24:08.306Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/foley/footsteps/grass-03.wav",
+    "kind": "audio",
+    "name": "grass-03.wav",
+    "bytes": 27758,
+    "at": "2026-10-11T21:24:08.320Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/foley/footsteps/grass-04.wav",
+    "kind": "audio",
+    "name": "grass-04.wav",
+    "bytes": 31206,
+    "at": "2026-10-11T21:24:08.333Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/foley/footsteps/jump.wav",
+    "kind": "audio",
+    "name": "jump.wav",
+    "bytes": 52028,
+    "at": "2026-10-11T21:24:16.866Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/foley/footsteps/land.wav",
+    "kind": "audio",
+    "name": "land.wav",
+    "bytes": 56610,
+    "at": "2026-10-11T21:24:16.954Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/foley/footsteps/metal-01.wav",
+    "kind": "audio",
+    "name": "metal-01.wav",
+    "bytes": 44520,
+    "at": "2026-10-11T21:24:09.072Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/foley/footsteps/metal-02.wav",
+    "kind": "audio",
+    "name": "metal-02.wav",
+    "bytes": 44202,
+    "at": "2026-10-11T21:24:09.138Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/foley/footsteps/metal-03.wav",
+    "kind": "audio",
+    "name": "metal-03.wav",
+    "bytes": 44204,
+    "at": "2026-10-11T21:24:09.160Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/foley/footsteps/metal-04.wav",
+    "kind": "audio",
+    "name": "metal-04.wav",
+    "bytes": 44204,
+    "at": "2026-10-11T21:24:12.839Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/foley/footsteps/shallow-water-01.wav",
+    "kind": "audio",
+    "name": "shallow-water-01.wav",
+    "bytes": 41938,
+    "at": "2026-10-11T21:24:16.703Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/foley/footsteps/shallow-water-02.wav",
+    "kind": "audio",
+    "name": "shallow-water-02.wav",
+    "bytes": 40272,
+    "at": "2026-10-11T21:24:16.719Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/foley/footsteps/shallow-water-03.wav",
+    "kind": "audio",
+    "name": "shallow-water-03.wav",
+    "bytes": 42288,
+    "at": "2026-10-11T21:24:16.780Z",
+    "by": null
+   },
+   {
+    "id": "repo/game/assets/audio/foley/footsteps/shallow-water-04.wav",
+    "kind": "audio",
+    "name": "shallow-water-04.wav",
+    "bytes": 40476,
+    "at": "2026-10-11T21:24:16.795Z",
+    "by": null
+   }
+  ],
+  "group": null,
+  "kind": "audio",
+  "milestone": "Traversal",
+  "name": "Footsteps",
+  "notes": "Synthesized placeholders (art/audio-tools); replace with recorded or designed sounds before launch.",
+  "order": 75,
+  "parts": [
+   {
+    "done": true,
+    "n": "Basalt"
+   },
+   {
+    "done": true,
+    "n": "Grass"
+   },
+   {
+    "done": true,
+    "n": "Metal"
+   },
+   {
+    "done": true,
+    "n": "Glass"
+   },
+   {
+    "done": true,
+    "n": "Shallow water"
+   },
+   {
+    "done": true,
+    "n": "Jump and land"
+   }
+  ],
+  "path": "game/assets/audio/foley/footsteps/",
+  "source": "art/foley/footsteps/",
+  "stage": "Review",
+  "updatedAt": "2026-10-11T18:24:13.149Z",
+  "updatedBy": null,
+  "thumb": null
+ },
+ {
+  "id": "announcer-callouts",
+  "budget": null,
+  "category": "Voice",
+  "createdAt": "2026-10-11T16:53:34.062Z",
+  "decision": "Whether the game has announcer voice lines is undecided (subtitles are planned).",
+  "files": [],
+  "group": null,
+  "kind": "audio",
+  "milestone": "Full local match",
+  "name": "Announcer callouts",
+  "notes": "",
+  "order": 76,
+  "parts": [
+   {
+    "done": false,
+    "n": "Storm closing"
+   },
+   {
+    "done": false,
+    "n": "Survivors remaining"
+   },
+   {
+    "done": false,
+    "n": "Victory"
+   }
+  ],
+  "path": "game/assets/audio/voice/announcer-callouts/",
+  "source": "art/voice/announcer-callouts/",
+  "stage": "Not started",
+  "updatedAt": "2026-10-11T18:24:13.149Z",
+  "updatedBy": null,
+  "thumb": null
+ }
+]
