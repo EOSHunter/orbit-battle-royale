@@ -23,7 +23,7 @@ float noise(vec2 p) {
 float fbm(vec2 p) {
 	float v = 0.0;
 	float a = 0.5;
-	for (int i = 0; i < 4; i++) {
+	for (int i = 0; i < 2; i++) {
 		v += a * noise(p);
 		p *= 2.03;
 		a *= 0.5;
@@ -44,5 +44,7 @@ void fragment() {
 	// Fade the top so the wall doesn't end in a hard line against the sky.
 	// CylinderMesh UV.y runs from 0 at the top to 1 at the bottom.
 	a *= smoothstep(0.0, 0.3, UV.y);
+	// Strong up close, a faint line on the horizon from far inside the safe zone.
+	a *= mix(0.12, 1.0, smoothstep(450.0, 60.0, length(VERTEX)));
 	ALBEDO = col * a;
 }

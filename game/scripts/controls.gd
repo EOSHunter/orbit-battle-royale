@@ -37,15 +37,15 @@ func _ready() -> void:
 		_bind("teleport_%d" % (i + 1), [_key((KEY_F6 + i) as Key)], [])
 
 
-const SCENES := ["res://scenes/arena.tscn", "res://scenes/playground.tscn"]
+const SCENES := ["res://scenes/ringfall.tscn", "res://scenes/arena.tscn", "res://scenes/playground.tscn"]
 
 
-## F10 switches between the combat arena and the movement playground.
+## F10 cycles the Ringfall map, the combat arena and the movement playground.
 func _unhandled_input(event: InputEvent) -> void:
 	var key := event as InputEventKey
 	if key and key.pressed and not key.echo and key.physical_keycode == KEY_F10:
 		var current := get_tree().current_scene.scene_file_path
-		get_tree().change_scene_to_file(SCENES[1] if current == SCENES[0] else SCENES[0])
+		get_tree().change_scene_to_file(SCENES[(SCENES.find(current) + 1) % SCENES.size()])
 
 
 func _bind(action: StringName, keys: Array, pad: Array, deadzone := 0.2) -> void:

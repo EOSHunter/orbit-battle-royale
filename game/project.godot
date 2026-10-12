@@ -7,7 +7,7 @@ config_version=5
 
 config/name="Orbit Royale"
 config/description="Combat slice and movement playground"
-run/main_scene="res://scenes/arena.tscn"
+run/main_scene="res://scenes/ringfall.tscn"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -37,7 +37,8 @@ anti_aliasing/quality/msaa_3d=1
 [importer_defaults]
 
 texture={
-"compress/lossy_quality": 0.85,
+"compress/lossy_quality": 0.75,
+"process/size_limit": 1024,
 "compress/mode": 1,
 "detect_3d/compress_to": 0
 }

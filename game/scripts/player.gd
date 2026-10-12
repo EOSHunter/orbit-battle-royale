@@ -18,6 +18,9 @@ enum State { GROUND, AIR, TETHERED, DEAD }
 const STAND_HEIGHT := 1.8
 const CROUCH_HEIGHT := 1.1
 const HEAD_FROM_TOP := 0.18
+## Swimming: feet this far below the surface means deep water (head stays above).
+const SWIM_DEPTH := 1.35
+const SWIM_SPEED := 3.0
 const AIM_SENSITIVITY := 0.7
 const EDGE_ZONE := 0.12             # fraction of the window width / height
 const EDGE_TURN_SPEED := Vector2(2.6, 1.3)  # rad/s at the very edge
@@ -50,6 +53,9 @@ var _coyote := 0.0
 var _jump_buffer := 0.0
 var _peak_y := 0.0
 var _was_on_floor := true
+## Water surface height for swimming; the default keeps maps without water dry.
+@export var water_level := -10000.0
+var in_water := false
 var _aura: CPUParticles3D
 var _dust_left := 0.0
 var _land_dip := 0.0
@@ -218,6 +224,7 @@ func _physics_process(delta: float) -> void:
 			_jump_buffer = 0.0
 			_coyote = 0.0
 
+	_swim(delta)
 	var fall_speed := -velocity.y
 	move_and_slide()
 	_track_landing(fall_speed)
@@ -420,6 +427,25 @@ func _update_crouch(delta: float) -> void:
 	var target := CROUCH_HEIGHT if crouching else STAND_HEIGHT
 	_shape.height = move_toward(_shape.height, target, delta * 6.0)
 	_shape_node.position.y = _shape.height * 0.5
+
+
+## Deep water: float with the head above the surface, move slowly, no sprint.
+## Crossing open water is meant to be slow and exposed. Shallow water (below
+## the chest) is waded through normally.
+func _swim(delta: float) -> void:
+	in_water = global_position.y < water_level - SWIM_DEPTH
+	if not in_water or tether.is_attached():
+		return
+	sprinting = false
+	var depth := water_level - SWIM_DEPTH - global_position.y
+	# Cancel this frame's gravity, then ease toward floating at the surface.
+	velocity.y += tuning.gravity * delta
+	velocity.y = move_toward(velocity.y, clampf(depth * 3.0, -1.5, 2.5), delta * 40.0)
+	var flat := Vector2(velocity.x, velocity.z).limit_length(SWIM_SPEED)
+	velocity.x = flat.x
+	velocity.z = flat.y
+	if Input.is_action_just_pressed("jump") and depth < 0.3:
+		velocity.y = tuning.jump_velocity * 0.6
 
 
 func _track_landing(fall_speed: float) -> void:

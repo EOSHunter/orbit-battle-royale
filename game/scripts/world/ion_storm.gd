@@ -91,6 +91,11 @@ func _physics_process(delta: float) -> void:
 		_apply_radius()
 		if _timer <= 0.0:
 			_next_phase()
+	# The wall is a big translucent surface: skip drawing it when it is far away.
+	var cam := get_viewport().get_camera_3d()
+	if cam:
+		var d := Vector2(cam.global_position.x - global_position.x, cam.global_position.z - global_position.z).length()
+		_wall.visible = absf(d - radius) < 450.0
 	_tick -= delta
 	if _tick <= 0.0:
 		_tick = 1.0

@@ -2,7 +2,10 @@ extends Node3D
 ## Combat slice: loot on the ground, three bots, elimination feed, win or lose,
 ## and F5 to play again. Bots hear the player's gunfire within their range.
 
-const KILL_HEIGHT := -60.0
+## Falling below this height respawns the player at the spawn point.
+@export var kill_height := -60.0
+## Bots in the round; names and weapons cycle through BOT_SETUP.
+@export var bot_count := 3
 const LOCK_TIMEOUT := 0.6
 const BOT_SETUP := [
 	{"name": "Bot Rhea", "weapon": &"ar7"},
@@ -49,8 +52,8 @@ func start_round() -> void:
 	for b in get_tree().get_nodes_in_group("bots"):
 		b.queue_free()
 	var spots := _markers.get_node("LootSpots").get_children()
-	for i in mini(LOOT.size(), spots.size()):
-		var entry: Dictionary = LOOT[i]
+	for i in spots.size():
+		var entry: Dictionary = LOOT[i % LOOT.size()]
 		var at := (spots[i] as Node3D).global_position
 		if entry.has("ammo"):
 			Pickup.spawn_ammo(_loot, entry.ammo, int(entry.n), at)
@@ -61,8 +64,11 @@ func start_round() -> void:
 		cover.append((m as Node3D).global_position)
 	var spawns := _markers.get_node("BotSpawns").get_children()
 	_bots_alive = 0
-	for i in BOT_SETUP.size():
-		var bot := _make_bot(BOT_SETUP[i])
+	for i in bot_count:
+		var setup: Dictionary = BOT_SETUP[i % BOT_SETUP.size()].duplicate()
+		if i >= BOT_SETUP.size():
+			setup.name = "%s %d" % [setup.name, i / BOT_SETUP.size() + 1]
+		var bot := _make_bot(setup)
 		add_child(bot)
 		bot.global_position = (spawns[i % spawns.size()] as Node3D).global_position
 		bot.target = player
@@ -72,7 +78,7 @@ func start_round() -> void:
 	player.respawn((_markers.get_node("PlayerSpawn") as Node3D).global_transform)
 	hud.alive_count = _bots_alive + 1
 	hud.eliminations = 0
-	hud.toast("Find a weapon. Three bots are on the field.")
+	hud.toast("Find a weapon. %d bots are on the field." % bot_count)
 
 
 func _make_bot(setup: Dictionary) -> Bot:
@@ -150,5 +156,5 @@ func _physics_process(delta: float) -> void:
 		elif _lock_wait <= 0.0:
 			_lock_refused = true
 			_recapture()
-	if player.global_position.y < KILL_HEIGHT:
+	if player.global_position.y < kill_height:
 		player.teleport_to((_markers.get_node("PlayerSpawn") as Node3D).global_transform)

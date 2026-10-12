@@ -9,10 +9,11 @@ uniform vec3 ground_color : source_color = vec3(0.043, 0.063, 0.106);
 uniform float star_density = 0.0025;
 
 // Rings: a plane through the planet's center seen from its surface. Directions
-// whose elevation above the ring plane falls between inner and outer show ring.
-uniform vec3 ring_normal = vec3(0.26, 0.93, 0.25);
-uniform float ring_inner_deg = 9.0;
-uniform float ring_outer_deg = 27.0;
+// within a few degrees of the plane form a band: a great-circle arc sweeping
+// diagonally across the sky, the way rings look from the planet's surface.
+uniform vec3 ring_normal = vec3(0.3, 0.55, 0.78);
+uniform float ring_inner_deg = -3.0;
+uniform float ring_outer_deg = 9.0;
 uniform vec3 ring_color : source_color = vec3(0.93, 0.89, 0.98);
 uniform vec3 ring_shadow_color : source_color = vec3(0.55, 0.5, 0.72);
 uniform float ring_opacity = 0.75;
