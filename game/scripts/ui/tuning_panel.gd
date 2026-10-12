@@ -23,8 +23,6 @@ const TUNABLES := [
 	["grapple_max_speed", "Tether max speed", 10.0, 80.0, 1.0],
 	["release_boost", "Jump-release boost", 0.0, 15.0, 0.1],
 	["grapple_cooldown", "Tether recharge", 0.0, 15.0, 0.1],
-	["mouse_sensitivity", "Mouse sensitivity", 0.1, 3.0, 0.05],
-	["fov", "Field of view", 60.0, 120.0, 1.0],
 ]
 
 var _panel: PanelContainer

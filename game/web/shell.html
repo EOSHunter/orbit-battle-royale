@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+<title>$GODOT_PROJECT_NAME</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<!-- Orbit Royale's own boot screen (replaces Godot's): key art, the mode, a
+     real download progress bar and tips, matching the in-game loading screen.
+     tools/export_web.sh copies key-art.jpg, logo.svg, favicon.svg and the
+     fonts next to this page. -->
+<style>
+@font-face { font-family: "Archivo"; src: url("fonts/Archivo-Variable.ttf") format("truetype"); font-weight: 100 900; font-stretch: 62% 125%; font-display: swap; }
+@font-face { font-family: "Plex"; src: url("fonts/IBMPlexSans-Variable.ttf") format("truetype"); font-weight: 100 700; font-display: swap; }
+:root { --bg: #0b101b; --text: #f3f5fa; --text-2: #b4bfd0; --text-3: #7d889b; --accent: #c5f277; --danger: #ff797f; }
+html, body, #canvas { margin: 0; padding: 0; border: 0; }
+body { color: var(--text); background: var(--bg); overflow: hidden; touch-action: none; font-family: "Plex", "Segoe UI", system-ui, sans-serif; }
+#canvas { display: block; }
+#canvas:focus { outline: none; }
+
+#boot { position: fixed; inset: 0; z-index: 2; background: var(--bg); transition: opacity .6s ease; }
+#boot.gone { opacity: 0; pointer-events: none; }
+#boot .art { position: absolute; inset: 0; background: url("key-art.jpg") center / cover no-repeat; transform: scale(1.04); animation: drift 30s ease-in-out infinite alternate; }
+@keyframes drift { to { transform: scale(1.0); } }
+@media (prefers-reduced-motion: reduce) { #boot .art { animation: none; } }
+#boot .shade { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(11,16,27,.45) 0%, rgba(11,16,27,0) 20%, rgba(11,16,27,0) 48%, rgba(11,16,27,.86) 80%, var(--bg) 100%); }
+#boot .safe { position: absolute; inset: 48px 64px 40px; display: flex; flex-direction: column; }
+#boot .logo { width: min(320px, 30vw); align-self: flex-start; }
+#boot .bottom { margin-top: auto; display: flex; gap: 40px; align-items: flex-end; }
+#boot .left { flex: 1; min-width: 0; }
+.eyebrow { font-family: "Archivo", "Arial Narrow", sans-serif; font-weight: 640; text-transform: uppercase; letter-spacing: .24em; font-size: 16px; color: var(--text-2); }
+.eyebrow.dash::before { content: ""; display: inline-block; width: 44px; height: 1px; background: var(--text-3); vertical-align: middle; margin-right: 14px; }
+h1 { font-family: "Archivo", "Arial Narrow", sans-serif; font-weight: 860; font-stretch: 78%; text-transform: uppercase; font-size: clamp(56px, 10.7vh, 116px); line-height: .9; margin: 14px 0; letter-spacing: -.005em; }
+.status { display: flex; align-items: baseline; }
+.status .eyebrow { color: var(--text); font-size: 20px; }
+.pct { margin-left: auto; font-family: "Archivo", sans-serif; font-weight: 700; color: var(--accent); font-size: 24px; }
+.bar { height: 3px; background: rgba(255,255,255,.15); margin-top: 10px; }
+.bar i { display: block; height: 100%; width: 0; background: var(--accent); transition: width .25s ease; }
+.size { margin-top: 10px; font-size: 12px; color: var(--text-3); }
+.tip { width: 420px; border-left: 1px solid rgba(255,255,255,.3); padding-left: 32px; }
+.tip .head { display: flex; gap: 10px; align-items: center; margin: 10px 0; }
+.key { font-family: "Archivo", sans-serif; font-size: 16px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; background: var(--text); color: var(--bg); min-width: 30px; height: 30px; padding: 0 8px; display: inline-flex; align-items: center; justify-content: center; border-radius: 2px; }
+.tip .name { font-family: "Archivo", sans-serif; font-weight: 600; text-transform: uppercase; letter-spacing: .14em; font-size: 20px; }
+.tip p { margin: 0 0 12px; color: var(--text-2); font-size: 18px; line-height: 1.45; }
+.dots { display: flex; gap: 6px; }
+.dots i { width: 18px; height: 2px; background: rgba(255,255,255,.2); }
+.dots i.on { background: var(--accent); }
+#error { display: none; margin-top: 14px; color: var(--danger); font-size: 14px; line-height: 1.4; max-width: 640px; }
+#retry { display: none; margin-top: 14px; font-family: "Archivo", sans-serif; font-weight: 760; letter-spacing: .14em; text-transform: uppercase; font-size: 13px; background: var(--accent); color: var(--bg); border: 0; padding: 12px 22px; cursor: pointer; }
+#retry:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+@media (max-width: 860px) { .tip { display: none; } #boot .safe { inset: 24px 20px 28px; } }
+</style>
+$GODOT_HEAD_INCLUDE
+</head>
+<body>
+<canvas id="canvas">Your browser does not support the canvas tag.</canvas>
+<noscript>Orbit Royale needs JavaScript.</noscript>
+
+<div id="boot" role="status" aria-live="polite">
+  <div class="art"></div>
+  <div class="shade"></div>
+  <div class="safe">
+    <img class="logo" src="logo.svg" alt="Orbit Royale">
+    <div class="bottom">
+      <div class="left">
+        <div class="eyebrow dash">Orbit Royale · playtest build</div>
+        <h1>Preparing<br>the drop.</h1>
+        <div class="status"><span class="eyebrow" id="stage">Downloading game data</span><span class="pct" id="pct">0%</span></div>
+        <div class="bar"><i id="fill"></i></div>
+        <div class="size" id="size">&nbsp;</div>
+        <div id="error"></div>
+        <button id="retry" type="button">Retry</button>
+      </div>
+      <div class="tip">
+        <div class="eyebrow" style="color: var(--text-3); font-size: 10px">Tip</div>
+        <div class="head" id="tip-head"></div>
+        <p id="tip-text"></p>
+        <div class="dots" id="dots"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="$GODOT_URL"></script>
+<script>
+const GODOT_CONFIG = $GODOT_CONFIG;
+const GODOT_THREADS_ENABLED = $GODOT_THREADS_ENABLED;
+const engine = new Engine(GODOT_CONFIG);
+
+(function () {
+	const boot = document.getElementById('boot');
+	const stage = document.getElementById('stage');
+	const pct = document.getElementById('pct');
+	const fill = document.getElementById('fill');
+	const size = document.getElementById('size');
+	const error = document.getElementById('error');
+	const retry = document.getElementById('retry');
+
+	// Rotating tips, the same ones the in-game loading screen uses.
+	const tips = [
+		[['Shift'], 'Sprint', 'Sprint to cover ground between fights. You can\'t sprint while aiming or healing.'],
+		[['Q'], 'Tethercaster', 'Fire the Tethercaster at high ground, then jump to let go and keep your momentum.'],
+		[['Tab'], 'Inventory', 'Open your inventory to move, equip or drop items without leaving cover.'],
+		[['R'], 'Reload', 'Reload behind cover. Switching slots cancels a reload.'],
+		[['LMB'], 'Heal out of sight', 'Select a healing item and fire to use it. Sprinting, firing or switching stops it, and you keep the item.'],
+		[['C'], 'Crouch', 'Crouching steadies your aim and keeps you low in Bloomwild\'s plants.'],
+	];
+	let tip = Math.floor(Math.random() * tips.length);
+	function showTip() {
+		const t = tips[tip];
+		const head = document.getElementById('tip-head');
+		head.textContent = '';
+		t[0].forEach((k) => { const s = document.createElement('span'); s.className = 'key'; s.textContent = k; head.appendChild(s); });
+		const n = document.createElement('span'); n.className = 'name'; n.textContent = t[1]; head.appendChild(n);
+		document.getElementById('tip-text').textContent = t[2];
+		const dots = document.getElementById('dots');
+		dots.textContent = '';
+		tips.forEach((_, i) => { const d = document.createElement('i'); if (i === tip) d.className = 'on'; dots.appendChild(d); });
+	}
+	showTip();
+	const tipTimer = setInterval(() => { tip = (tip + 1) % tips.length; showTip(); }, 5000);
+
+	const mb = (b) => (b / 1048576).toFixed(1);
+	function progress(current, total) {
+		if (current > 0 && total > 0) {
+			const p = Math.min(1, current / total);
+			fill.style.width = (p * 100).toFixed(1) + '%';
+			pct.textContent = Math.round(p * 100) + '%';
+			size.textContent = mb(current) + ' MB of ' + mb(total) + ' MB';
+			stage.textContent = p >= 1 ? 'Starting the engine' : 'Downloading game data';
+		}
+	}
+
+	function fail(err) {
+		console.error(err);
+		const msg = err instanceof Error ? err.message : (typeof err === 'string' ? err : 'An unknown error occurred.');
+		stage.textContent = 'Couldn\'t start';
+		pct.textContent = '';
+		error.textContent = msg;
+		error.style.display = 'block';
+		retry.style.display = 'inline-block';
+		retry.focus();
+	}
+	retry.addEventListener('click', () => window.location.reload());
+
+	const missing = Engine.getMissingFeatures({ threads: GODOT_THREADS_ENABLED });
+	if (missing.length !== 0) {
+		fail('This browser is missing features the game needs: ' + missing.join(', ') + '. Try the latest Chrome, Edge or Firefox.');
+		return;
+	}
+	engine.startGame({ onProgress: progress }).then(() => {
+		clearInterval(tipTimer);
+		boot.classList.add('gone');
+		setTimeout(() => boot.remove(), 700);
+	}, fail);
+}());
+</script>
+</body>
+</html>

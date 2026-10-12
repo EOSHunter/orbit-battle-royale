@@ -6,6 +6,8 @@ extends Node3D
 @export var kill_height := -60.0
 ## Bots in the round; names and weapons cycle through BOT_SETUP.
 @export var bot_count := 3
+## Shown at the top of the in-match menu.
+@export var menu_context := "Ringfall"
 const BOT_SETUP := [
 	{"name": "Bot Rhea", "weapon": &"ar7"},
 	{"name": "Bot Ivo", "weapon": &"sg4"},
@@ -38,11 +40,14 @@ func _ready() -> void:
 	player.weapons.fired.connect(func(_w: WeaponDef) -> void:
 		for b in get_tree().get_nodes_in_group("bots"):
 			(b as Bot).hear(player.global_position))
+	add_child(MenuWatcher.new(menu_context))
+	MatchStats.track(player)
 	start_round()
 
 
 func start_round() -> void:
 	_ended = false
+	MatchStats.reset()
 	hud.show_center("")
 	for c in _loot.get_children():
 		c.queue_free()
@@ -75,7 +80,8 @@ func start_round() -> void:
 	player.respawn((_markers.get_node("PlayerSpawn") as Node3D).global_transform)
 	hud.alive_count = _bots_alive + 1
 	hud.eliminations = 0
-	hud.toast("Find a weapon. %d bots are on the field." % bot_count)
+	hud.set_mode(menu_context, "Solo  ·  %d bots" % bot_count)
+	hud.set_status("Find a weapon  ·  %d bots on the field" % bot_count)
 
 
 func _make_bot(setup: Dictionary) -> Bot:
@@ -106,7 +112,18 @@ func _on_bot_eliminated(bot: Bot, attacker: Node) -> void:
 		Pickup.spawn_stack(_loot, ItemCatalog.stack(&"field_patch", bot.heals), at + Vector3(0, 0.1, 0.6))
 	if _bots_alive <= 0 and player.is_alive():
 		_ended = true
-		hud.show_center("Last one standing\nF5 to play again")
+		_show_results(true, 1, "")
+
+
+## Results after a short beat so the last moment can be seen.
+func _show_results(victory: bool, placement: int, by: String) -> void:
+	await get_tree().create_timer(2.0 if victory else 2.5).timeout
+	if not is_inside_tree() or not _ended:
+		return
+	if inventory_screen.is_open():
+		inventory_screen.close()
+	Menus.clear()
+	Menus.push(ResultsScreen.new(victory, placement, bot_count + 1, by, start_round))
 
 
 func _on_player_eliminated(attacker: Node) -> void:
@@ -114,7 +131,7 @@ func _on_player_eliminated(attacker: Node) -> void:
 	var by := (attacker as Bot).display_name if attacker is Bot else "the field"
 	hud.alive_count = _bots_alive
 	hud.feed("%s eliminated you" % by)
-	hud.show_center("Eliminated by %s\nF5 to play again" % by)
+	_show_results(false, _bots_alive + 1, by)
 	if inventory_screen.is_open():
 		inventory_screen.close()
 
@@ -130,8 +147,6 @@ func _unhandled_input(event: InputEvent) -> void:
 		get_viewport().set_input_as_handled()
 	elif event.is_action_pressed("respawn"):
 		start_round()
-	elif event.is_action_pressed("ui_cancel") and not inventory_screen.is_open():
-		MouseLock.release()
 
 
 func _recapture() -> void:

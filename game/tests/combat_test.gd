@@ -11,6 +11,7 @@ var failures := 0
 
 func _initialize() -> void:
 	Player.use_saved_tuning = false
+	GameSettings.use_saved = false
 	scene = load("res://scenes/arena.tscn").instantiate()
 	root.add_child(scene)
 	player = scene.get_node("Player")

@@ -1,0 +1,23 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/firing_range.gd" id="1_range"]
+[ext_resource type="PackedScene" path="res://scenes/player.tscn" id="2_player"]
+[ext_resource type="Script" path="res://scripts/ui/combat_hud.gd" id="3_hud"]
+[ext_resource type="Script" path="res://scripts/ui/inventory_screen.gd" id="4_inv"]
+
+[node name="FiringRange" type="Node3D"]
+script = ExtResource("1_range")
+
+[node name="Loot" type="Node3D" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("2_player")]
+collision_layer = 4
+collision_mask = 11
+floor_max_angle = 0.80285144
+floor_snap_length = 0.35
+
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource("3_hud")
+
+[node name="InventoryScreen" type="CanvasLayer" parent="."]
+script = ExtResource("4_inv")

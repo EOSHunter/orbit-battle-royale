@@ -4,14 +4,29 @@
     {
       "name": "prototype",
       "runtimeExecutable": "node",
-      "runtimeArgs": ["prototype/serve.js"],
+      "runtimeArgs": [
+        "prototype/serve.js"
+      ],
       "port": 5173
     },
     {
       "name": "asset-hub",
       "runtimeExecutable": "node",
-      "runtimeArgs": ["asset-hub/server.js", "5180"],
+      "runtimeArgs": [
+        "asset-hub/server.js",
+        "5180"
+      ],
       "port": 5180
+    },
+    {
+      "name": "game-web",
+      "runtimeExecutable": "node",
+      "runtimeArgs": [
+        "prototype/serve.js",
+        "game/build/web",
+        "8060"
+      ],
+      "port": 8060
     }
   ]
 }

@@ -14,6 +14,18 @@ func _ready() -> void:
 	for b: Dictionary in batches:
 		var xforms: PackedFloat32Array = b.xforms
 		var count := xforms.size() / 12
+		# Vegetation joins the "foliage" group so Foliage density can thin it.
+		# Its instances are shuffled so showing the first N thins evenly.
+		var foliage := String(b.path).contains("/vegetation/")
+		var order := range(count)
+		if foliage:
+			var rng := RandomNumberGenerator.new()
+			rng.seed = count
+			for i in range(count - 1, 0, -1):
+				var j := rng.randi_range(0, i)
+				var tmp: int = order[i]
+				order[i] = order[j]
+				order[j] = tmp
 		for part: Array in _parts(b.path):
 			var mm := MultiMesh.new()
 			mm.transform_format = MultiMesh.TRANSFORM_3D
@@ -21,7 +33,7 @@ func _ready() -> void:
 			mm.instance_count = count
 			var local: Transform3D = part[1]
 			for i in count:
-				var o := i * 12
+				var o: int = order[i] * 12
 				var xf := Transform3D(
 					Vector3(xforms[o], xforms[o + 1], xforms[o + 2]),
 					Vector3(xforms[o + 3], xforms[o + 4], xforms[o + 5]),
@@ -34,6 +46,8 @@ func _ready() -> void:
 			mmi.visibility_range_end_margin = 20.0
 			if not b.shadow:
 				mmi.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+			if foliage:
+				mmi.add_to_group("foliage")
 			add_child(mmi)
 
 

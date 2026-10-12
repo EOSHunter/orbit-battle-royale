@@ -21,7 +21,6 @@ const HEAD_FROM_TOP := 0.18
 ## Swimming: feet this far below the surface means deep water (head stays above).
 const SWIM_DEPTH := 1.35
 const SWIM_SPEED := 3.0
-const AIM_SENSITIVITY := 0.7
 
 @export var tuning: MoveTuning
 ## Load the values saved by the tuning panel. Tests turn this off to use defaults.
@@ -36,6 +35,9 @@ var sprinting := false
 var input_grace := 0.0
 ## False while a menu (like the inventory screen) owns the mouse.
 var combat_input := true
+var _sprint_latch := false
+var _aim_latch := false
+var _crouch_latch := false
 
 ## Healing in progress.
 var using: HealDef
@@ -71,13 +73,24 @@ func _ready() -> void:
 	if tuning == null:
 		tuning = MoveTuning.load_saved() if use_saved_tuning else MoveTuning.new()
 	tether.tuning = tuning
-	camera.fov = tuning.fov
+	camera.fov = GameSettings.vertical_fov(_aspect())
 	_peak_y = global_position.y
 	weapons.setup(self, inventory)
 	health.damaged.connect(func(_a: float, _f: Vector3, _by: Node) -> void: _interrupt_use("Took damage"))
 	health.died.connect(_die)
 	inventory.selected_changed.connect(func(_i: int) -> void: _interrupt_use("Switched items"))
 	give_loadout()
+	SceneGraphics.apply.call_deferred(get_tree())
+	GameSettings.listen(_on_setting)
+
+
+func _on_setting(id: String) -> void:
+	if id in ["", "preset", "shadows", "foliage", "view_distance"] and is_inside_tree():
+		SceneGraphics.apply(get_tree())
+
+
+func _exit_tree() -> void:
+	GameSettings.unlisten(_on_setting)
 
 
 func give_loadout() -> void:
@@ -125,7 +138,37 @@ func _unhandled_input(event: InputEvent) -> void:
 	if motion == null or not combat_input:
 		return
 	# Only a locked pointer turns the camera; a free cursor never does.
-	_turn(MouseLock.look_delta(motion) * 0.0022 * tuning.mouse_sensitivity * (AIM_SENSITIVITY if weapons.aiming else 1.0))
+	var d := MouseLock.look_delta(motion)
+	if GameSettings.b("invert_mouse"):
+		d.y = -d.y
+	_turn(d * 0.0022 * GameSettings.f("sens") * _aim_multiplier("aim_sens"))
+
+
+## Look speed multiplier while aiming: the aim setting, or the scope setting
+## for scoped weapons.
+func _aim_multiplier(aim_id: String) -> float:
+	if not weapons.aiming:
+		return 1.0
+	var w := weapons.weapon()
+	if w and w.aim_fov_scale < 0.5 and aim_id == "aim_sens":
+		return GameSettings.f("scope_sens")
+	return GameSettings.f(aim_id)
+
+
+func _aspect() -> float:
+	var r := get_viewport().get_visible_rect().size
+	return r.x / maxf(r.y, 1.0)
+
+
+## A Hold/Toggle(/Auto) action: true while held, or latched on by a press.
+func _mode_held(action: String, mode_id: String, latch: String) -> bool:
+	var mode := GameSettings.s(mode_id)
+	if mode == "Hold" or not combat_input:
+		set(latch, false)
+		return combat_input and Input.is_action_pressed(action)
+	if Input.is_action_just_pressed(action):
+		set(latch, not get(latch))
+	return get(latch)
 
 
 func _turn(by: Vector2) -> void:
@@ -161,7 +204,10 @@ func _physics_process(delta: float) -> void:
 	if combat_input:
 		var look := Input.get_vector("look_left", "look_right", "look_up", "look_down")
 		if look != Vector2.ZERO:
-			_turn(look * look.length() * tuning.stick_sensitivity * (AIM_SENSITIVITY if weapons.aiming else 1.0) * delta)
+			look = GameSettings.shape_stick(look)
+			if GameSettings.b("invert_pad"):
+				look.y = -look.y
+			_turn(look * tuning.stick_sensitivity * GameSettings.f("pad_look") * _aim_multiplier("pad_aim") * delta)
 
 	var move := Input.get_vector("move_left", "move_right", "move_forward", "move_back")
 	var wish := global_basis * Vector3(move.x, 0.0, move.y)
@@ -169,7 +215,10 @@ func _physics_process(delta: float) -> void:
 	wish = wish.limit_length(1.0)
 
 	_update_crouch(delta)
-	sprinting = Input.is_action_pressed("sprint") and move.y < -0.3 and not crouching and using == null and not weapons.aiming
+	var sprint_on := GameSettings.s("sprint_mode") == "Auto" or _mode_held("sprint", "sprint_mode", "_sprint_latch")
+	if move.y >= -0.3:
+		_sprint_latch = false
+	sprinting = sprint_on and move.y < -0.3 and not crouching and using == null and not weapons.aiming
 
 	var on_floor := is_on_floor()
 	_coyote = tuning.coyote_time if on_floor else _coyote - delta
@@ -201,7 +250,7 @@ func _physics_process(delta: float) -> void:
 	_track_landing(fall_speed)
 	_land_dip = move_toward(_land_dip, 0.0, delta * 0.6)
 	head.position.y = _shape.height - HEAD_FROM_TOP - _land_dip
-	var fov_target := tuning.fov * (weapons.weapon().aim_fov_scale if weapons.aiming and weapons.weapon() else 1.0)
+	var fov_target := GameSettings.vertical_fov(_aspect()) * (weapons.weapon().aim_fov_scale if weapons.aiming and weapons.weapon() else 1.0)
 	camera.fov = lerpf(camera.fov, fov_target, minf(1.0, delta * 14.0))
 
 
@@ -226,7 +275,7 @@ func _combat(delta: float, combat: bool, move_amount: float) -> void:
 	var sel := inventory.selected_stack()
 	var fire_pressed := combat and Input.is_action_just_pressed("fire")
 	var fire_held := combat and Input.is_action_pressed("fire")
-	var aim_held := combat and Input.is_action_pressed("aim")
+	var aim_held := combat and _mode_held("aim", "aim_mode", "_aim_latch")
 	var moving_ratio := clampf(horizontal_speed() / maxf(0.1, tuning.walk_speed), 0.0, 1.0) * clampf(move_amount * 2.0, 0.0, 1.0)
 	if sel and sel.def is HealDef:
 		if fire_pressed and using == null:
@@ -388,7 +437,7 @@ func _tethered_move(delta: float, wish: Vector3) -> void:
 
 
 func _update_crouch(delta: float) -> void:
-	var want := Input.is_action_pressed("crouch") and not tether.is_attached()
+	var want := _mode_held("crouch", "crouch_mode", "_crouch_latch") and not tether.is_attached()
 	if not want and crouching:
 		# Stand only if there is headroom.
 		var lift := Vector3.UP * (STAND_HEIGHT - CROUCH_HEIGHT)

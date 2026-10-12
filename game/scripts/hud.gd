@@ -71,7 +71,7 @@ func _ready() -> void:
 
 	var help_panel := _panel(root, Vector2(0, 1), Vector2i(Control.GROW_DIRECTION_END, Control.GROW_DIRECTION_BEGIN), Vector2(24, -24))
 	_help = _label(15, TEXT_2)
-	_help.text = "WASD move · Shift sprint · C crouch · Space jump\nClick, Q or a mouse side button: fire or release the tether · Space while tethered: release with boost\nHold C while tethered: swing without reeling\nF6–F9 teleport · F5 respawn · F1 tuning (saved) · F10 combat arena · Esc free the mouse\nController: sticks, A jump, RT or R3 tether, B crouch, L3 sprint, Start tuning"
+	_help.text = "WASD move · Shift sprint · C crouch · Space jump\nClick, Q or a mouse side button: fire or release the tether · Space while tethered: release with boost\nHold C while tethered: swing without reeling\nF6–F9 teleport · F5 respawn · F1 tuning (saved) · F10 next scene · Esc menu\nController: sticks, A jump, RT or R3 tether, B crouch, L3 sprint, Start tuning"
 	help_panel.add_child(_help)
 
 	_capture_hint = _label(22, TEXT)

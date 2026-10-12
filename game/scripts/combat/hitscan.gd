@@ -11,10 +11,11 @@ const SHOT_MASK := WORLD | GRAPPABLE | PLAYER | BOTS
 
 
 ## Fires one shot of `def` from `origin` along `forward` with a spread cone
-## of `spread_deg`. Returns {hits: int, damage: float, kills: int}.
+## of `spread_deg`. Returns {hits: int, damage: float, kills: int,
+## shield: bool (a pellet hit a shield), broke: bool (a pellet emptied one)}.
 static func fire(world: World3D, origin: Vector3, forward: Vector3, muzzle: Vector3, def: WeaponDef,
 		spread_deg: float, shooter: Node, exclude: Array[RID], damage_scale := 1.0) -> Dictionary:
-	var result := {"hits": 0, "damage": 0.0, "kills": 0}
+	var result := {"hits": 0, "damage": 0.0, "kills": 0, "shield": false, "broke": false}
 	var space := world.direct_space_state
 	var basis := Basis.looking_at(forward, Vector3.UP if absf(forward.y) < 0.99 else Vector3.FORWARD)
 	for i in def.pellets:
@@ -37,6 +38,9 @@ static func fire(world: World3D, origin: Vector3, forward: Vector3, muzzle: Vect
 				if not health.alive:
 					result.kills += 1
 				if shielded:
+					result.shield = true
+					if health.shield <= 0.0:
+						result.broke = true
 					Fx.shield_hit(world, end, hit.normal)
 					if health.shield <= 0.0 and body is Node3D:
 						Fx.shield_break(world, (body as Node3D).global_position + Vector3.UP * 1.0)

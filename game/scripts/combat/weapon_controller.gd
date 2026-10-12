@@ -6,6 +6,8 @@ extends Node3D
 
 signal fired(def: WeaponDef)
 signal hit_confirmed(damage: float, killed: bool)
+## What a hit did, for hit numbers: "shield", "break" or "health".
+signal hit_detail(damage: float, kind: String)
 signal reload_started(seconds: float)
 signal reload_finished
 
@@ -105,6 +107,7 @@ func _fire(w: WeaponDef, s: ItemStack) -> void:
 	fired.emit(w)
 	if int(result.hits) > 0:
 		hit_confirmed.emit(float(result.damage), int(result.kills) > 0)
+		hit_detail.emit(float(result.damage), "break" if result.broke else ("shield" if result.shield else "health"))
 	# Kick the view; most of it recovers, a little stays (aim drifts up under sustained fire).
 	var kick := Vector2(deg_to_rad(randf_range(-w.recoil_yaw, w.recoil_yaw)), deg_to_rad(w.recoil_pitch)) * (0.6 if aiming else 1.0)
 	player.head.rotation.x = clampf(player.head.rotation.x + kick.y, deg_to_rad(-89.0), deg_to_rad(89.0))

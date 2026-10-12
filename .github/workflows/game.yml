@@ -73,7 +73,7 @@ jobs:
       - name: Run headless checks
         run: |
           set -o pipefail
-          for suite in movement_test inventory_test combat_test ringfall_test; do
+          for suite in movement_test inventory_test combat_test ringfall_test ui_test; do
             echo "::group::$suite"
             timeout 300 ~/godot/godot --headless --path game -s res://tests/$suite.gd 2>&1 | tee "$suite.log"
             echo "::endgroup::"
@@ -83,8 +83,7 @@ jobs:
 
       - name: Export web build
         run: |
-          mkdir -p game/build/web
-          ~/godot/godot --headless --path game --export-release "Web" build/web/index.html
+          GODOT=~/godot/godot game/tools/export_web.sh
           test -f game/build/web/index.wasm && test -f game/build/web/index.pck
           ls -la game/build/web
           echo "### Web build" >> "$GITHUB_STEP_SUMMARY"

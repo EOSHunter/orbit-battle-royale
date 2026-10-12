@@ -23,7 +23,10 @@ func _ready() -> void:
 	layer.layer = 100
 	add_child(layer)
 	_label = Label.new()
-	_label.visible = false
+	_label.visible = GameSettings.b("show_fps")
+	GameSettings.listen(func(id: String) -> void:
+		if id == "" or id == "show_fps":
+			_label.visible = GameSettings.b("show_fps"))
 	_label.add_theme_font_size_override("font_size", 15)
 	_label.add_theme_color_override("font_color", Color("c5f277"))
 	_label.add_theme_color_override("font_shadow_color", Color(0, 0, 0, 0.8))
@@ -51,7 +54,7 @@ func _bench_requested() -> bool:
 func _unhandled_input(event: InputEvent) -> void:
 	var key := event as InputEventKey
 	if key and key.pressed and not key.echo and key.physical_keycode == KEY_F3:
-		_label.visible = not _label.visible
+		GameSettings.set_value("show_fps", not _label.visible)
 
 
 func _process(delta: float) -> void:

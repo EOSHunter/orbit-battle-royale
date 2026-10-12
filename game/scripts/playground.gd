@@ -14,6 +14,8 @@ var _last_marker := "Spawn"
 func _ready() -> void:
 	hud.player = player
 	player.landed.connect(func(drop: float, _speed: float) -> void: hud.show_landing(drop))
+	add_child(MenuWatcher.new("Movement playground", true))
+	MatchStats.track(player)
 	teleport("Spawn")
 
 
@@ -23,8 +25,6 @@ func _unhandled_input(event: InputEvent) -> void:
 		get_viewport().set_input_as_handled()
 		player.input_grace = 0.25
 		MouseLock.capture()
-	elif event.is_action_pressed("ui_cancel"):
-		MouseLock.release()
 
 
 func _physics_process(_delta: float) -> void:

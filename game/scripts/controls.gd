@@ -35,12 +35,17 @@ func _ready() -> void:
 	_bind("toggle_tuning", [_key(KEY_F1)], [_button(JOY_BUTTON_START)])
 	for i in 4:
 		_bind("teleport_%d" % (i + 1), [_key((KEY_F6 + i) as Key)], [])
+	_bind("map", [_key(KEY_M)], [_button(JOY_BUTTON_DPAD_UP)])
+
+	# Saved settings: rebinds, volumes, frame cap, deadzones and the rest.
+	GameSettings.apply()
 
 
-const SCENES := ["res://scenes/ringfall.tscn", "res://scenes/arena.tscn", "res://scenes/playground.tscn"]
+const SCENES := ["res://scenes/main_menu.tscn", "res://scenes/ringfall.tscn", "res://scenes/firing_range.tscn", "res://scenes/arena.tscn", "res://scenes/playground.tscn"]
 
 
-## F10 cycles the Ringfall map, the combat arena and the movement playground.
+## F10 cycles the main menu, Ringfall, the firing range, the combat arena and
+## the movement playground (a development shortcut).
 func _unhandled_input(event: InputEvent) -> void:
 	var key := event as InputEventKey
 	if key and key.pressed and not key.echo and key.physical_keycode == KEY_F10:
