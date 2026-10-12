@@ -1,0 +1,203 @@
+{
+  "version": "0.1",
+  "tool": "built-in image_gen",
+  "reference": {
+    "url": "https://eoshunter.github.io/kong-royale-feedback/#play-hud",
+    "variant": "Hybrid",
+    "inspectedOn": "2026-10-12",
+    "method": "Browser dropdowns and visible DOM/screenshot inspection"
+  },
+  "selectedCount": 26,
+  "retainedFirstDrafts": 7,
+  "screens": [
+    {
+      "index": 1,
+      "name": "Mouse & keyboard — Mouse",
+      "group": "Settings",
+      "file": "01-mouse-tuning.png",
+      "status": "complete"
+    },
+    {
+      "index": 2,
+      "name": "Mouse & keyboard — Behavior",
+      "group": "Settings",
+      "file": "02-mouse-behavior.png",
+      "status": "complete"
+    },
+    {
+      "index": 3,
+      "name": "Mouse & keyboard — Bindings",
+      "group": "Settings",
+      "file": "03-keyboard-bindings.png",
+      "status": "complete"
+    },
+    {
+      "index": 4,
+      "name": "Controller — Layout",
+      "group": "Settings",
+      "file": "04-controller-layout.png",
+      "status": "complete"
+    },
+    {
+      "index": 5,
+      "name": "Controller — Look",
+      "group": "Settings",
+      "file": "05-controller-look.png",
+      "status": "complete"
+    },
+    {
+      "index": 6,
+      "name": "Controller — Deadzones",
+      "group": "Settings",
+      "file": "06-controller-deadzones.png",
+      "status": "complete"
+    },
+    {
+      "index": 7,
+      "name": "Controller — Bindings",
+      "group": "Settings",
+      "file": "07-controller-bindings-refined.png",
+      "status": "complete",
+      "firstDraftFile": "07-controller-bindings.png"
+    },
+    {
+      "index": 8,
+      "name": "Audio — Volume",
+      "group": "Settings",
+      "file": "08-audio-volume-refined.png",
+      "status": "complete",
+      "firstDraftFile": "08-audio-volume.png"
+    },
+    {
+      "index": 9,
+      "name": "Audio — Voice",
+      "group": "Settings",
+      "file": "09-audio-voice.png",
+      "status": "complete"
+    },
+    {
+      "index": 10,
+      "name": "Video — Display",
+      "group": "Settings",
+      "file": "10-video-display.png",
+      "status": "complete"
+    },
+    {
+      "index": 11,
+      "name": "Video — Graphics",
+      "group": "Settings",
+      "file": "11-video-graphics-refined.png",
+      "status": "complete",
+      "firstDraftFile": "11-video-graphics.png"
+    },
+    {
+      "index": 12,
+      "name": "Accessibility — Readability",
+      "group": "Settings",
+      "file": "12-accessibility-readability-refined.png",
+      "status": "complete",
+      "firstDraftFile": "12-accessibility-readability.png"
+    },
+    {
+      "index": 13,
+      "name": "Accessibility — Comfort",
+      "group": "Settings",
+      "file": "13-accessibility-comfort.png",
+      "status": "complete"
+    },
+    {
+      "index": 14,
+      "name": "Gameplay — HUD",
+      "group": "Settings",
+      "file": "14-gameplay-hud-refined.png",
+      "status": "complete",
+      "firstDraftFile": "14-gameplay-hud.png"
+    },
+    {
+      "index": 15,
+      "name": "Main menu",
+      "group": "Menus",
+      "file": "15-main-menu-refined.png",
+      "status": "complete",
+      "firstDraftFile": "15-main-menu.png"
+    },
+    {
+      "index": 16,
+      "name": "Solo lobby",
+      "group": "Menus",
+      "file": "16-lobby.png",
+      "status": "complete"
+    },
+    {
+      "index": 17,
+      "name": "Downloading assets",
+      "group": "Menus",
+      "file": "17-asset-loading.png",
+      "status": "complete"
+    },
+    {
+      "index": 18,
+      "name": "Preparing match",
+      "group": "Menus",
+      "file": "18-match-loading-refined.png",
+      "status": "complete",
+      "firstDraftFile": "18-match-loading.png"
+    },
+    {
+      "index": 19,
+      "name": "Match menu",
+      "group": "Menus",
+      "file": "19-match-menu.png",
+      "status": "complete"
+    },
+    {
+      "index": 20,
+      "name": "Report a problem",
+      "group": "Menus",
+      "file": "20-report.png",
+      "status": "complete"
+    },
+    {
+      "index": 21,
+      "name": "Learn controls",
+      "group": "Menus",
+      "file": "21-learn-controls.png",
+      "status": "complete"
+    },
+    {
+      "index": 22,
+      "name": "Ringfall map screen",
+      "group": "Menus",
+      "file": "22-map-screen.png",
+      "status": "complete"
+    },
+    {
+      "index": 23,
+      "name": "Victory results",
+      "group": "Menus",
+      "file": "23-victory-results.png",
+      "status": "complete"
+    },
+    {
+      "index": 24,
+      "name": "Elimination results",
+      "group": "Menus",
+      "file": "24-elimination-results.png",
+      "status": "complete"
+    },
+    {
+      "index": 25,
+      "name": "Reset settings confirmation",
+      "group": "Dialogs",
+      "file": "25-reset-confirmation.png",
+      "status": "complete"
+    },
+    {
+      "index": 26,
+      "name": "Leave match confirmation",
+      "group": "Dialogs",
+      "file": "26-leave-confirmation.png",
+      "status": "complete"
+    }
+  ]
+}
