@@ -4,6 +4,7 @@ Work produced in the Orbit Royale Codex conversation lives here so Claude and ot
 
 ## Start here
 
+- [Working menu/UI prototype v0.1](ui-prototype/v0.1/index.html): 31 coded views with styled dropdowns, settings persistence, rebinding, map controls, inventory and matching HUD. [Usage and verification](ui-prototype/v0.1/README.md).
 - [Menu and UI design system v0.1](ui-design-system/v0.1/index.html): downloadable SVG logo masters, bundled fonts, visual component guide, CSS/JSON tokens and [implementation specification](ui-design-system/v0.1/README.md).
 - [Matching sci-fi UI v0.2](concepts/ui-v0.2/index.html): 28 screens spanning settings, menus, dialogs, HUD and inventory. [Claude handoff notes](concepts/ui-v0.2/README.md).
 - [Main menu v0.2 — sci-fi UI exploration](concepts/main-menu-v0.2/README.md): alternate typography, panels and selected states on a plain background.
