@@ -1,0 +1,27 @@
+[
+  {
+    "sha256": "F8906F762CB73DCA441DA034BC363B2D8E2E68BC10D5C05E58717646C20CC4B4",
+    "file": "Barlow-Medium.ttf",
+    "bytes": 103536
+  },
+  {
+    "sha256": "95AA02C7C43096E0DD44D787BA6216864A67157E402ADAB59B35572E0C1577EA",
+    "file": "Barlow-Regular.ttf",
+    "bytes": 104068
+  },
+  {
+    "sha256": "86577CB32F8ABE3673DB53CA0F4221E6856751A4F6730C867E00F720F8BB1FC5",
+    "file": "Barlow-SemiBold.ttf",
+    "bytes": 108348
+  },
+  {
+    "sha256": "A9B4C49BB299E05B5F6C481E7FB5E78943D2793249A0C8874AB574A2D1EA6755",
+    "file": "IBMPlexMono-Medium.ttf",
+    "bytes": 136704
+  },
+  {
+    "sha256": "2CE01D946E1E1FFC8D7EECFFFBDA8623BEDD63EAF811A20488C4B69AF45BABB0",
+    "file": "Oxanium-Variable.ttf",
+    "bytes": 43536
+  }
+]
