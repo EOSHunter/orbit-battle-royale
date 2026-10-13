@@ -1,0 +1,114 @@
+[
+  {
+    "name": "Mouse & keyboard — Mouse",
+    "file": "01-mouse-keyboard-mouse.png"
+  },
+  {
+    "name": "Mouse & keyboard — Behavior",
+    "file": "02-mouse-keyboard-behavior.png"
+  },
+  {
+    "name": "Mouse & keyboard — Bindings",
+    "file": "03-mouse-keyboard-bindings.png"
+  },
+  {
+    "name": "Controller — Layout",
+    "file": "04-controller-layout.png"
+  },
+  {
+    "name": "Controller — Look",
+    "file": "05-controller-look.png"
+  },
+  {
+    "name": "Controller — Deadzones",
+    "file": "06-controller-deadzones.png"
+  },
+  {
+    "name": "Controller — Bindings",
+    "file": "07-controller-bindings.png"
+  },
+  {
+    "name": "Audio — Volume",
+    "file": "08-audio-volume.png"
+  },
+  {
+    "name": "Audio — Voice",
+    "file": "09-audio-voice.png"
+  },
+  {
+    "name": "Video — Display",
+    "file": "10-video-display.png"
+  },
+  {
+    "name": "Video — Graphics",
+    "file": "11-video-graphics.png"
+  },
+  {
+    "name": "Accessibility — Readability",
+    "file": "12-accessibility-readability.png"
+  },
+  {
+    "name": "Accessibility — Comfort",
+    "file": "13-accessibility-comfort.png"
+  },
+  {
+    "name": "Gameplay — HUD settings",
+    "file": "14-gameplay-hud-settings.png"
+  },
+  {
+    "name": "Main menu",
+    "file": "16-main-menu.png"
+  },
+  {
+    "name": "Solo lobby",
+    "file": "17-solo-lobby.png"
+  },
+  {
+    "name": "Downloading assets",
+    "file": "18-downloading-assets.png"
+  },
+  {
+    "name": "Preparing match",
+    "file": "19-preparing-match.png"
+  },
+  {
+    "name": "Match menu",
+    "file": "20-match-menu.png"
+  },
+  {
+    "name": "Report a problem",
+    "file": "21-report-a-problem.png"
+  },
+  {
+    "name": "Learn controls",
+    "file": "22-learn-controls.png"
+  },
+  {
+    "name": "Ringfall map",
+    "file": "23-ringfall-map.png"
+  },
+  {
+    "name": "Victory results",
+    "file": "24-victory-results.png"
+  },
+  {
+    "name": "Elimination results",
+    "file": "25-elimination-results.png"
+  },
+  {
+    "name": "Reset settings confirmation",
+    "file": "26-reset-settings-confirmation.png"
+  },
+  {
+    "name": "Leave match confirmation",
+    "file": "27-leave-match-confirmation.png"
+  },
+  {
+    "name": "Gameplay HUD",
+    "file": "28-gameplay-hud.png"
+  },
+  {
+    "name": "Inventory",
+    "file": "29-inventory.png"
+  }
+]

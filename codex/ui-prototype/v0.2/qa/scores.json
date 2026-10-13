@@ -1,0 +1,289 @@
+{
+  "version": "0.2",
+  "minimumRequired": 9,
+  "reviewedScreens": 28,
+  "passedScreens": 28,
+  "reviewType": "Independent visual cross-review",
+  "screens": [
+    {
+      "conceptIndex": 1,
+      "name": "Mouse & keyboard — Mouse",
+      "reference": "../references/01-mouse-tuning.png",
+      "evidence": "01-mouse-keyboard-mouse.png",
+      "score": 9.2,
+      "passed": true,
+      "reviewer": "qa_menus",
+      "report": "QA-cross-settings.md"
+    },
+    {
+      "conceptIndex": 2,
+      "name": "Mouse & keyboard — Behavior",
+      "reference": "../references/02-mouse-behavior.png",
+      "evidence": "02-mouse-keyboard-behavior.png",
+      "score": 9.2,
+      "passed": true,
+      "reviewer": "qa_menus",
+      "report": "QA-cross-settings.md"
+    },
+    {
+      "conceptIndex": 3,
+      "name": "Mouse & keyboard — Bindings",
+      "reference": "../references/03-keyboard-bindings.png",
+      "evidence": "03-mouse-keyboard-bindings.png",
+      "score": 9.2,
+      "passed": true,
+      "reviewer": "qa_menus",
+      "report": "QA-cross-settings.md"
+    },
+    {
+      "conceptIndex": 4,
+      "name": "Controller — Layout",
+      "reference": "../references/04-controller-layout.png",
+      "evidence": "04-controller-layout.png",
+      "score": 9.2,
+      "passed": true,
+      "reviewer": "qa_menus",
+      "report": "QA-cross-settings.md"
+    },
+    {
+      "conceptIndex": 5,
+      "name": "Controller — Look",
+      "reference": "../references/05-controller-look.png",
+      "evidence": "05-controller-look.png",
+      "score": 9.2,
+      "passed": true,
+      "reviewer": "qa_menus",
+      "report": "QA-cross-settings.md"
+    },
+    {
+      "conceptIndex": 6,
+      "name": "Controller — Deadzones",
+      "reference": "../references/06-controller-deadzones.png",
+      "evidence": "06-controller-deadzones.png",
+      "score": 9.2,
+      "passed": true,
+      "reviewer": "qa_menus",
+      "report": "QA-cross-settings.md"
+    },
+    {
+      "conceptIndex": 7,
+      "name": "Controller — Bindings",
+      "reference": "../references/07-controller-bindings.png",
+      "evidence": "07-controller-bindings.png",
+      "score": 9.2,
+      "passed": true,
+      "reviewer": "qa_menus",
+      "report": "QA-cross-settings.md"
+    },
+    {
+      "conceptIndex": 8,
+      "name": "Audio — Volume",
+      "reference": "../references/08-audio-volume.png",
+      "evidence": "08-audio-volume.png",
+      "score": 9.2,
+      "passed": true,
+      "reviewer": "qa_menus",
+      "report": "QA-cross-settings.md"
+    },
+    {
+      "conceptIndex": 9,
+      "name": "Audio — Voice",
+      "reference": "../references/09-audio-voice.png",
+      "evidence": "09-audio-voice.png",
+      "score": 9.2,
+      "passed": true,
+      "reviewer": "qa_menus",
+      "report": "QA-cross-settings.md"
+    },
+    {
+      "conceptIndex": 10,
+      "name": "Video — Display",
+      "reference": "../references/10-video-display.png",
+      "evidence": "10-video-display.png",
+      "score": 9.2,
+      "passed": true,
+      "reviewer": "qa_menus",
+      "report": "QA-cross-settings.md"
+    },
+    {
+      "conceptIndex": 11,
+      "name": "Video — Graphics",
+      "reference": "../references/11-video-graphics.png",
+      "evidence": "11-video-graphics.png",
+      "score": 9.1,
+      "passed": true,
+      "reviewer": "qa_menus",
+      "report": "QA-cross-settings.md"
+    },
+    {
+      "conceptIndex": 12,
+      "name": "Accessibility — Readability",
+      "reference": "../references/12-accessibility-readability-refined.png",
+      "evidence": "12-accessibility-readability.png",
+      "score": 9.2,
+      "passed": true,
+      "reviewer": "qa_menus",
+      "report": "QA-cross-settings.md"
+    },
+    {
+      "conceptIndex": 13,
+      "name": "Accessibility — Comfort",
+      "reference": "../references/13-accessibility-comfort.png",
+      "evidence": "13-accessibility-comfort.png",
+      "score": 9.1,
+      "passed": true,
+      "reviewer": "qa_menus",
+      "report": "QA-cross-settings.md"
+    },
+    {
+      "conceptIndex": 14,
+      "name": "Gameplay — HUD",
+      "reference": "../references/14-gameplay-hud.png",
+      "evidence": "14-gameplay-hud-settings.png",
+      "score": 9.1,
+      "passed": true,
+      "reviewer": "qa_menus",
+      "report": "QA-cross-settings.md"
+    },
+    {
+      "conceptIndex": 15,
+      "name": "Main menu",
+      "reference": "../references/15-main-menu.png",
+      "evidence": "16-main-menu.png",
+      "score": 9,
+      "passed": true,
+      "reviewer": "qa_settings",
+      "report": "QA-cross-menus.md"
+    },
+    {
+      "conceptIndex": 16,
+      "name": "Solo lobby",
+      "reference": "../references/16-lobby-refined.png",
+      "evidence": "17-solo-lobby.png",
+      "score": 9,
+      "passed": true,
+      "reviewer": "qa_settings",
+      "report": "QA-cross-menus.md"
+    },
+    {
+      "conceptIndex": 17,
+      "name": "Downloading assets",
+      "reference": "../references/17-asset-loading.png",
+      "evidence": "18-downloading-assets.png",
+      "score": 9,
+      "passed": true,
+      "reviewer": "qa_settings",
+      "report": "QA-cross-menus.md"
+    },
+    {
+      "conceptIndex": 18,
+      "name": "Preparing match",
+      "reference": "../references/18-match-loading-refined.png",
+      "evidence": "19-preparing-match.png",
+      "score": 9,
+      "passed": true,
+      "reviewer": "qa_settings",
+      "report": "QA-cross-menus.md"
+    },
+    {
+      "conceptIndex": 19,
+      "name": "Match menu",
+      "reference": "../references/19-match-menu-refined.png",
+      "evidence": "20-match-menu.png",
+      "score": 9,
+      "passed": true,
+      "reviewer": "qa_settings",
+      "report": "QA-cross-menus.md"
+    },
+    {
+      "conceptIndex": 20,
+      "name": "Report a problem",
+      "reference": "../references/20-report.png",
+      "evidence": "21-report-a-problem.png",
+      "score": 9,
+      "passed": true,
+      "reviewer": "qa_settings",
+      "report": "QA-cross-menus.md"
+    },
+    {
+      "conceptIndex": 21,
+      "name": "Learn controls",
+      "reference": "../references/21-learn-controls.png",
+      "evidence": "22-learn-controls.png",
+      "score": 9.1,
+      "passed": true,
+      "reviewer": "qa_settings",
+      "report": "QA-cross-menus.md"
+    },
+    {
+      "conceptIndex": 22,
+      "name": "Ringfall map screen",
+      "reference": "../references/22-map-screen.png",
+      "evidence": "23-ringfall-map.png",
+      "score": 9.1,
+      "passed": true,
+      "reviewer": "qa_settings",
+      "report": "QA-cross-menus.md"
+    },
+    {
+      "conceptIndex": 23,
+      "name": "Victory results",
+      "reference": "../references/23-victory-results.png",
+      "evidence": "24-victory-results.png",
+      "score": 9,
+      "passed": true,
+      "reviewer": "qa_settings",
+      "report": "QA-cross-menus.md"
+    },
+    {
+      "conceptIndex": 24,
+      "name": "Elimination results",
+      "reference": "../references/24-elimination-results.png",
+      "evidence": "25-elimination-results.png",
+      "score": 9,
+      "passed": true,
+      "reviewer": "qa_settings",
+      "report": "QA-cross-menus.md"
+    },
+    {
+      "conceptIndex": 25,
+      "name": "Reset settings confirmation",
+      "reference": "../references/25-reset-confirmation-refined.png",
+      "evidence": "26-reset-settings-confirmation.png",
+      "score": 9.1,
+      "passed": true,
+      "reviewer": "qa_settings",
+      "report": "QA-cross-gameplay.md"
+    },
+    {
+      "conceptIndex": 26,
+      "name": "Leave match confirmation",
+      "reference": "../references/26-leave-confirmation.png",
+      "evidence": "27-leave-match-confirmation.png",
+      "score": 9,
+      "passed": true,
+      "reviewer": "qa_settings",
+      "report": "QA-cross-gameplay.md"
+    },
+    {
+      "conceptIndex": 27,
+      "name": "Gameplay HUD",
+      "reference": "../references/27-gameplay-hud-refined.png",
+      "evidence": "28-gameplay-hud.png",
+      "score": 9.2,
+      "passed": true,
+      "reviewer": "qa_settings",
+      "report": "QA-cross-gameplay.md"
+    },
+    {
+      "conceptIndex": 28,
+      "name": "Inventory screen",
+      "reference": "../references/28-inventory-screen.png",
+      "evidence": "29-inventory.png",
+      "score": 9.2,
+      "passed": true,
+      "reviewer": "qa_settings",
+      "report": "QA-cross-gameplay.md"
+    }
+  ]
+}

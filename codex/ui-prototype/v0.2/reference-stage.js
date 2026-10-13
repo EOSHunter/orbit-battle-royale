@@ -1,0 +1,1 @@
+function fitReferenceStage(){const scale=Math.min(innerWidth/1672,(innerHeight-42)/941);document.documentElement.style.setProperty('--stage-scale',String(scale));}window.addEventListener('resize',fitReferenceStage);fitReferenceStage();

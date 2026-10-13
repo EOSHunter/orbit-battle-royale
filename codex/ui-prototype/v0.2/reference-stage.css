@@ -1,0 +1,57 @@
+/* Reference-sized stage: one uniform scale, never independent HUD transforms. */
+html,body{height:100%;overflow:hidden}
+#explorer{height:42px;z-index:50;padding:4px 12px;font-size:12px}
+#stage-viewport{position:relative;width:100%;height:calc(100dvh - 42px);overflow:hidden;background:#080e17}
+#app{position:absolute;left:50%;top:50%;width:1672px;height:941px;min-height:0;transform:translate(-50%,-50%) scale(var(--stage-scale,1));transform-origin:center center;overflow:hidden;background:#0b101b}
+:where(#app) .screen{width:1672px;height:941px;min-height:0;max-width:none;margin:0;padding:32px 48px;gap:20px;overflow:hidden}
+:where(#app) .screen-head{height:100px;min-height:100px;gap:24px;flex:none}
+:where(#app) .logo{width:280px;height:auto}
+#app h1{font-size:72px;letter-spacing:.012em;font-weight:800;line-height:1.1}
+#app h2{font-size:32px;line-height:1.15}
+#app h3{font-size:24px}
+:where(#app) .setting-label{font-size:22px;font-weight:500;letter-spacing:.01em}
+:where(#app) .help p{font-size:22px;font-weight:400;letter-spacing:.05em;line-height:1.45}
+:where(#app) .categories{display:grid;grid-template-columns:1.4fr 1.2fr 1fr 1fr 1.3fr 1.2fr;gap:8px;overflow:visible;padding:0}
+:where(#app) .category{min-width:0;font-size:18px;gap:16px;min-height:58px}
+:where(#app) .category .icon{width:32px;height:32px}
+:where(#app) .category.selected{background:#0b101b;box-shadow:none}
+:where(#app) .category:not(.selected):hover{background:#111b2b}
+:where(#app) .subtab{padding:10px 34px;font-size:18px}
+:where(#app) .settings-body{display:grid;grid-template-columns:1040px 524px;gap:24px;flex:none}
+:where(#app) .settings-rows{max-height:494px;min-height:494px;padding:24px 20px}
+:where(#app) .setting-row{min-height:72px;padding:12px 32px;flex-wrap:nowrap}
+:where(#app) .control{gap:18px;max-width:60%;width:auto}
+:where(#app) .control input[type=range]{width:300px;flex:none}
+:where(#app) .choice-trigger{min-width:218px;font-size:20px;padding:10px 20px}
+:where(#app) .value{min-width:108px;font-size:22px;padding:10px 8px}
+:where(#app) .adjust{width:46px;height:46px;font-size:32px}
+:where(#app) .footer{flex-wrap:nowrap;padding-top:14px;font-size:15px}
+:where(#app) .footer .saved{margin-left:auto}
+:where(#app) .action{font-size:19px}
+:where(#app) .frame::after{display:none}
+:where(#app) .panel-outline{z-index:1}
+:where(#app) .menu-column{width:770px;max-width:none}
+:where(#app) .hero-logo{width:600px}
+:where(#app) .menu-action{font-size:44px;min-height:108px;padding:20px 28px;gap:32px}
+:where(#app) .menu-index{font-size:24px}
+:where(#app) .lobby-main{width:800px;max-width:none}
+:where(#app) .lobby-map{grid-template-columns:1.5fr 1fr}
+:where(#app) .callsign{flex-wrap:nowrap}
+:where(#app) .topnav button{font-size:30px;padding:16px 44px}
+:where(#app) .loading-layout{display:grid;grid-template-columns:1fr 1.1fr}
+:where(#app) .report-layout{display:grid;grid-template-columns:1.7fr 1fr}
+:where(#app) .inventory-body{display:grid;grid-template-columns:1.4fr 1fr}
+:where(#app) .inventory-head{flex-wrap:nowrap}
+:where(#app) .ammo-reserves{grid-template-columns:repeat(4,1fr)}
+:where(#app) .inventory-actions{flex-wrap:nowrap}
+:where(#app) .guide-layout{display:grid;grid-template-columns:400px 1fr}
+:where(#app) .lessons{display:flex}
+:where(#app) .guide-footer{flex-wrap:nowrap}
+:where(#app) .results-layout{display:grid;grid-template-columns:1.3fr 1fr}
+:where(#app) .map-layout{display:grid;grid-template-columns:minmax(0,3.4fr) minmax(280px,1fr)}
+:where(#app) .map-side{display:flex}
+:where(#app) .hud{width:1672px;height:941px;min-height:0}
+#reference{width:min(46vw,840px)}
+#modal{position:fixed;left:50%;top:calc(50% + 21px);margin:0;transform:translate(-50%,-50%) scale(var(--stage-scale,1));transform-origin:center;width:760px;max-width:none;max-height:none}
+#modal::backdrop{background:rgba(5,8,14,.65)}
+@media(max-width:600px){#explorer{overflow-x:auto;white-space:nowrap}.prototype-label,.toolbar-note{display:none}.tool{flex:none}#reference{width:95vw}}
