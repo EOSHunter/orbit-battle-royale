@@ -4,6 +4,7 @@ Work produced in the Orbit Royale Codex conversation lives here so Claude and ot
 
 ## Start here
 
+- [Matching sci-fi UI v0.2](concepts/ui-v0.2/index.html): 28 screens spanning settings, menus, dialogs, HUD and inventory. [Claude handoff notes](concepts/ui-v0.2/README.md).
 - [Main menu v0.2 — sci-fi UI exploration](concepts/main-menu-v0.2/README.md): alternate typography, panels and selected states on a plain background.
 - [Menu and settings concept gallery](concepts/menus-v0.1/index.html): 26 screens based on the Kong prototype's Hybrid structure, in Orbit Royale's own style. [Review notes](concepts/menus-v0.1/README.md).
 - [Gameplay and inventory concepts](concepts/gameplay-v0.1/README.md): first-person POV with HUD and held rifle, plus the five-slot inventory overlay.
